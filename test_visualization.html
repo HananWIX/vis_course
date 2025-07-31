@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Global Cinema Data</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Global Cinema Data Test</h1>
+        <p>This page tests if the data loading and visualization components work correctly.</p>
+        
+        <div id="test-results"></div>
+        
+        <div id="data-sample" style="margin-top: 20px;">
+            <!-- Data sample will be displayed here -->
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button onclick="testEnrichment()" style="padding: 10px 20px; background: #4a90e2; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                🔍 Test Data Enrichment
+            </button>
+            <button onclick="testFiltering()" style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;">
+                🎯 Test Filtering
+            </button>
+        </div>
+        
+        <div id="debug-results" style="margin-top: 20px;">
+            <!-- Debug results will appear here -->
+        </div>
+    </div>
+
+    <script src="global_data.js"></script>
+    <script>
+        const resultsDiv = document.getElementById('test-results');
+        const sampleDiv = document.getElementById('data-sample');
+        
+        function addResult(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.textContent = message;
+            resultsDiv.appendChild(div);
+        }
+        
+        async function runTests() {
+            addResult('🔄 Starting tests...', 'info');
+            
+            // Test 1: Check if D3 is loaded
+            if (typeof d3 !== 'undefined') {
+                addResult('✅ D3.js loaded successfully', 'success');
+            } else {
+                addResult('❌ D3.js not loaded', 'error');
+                return;
+            }
+            
+            // Test 2: Check if global_data.js functions are available
+            if (typeof loadGlobalData === 'function') {
+                addResult('✅ Global data functions available', 'success');
+            } else {
+                addResult('❌ Global data functions not found', 'error');
+                return;
+            }
+            
+            // Test 3: Try to load the data
+            try {
+                addResult('🔄 Loading global cinema data...', 'info');
+                const data = await loadGlobalData();
+                
+                if (data && data.democratic_diversity_data) {
+                    addResult(`✅ Data loaded: ${data.democratic_diversity_data.length} countries`, 'success');
+                    
+                    // Show sample data
+                    const sample = data.democratic_diversity_data.slice(0, 3).map(country => ({
+                        name: country.country_name || country.country,
+                        movies: country.movie_count,
+                        diversity: country.diversity_index.toFixed(3),
+                        democracy: country.democracy_index
+                    }));
+                    
+                    sampleDiv.innerHTML = `
+                        <h3>📊 Sample Data (Top 3 Countries)</h3>
+                        <pre>${JSON.stringify(sample, null, 2)}</pre>
+                    `;
+                    
+                    addResult('✅ All tests passed! Data is ready for visualization.', 'success');
+                } else {
+                    addResult('❌ Data loaded but structure is invalid', 'error');
+                }
+                
+            } catch (error) {
+                addResult(`❌ Failed to load data: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', runTests);
+        
+        // Debug functions
+        async function testEnrichment() {
+            const debugDiv = document.getElementById('debug-results');
+            debugDiv.innerHTML = '<h3>🔍 Testing Data Enrichment...</h3>';
+            
+            try {
+                if (!window.GLOBAL_DATA) {
+                    await loadGlobalData();
+                }
+                
+                const firstCountry = window.GLOBAL_DATA.democratic_diversity_data[0];
+                console.log('Raw country data:', firstCountry);
+                
+                const enriched = window.enrichCountryData(firstCountry);
+                console.log('Enriched country data:', enriched);
+                
+                debugDiv.innerHTML += `
+                    <h4>Sample Country: ${firstCountry.country}</h4>
+                    <p><strong>Original:</strong> ${JSON.stringify(firstCountry, null, 2)}</p>
+                    <p><strong>Enriched:</strong> ${JSON.stringify(enriched, null, 2)}</p>
+                `;
+                
+            } catch (error) {
+                debugDiv.innerHTML += `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+        
+        async function testFiltering() {
+            const debugDiv = document.getElementById('debug-results');
+            debugDiv.innerHTML = '<h3>🎯 Testing Filtering...</h3>';
+            
+            try {
+                if (!window.GLOBAL_DATA) {
+                    await loadGlobalData();
+                }
+                
+                let data = window.GLOBAL_DATA.democratic_diversity_data;
+                debugDiv.innerHTML += `<p>Initial: ${data.length} countries</p>`;
+                
+                // Test minimum movies filter
+                const filtered50 = window.filterCountriesByMinMovies(data, 50);
+                debugDiv.innerHTML += `<p>After 50+ movies filter: ${filtered50.length} countries</p>`;
+                
+                const filtered100 = window.filterCountriesByMinMovies(data, 100);
+                debugDiv.innerHTML += `<p>After 100+ movies filter: ${filtered100.length} countries</p>`;
+                
+                // Test enrichment
+                const enriched = filtered50.map(window.enrichCountryData);
+                const withDemocracy = enriched.filter(d => d.democracy_index !== null && d.democracy_index !== undefined);
+                debugDiv.innerHTML += `<p>After democracy enrichment: ${withDemocracy.length} countries</p>`;
+                
+                // Show countries without democracy data
+                const withoutDemocracy = enriched.filter(d => d.democracy_index === null || d.democracy_index === undefined);
+                debugDiv.innerHTML += `<p>Countries without democracy data: ${withoutDemocracy.map(d => d.country).join(', ')}</p>`;
+                
+                // Show a few successful examples
+                const samples = withDemocracy.slice(0, 3).map(d => ({
+                    country: d.country_name,
+                    movies: d.movie_count,
+                    diversity: d.diversity_index,
+                    democracy: d.democracy_index
+                }));
+                
+                debugDiv.innerHTML += `<h4>Sample Valid Countries:</h4><pre>${JSON.stringify(samples, null, 2)}</pre>`;
+                
+            } catch (error) {
+                debugDiv.innerHTML += `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
