@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Cinema Map - Visualization Research</title>
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Override Hebrew styles for English */
+        body {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-home:hover {
+            background: #357abd;
+        }
+        
+        /* Hero Section */
+        .global-hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .research-question {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .research-question h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Navigation */
+        .viz-nav {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .nav-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #4a90e2;
+        }
+        
+        .nav-item.active {
+            border-color: #4a90e2;
+            background: #f8f9ff;
+        }
+        
+        .nav-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-item p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        /* Visualization Sections */
+        .viz-section {
+            padding: 4rem 0;
+            display: none;
+        }
+        
+        .viz-section.active {
+            display: block;
+        }
+        
+        .viz-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .viz-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .viz-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .research-q {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .research-q strong {
+            color: #1976d2;
+        }
+        
+        /* Chart Container */
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .chart-placeholder {
+            height: 600px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #dee2e6;
+        }
+        
+        .placeholder-content {
+            text-align: center;
+            color: #6c757d;
+        }
+        
+        .placeholder-content h4 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Controls */
+        .chart-controls {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .control-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .control-group select,
+        .control-group input {
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        /* Insights */
+        .insights {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .insights h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .insights ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .insights li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Progress Indicator */
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e9ecef;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4a90e2, #7b68ee);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Footer */
+        .global-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: #74b9ff;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Back to Home Button -->
+    <button class="back-to-home" onclick="window.location.href='index.html'">🏠 Home</button>
+    
+    <!-- Hero Section -->
+    <section class="global-hero">
+        <div class="container">
+            <h1 class="hero-title">🗺️ Global Cinema Map</h1>
+            <p class="hero-subtitle">
+                Exploring the relationship between socio-economic indicators and cinematic fingerprints of nations worldwide
+            </p>
+            
+            <div class="research-question">
+                <h3>🎯 Central Research Question</h3>
+                <p>
+                    "How do socio-economic indicators of countries reflect and influence their cinematic fingerprint, 
+                    and what does this reveal about the relationship between democracy, economy, and creativity?"
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <section class="viz-nav">
+        <div class="container">
+            <div class="nav-grid">
+                <div class="nav-item active" data-viz="diversity">
+                    <h4>📊 Interactive Chart</h4>
+                    <p>Sortable Cinema Diversity Analysis</p>
+                </div>
+                <div class="nav-item" data-viz="influence">
+                    <h4>🌊 Cultural Influence Flows</h4>
+                    <p>Cinema Influence Between Nations</p>
+                </div>
+                <div class="nav-item" data-viz="quality">
+                    <h4>⚖️ National Quality Gap</h4>
+                    <p>Inequality vs Cinema Quality</p>
+                </div>
+                <div class="nav-item" data-viz="collaboration">
+                    <h4>🤝 Global Collaboration Network</h4>
+                    <p>International Cinema Partnerships</p>
+                </div>
+                <div class="nav-item" data-viz="timeline">
+                    <h4>📈 Political Events Timeline</h4>
+                    <p>How Politics Affects Cinema</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visualization 1: Democratic Diversity Index -->
+    <section id="viz-diversity" class="viz-section active">
+        <div class="container">
+            <div class="viz-header">
+                <h2 class="viz-title">📊 Interactive Cinema Diversity Chart</h2>
+                <p class="viz-description">
+                    This sophisticated bar chart displays cinema genre diversity across countries with rich interactive features.
+                    Sort by different metrics, hover for detailed statistics, and explore patterns in global movie production.
+                    Each bar is colored by diversity level and shows precise values.
+                </p>
+                
+                <div class="research-q">
+                    <strong>Research Question:</strong> Which countries produce the most diverse cinema, and how do they compare across different metrics?
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-placeholder">
+                    <div style="text-align: center; padding: 50px; color: #666;">
+                        <h4>📊 Loading Interactive Chart...</h4>
+                        <p>Preparing sophisticated cinema diversity visualization</p>
+                    </div>
+                </div>
+                
+                <div class="insights">
+                    <h4>Chart Features:</h4>
+                    <ul>
+                        <li>📊 <strong>Sortable Data:</strong> Sort by diversity, movie count, rating, or name</li>
+                        <li>🎨 <strong>Color Coding:</strong> Bar colors reflect diversity levels</li>
+                        <li>🖱️ <strong>Interactive Tooltips:</strong> Rich details on hover</li>
+                        <li>📈 <strong>Value Labels:</strong> Precise numbers displayed on bars</li>
+                        <li>✨ <strong>Smooth Animations:</strong> Beautiful transitions between views</li>
+                        <li>🏆 <strong>Coverage:</strong> 47 countries with comprehensive data (2000-2024)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid #2196f3;">
+                    <strong>🎯 How to Use:</strong>
+                    <p style="margin: 0.5rem 0 0 0; color: #1565c0;">
+                        Use the sort dropdown to view data by different metrics. Hover over any bar to see detailed statistics 
+                        including diversity index, movie count, ratings, and top genres for each country.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visualization 2: Cultural Influence Flows -->
+    <section id="viz-influence" class="viz-section">
+        <div class="container">
+            <div class="viz-header">
+                <h2 class="viz-title">🌊 Cultural Influence Flows</h2>
+                <p class="viz-description">
+                    A dynamic flow diagram showing how cinematic influence travels between countries. 
+                    Producer countries on the left, consumer countries on the right, with flow thickness 
+                    indicating influence strength and color showing dominant genres.
+                </p>
+                
+                <div class="research-q">
+                    <strong>Research Question:</strong> How does cinematic influence flow between countries, and who are the cultural power centers?
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-controls">
+                    <div class="control-group">
+                        <label for="flowMetric">Flow Metric:</label>
+                        <select id="flowMetric">
+                            <option value="popularity">Popularity (Votes)</option>
+                            <option value="quality">Quality (Ratings)</option>
+                            <option value="volume">Volume (Movie Count)</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="genreFilter">Genre Focus:</label>
+                        <select id="genreFilter">
+                            <option value="all">All Genres</option>
+                            <option value="drama">Drama</option>
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="documentary">Documentary</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="topCountries">Show Top:</label>
+                        <select id="topCountries">
+                            <option value="20">20 Countries</option>
+                            <option value="15">15 Countries</option>
+                            <option value="10">10 Countries</option>
+                            <option value="5">5 Countries</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder">
+                    <div class="placeholder-content">
+                        <h4>🚧 Visualization Under Development</h4>
+                        <p>Sankey/Chord diagram showing cultural influence flows</p>
+                        <p><em>Data processing required: title.akas.tsv + title.ratings.tsv + regional popularity analysis</em></p>
+                    </div>
+                </div>
+                
+                <div class="insights">
+                    <h4>Expected Insights:</h4>
+                    <ul>
+                        <li>🇺🇸 USA dominates global influence but not in all genres</li>
+                        <li>🌏 Regional power centers: Bollywood, Nollywood, K-cinema</li>
+                        <li>📊 Language barriers create distinct influence clusters</li>
+                        <li>🎭 Different genres follow different influence patterns</li>
+                        <li>⚡ Digital platforms are reshaping traditional flows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visualization 3: National Quality Gap -->
+    <section id="viz-quality" class="viz-section">
+        <div class="container">
+            <div class="viz-header">
+                <h2 class="viz-title">⚖️ National Quality Gap</h2>
+                <p class="viz-description">
+                    Violin plots showing the distribution of movie quality (IMDb ratings) for each country, 
+                    arranged by their economic inequality (Gini coefficient). This reveals whether 
+                    economic inequality translates to "two-tier" cinema systems.
+                </p>
+                
+                <div class="research-q">
+                    <strong>Research Question:</strong> Is there a relationship between economic inequality in a country and the quality gap in its cinema?
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-controls">
+                    <div class="control-group">
+                        <label for="inequalityMetric">Inequality Metric:</label>
+                        <select id="inequalityMetric">
+                            <option value="gini">Gini Coefficient</option>
+                            <option value="income-ratio">Income Ratio (90/10)</option>
+                            <option value="wealth-gap">Wealth Gap Index</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="qualityMetric">Quality Metric:</label>
+                        <select id="qualityMetric">
+                            <option value="imdb-rating">IMDb Rating</option>
+                            <option value="weighted-rating">Weighted Rating</option>
+                            <option value="critic-score">Critic Score</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="countryGroup">Country Group:</label>
+                        <select id="countryGroup">
+                            <option value="all">All Countries</option>
+                            <option value="developed">Developed</option>
+                            <option value="developing">Developing</option>
+                            <option value="high-production">High Production</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder">
+                    <div class="placeholder-content">
+                        <h4>🚧 Visualization Under Development</h4>
+                        <p>Violin plots showing quality distribution vs inequality</p>
+                        <p><em>Data processing required: title.ratings.tsv + title.akas.tsv + World Bank inequality data</em></p>
+                    </div>
+                </div>
+                
+                <div class="insights">
+                    <h4>Expected Insights:</h4>
+                    <ul>
+                        <li>📈 Higher inequality correlates with wider quality gaps</li>
+                        <li>🎬 "Elite cinema" vs "mass cinema" clearly visible in unequal societies</li>
+                        <li>🌍 Nordic countries show narrow, high-quality distributions</li>
+                        <li>💡 Some countries defy the pattern - cultural factors matter</li>
+                        <li>📊 Quality gaps are genre-specific</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visualization 4: Global Collaboration Network -->
+    <section id="viz-collaboration" class="viz-section">
+        <div class="container">
+            <div class="viz-header">
+                <h2 class="viz-title">🤝 Global Collaboration Network</h2>
+                <p class="viz-description">
+                    A 3D network graph where countries are nodes and collaborations are edges. 
+                    Node size represents collaboration volume, edge thickness shows partnership strength, 
+                    and colors reveal community clusters of frequently collaborating nations.
+                </p>
+                
+                <div class="research-q">
+                    <strong>Research Question:</strong> What does the map of international cinema collaborations reveal about diplomatic relationships?
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-controls">
+                    <div class="control-group">
+                        <label for="collaborationType">Collaboration Type:</label>
+                        <select id="collaborationType">
+                            <option value="all">All Roles</option>
+                            <option value="directors">Directors Only</option>
+                            <option value="actors">Actors Only</option>
+                            <option value="producers">Producers Only</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="networkLayout">Layout Algorithm:</label>
+                        <select id="networkLayout">
+                            <option value="force-directed">Force Directed</option>
+                            <option value="circular">Circular</option>
+                            <option value="geographic">Geographic</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="minCollaborations">Minimum Collaborations:</label>
+                        <select id="minCollaborations">
+                            <option value="5">5+</option>
+                            <option value="10">10+</option>
+                            <option value="25">25+</option>
+                            <option value="50">50+</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder">
+                    <div class="placeholder-content">
+                        <h4>🚧 Visualization Under Development</h4>
+                        <p>3D network graph of international collaborations</p>
+                        <p><em>Data processing required: title.principals.tsv + name.basics.tsv + title.akas.tsv</em></p>
+                    </div>
+                </div>
+                
+                <div class="insights">
+                    <h4>Expected Insights:</h4>
+                    <ul>
+                        <li>🤝 Canada-USA, UK-Ireland form tight collaboration clusters</li>
+                        <li>🌍 Geographic proximity influences collaboration patterns</li>
+                        <li>🗣️ Language families create distinct collaboration communities</li>
+                        <li>📺 Streaming platforms are creating new collaboration patterns</li>
+                        <li>🎭 Some surprising partnerships reveal hidden cultural connections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visualization 5: Political Events Timeline -->
+    <section id="viz-timeline" class="viz-section">
+        <div class="container">
+            <div class="viz-header">
+                <h2 class="viz-title">📈 Political Events Timeline</h2>
+                <p class="viz-description">
+                    Multi-line time series showing movie production by genre for specific countries, 
+                    with vertical annotations marking major political events. This reveals how 
+                    dramatic political changes affect national cinema production patterns.
+                </p>
+                
+                <div class="research-q">
+                    <strong>Research Question:</strong> How do dramatic political changes affect the cinema production of countries?
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-controls">
+                    <div class="control-group">
+                        <label for="focusCountry">Focus Country:</label>
+                        <select id="focusCountry">
+                            <option value="iran">Iran (2009, 2019 protests)</option>
+                            <option value="turkey">Turkey (2016 coup attempt)</option>
+                            <option value="hong-kong">Hong Kong (2019 protests)</option>
+                            <option value="poland">Poland (2015 government change)</option>
+                            <option value="venezuela">Venezuela (2013 crisis)</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="genreSelection">Genres to Show:</label>
+                        <select id="genreSelection" multiple>
+                            <option value="drama" selected>Drama</option>
+                            <option value="documentary" selected>Documentary</option>
+                            <option value="comedy" selected>Comedy</option>
+                            <option value="action">Action</option>
+                            <option value="thriller">Thriller</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="smoothing">Data Smoothing:</label>
+                        <select id="smoothing">
+                            <option value="none">Raw Data</option>
+                            <option value="moving-average">Moving Average</option>
+                            <option value="trend-line">Trend Line</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder">
+                    <div class="placeholder-content">
+                        <h4>🚧 Visualization Under Development</h4>
+                        <p>Time series with political event annotations</p>
+                        <p><em>Data processing required: title.basics.tsv + title.akas.tsv + political events database</em></p>
+                    </div>
+                </div>
+                
+                <div class="insights">
+                    <h4>Expected Insights:</h4>
+                    <ul>
+                        <li>📉 Documentary production drops during political crackdowns</li>
+                        <li>🎭 Drama and social commentary films show immediate impact</li>
+                        <li>😂 Comedy production increases as coping mechanism</li>
+                        <li>⏱️ Recovery patterns vary by country and regime type</li>
+                        <li>🔄 Some countries show anticipatory changes before major events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>📊 Data Sources</h4>
+                    <p>Primary: <a href="https://datasets.imdbws.com/" target="_blank">IMDb Datasets</a></p>
+                    <p>Secondary: World Bank, Freedom House, Democracy Index</p>
+                    <p>Period: 2000-2024</p>
+                </div>
+                <div class="footer-section">
+                    <h4>🛠️ Technologies</h4>
+                    <p>D3.js v7, Python, Pandas</p>
+                    <p>HTML5, CSS3, JavaScript ES6+</p>
+                    <p>Interactive visualizations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>📚 Research</h4>
+                    <p>Academic Visualization Project</p>
+                    <p>Cinema Studies & Data Science</p>
+                    <p>&copy; 2024 | All Rights Reserved</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #34495e;">
+                <p><em>"Understanding global cinema through the lens of democracy, economy, and human creativity"</em></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Data and Visualization Scripts -->
+    <script src="global_data.js"></script>
+    <script src="diversity_bar_chart.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Navigation between visualizations
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const vizSections = document.querySelectorAll('.viz-section');
+            const progressBar = document.getElementById('progressBar');
+            
+            // Navigation functionality
+            navItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    console.log('🔄 Navigation clicked:', this.getAttribute('data-viz'));
+                    
+                    // Remove active class from all items
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    vizSections.forEach(viz => viz.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Show corresponding visualization
+                    const vizId = this.getAttribute('data-viz');
+                    const vizSection = document.getElementById(`viz-${vizId}`);
+                    
+                    if (vizSection) {
+                        vizSection.classList.add('active');
+                        console.log('✅ Activated section:', vizId);
+                        
+                        // Dispatch custom event for visualization loading
+                        document.dispatchEvent(new CustomEvent('viz-change', {
+                            detail: { viz: vizId }
+                        }));
+                        
+                        // Update progress bar
+                        const progress = ((index + 1) / navItems.length) * 100;
+                        progressBar.style.width = progress + '%';
+                        
+                        // Smooth scroll to top of section
+                        vizSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        console.error('❌ Could not find section:', `viz-${vizId}`);
+                    }
+                });
+            });
+            
+            // Initialize progress bar and load first visualization
+            progressBar.style.width = '20%';
+            
+            // Auto-load the first (active) visualization
+            setTimeout(() => {
+                const activeViz = document.querySelector('.nav-item.active');
+                if (activeViz) {
+                    const vizId = activeViz.getAttribute('data-viz');
+                    document.dispatchEvent(new CustomEvent('viz-change', {
+                        detail: { viz: vizId }
+                    }));
+                }
+            }, 500);
+        });
+        
+        // Global error handler for visualization issues
+        window.addEventListener('error', function(event) {
+            console.error('Visualization error:', event.error);
+        });
+        
+        // Loading indicator helper
+        function showLoadingState(containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                const placeholder = container.querySelector('.chart-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = `
+                        <div style="text-align: center; padding: 100px;">
+                            <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #e9ecef; border-top: 4px solid #4a90e2; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                            <p style="margin-top: 20px; color: #666;">Loading visualization data...</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Add CSS animation for loading spinner
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
