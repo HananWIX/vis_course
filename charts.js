@@ -9,6 +9,13 @@ class BaseChart {
         this.width = 1000 - this.margin.left - this.margin.right;
         this.height = 550 - this.margin.top - this.margin.bottom;
         
+        // Ensure chart is not in loading state
+        const chartElement = d3.select(this.selector).node();
+        if (chartElement && chartElement.classList.contains('loading')) {
+            chartElement.classList.remove('loading');
+            console.log("Removed loading class from chart constructor:", this.selector);
+        }
+        
         // Genre colors mapping - Enhanced
         this.genreColors = {
             'Drama': '#e74c3c',
@@ -70,17 +77,24 @@ class BaseChart {
     }
 
     showTooltip(event, content) {
+        // Ensure current element is not blocked by loading state
+        const chartElement = d3.select(this.selector).node();
+        if (chartElement && chartElement.classList.contains('loading')) {
+            chartElement.classList.remove('loading');
+            console.log("Removed loading class from", this.selector);
+        }
+        
         const tooltip = d3.select("#tooltip");
         
-        // אם התוכן הוא HTML string, השתמש בו ישירות
+        // If content is HTML string, use it directly
         if (typeof content === 'string' && content.includes('<div')) {
             tooltip.html(content);
         } else {
-            // אחרת, עטוף בתוך div
+            // Otherwise, wrap inside div
             tooltip.html(`<div>${content}</div>`);
         }
         
-        // וודא שה-tooltip נראה
+        // Ensure tooltip is visible
         tooltip.style("display", "block")
             .transition()
             .duration(200)
@@ -102,7 +116,7 @@ class BaseChart {
     }
 
     addCrisisMarkers() {
-        // בדוק אם xScale קיים
+        // Check if xScale exists
         if (!this.xScale) {
             console.warn('xScale not defined, skipping crisis markers');
             return;
@@ -111,7 +125,7 @@ class BaseChart {
         this.crisisData.crisisYears.forEach((year, index) => {
             const xPosition = this.xScale(year);
             
-            // בדוק אם המיקום תקין
+            // Check if position is valid
             if (isNaN(xPosition)) {
                 console.warn(`Invalid x position for year ${year}: ${xPosition}`);
                 return;
@@ -131,21 +145,21 @@ class BaseChart {
                     this.hideTooltip();
                 });
 
-            // מיקום התוויות בגובה שונה כדי למנוע חפיפה
+            // Position labels at different heights to prevent overlap
             const yPosition = 15 + (index % 3) * 20;
             
-            // קיצור התוויות
+            // Shorten labels
             const shortLabels = {
-                "פיגועי 11 בספטמבר": "11/9",
-                "המשבר הכלכלי העולמי": "2008",
-                "מגפת COVID-19": "COVID",
-                "מלחמת רוסיה-אוקראינה": "אוקראינה",
-                "התקפת 7 באוקטובר": "7/10"
+                "September 11 attacks": "9/11",
+                "Global Economic Crisis": "2008",
+                "COVID-19 Pandemic": "COVID",
+                "Russia-Ukraine War": "Ukraine",
+                "October 7 Attack": "Oct 7"
             };
             
             const shortLabel = shortLabels[this.crisisData.crisisNames[year]] || year.toString();
             
-            // רקע לבן לתווית
+            // White background for label
             this.svg.append("text")
                 .attr("class", "crisis-label-bg")
                 .attr("x", xPosition + 5)
@@ -157,7 +171,7 @@ class BaseChart {
                 .style("stroke-width", "3px")
                 .text(shortLabel);
             
-            // התווית עצמה
+            // The label itself
             this.svg.append("text")
                 .attr("class", "crisis-label")
                 .attr("x", xPosition + 5)
@@ -177,7 +191,7 @@ class LineChart extends BaseChart {
     }
 
     init() {
-        console.log('🎨 יוצר גרף קווי...');
+        console.log('🎨 Creating line chart...');
         this.createSVG();
         this.setupScales();
         this.createAxes();
@@ -185,7 +199,7 @@ class LineChart extends BaseChart {
         this.addCrisisMarkers();
         this.createLines();
         this.createLegend();
-        console.log('✅ גרף קווי נוצר בהצלחה');
+        console.log('✅ Line chart created successfully');
     }
 
     setupScales() {
@@ -238,7 +252,7 @@ class LineChart extends BaseChart {
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("מספר סרטים");
+            .text("Number of Movies");
 
         this.svg.append("text")
             .attr("class", "axis-label")
@@ -247,11 +261,11 @@ class LineChart extends BaseChart {
             .style("font-size", "14px")
             .style("font-weight", "500")
             .style("fill", "#666")
-            .text("שנה");
+            .text("Year");
     }
 
     createGrid() {
-        console.log('📐 יוצר גריד...');
+        console.log('📐 Creating grid...');
         
         // Grid lines - only horizontal lines
         this.svg.append("g")
@@ -260,7 +274,7 @@ class LineChart extends BaseChart {
                 .tickSize(-this.width)
                 .tickFormat(""));
         
-        console.log('✅ גריד נוצר בהצלחה');
+        console.log('✅ Grid created successfully');
     }
 
     createLines() {
@@ -505,7 +519,7 @@ class BarChart extends BaseChart {
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("מספר סרטים");
+            .text("Number of Movies");
     }
 
     createBars(data) {
@@ -1452,11 +1466,11 @@ class ScatterChart extends BaseChart {
             .style("text-anchor", "middle")
             .style("font-size", "12px")
             .style("fill", "#666")
-            .text("שנה");
+            .text("Year");
     }
 
     createGrid() {
-        console.log('📐 יוצר גריד...');
+        console.log('📐 Creating grid...');
         
         // Grid lines - only horizontal lines
         this.svg.append("g")
@@ -1465,7 +1479,7 @@ class ScatterChart extends BaseChart {
                 .tickSize(-this.width)
                 .tickFormat(""));
         
-        console.log('✅ גריד נוצר בהצלחה');
+        console.log('✅ Grid created successfully');
     }
 
     createDots() {

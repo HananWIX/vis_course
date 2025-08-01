@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 Cultural Influence Flows</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .controls {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .control-group label {
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        .control-group select, .control-group input {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            background: white;
+        }
+        
+        .stats {
+            padding: 20px 30px;
+            background: #e9ecef;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .visualization-container {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .loading {
+            font-size: 1.2em;
+            color: #495057;
+            padding: 50px;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .chart-description {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            color: #495057;
+            line-height: 1.6;
+            text-align: left;
+        }
+        
+        .methodology {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .methodology h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        
+        .methodology ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .methodology li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .control-group {
+                justify-content: space-between;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+        
+        /* Sankey specific styles */
+        .links path {
+            cursor: pointer;
+            transition: stroke-opacity 0.3s;
+        }
+        
+        .links path:hover {
+            stroke-opacity: 0.8 !important;
+        }
+        
+        .nodes rect {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .nodes rect:hover {
+            opacity: 0.8;
+        }
+        
+        .node-labels text {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 500;
+        }
+        
+        .legend {
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .influence-tooltip {
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌊 Cultural Influence Flows</h1>
+            <p>Dynamic visualization showing how cinematic influence travels between countries</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="flowMetric">📊 Flow Metric:</label>
+                <select id="flowMetric">
+                    <option value="popularity">Popularity (Votes)</option>
+                    <option value="quality">Quality (Ratings)</option>
+                    <option value="combined">Combined Score</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="genreFocus">🎭 Genre Focus:</label>
+                <select id="genreFocus">
+                    <option value="all">All Genres</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="action">Action</option>
+                    <option value="documentary">Documentary</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="topCountries">🌍 Show Top:</label>
+                <select id="topCountries">
+                    <option value="15">15 Countries</option>
+                    <option value="20" selected>20 Countries</option>
+                    <option value="25">25 Countries</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="stats" id="statsContainer">
+            <div class="stat-item">
+                <div class="stat-value" id="totalFlows">-</div>
+                <div class="stat-label">Active Flows</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="topInfluencer">-</div>
+                <div class="stat-label">Top Influencer</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="dominantGenre">-</div>
+                <div class="stat-label">Dominant Genre</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="avgFlowStrength">-</div>
+                <div class="stat-label">Avg Flow Strength</div>
+            </div>
+        </div>
+        
+        <div class="visualization-container">
+            <div class="chart-description">
+                <h3>🎬 Research Question: How does cinematic influence flow between countries?</h3>
+                <p>
+                    This visualization maps the cultural influence flows in global cinema. <strong>Producer countries</strong> 
+                    (left, red) create and export cinematic content, while <strong>consumer countries</strong> (right, teal) 
+                    receive and are influenced by this content. The thickness of flows indicates influence strength, 
+                    calculated from movie popularity, ratings, and cultural similarity.
+                </p>
+                
+                <div class="methodology">
+                    <h3>📋 Methodology</h3>
+                    <ul>
+                        <li><strong>Influence Score:</strong> Combination of movie count, average votes, and ratings</li>
+                        <li><strong>Flow Strength:</strong> Producer influence × Consumer receptivity × Genre similarity × Regional bonus</li>
+                        <li><strong>Cultural Producers:</strong> Top 8 countries with highest influence scores</li>
+                        <li><strong>Cultural Consumers:</strong> Next 12 countries in the ranking</li>
+                        <li><strong>Color Coding:</strong> Flows colored by producer's dominant genre</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="culturalFlowsViz" class="loading">
+                🔄 Loading cultural influence data...
+            </div>
+        </div>
+    </div>
+
+    <!-- Load our data and visualization scripts -->
+    <script src="global_data.js"></script>
+    <script src="cultural_influence_viz.js"></script>
+    
+    <script>
+        // Initialize visualization when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Initializing Cultural Influence Flows...');
+            
+            try {
+                // Create visualization instance
+                const viz = new CulturalInfluenceFlow('#culturalFlowsViz');
+                
+                // Render the visualization
+                await viz.render();
+                
+                // Update stats when visualization is ready
+                updateStats(viz.influenceFlows);
+                
+                // Add event listeners for controls
+                setupControls(viz);
+                
+                console.log('✅ Cultural Influence Flows initialized successfully!');
+                
+            } catch (error) {
+                console.error('❌ Error initializing visualization:', error);
+                document.getElementById('culturalFlowsViz').innerHTML = `
+                    <div class="error-message">
+                        <h3>❌ Visualization Error</h3>
+                        <p>Could not load the cultural influence data. Please ensure:</p>
+                        <ul>
+                            <li>The server is running</li>
+                            <li>global_cinema_data.json is accessible</li>
+                            <li>All required scripts are loaded</li>
+                        </ul>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+        
+        // Update statistics display
+        function updateStats(influenceFlows) {
+            if (!influenceFlows) return;
+            
+            const { flows, producers } = influenceFlows;
+            
+            // Total flows
+            document.getElementById('totalFlows').textContent = flows.length;
+            
+            // Top influencer
+            const topInfluencer = producers[0];
+            document.getElementById('topInfluencer').textContent = getCountryName(topInfluencer.country);
+            
+            // Dominant genre (most common across flows)
+            const genreCounts = {};
+            flows.forEach(flow => {
+                genreCounts[flow.dominantGenre] = (genreCounts[flow.dominantGenre] || 0) + 1;
+            });
+            const dominantGenre = Object.entries(genreCounts)
+                .sort(([,a], [,b]) => b - a)[0]?.[0] || 'N/A';
+            document.getElementById('dominantGenre').textContent = dominantGenre;
+            
+            // Average flow strength
+            const avgStrength = flows.reduce((sum, flow) => sum + flow.value, 0) / flows.length;
+            document.getElementById('avgFlowStrength').textContent = avgStrength.toFixed(2);
+        }
+        
+        // Setup control event listeners
+        function setupControls(viz) {
+            // Flow metric selector
+            document.getElementById('flowMetric').addEventListener('change', function(e) {
+                console.log('🔄 Changing flow metric to:', e.target.value);
+                // TODO: Implement metric switching
+            });
+            
+            // Genre focus selector
+            document.getElementById('genreFocus').addEventListener('change', function(e) {
+                console.log('🎭 Changing genre focus to:', e.target.value);
+                // TODO: Implement genre filtering
+            });
+            
+            // Top countries selector
+            document.getElementById('topCountries').addEventListener('change', function(e) {
+                const newCount = parseInt(e.target.value);
+                console.log('🌍 Changing country count to:', newCount);
+                
+                // Recalculate with new count
+                viz.influenceFlows = viz.calculateInfluenceFlows(viz.data, newCount);
+                viz.renderSankey();
+                updateStats(viz.influenceFlows);
+            });
+        }
+        
+        // Export visualization for external use
+        window.culturalFlowsPage = {
+            viz: null,
+            updateStats: updateStats,
+            setupControls: setupControls
+        };
+    </script>
+</body>
+</html>

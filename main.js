@@ -10,7 +10,7 @@ class IMDbVisualization {
 
     async init() {
         try {
-            console.log('🎬 מתחיל ויזואליזציה של נתוני IMDb...');
+            console.log('🎬 Starting IMDb data visualization...');
             this.showLoadingState();
             await this.loadData();
             this.createCharts();
@@ -19,10 +19,10 @@ class IMDbVisualization {
             this.updateStatistics();
             this.hideLoadingIndicator();
             this.animateElements();
-            console.log('✅ ויזואליזציה הושלמה בהצלחה!');
+            console.log('✅ Visualization completed successfully!');
         } catch (error) {
-            console.error('❌ שגיאה באתחול הפרויקט:', error);
-            this.showError('שגיאה בטעינת הנתונים. אנא רענן את הדף.');
+            console.error('❌ Error initializing project:', error);
+            this.showError('Error loading data. Please refresh the page.');
         }
     }
 
@@ -33,7 +33,7 @@ class IMDbVisualization {
             loadingIndicator.classList.remove('hidden');
         }
         
-        // הוסף מצב טעינה לכל הגרפים
+        // Add loading state to all charts
         document.querySelectorAll('.chart').forEach(chart => {
             chart.classList.add('loading');
         });
@@ -41,85 +41,95 @@ class IMDbVisualization {
 
     async loadData() {
         try {
-            console.log('📊 טוען נתוני IMDb...');
-            // טעינת הנתונים מהמשתנה הגלובלי
+            console.log('📊 Loading IMDb data...');
+            // Load data from global variable
             if (typeof DATA === 'undefined') {
-                throw new Error('קובץ הנתונים לא נטען. וודא שקובץ data.js קיים.');
+                throw new Error('Data file not loaded. Make sure data.js file exists.');
             }
             this.data = DATA;
-            console.log('📈 נתונים נטענו בהצלחה:', {
+            console.log('📈 Data loaded successfully:', {
                 movies: this.data.metadata.totalMovies,
                 ratings: this.data.metadata.totalRatings,
                 records: this.data.metadata.mergedRecords
             });
         } catch (error) {
-            console.error('💥 שגיאה בטעינת נתונים:', error);
+            console.error('💥 Error loading data:', error);
             throw error;
         }
     }
 
     createCharts() {
-        console.log('🎨 יוצר גרפים...');
+        console.log('🎨 Creating charts...');
         
         try {
-            // Line Chart - מגמות לאורך זמן
+            // Line Chart - trends over time
             this.charts.lineChart = new LineChart(
                 '#lineChart', 
                 this.data.lineChartData, 
                 this.data.crisisData
             );
-            console.log('✓ גרף קווי נוצר');
+            console.log('✓ Line chart created');
 
-            // Bar Chart - השוואת משברים
+            // Bar Chart - crisis comparison
             this.charts.barChart = new BarChart(
                 '#barChart', 
                 this.data.barChartData, 
                 this.data.crisisData
             );
-            console.log('✓ גרף עמודות נוצר');
+            console.log('✓ Bar chart created');
 
-            // Pie Chart - חלוקת ז'אנרים
+            // Pie Chart - genre distribution
             this.charts.pieChart = new PieChart(
                 '#pieChart', 
                 this.data.pieChartData, 
                 this.data.crisisData
             );
-            console.log('✓ גרף עוגה נוצר');
+            console.log('✓ Pie chart created');
 
-            // DNA Chart - DNA הקולנוע
+            // DNA Chart - Cinema DNA
             if (typeof CinemaDNAChart !== 'undefined') {
                 this.charts.dnaChart = new CinemaDNAChart(
                     '#dnaChart', 
                     this.data, 
                     this.data.crisisData
                 );
-                console.log('✓ גרף DNA נוצר');
+                console.log('✓ DNA chart created');
             }
 
-            // Area Chart - ניתוח השפעת משברים
+            // Area Chart - crisis impact analysis
             this.charts.areaChart = new AreaChart(
                 '#areaChart', 
                 this.data, 
                 this.data.crisisData
             );
-            console.log('✓ גרף ניתוח משברים נוצר');
+            console.log('✓ Crisis analysis chart created');
 
-            // Heatmap Chart - מפת חום
+            // Heatmap Chart - heatmap
             this.charts.heatmapChart = new HeatmapChart(
                 '#heatmapChart', 
                 this.data.heatmapData, 
                 this.data.crisisData
             );
-            console.log('✓ מפת חום נוצרה');
+            console.log('✓ Heatmap created');
+
+            // Ensure loading state is removed from all charts after creation
+            setTimeout(() => {
+                document.querySelectorAll('.chart').forEach(chart => {
+                    if (chart.classList.contains('loading')) {
+                        chart.classList.remove('loading');
+                        console.log('✓ Removed loading state from', chart.id);
+                    }
+                });
+            }, 100);
 
         } catch (error) {
-            console.error('💥 שגיאה ביצירת גרפים:', error);
+            console.error('💥 Error creating charts:', error);
             throw error;
         }
     }
 
     setupEventListeners() {
-        console.log('🔧 מגדיר מאזיני אירועים...');
+        console.log('🔧 Setting up event listeners...');
 
         // Navigation
         this.setupNavigation();
@@ -225,10 +235,10 @@ class IMDbVisualization {
                 this.charts.pieChart.toggleComparison();
                 const btn = pieComparison;
                 if (this.charts.pieChart.showComparison) {
-                    btn.textContent = 'הצג גרף בודד';
+                    btn.textContent = 'Show Single Chart';
                     btn.style.background = '#e74c3c';
                 } else {
-                    btn.textContent = 'הצג השוואה לפני/אחרי';
+                    btn.textContent = 'Show Before/After Comparison';
                     btn.style.background = '#3498db';
                 }
             });
@@ -254,7 +264,7 @@ class IMDbVisualization {
     }
 
     generateInsights() {
-        console.log('🧠 מפיק תובנות מהנתונים...');
+        console.log('🧠 Generating insights from data...');
         
         this.updateLineChartInsights('all');
         this.updateBarChartInsights('2008');
@@ -275,11 +285,11 @@ class IMDbVisualization {
             // General trends
             const crisisYears = this.data.crisisData.crisisYears;
             insights = [
-                `מגמת הסרטים כללית: עלייה מתמדת מ-2000 עד 2024`,
-                `שנות משבר מזוהות: ${crisisYears.join(', ')}`,
-                `דרמה היא הז'אנר הדומיננטי ברוב השנים`,
-                `עלייה חדה בדוקומנטריים מאז 2015`,
-                `ז'אנר האימה מראה צמיחה יציבה`
+                `Overall movie trend: Steady increase from 2000 to 2024`,
+                `Crisis years identified: ${crisisYears.join(', ')}`,
+                `Drama is the dominant genre in most years`,
+                `Sharp increase in documentaries since 2015`,
+                `Horror genre shows steady growth`
             ];
         } else {
             // Genre-specific insights
@@ -293,15 +303,15 @@ class IMDbVisualization {
             const avgCrisis = crisisYearData.reduce((sum, d) => sum + d.value, 0) / crisisYearData.length;
             const avgNormal = genreData.filter(d => !d.isCrisis).reduce((sum, d) => sum + d.value, 0) / genreData.filter(d => !d.isCrisis).length;
             
-            const trend = avgCrisis > avgNormal ? 'עלייה' : 'ירידה';
+            const trend = avgCrisis > avgNormal ? 'increase' : 'decrease';
             const percentage = Math.abs(((avgCrisis - avgNormal) / avgNormal) * 100).toFixed(1);
 
             insights = [
-                `${this.data.genreMapping[selectedGenre]}: ${trend} של ${percentage}% בשנות משבר`,
-                `ממוצע בשנות משבר: ${Math.round(avgCrisis)} סרטים`,
-                `ממוצע בשנים רגילות: ${Math.round(avgNormal)} סרטים`,
-                `השנה עם הפקה הגבוהה ביותר: ${genreData.reduce((max, d) => d.value > max.value ? d : max).year}`,
-                `מגמה כללית: ${this.calculateTrend(genreData)}`
+                `${this.data.genreMapping[selectedGenre]}: ${trend} of ${percentage}% in crisis years`,
+                `Average in crisis years: ${Math.round(avgCrisis)} movies`,
+                `Average in normal years: ${Math.round(avgNormal)} movies`,
+                `Year with highest production: ${genreData.reduce((max, d) => d.value > max.value ? d : max).year}`,
+                `Overall trend: ${this.calculateTrend(genreData)}`
             ];
         }
 
@@ -319,10 +329,10 @@ class IMDbVisualization {
         const mostDecrease = data.reduce((min, d) => d.change < min.change ? d : min);
 
         const insights = [
-            `משבר ${crisis}: ${increasedGenres.length} ז'אנרים עלו, ${decreasedGenres.length} ירדו`,
-            `העלייה הגדולה ביותר: ${mostIncrease.genre} (+${mostIncrease.change}%)`,
-            `הירידה הגדולה ביותר: ${mostDecrease.genre} (${mostDecrease.change}%)`,
-            `שינוי ממוצע: ${(data.reduce((sum, d) => sum + Math.abs(d.change), 0) / data.length).toFixed(1)}%`,
+            `Crisis ${crisis}: ${increasedGenres.length} genres increased, ${decreasedGenres.length} decreased`,
+            `Biggest increase: ${mostIncrease.genre} (+${mostIncrease.change}%)`,
+            `Biggest decrease: ${mostDecrease.genre} (${mostDecrease.change}%)`,
+            `Average change: ${(data.reduce((sum, d) => sum + Math.abs(d.change), 0) / data.length).toFixed(1)}%`,
             this.getCrisisInsight(crisis)
         ];
 
@@ -331,9 +341,9 @@ class IMDbVisualization {
 
     getCrisisInsight(crisis) {
         const insights = {
-            '2001': 'פיגועי 11 בספטמבר הובילו לעלייה בסרטי פעולה ומותחנים',
-            '2008': 'המשבר הכלכלי הוביל לעלייה בדרמות ואימה',
-            '2020': 'COVID-19 הוביל לעלייה בקומדיות ודוקומנטריים',
+            '2001': 'September 11 attacks led to increase in action and thriller movies',
+            '2008': 'Economic crisis led to increase in dramas and horror movies',
+            '2020': 'COVID-19 led to increase in comedies and documentaries',
             '2022': 'מלחמת רוסיה-אוקראינה השפיעה על הפקת סרטי מלחמה ודרמות',
             '2023': 'התקפת 7 באוקטובר השפיעה על תעשיית הקולנוע בישראל'
         };
@@ -342,13 +352,13 @@ class IMDbVisualization {
 
     getPieChartCrisisInsight(year) {
         const insights = {
-            '2001': 'בעת פיגועי 11/9, סרטי פעולה ומותחנים גברו',
-            '2008': 'בעת משבר כלכלי, דרמות ואימה היו פופולריים',
-            '2020': 'בעת COVID-19, קומדיות סייעו להתמודדות',
-            '2022': 'בעת מלחמת אוקראינה, דוקומנטריים הציגו את המציאות',
-            '2023': 'בעת התקפת 7/10, הקולנוע הישראלי התרכז בסרטי דרמה'
+            '2001': 'During 9/11 attacks, action and thriller movies increased',
+            '2008': 'During economic crisis, dramas and horror were popular',
+            '2020': 'During COVID-19, comedies helped with coping',
+            '2022': 'During Ukraine war, documentaries showed reality',
+            '2023': 'During October 7 attack, Israeli cinema focused on dramas'
         };
-        return insights[year] || 'משבר זה השפיע על העדפות הז\'אנרים';
+        return insights[year] || 'This crisis affected genre preferences';
     }
 
     updatePieChartInsights(year) {
@@ -360,10 +370,10 @@ class IMDbVisualization {
         const totalMovies = data.reduce((sum, d) => sum + d.count, 0);
 
         const insights = [
-            `שנת ${year}: סך הכל ${totalMovies.toLocaleString()} סרטים`,
-            `הז'אנר הדומיננטי: ${dominant.genre} (${dominant.percentage}%)`,
-            `שלושת הז'אנרים המובילים מכילים ${data.slice(0, 3).reduce((sum, d) => sum + d.percentage, 0).toFixed(1)}% מהסרטים`,
-            `גיוון ז'אנרים: ${data.length} ז'אנרים שונים`,
+            `Year ${year}: Total ${totalMovies.toLocaleString()} movies`,
+            `Dominant genre: ${dominant.genre} (${dominant.percentage}%)`,
+            `Top three genres contain ${data.slice(0, 3).reduce((sum, d) => sum + d.percentage, 0).toFixed(1)}% of movies`,
+            `Genre diversity: ${data.length} different genres`,
             this.getPieChartCrisisInsight(year)
         ];
 
@@ -380,11 +390,11 @@ class IMDbVisualization {
         const crisisImpact2020 = this.calculateCrisisImpact(data, 2020);
 
         const insights = [
-            `צמיחה כוללת: ${growth}% מ-2000 עד 2024`,
-            `פיק הפקה: ${data.reduce((max, d) => d.count > max.count ? d : max).year} עם ${data.reduce((max, d) => d.count > max.count ? d : max).count.toLocaleString()} סרטים`,
-            `השפעת משבר 2008: ${crisisImpact2008}% שינוי`,
-            `השפעת משבר 2020: ${crisisImpact2020}% שינוי`,
-            `מגמה עיקרית: עלייה מתמדת עם טבילות קצרות במשברים`
+            `Overall growth: ${growth}% from 2000 to 2024`,
+            `Production peak: ${data.reduce((max, d) => d.count > max.count ? d : max).year} with ${data.reduce((max, d) => d.count > max.count ? d : max).count.toLocaleString()} movies`,
+            `2008 crisis impact: ${crisisImpact2008}% change`,
+            `2020 crisis impact: ${crisisImpact2020}% change`,
+            `Main trend: Steady increase with short dips during crises`
         ];
 
         insightsList.innerHTML = insights.map(insight => `<li>${insight}</li>`).join('');
@@ -424,11 +434,11 @@ class IMDbVisualization {
         const mainFindings = document.getElementById('mainFindings');
         if (mainFindings) {
             mainFindings.innerHTML = [
-                'דרמה היא הז\'אנר הדומיננטי בכל התקופה',
-                'עלייה משמעותית בדוקומנטריים מאז 2015',
-                'קומדיות משמשות כמנגנון התמודדות במשברים',
-                'איכות הסרטים נשמרת יציבה לאורך השנים',
-                'השפעת הטכנולוגיה הדיגיטלית על עלייה בהפקות'
+                'Drama is the dominant genre throughout the period',
+                'Significant increase in documentaries since 2015',
+                'Comedies serve as a coping mechanism during crises',
+                'Movie quality remains stable over the years',
+                'Digital technology impact on increased production'
             ].map(finding => `<li>${finding}</li>`).join('');
         }
 
@@ -436,11 +446,11 @@ class IMDbVisualization {
         const crisisImpact = document.getElementById('crisisImpact');
         if (crisisImpact) {
             crisisImpact.innerHTML = [
-                'משבר 2008: עלייה בדרמות ואימה (+20-25%)',
-                'COVID-19: פריחה של קומדיות ודוקומנטריים (+30-40%)',
-                'ירידה זמנית בסרטי פעולה במשברים',
-                'החלמה מהירה של התעשייה אחרי כל משבר',
-                'שינוי בהעדפות הצרכנים לתכנים נחמדים'
+                '2008 crisis: Increase in dramas and horror (+20-25%)',
+                'COVID-19: Boom in comedies and documentaries (+30-40%)',
+                'Temporary decline in action movies during crises',
+                'Quick industry recovery after each crisis',
+                'Shift in consumer preferences to feel-good content'
             ].map(impact => `<li>${impact}</li>`).join('');
         }
     }
@@ -471,7 +481,7 @@ class IMDbVisualization {
         const avgFirst = firstHalf.reduce((sum, d) => sum + d.value, 0) / firstHalf.length;
         const avgSecond = secondHalf.reduce((sum, d) => sum + d.value, 0) / secondHalf.length;
         
-        return avgSecond > avgFirst ? 'עלייה' : 'ירידה';
+        return avgSecond > avgFirst ? 'increase' : 'decrease';
     }
 
     calculateCrisisImpact(data, crisisYear) {
@@ -489,9 +499,9 @@ class IMDbVisualization {
 
     getMetricLabel(metric) {
         switch(metric) {
-            case 'count': return 'מספר סרטים';
-            case 'rating': return 'דירוג ממוצע';
-            case 'votes': return 'מספר הצבעות';
+            case 'count': return 'Number of movies';
+            case 'rating': return 'Average rating';
+            case 'votes': return 'Number of votes';
             default: return metric;
         }
     }
@@ -500,7 +510,7 @@ class IMDbVisualization {
         // Simple pattern identification
         const recentData = data.filter(d => d.year >= 2015);
         const trend = this.calculateTrend(recentData.map(d => ({value: d[metric]})));
-        return `${trend} בשנים האחרונות`;
+        return `${trend} in recent years`;
     }
 
     animateNumber(element, target) {
@@ -546,7 +556,7 @@ class IMDbVisualization {
             loadingIndicator.classList.add('hidden');
         }
         
-        // הסר מצב טעינה מכל הגרפים
+        // Remove loading state from all charts
         document.querySelectorAll('.chart').forEach(chart => {
             chart.classList.remove('loading');
         });
@@ -583,7 +593,7 @@ class IMDbVisualization {
         // Recreate charts on window resize for responsive design - Enhanced
         if (this.isLoading) return; // Don't resize while loading
         
-        console.log('📱 מתאים לגודל מסך חדש...');
+        console.log('📱 Adapting to new screen size...');
         
         // Debounce resize events
         clearTimeout(this.resizeTimeout);
@@ -595,13 +605,13 @@ class IMDbVisualization {
 
 // Initialize application when DOM is loaded - Enhanced
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 מתחיל אפליקציית ויזואליזציה...');
+    console.log('🚀 Starting visualization application...');
     new IMDbVisualization();
 });
 
 // Global error handler - Enhanced
 window.addEventListener('error', (event) => {
-    console.error('💥 שגיאה גלובלית:', event.error);
+    console.error('💥 Global error:', event.error);
 });
 
 // Service Worker for offline capability (optional) - Enhanced
@@ -609,10 +619,10 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
-                console.log('📱 Service Worker נרשם בהצלחה');
+                console.log('📱 Service Worker registered successfully');
             })
             .catch((registrationError) => {
-                console.log('❌ Service Worker נכשל:', registrationError);
+                console.log('❌ Service Worker failed:', registrationError);
             });
     });
 } 

@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# TSV files
+*.tsv
+
 # Distribution / packaging
 .Python
 build/
@@ -148,6 +151,12 @@ data/
 *.log
 logs/
 
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -157,13 +166,11 @@ logs/
 ehthumbs.db
 Thumbs.db
 
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
 *~
 
 # Temporary files
 *.tmp
 *.temp
+
+# Data files (uncomment if needed)
+# *.xlsx
