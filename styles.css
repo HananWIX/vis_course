@@ -73,7 +73,7 @@ body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
     line-height: 1.6;
-    color: var(--gray-800);
+    color: var(--gray-900);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     direction: rtl;
@@ -103,7 +103,7 @@ h6 { font-size: var(--font-size-base); }
 
 p {
     margin-bottom: var(--spacing-4);
-    color: var(--gray-700);
+    color: var(--dark-color);
 }
 
 a {
@@ -258,7 +258,7 @@ a:hover {
     padding: var(--spacing-3) var(--spacing-5);
     border-radius: 25px;
     font-weight: 500;
-    color: var(--gray-700);
+    color: var(--dark-color);
     transition: all var(--transition-base);
     position: relative;
     background: var(--white);
@@ -357,7 +357,7 @@ a:hover {
 
 .chart-controls label {
     font-weight: 500;
-    color: var(--gray-700);
+    color: var(--dark-color);
     font-size: var(--font-size-sm);
 }
 
@@ -421,7 +421,7 @@ a:hover {
 }
 
 .insights h4 {
-    color: var(--gray-800);
+    color: var(--dark-color);
     margin-bottom: var(--spacing-4);
     font-size: var(--font-size-lg);
     font-weight: 600;
@@ -436,7 +436,7 @@ a:hover {
     padding: var(--spacing-2) 0;
     padding-right: var(--spacing-5);
     position: relative;
-    color: var(--gray-700);
+    color: var(--dark-color);
     font-size: var(--font-size-sm);
     line-height: 1.5;
 }
@@ -570,7 +570,7 @@ a:hover {
 .summary h2 {
     text-align: center;
     margin-bottom: var(--spacing-8);
-    color: var(--gray-800);
+    color: var(--dark-color);
 }
 
 .summary-grid {
@@ -594,7 +594,7 @@ a:hover {
 }
 
 .summary-card h3 {
-    color: var(--gray-800);
+    color: var(--dark-color);
     margin-bottom: var(--spacing-4);
     font-size: var(--font-size-xl);
 }
@@ -606,7 +606,7 @@ a:hover {
 
 .summary-card li {
     padding: var(--spacing-2) 0;
-    color: var(--gray-700);
+    color: var(--dark-color);
     font-size: var(--font-size-sm);
     line-height: 1.5;
     padding-right: var(--spacing-5);
@@ -805,7 +805,7 @@ a:hover {
     
     .header {
         background: var(--white) !important;
-        color: var(--gray-800) !important;
+        color: var(--dark-color) !important;
         box-shadow: none;
     }
     

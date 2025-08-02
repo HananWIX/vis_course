@@ -625,43 +625,8 @@
             </div>
             
             <div class="chart-container">
-                <div class="chart-controls">
-                    <div class="control-group">
-                        <label for="focusCountry">Focus Country:</label>
-                        <select id="focusCountry">
-                            <option value="iran">Iran (2009, 2019 protests)</option>
-                            <option value="turkey">Turkey (2016 coup attempt)</option>
-                            <option value="hong-kong">Hong Kong (2019 protests)</option>
-                            <option value="poland">Poland (2015 government change)</option>
-                            <option value="venezuela">Venezuela (2013 crisis)</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="genreSelection">Genres to Show:</label>
-                        <select id="genreSelection" multiple>
-                            <option value="drama" selected>Drama</option>
-                            <option value="documentary" selected>Documentary</option>
-                            <option value="comedy" selected>Comedy</option>
-                            <option value="action">Action</option>
-                            <option value="thriller">Thriller</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="smoothing">Data Smoothing:</label>
-                        <select id="smoothing">
-                            <option value="none">Raw Data</option>
-                            <option value="moving-average">Moving Average</option>
-                            <option value="trend-line">Trend Line</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="chart-placeholder">
-                    <div class="placeholder-content">
-                        <h4>🚧 Visualization Under Development</h4>
-                        <p>Time series with political event annotations</p>
-                        <p><em>Data processing required: title.basics.tsv + title.akas.tsv + political events database</em></p>
-                    </div>
+                <div id="political-timeline-container">
+                    <!-- The political events timeline will be rendered here by JavaScript -->
                 </div>
                 
                 <div class="insights">
@@ -711,6 +676,7 @@
     <!-- Data and Visualization Scripts -->
     <script src="global_data.js"></script>
     <script src="diversity_bar_chart.js"></script>
+    <script src="political_events_timeline.js"></script>
     
     <!-- Main JavaScript -->
     <script>
