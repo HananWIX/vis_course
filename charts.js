@@ -9,6 +9,11 @@ class BaseChart {
         this.width = 1000 - this.margin.left - this.margin.right;
         this.height = 550 - this.margin.top - this.margin.bottom;
         
+        // Performance optimization - debouncing timeouts
+        this.tooltipTimeout = null;
+        this.legendTimeout = null;
+        this.hoverTimeout = null;
+        
         // Ensure chart is not in loading state
         const chartElement = d3.select(this.selector).node();
         if (chartElement && chartElement.classList.contains('loading')) {
@@ -52,11 +57,11 @@ class BaseChart {
         
         // Hebrew to English genre mapping
         this.hebrewToEnglish = {
-            'דרמה': 'Drama',
-            'פעולה': 'Action',
-            'קומדיה': 'Comedy',
-            'אימה': 'Horror',
-            'דוקומנטרי': 'Documentary',
+            'Drama': 'Drama',
+            'Action': 'Action',
+            'Comedy': 'Comedy',
+            'Horror': 'Horror',
+            'Documentary': 'Documentary',
             'מותחן': 'Thriller',
             'רומנטיקה': 'Romance',
             'הרפתקאות': 'Adventure',
@@ -77,38 +82,67 @@ class BaseChart {
     }
 
     showTooltip(event, content) {
-        // Ensure current element is not blocked by loading state
-        const chartElement = d3.select(this.selector).node();
-        if (chartElement && chartElement.classList.contains('loading')) {
-            chartElement.classList.remove('loading');
-            console.log("Removed loading class from", this.selector);
+        // Debouncing - prevent multiple rapid calls
+        if (this.tooltipTimeout) {
+            clearTimeout(this.tooltipTimeout);
         }
         
+        this.tooltipTimeout = setTimeout(() => {
         const tooltip = d3.select("#tooltip");
         
-        // If content is HTML string, use it directly
+            // Calculate position with offset to prevent jumping
+            const offsetX = 15;
+            const offsetY = -40;
+            const tooltipWidth = 300;
+            const tooltipHeight = 150;
+            
+            // Get viewport dimensions
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate optimal position
+            let left = event.pageX + offsetX;
+            let top = event.pageY + offsetY;
+            
+            // Prevent tooltip from going off-screen
+            if (left + tooltipWidth > viewportWidth) {
+                left = event.pageX - tooltipWidth - offsetX;
+            }
+            if (top + tooltipHeight > viewportHeight) {
+                top = event.pageY - tooltipHeight - offsetY;
+            }
+            if (top < 0) {
+                top = 10;
+            }
+            
+            // Set content efficiently
         if (typeof content === 'string' && content.includes('<div')) {
             tooltip.html(content);
         } else {
-            // Otherwise, wrap inside div
             tooltip.html(`<div>${content}</div>`);
         }
         
-        // Ensure tooltip is visible
-        tooltip.style("display", "block")
+            // Show tooltip with optimized animation
+            tooltip
+                .style("display", "block")
+                .style("left", left + "px")
+                .style("top", top + "px")
+                .style("opacity", 0)
             .transition()
-            .duration(200)
-            .style("opacity", 0.95)
-            .style("left", (event.pageX + 15) + "px")
-            .style("top", (event.pageY - 40) + "px");
-            
-        console.log("Tooltip shown:", content); // Debug
+                .duration(150) // Faster animation
+                .style("opacity", 0.95);
+        }, 50); // Small delay for debouncing
     }
 
     hideTooltip() {
+        if (this.tooltipTimeout) {
+            clearTimeout(this.tooltipTimeout);
+            this.tooltipTimeout = null;
+        }
+        
         d3.select("#tooltip")
             .transition()
-            .duration(300)
+            .duration(100) // Faster hide animation
             .style("opacity", 0)
             .on("end", function() {
                 d3.select(this).style("display", "none");
@@ -138,10 +172,40 @@ class BaseChart {
                 .attr("y1", 0)
                 .attr("y2", this.height)
                 .style("cursor", "pointer")
+                .style("transition", "all 0.2s ease")
                 .on("mouseover", (event) => {
-                    this.showTooltip(event, `<strong>${year}</strong><br/>${this.crisisData.crisisNames[year]}`);
+                    // Prevent event bubbling
+                    event.stopPropagation();
+                    
+                    // Highlight crisis marker
+                    d3.select(event.target)
+                        .style("stroke-width", 4)
+                        .style("stroke", "#e74c3c")
+                        .style("opacity", 0.8)
+                        .style("transition", "all 0.2s ease");
+                    
+                    // Simplified tooltip
+                    const tooltipContent = `
+                        <div style="background: linear-gradient(135deg, #e74c3c, #2c3e50); 
+                                   color: white; padding: 12px; border-radius: 8px; 
+                                   box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>${year}</strong><br/>
+                            ${this.crisisData.crisisNames[year]}
+                        </div>`;
+                    
+                    this.showTooltip(event, tooltipContent);
                 })
-                .on("mouseout", () => {
+                .on("mouseout", (event) => {
+                    // Prevent event bubbling
+                    event.stopPropagation();
+                    
+                    // Reset crisis marker
+                    d3.select(event.target)
+                        .style("stroke-width", 2)
+                        .style("stroke", "#e74c3c")
+                        .style("opacity", 0.6)
+                        .style("transition", "all 0.2s ease");
+                    
                     this.hideTooltip();
                 });
 
@@ -318,38 +382,39 @@ class LineChart extends BaseChart {
                 .style("transition", "all 0.3s ease")
                 .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
                 .on("mouseover", (event, d) => {
-                    d3.select(event.target)
+                    // Prevent event bubbling
+                    event.stopPropagation();
+                    
+                    // Optimized hover effect - no DOM manipulation
+                    const circle = d3.select(event.target);
+                    circle
                         .attr("r", 12)
-                        .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))");
+                        .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
+                        .style("transition", "all 0.2s ease");
                     
-                    // הוסף אפקט זוהר
-                    d3.select(event.target.parentNode).append("circle")
-                        .attr("class", "line-glow")
-                        .attr("cx", this.xScale(d.year))
-                        .attr("cy", this.yScale(d.value))
-                        .attr("r", 20)
-                        .attr("fill", this.colorScale(genre))
-                        .attr("opacity", 0.3)
-                        .style("filter", "blur(8px)");
+                    // Simplified tooltip content for better performance
+                    const tooltipContent = `
+                        <div style="background: linear-gradient(135deg, ${this.colorScale(genre)}, #2c3e50); 
+                                   color: white; padding: 12px; border-radius: 8px; 
+                                   box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>${genre}</strong><br/>
+                            Year: ${d.year}<br/>
+                            Movies: ${d.value.toLocaleString()}
+                            ${d.isCrisis ? '<br/><span style="color: #ff6b6b;">🔥 Crisis</span>' : ''}
+                        </div>`;
                     
-                    this.showTooltip(event, 
-                        `<div style="background: linear-gradient(135deg, ${this.colorScale(genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                            <h4 style="margin: 0 0 10px 0; font-size: 16px;">📈 ${this.getHebrewGenre(genre)}</h4>
-                            <div style="font-size: 14px; line-height: 1.6;">
-                                <strong>שנה:</strong> ${d.year}<br/>
-                                <strong>מספר סרטים:</strong> ${d.value.toLocaleString()}<br/>
-                                ${d.isCrisis ? '<span style="color: #e74c3c; font-weight: bold;">🔥 שנת משבר</span>' : ''}
-                            </div>
-                        </div>`
-                    );
+                    this.showTooltip(event, tooltipContent);
                 })
                 .on("mouseout", (event, d) => {
-                    d3.select(event.target)
-                        .attr("r", d.isCrisis ? 8 : 5)
-                        .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
+                    // Prevent event bubbling
+                    event.stopPropagation();
                     
-                    // הסר אפקט זוהר
-                    d3.select(event.target.parentNode).select(".line-glow").remove();
+                    // Reset hover effect
+                    const circle = d3.select(event.target);
+                    circle
+                        .attr("r", d.isCrisis ? 8 : 5)
+                        .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
+                        .style("transition", "all 0.2s ease");
                     
                     this.hideTooltip();
                 });
@@ -363,7 +428,7 @@ class LineChart extends BaseChart {
             .attr("transform", `translate(${this.width + 120}, 20)`);
 
         const genres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
-        const genreNames = ['דרמה', 'פעולה', 'קומדיה', 'אימה', 'דוקו'];
+        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary']; // באנגלית בלבד
         
         // Add legend title - Enhanced
         legend.append("text")
@@ -373,13 +438,64 @@ class LineChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
-            .text("ז'אנרים");
+            .text("Genres");
         
         genres.forEach((genre, i) => {
             const legendRow = legend.append("g")
-                .attr("class", `legend-${genre}`)
-                .attr("transform", `translate(0, ${i * 35 + 30})`)
+                .attr("transform", `translate(0, ${30 + i * 25})`)
                 .style("cursor", "pointer")
+                .style("transition", "all 0.2s ease")
+                .on("mouseover", (event) => {
+                    // Debouncing for legend hover
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                    }
+                    
+                    this.legendTimeout = setTimeout(() => {
+                        // Highlight corresponding line
+                        this.svg.select(`.line-${genre}`)
+                            .style("opacity", 1)
+                            .style("stroke-width", 6)
+                            .style("transition", "all 0.2s ease");
+                        
+                        // Dim other lines
+                        genres.forEach(otherGenre => {
+                            if (otherGenre !== genre) {
+                                this.svg.select(`.line-${otherGenre}`)
+                                    .style("opacity", 0.3)
+                                    .style("stroke-width", 2)
+                                    .style("transition", "all 0.2s ease");
+                            }
+                        });
+                        
+                        // Highlight legend item
+                        d3.select(event.target)
+                            .style("opacity", 1)
+                            .style("transform", "scale(1.05)")
+                            .style("transition", "all 0.2s ease");
+                    }, 30);
+                })
+                .on("mouseout", (event) => {
+                    // Clear timeout
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                        this.legendTimeout = null;
+                    }
+                    
+                    // Reset all lines
+                    genres.forEach(genreName => {
+                        this.svg.select(`.line-${genreName}`)
+                            .style("opacity", 0.8)
+                            .style("stroke-width", 4)
+                            .style("transition", "all 0.2s ease");
+                    });
+                    
+                    // Reset legend item
+                    d3.select(event.target)
+                        .style("opacity", 0.8)
+                        .style("transform", "scale(1)")
+                        .style("transition", "all 0.2s ease");
+                })
                 .on("click", () => this.toggleGenre(genre));
 
             // Text in the color of the genre - no rectangles needed
@@ -431,19 +547,8 @@ class LineChart extends BaseChart {
     }
 
     getHebrewGenre(genre) {
-        const hebrewGenres = {
-            'Drama': 'דרמה',
-            'Action': 'פעולה', 
-            'Comedy': 'קומדיה',
-            'Horror': 'אימה',
-            'Documentary': 'דוקומנטרי',
-            'Thriller': 'מותחן',
-            'Romance': 'רומנטיקה',
-            'Adventure': 'הרפתקאות',
-            'Crime': 'פשע',
-            'Sci-Fi': 'מדע בדיוני'
-        };
-        return hebrewGenres[genre] || genre;
+        // Return English genre names for display
+        return genre;
     }
 }
 
@@ -540,41 +645,39 @@ class BarChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseover", (event, d) => {
-                d3.select(event.target)
-                    .attr("opacity", 0.9)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Optimized hover effect
+                const bar = d3.select(event.target);
+                bar
+                    .style("opacity", 0.9)
                     .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.02)");
+                    .style("transition", "all 0.2s ease");
                 
-                // הוסף אפקט זוהר
-                d3.select(event.target.parentNode).append("rect")
-                    .attr("class", "bar-glow-before")
-                    .attr("x", this.xScale(d.genre))
-                    .attr("width", barWidth)
-                    .attr("y", this.yScale(d.before))
-                    .attr("height", this.height - this.yScale(d.before))
-                    .attr("fill", this.colorScale('before'))
-                    .attr("opacity", 0.3)
-                    .style("filter", "blur(8px)");
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${this.colorScale(d.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${d.genre}</strong><br/>
+                        Before Crisis: ${d.before.toLocaleString()} movies<br/>
+                        After Crisis: ${d.after.toLocaleString()} movies<br/>
+                        Change: ${d.change > 0 ? '+' : ''}${d.change}%
+                    </div>`;
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${this.colorScale('before')}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">📊 ${d.genre}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>לפני המשבר:</strong> ${d.before.toLocaleString()}<br/>
-                            <strong>שנה:</strong> ${parseInt(this.currentCrisis) - 1}<br/>
-                            <strong>שינוי:</strong> <span style="color: ${d.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.change > 0 ? '+' : ''}${d.change}%</span>
-                        </div>
-                    </div>`
-                );
+                this.showTooltip(event, tooltipContent);
             })
-            .on("mouseout", (event) => {
-                d3.select(event.target)
-                    .attr("opacity", 1)
-                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
+            .on("mouseout", (event, d) => {
+                // Prevent event bubbling
+                event.stopPropagation();
                 
-                // הסר אפקט זוהר
-                d3.select(event.target.parentNode).select(".bar-glow-before").remove();
+                // Reset hover effect
+                const bar = d3.select(event.target);
+                bar
+                    .style("opacity", 0.8)
+                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
+                    .style("transition", "all 0.2s ease");
                 
                 this.hideTooltip();
             });
@@ -594,41 +697,39 @@ class BarChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseover", (event, d) => {
-                d3.select(event.target)
-                    .attr("opacity", 0.9)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Optimized hover effect
+                const bar = d3.select(event.target);
+                bar
+                    .style("opacity", 0.9)
                     .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.02)");
+                    .style("transition", "all 0.2s ease");
                 
-                // הוסף אפקט זוהר
-                d3.select(event.target.parentNode).append("rect")
-                    .attr("class", "bar-glow-after")
-                    .attr("x", this.xScale(d.genre) + barWidth)
-                    .attr("width", barWidth)
-                    .attr("y", this.yScale(d.after))
-                    .attr("height", this.height - this.yScale(d.after))
-                    .attr("fill", this.colorScale('after'))
-                    .attr("opacity", 0.3)
-                    .style("filter", "blur(8px)");
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${this.colorScale(d.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${d.genre}</strong><br/>
+                        Before Crisis: ${d.before.toLocaleString()} movies<br/>
+                        After Crisis: ${d.after.toLocaleString()} movies<br/>
+                        Change: ${d.change > 0 ? '+' : ''}${d.change}%
+                    </div>`;
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${this.colorScale('after')}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">📊 ${d.genre}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>אחרי המשבר:</strong> ${d.after.toLocaleString()}<br/>
-                            <strong>שנה:</strong> ${parseInt(this.currentCrisis) + 1}<br/>
-                            <strong>שינוי:</strong> <span style="color: ${d.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.change > 0 ? '+' : ''}${d.change}%</span>
-                        </div>
-                    </div>`
-                );
+                this.showTooltip(event, tooltipContent);
             })
-            .on("mouseout", (event) => {
-                d3.select(event.target)
-                    .attr("opacity", 1)
-                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
+            .on("mouseout", (event, d) => {
+                // Prevent event bubbling
+                event.stopPropagation();
                 
-                // הסר אפקט זוהר
-                d3.select(event.target.parentNode).select(".bar-glow-after").remove();
+                // Reset hover effect
+                const bar = d3.select(event.target);
+                bar
+                    .style("opacity", 0.8)
+                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
+                    .style("transition", "all 0.2s ease");
                 
                 this.hideTooltip();
             });
@@ -661,11 +762,11 @@ class BarChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
-            .text("תקופות");
+            .text("Periods");
 
         const legendData = [
-            { label: "לפני המשבר", color: this.colorScale('before') },
-            { label: "אחרי המשבר", color: this.colorScale('after') }
+            { label: "Before Crisis", color: this.colorScale('before') },
+            { label: "After Crisis", color: this.colorScale('after') }
         ];
 
         legend.selectAll(".legend-item")
@@ -701,7 +802,7 @@ class BarChart extends BaseChart {
     togglePeriod(period) {
         console.log(`BarChart togglePeriod called with: ${period}`);
         
-        const legendKey = period === "לפני המשבר" ? 'before' : 'after';
+        const legendKey = period === "Before Crisis" ? 'before' : 'after';
         const legendElement = this.svg.select(`.legend-${legendKey}`);
         
         if (legendElement.empty()) {
@@ -803,41 +904,41 @@ class PieChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseover", (event, d) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Optimized hover effect
+                const slice = d3.select(event.target);
+                slice
                     .transition()
-                    .duration(200)
-                    .attr("transform", "scale(1.1)")
+                    .duration(150)
+                    .attr("transform", "scale(1.05)")
                     .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))");
                 
-                // הוסף אפקט זוהר
-                d3.select(event.target.parentNode).append("path")
-                    .attr("class", "pie-glow")
-                    .attr("d", this.arc)
-                    .attr("fill", colorScale(d.data.genre))
-                    .attr("opacity", 0.3)
-                    .style("filter", "blur(8px)")
-                    .style("transform", "scale(1.05)");
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${d.data.genre}</strong><br/>
+                        Movies: ${d.data.count.toLocaleString()}<br/>
+                        Percentage: ${d.data.percentage}%<br/>
+                        Year: ${this.currentYear}
+                    </div>`;
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎭 ${d.data.genre}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>מספר סרטים:</strong> ${d.data.count.toLocaleString()}<br/>
-                            <strong>אחוז:</strong> ${d.data.percentage}%<br/>
-                            <strong>שנה:</strong> ${this.currentYear}
-                        </div>
-                    </div>`
-                );
+                this.showTooltip(event, tooltipContent);
             })
             .on("mouseout", (event) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Reset hover effect
+                const slice = d3.select(event.target);
+                slice
                     .transition()
-                    .duration(200)
+                    .duration(150)
                     .attr("transform", "scale(1)")
                     .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
-                
-                // הסר אפקט זוהר
-                d3.select(event.target.parentNode).select(".pie-glow").remove();
                 
                 this.hideTooltip();
             });
@@ -869,7 +970,7 @@ class PieChart extends BaseChart {
             .style("font-size", "18px")
             .style("font-weight", "600")
             .style("fill", "#333")
-            .text(`חלוקת ז'אנרים - ${this.currentYear}`);
+            .text(`Genre Distribution - ${this.currentYear}`);
         
         // הוסף event listener להסרת הדגשה כשלוחצים במקום ריק
         this.svg.on("click", (event) => {
@@ -882,7 +983,7 @@ class PieChart extends BaseChart {
     createComparisonChart() {
         const currentYear = parseInt(this.currentYear);
         
-        // נסה לקחת שנה אחת לפני ואחת אחרי
+        // Try to take one year before and one year after
         let beforeYear = currentYear - 1;
         let afterYear = currentYear + 1;
         
@@ -1064,7 +1165,7 @@ class PieChart extends BaseChart {
             .style("font-size", "14px")
             .style("font-weight", "600")
             .style("fill", "#666")
-            .text(`לפני (${beforeYear})`);
+            .text(`Before (${beforeYear})`);
         
         gCurrent.append("text")
             .attr("text-anchor", "middle")
@@ -1072,7 +1173,7 @@ class PieChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#333")
-            .text(`שנת המשבר (${currentYear})`);
+            .text(`Crisis Year (${currentYear})`);
         
         gAfter.append("text")
             .attr("text-anchor", "middle")
@@ -1080,7 +1181,7 @@ class PieChart extends BaseChart {
             .style("font-size", "14px")
             .style("font-weight", "600")
             .style("fill", "#666")
-            .text(`אחרי (${afterYear})`);
+            .text(`After (${afterYear})`);
         
         // הוסף כותרת כללית - Enhanced
         this.svg.append("text")
@@ -1090,7 +1191,7 @@ class PieChart extends BaseChart {
             .style("font-size", "18px")
             .style("font-weight", "600")
             .style("fill", "#333")
-            .text(`השוואת ז'אנרים לפני, במהלך ואחרי המשבר`);
+            .text(`Genre Comparison Before, During, and After Crisis`);
         
         // הוסף הסבר - Enhanced
         this.svg.append("text")
@@ -1099,7 +1200,7 @@ class PieChart extends BaseChart {
             .attr("y", 55)
             .style("font-size", "14px")
             .style("fill", "#666")
-            .text(`השוואה ויזואלית של חלוקת הז'אנרים - ניתן לראות איך המשבר השפיע על העדפות הצופים`);
+            .text(`Visual comparison of genre distribution - you can see how the crisis affected viewer preferences`);
         
         // Add arrows between charts - Enhanced
         this.createArrows(centerX, chartSpacing, chartY, smallRadius);
@@ -1122,7 +1223,7 @@ class PieChart extends BaseChart {
             .attr("d", "M0,-5L10,0L0,5")
             .attr("fill", "#666");
         
-        // חץ מימין לשמאל (לפני -> משבר)
+        // Arrow from right to left (before -> crisis)
         const arrow1 = this.svg.append("g")
             .attr("class", "arrow");
         
@@ -1135,7 +1236,7 @@ class PieChart extends BaseChart {
             .attr("stroke-width", 3)
             .attr("marker-end", "url(#arrowhead)");
         
-        // חץ מימין לשמאל (משבר -> אחרי)
+        // Arrow from right to left (crisis -> after)
         const arrow2 = this.svg.append("g")
             .attr("class", "arrow");
         
@@ -1155,7 +1256,7 @@ class PieChart extends BaseChart {
             .attr("class", "legend")
             .attr("transform", `translate(${this.width + 200}, 50)`);
 
-        // חלק את הז'אנרים ל-2 שורות (פחות עמוס)
+        // Divide genres into 2 rows (less crowded)
         const itemsPerRow = Math.ceil(genres.length / 2);
         const rowHeight = 35; // מרווח גדול יותר בין שורות
         
@@ -1167,10 +1268,10 @@ class PieChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
-            .text("ז'אנרים");
+            .text("Genres");
 
         // צור את פריטי המקרא ב-2 שורות - Enhanced
-        const genreNames = ['דרמה', 'פעולה', 'קומדיה', 'אימה', 'דוקומנטרי'];
+        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
         genres.forEach((genre, i) => {
             const row = Math.floor(i / itemsPerRow);
             const col = i % itemsPerRow;
@@ -1179,6 +1280,58 @@ class PieChart extends BaseChart {
                 .attr("class", `legend-${genre}`)
                 .attr("transform", `translate(${col * 120 + 20}, ${row * rowHeight + 25})`)
                 .style("cursor", "pointer")
+                .style("transition", "all 0.2s ease")
+                .on("mouseover", (event) => {
+                    // Debouncing for legend hover
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                    }
+                    
+                    this.legendTimeout = setTimeout(() => {
+                        // Highlight corresponding line
+                        this.svg.select(`.line-${genre}`)
+                            .style("opacity", 1)
+                            .style("stroke-width", 6)
+                            .style("transition", "all 0.2s ease");
+                        
+                        // Dim other lines
+                        genres.forEach(otherGenre => {
+                            if (otherGenre !== genre) {
+                                this.svg.select(`.line-${otherGenre}`)
+                                    .style("opacity", 0.3)
+                                    .style("stroke-width", 2)
+                                    .style("transition", "all 0.2s ease");
+                            }
+                        });
+                        
+                        // Highlight legend item
+                        d3.select(event.target)
+                            .style("opacity", 1)
+                            .style("transform", "scale(1.05)")
+                            .style("transition", "all 0.2s ease");
+                    }, 30);
+                })
+                .on("mouseout", (event) => {
+                    // Clear timeout
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                        this.legendTimeout = null;
+                    }
+                    
+                    // Reset all lines
+                    genres.forEach(genreName => {
+                        this.svg.select(`.line-${genreName}`)
+                            .style("opacity", 0.8)
+                            .style("stroke-width", 4)
+                            .style("transition", "all 0.2s ease");
+                    });
+                    
+                    // Reset legend item
+                    d3.select(event.target)
+                        .style("opacity", 0.8)
+                        .style("transform", "scale(1)")
+                        .style("transition", "all 0.2s ease");
+                })
                 .on("click", () => this.toggleGenre(genre));
 
             // Text in the color of the genre - uniform style
@@ -1209,7 +1362,7 @@ class PieChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
-            .text("ז'אנרים");
+            .text("Genres");
 
         const legendItems = legend.selectAll(".legend-item")
             .data(data)
@@ -1224,18 +1377,18 @@ class PieChart extends BaseChart {
             });
 
         // Text in the color of the genre - uniform style
-        const genreNames = ['דרמה', 'פעולה', 'קומדיה', 'אימה', 'דוקומנטרי'];
+        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
         const hebrewGenres = {
-            'Drama': 'דרמה',
-            'Action': 'פעולה', 
-            'Comedy': 'קומדיה',
-            'Horror': 'אימה',
-            'Documentary': 'דוקומנטרי',
-            'Thriller': 'מותחן',
-            'Romance': 'רומנטיקה',
-            'Adventure': 'הרפתקאות',
-            'Crime': 'פשע',
-            'Sci-Fi': 'מדע בדיוני'
+            'Drama': 'Drama',
+            'Action': 'Action', 
+            'Comedy': 'Comedy',
+            'Horror': 'Horror',
+            'Documentary': 'Documentary',
+            'Thriller': 'Thriller',
+            'Romance': 'Romance',
+            'Adventure': 'Adventure',
+            'Crime': 'Crime',
+            'Sci-Fi': 'Sci-Fi'
         };
         legendItems.append("text")
             .attr("x", 0)
@@ -1243,20 +1396,14 @@ class PieChart extends BaseChart {
             .attr("dominant-baseline", "middle")
             .attr("text-anchor", "start")
             .attr("fill", d => {
-                // Convert Hebrew genre to English for color lookup
-                const englishGenre = this.hebrewToEnglish[d.genre] || d.genre;
-                const color = this.genreColors[englishGenre];
-                console.log(`PieLegend Genre: ${d.genre} -> ${englishGenre}, Color: ${color}`);
-                return color || "#2c3e50"; // fallback color
+                const color = this.genreColors[d.genre] || "#2c3e50";
+                return color;
             })
             .attr("style", d => {
-                const englishGenre = this.hebrewToEnglish[d.genre] || d.genre;
-                const color = this.genreColors[englishGenre] || "#2c3e50";
-                console.log(`Setting color for ${d.genre}: ${color}`);
+                const color = this.genreColors[d.genre] || "#2c3e50";
                 return `fill: ${color} !important; color: ${color} !important; font-size: 16px; font-weight: 600; cursor: pointer;`;
             })
             .text(d => {
-                // Use the Hebrew genre name directly
                 if (this.displayMode === 'count') {
                     return `${d.genre} (${d.count.toLocaleString()})`;
                 } else {
@@ -1372,19 +1519,8 @@ class PieChart extends BaseChart {
     }
 
     getHebrewGenre(genre) {
-        const hebrewGenres = {
-            'Drama': 'דרמה',
-            'Action': 'פעולה', 
-            'Comedy': 'קומדיה',
-            'Horror': 'אימה',
-            'Documentary': 'דוקומנטרי',
-            'Thriller': 'מותחן',
-            'Romance': 'רומנטיקה',
-            'Adventure': 'הרפתקאות',
-            'Crime': 'פשע',
-            'Sci-Fi': 'מדע בדיוני'
-        };
-        return hebrewGenres[genre] || genre;
+        // Return English genre names for display
+        return genre;
     }
 }
 
@@ -1420,7 +1556,7 @@ class ScatterChart extends BaseChart {
             .range([3, 15]);
 
         this.colorScale = d3.scaleOrdinal()
-            .domain(['דרמה', 'פעולה', 'קומדיה', 'אימה', 'דוקומנטרי'])
+            .domain(['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'])
             .range([this.genreColors.Drama, this.genreColors.Action, this.genreColors.Comedy, 
                    this.genreColors.Horror, this.genreColors.Documentary]);
     }
@@ -1458,7 +1594,7 @@ class ScatterChart extends BaseChart {
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("דירוג IMDb");
+            .text("IMDb Rating");
 
         this.svg.append("text")
             .attr("class", "axis-label")
@@ -1499,44 +1635,45 @@ class ScatterChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseover", (event, d) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Optimized hover effect
+                const circle = d3.select(event.target);
+                circle
                     .style("opacity", 1)
                     .attr("stroke-width", 4)
                     .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.3)");
+                    .style("transform", "scale(1.2)")
+                    .style("transition", "all 0.2s ease");
                 
-                // הוסף אפקט זוהר
-                d3.select(event.target.parentNode).append("circle")
-                    .attr("class", "scatter-glow")
-                    .attr("cx", this.xScale(d.year))
-                    .attr("cy", this.yScale(d.rating))
-                    .attr("r", this.sizeScale(d.votes) * 2)
-                    .attr("fill", this.colorScale(d.genre))
-                    .attr("opacity", 0.3)
-                    .style("filter", "blur(8px)");
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${this.colorScale(d.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${d.title}</strong><br/>
+                        Genre: ${d.genre}<br/>
+                        Year: ${d.year}<br/>
+                        Rating: ${d.rating}/10<br/>
+                        Votes: ${d.votes.toLocaleString()}
+                        ${d.isCrisis ? '<br/><span style="color: #ff6b6b;">🔥 Crisis</span>' : ''}
+                    </div>`;
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${this.colorScale(d.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎬 ${d.title}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>ז'אנר:</strong> ${d.genre}<br/>
-                            <strong>שנה:</strong> ${d.year}<br/>
-                            <strong>דירוג:</strong> ${d.rating}/10<br/>
-                            <strong>הצבעות:</strong> ${d.votes.toLocaleString()}<br/>
-                            ${d.isCrisis ? '<span style="color: #e74c3c; font-weight: bold;">🔥 שנת משבר</span>' : ''}
-                        </div>
-                    </div>`
-                );
+                this.showTooltip(event, tooltipContent);
             })
             .on("mouseout", (event, d) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Reset hover effect
+                const circle = d3.select(event.target);
+                circle
                     .style("opacity", 0.7)
                     .attr("stroke-width", d.isCrisis ? 2 : 1)
                     .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
-                
-                // הסר אפקט זוהר
-                d3.select(event.target.parentNode).select(".scatter-glow").remove();
+                    .style("transform", "scale(1)")
+                    .style("transition", "all 0.2s ease");
                 
                 this.hideTooltip();
             });
@@ -1556,16 +1693,44 @@ class ScatterChart extends BaseChart {
             .style("font-size", "16px")
             .style("font-weight", "600")
             .style("fill", "#2c3e50")
-            .text("ז'אנרים");
+            .text("Genres");
 
         const genres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
-        const genreNames = ['דרמה', 'פעולה', 'קומדיה', 'אימה', 'דוקו'];
+        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary']; // באנגלית בלבד
         
         genres.forEach((genre, i) => {
             const legendRow = legend.append("g")
                 .attr("class", `legend-${genre}`)
                 .attr("transform", `translate(0, ${i * 35 + 30})`)
                 .style("cursor", "pointer")
+                .style("transition", "all 0.2s ease")
+                .on("mouseover", (event) => {
+                    // Debouncing for legend hover
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                    }
+                    
+                    this.legendTimeout = setTimeout(() => {
+                        // Highlight legend item
+                        d3.select(event.target)
+                            .style("opacity", 1)
+                            .style("transform", "scale(1.05)")
+                            .style("transition", "all 0.2s ease");
+                    }, 30);
+                })
+                .on("mouseout", (event) => {
+                    // Clear timeout
+                    if (this.legendTimeout) {
+                        clearTimeout(this.legendTimeout);
+                        this.legendTimeout = null;
+                    }
+                    
+                    // Reset legend item
+                    d3.select(event.target)
+                        .style("opacity", 0.8)
+                        .style("transform", "scale(1)")
+                        .style("transition", "all 0.2s ease");
+                })
                 .on("click", () => this.toggleGenre(genre));
 
             // Text in the color of the genre - uniform style
@@ -1613,7 +1778,7 @@ class ScatterChart extends BaseChart {
     }
 }
 
-// Crisis Impact Analysis Chart - גרף ניתוח השפעת משברים
+        // Crisis Impact Analysis Chart - Analysis of Crisis Impact
 class AreaChart extends BaseChart {
     constructor(selector, data, crisisData) {
         super(selector, data, crisisData);
@@ -1852,16 +2017,47 @@ class AreaChart extends BaseChart {
                     .attr("stroke", "#fff")
                     .attr("stroke-width", 2)
                     .on("mouseover", (event) => {
-                        let tooltipText = `<b>ז'אנר:</b> ${d.genre}<br><b>${pt.label} המשבר (${pt.val.year}):</b> ${pt.val[metric].toFixed(2)}<br><b>מספר סרטים:</b> ${pt.val.count}`;
+                        // Prevent event bubbling
+                        event.stopPropagation();
+                        
+                        // Optimized hover effect
+                        const circle = d3.select(event.target);
+                        circle
+                            .attr("r", 10)
+                            .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
+                            .style("transition", "all 0.2s ease");
+                        
+                        // Simplified tooltip for better performance
+                        let tooltipText = `<div style="background: linear-gradient(135deg, ${colorScale(d.genre)}, #2c3e50); 
+                                           color: white; padding: 12px; border-radius: 8px; 
+                                           box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>${genre}</strong><br/>
+                            ${pt.label} Crisis (${pt.val.year}): ${pt.val[metric].toFixed(2)}<br/>
+                            Movie Count: ${pt.val.count}`;
+                        
                         if (pt.val.count < 3) {
-                            tooltipText += `<br><span style='color:#e74c3c;font-weight:bold;'>שים לב: מעט סרטים, ייתכן שהמגמה לא מייצגת</span>`;
+                            tooltipText += `<br/><span style="color:#ff6b6b;">Note: Few movies</span>`;
                         }
                         if (pt.val.title) {
-                            tooltipText += `<br><b>דוגמה לסרט:</b> ${pt.val.title}`;
+                            tooltipText += `<br/>Example: ${pt.val.title}`;
                         }
+                        tooltipText += `</div>`;
+                        
                         this.showTooltip(event, tooltipText);
                     })
-                    .on("mouseout", () => this.hideTooltip());
+                    .on("mouseout", (event) => {
+                        // Prevent event bubbling
+                        event.stopPropagation();
+                        
+                        // Reset hover effect
+                        const circle = d3.select(event.target);
+                        circle
+                            .attr("r", 7)
+                            .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
+                            .style("transition", "all 0.2s ease");
+                        
+                        this.hideTooltip();
+                    });
             });
         });
 
@@ -1879,7 +2075,7 @@ class AreaChart extends BaseChart {
             .style('font-size', '16px')
             .style('font-weight', '600')
             .style('fill', '#2c3e50')
-            .text('ז\'אנרים');
+            .text('Genres');
 
         const legendItems = legend.selectAll('.legend-item')
             .data(slopeData)
@@ -1888,6 +2084,34 @@ class AreaChart extends BaseChart {
             .attr('class', d => `legend-${d.genre}`)
             .attr('transform', (d, i) => `translate(0, ${i * 30 + 20})`)
             .style('cursor', 'pointer')
+            .style('transition', 'all 0.2s ease')
+            .on('mouseover', (event, d) => {
+                // Debouncing for legend hover
+                if (this.legendTimeout) {
+                    clearTimeout(this.legendTimeout);
+                }
+                
+                this.legendTimeout = setTimeout(() => {
+                    // Highlight legend item
+                    d3.select(event.target)
+                        .style('opacity', 1)
+                        .style('transform', 'scale(1.05)')
+                        .style('transition', 'all 0.2s ease');
+                }, 30);
+            })
+            .on('mouseout', (event) => {
+                // Clear timeout
+                if (this.legendTimeout) {
+                    clearTimeout(this.legendTimeout);
+                    this.legendTimeout = null;
+                }
+                
+                // Reset legend item
+                d3.select(event.target)
+                    .style('opacity', 0.8)
+                    .style('transform', 'scale(1)')
+                    .style('transition', 'all 0.2s ease');
+            })
             .on('click', (event, d) => this.toggleGenre(d.genre));
 
         // Text in the color of the genre - uniform style
@@ -1936,7 +2160,7 @@ class AreaChart extends BaseChart {
             .style('color', '#2c3e50')
             .style('text-align', 'center')
             .style('margin-bottom', '15px')
-            .text('ז\'אנרים');
+            .text('Genres');
 
         slopeData.forEach((d, i) => {
             const row = legendContainer.append('div')
@@ -2235,30 +2459,45 @@ class AreaChart extends BaseChart {
             .style("cursor", "pointer")
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-            .on("mouseover", function(event, d) {
-                d3.select(this)
-                    .attr("stroke-width", 4)
-                    .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.05)");
+            .on("mouseover", (event, d) => {
+                // Prevent event bubbling
+                event.stopPropagation();
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎭 ${d.data.genre}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>לפני המשבר:</strong> ${d.data.before.toFixed(1)}%<br/>
-                            <strong>אחרי המשבר:</strong> ${d.data.after.toFixed(1)}%<br/>
-                            <strong>שינוי:</strong> <span style="color: ${d.data.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.data.change > 0 ? '+' : ''}${d.data.change.toFixed(1)}%</span>
-                        </div>
-                    </div>`
-                );
-            }.bind(this))
-            .on("mouseout", function() {
-                d3.select(this)
-                    .attr("stroke-width", 2)
-                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
+                // Optimized hover effect
+                const slice = d3.select(event.target);
+                slice
+                    .transition()
+                    .duration(150)
+                    .attr("transform", "scale(1.05)")
+                    .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))");
+                
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${genre}</strong><br/>
+                        Before Crisis: ${d.data.before.toFixed(1)}%<br/>
+                        After Crisis: ${d.data.after.toFixed(1)}%<br/>
+                        Change: <span style="color: ${d.data.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.data.change > 0 ? '+' : ''}${d.data.change.toFixed(1)}%</span>
+                    </div>`;
+                
+                this.showTooltip(event, tooltipContent);
+            })
+            .on("mouseout", (event) => {
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Reset hover effect
+                const slice = d3.select(event.target);
+                slice
+                    .transition()
+                    .duration(150)
+                    .attr("transform", "scale(1)")
+                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
+                
                 this.hideTooltip();
-            }.bind(this));
+            });
 
         // עוגה אחרי
         const afterGroup = this.svg.append("g")
@@ -2275,37 +2514,52 @@ class AreaChart extends BaseChart {
             .style("cursor", "pointer")
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-            .on("mouseover", function(event, d) {
-                d3.select(this)
-                    .attr("stroke-width", 4)
-                    .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.05)");
+            .on("mouseover", (event, d) => {
+                // Prevent event bubbling
+                event.stopPropagation();
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎭 ${d.data.genre}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>לפני המשבר:</strong> ${d.data.before.toFixed(1)}%<br/>
-                            <strong>אחרי המשבר:</strong> ${d.data.after.toFixed(1)}%<br/>
-                            <strong>שינוי:</strong> <span style="color: ${d.data.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.data.change > 0 ? '+' : ''}${d.data.change.toFixed(1)}%</span>
-                        </div>
-                    </div>`
-                );
-            }.bind(this))
-            .on("mouseout", function() {
-                d3.select(this)
-                    .attr("stroke-width", 2)
-                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
+                // Optimized hover effect
+                const slice = d3.select(event.target);
+                slice
+                    .transition()
+                    .duration(150)
+                    .attr("transform", "scale(1.05)")
+                    .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))");
+                
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${genre}</strong><br/>
+                        לפני המשבר: ${d.data.before.toFixed(1)}%<br/>
+                        אחרי המשבר: ${d.data.after.toFixed(1)}%<br/>
+                        שינוי: <span style="color: ${d.data.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.data.change > 0 ? '+' : ''}${d.data.change.toFixed(1)}%</span>
+                    </div>`;
+                
+                this.showTooltip(event, tooltipContent);
+            })
+            .on("mouseout", (event) => {
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Reset hover effect
+                const slice = d3.select(event.target);
+                slice
+                    .transition()
+                    .duration(150)
+                    .attr("transform", "scale(1)")
+                    .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
+                
                 this.hideTooltip();
-            }.bind(this));
+            });
     }
 
     createPsychologyNetwork(data) {
         const centerX = this.width / 2;
         const centerY = this.height / 2;
 
-        // כותרת
+        // Title
         this.svg.append("text")
             .attr("x", centerX)
             .attr("y", 50)
@@ -2314,16 +2568,16 @@ class AreaChart extends BaseChart {
             .attr("font-size", "16px")
             .attr("font-weight", "bold")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("דפוסי צפייה פסיכולוגיים");
+            .text("Psychological Viewing Patterns");
 
-        // צור קבוצות
+        // Create groups
         const escapeGroup = this.svg.append("g")
             .attr("transform", `translate(${centerX - 200}, ${centerY})`);
 
         const copingGroup = this.svg.append("g")
             .attr("transform", `translate(${centerX + 200}, ${centerY})`);
 
-        // כותרות קבוצות
+        // Group titles
         escapeGroup.append("text")
             .attr("x", 0)
             .attr("y", -80)
@@ -2332,7 +2586,7 @@ class AreaChart extends BaseChart {
             .attr("font-size", "18px")
             .attr("font-weight", "bold")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("🏃 בריחה מהמציאות");
+            .text("🏃 Escape from Reality");
 
         copingGroup.append("text")
             .attr("x", 0)
@@ -2342,7 +2596,7 @@ class AreaChart extends BaseChart {
             .attr("font-size", "18px")
             .attr("font-weight", "bold")
             .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text("💪 התמודדות עם המציאות");
+            .text("💪 Coping with Reality");
 
         // צור בועות בריחה
         const escapeGenres = Object.entries(data.escape);
@@ -2365,8 +2619,8 @@ class AreaChart extends BaseChart {
                     d3.select(this).attr("stroke-width", 4);
                     this.showTooltip(event, 
                         `<strong>${genre}</strong><br/>
-                         אחוז בריחה: ${value}%<br/>
-                         <em>סרטים שמסיחים את הדעת</em>`
+                         Escape percentage: ${value}%<br/>
+                         <em>Movies that distract from reality</em>`
                     );
                 }.bind(this))
                 .on("mouseout", function() {
@@ -2475,19 +2729,8 @@ class AreaChart extends BaseChart {
     }
 
     getHebrewGenre(genre) {
-        const hebrewGenres = {
-            'Drama': 'דרמה',
-            'Action': 'פעולה', 
-            'Comedy': 'קומדיה',
-            'Horror': 'אימה',
-            'Documentary': 'דוקומנטרי',
-            'Thriller': 'מותחן',
-            'Romance': 'רומנטיקה',
-            'Adventure': 'הרפתקאות',
-            'Crime': 'פשע',
-            'Sci-Fi': 'מדע בדיוני'
-        };
-        return hebrewGenres[genre] || genre;
+        // Return English genre names for display
+        return genre;
     }
 }
 
@@ -2574,40 +2817,40 @@ class HeatmapChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseover", (event, d) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Optimized hover effect
+                const rect = d3.select(event.target);
+                rect
                     .attr("stroke-width", 3)
                     .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.4))")
-                    .style("transform", "scale(1.05)");
+                    .style("transform", "scale(1.02)")
+                    .style("transition", "all 0.2s ease");
                 
-                // הוסף אפקט זוהר
-                d3.select(event.target.parentNode).append("rect")
-                    .attr("class", "heatmap-glow")
-                    .attr("x", this.xScale(d.year))
-                    .attr("y", this.yScale(d.genre))
-                    .attr("width", this.xScale.bandwidth())
-                    .attr("height", this.yScale.bandwidth())
-                    .attr("fill", this.colorScale(d[this.currentMetric]))
-                    .attr("opacity", 0.5)
-                    .style("filter", "blur(8px)");
+                // Simplified tooltip for better performance
+                const tooltipContent = `
+                    <div style="background: linear-gradient(135deg, ${this.colorScale(d[this.currentMetric])}, #2c3e50); 
+                               color: white; padding: 12px; border-radius: 8px; 
+                               box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                        <strong>${d.genre} - ${d.year}</strong><br/>
+                        ${this.getMetricLabel()}: ${this.formatValue(d[this.currentMetric])}
+                        ${this.crisisData.crisisYears.includes(d.year) ? '<br/><span style="color: #ff6b6b;">🔥 Crisis</span>' : ''}
+                    </div>`;
                 
-                this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${this.colorScale(d[this.currentMetric])}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🔥 ${this.getHebrewGenre(d.genre)} - ${d.year}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>${this.getMetricLabel()}:</strong> ${this.formatValue(d[this.currentMetric])}<br/>
-                            ${this.crisisData.crisisYears.includes(d.year) ? '<span style="color: #e74c3c; font-weight: bold;">🔥 שנת משבר</span>' : ''}
-                        </div>
-                    </div>`
-                );
+                this.showTooltip(event, tooltipContent);
             })
             .on("mouseout", (event) => {
-                d3.select(event.target)
+                // Prevent event bubbling
+                event.stopPropagation();
+                
+                // Reset hover effect
+                const rect = d3.select(event.target);
+                rect
                     .attr("stroke-width", 1)
                     .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
-                    .style("transform", "scale(1)");
-                
-                // הסר אפקט זוהר
-                d3.select(event.target.parentNode).select(".heatmap-glow").remove();
+                    .style("transform", "scale(1)")
+                    .style("transition", "all 0.2s ease");
                 
                 this.hideTooltip();
             });
@@ -2680,9 +2923,9 @@ class HeatmapChart extends BaseChart {
 
     getMetricLabel() {
         switch(this.currentMetric) {
-            case "count": return "מספר סרטים";
-            case "rating": return "דירוג ממוצע";
-            case "votes": return "מספר הצבעות";
+            case "count": return "Number of Movies";
+            case "rating": return "Average Rating";
+            case "votes": return "Number of Votes";
             default: return this.currentMetric;
         }
     }
@@ -2701,18 +2944,330 @@ class HeatmapChart extends BaseChart {
     }
 
     getHebrewGenre(genre) {
-        const hebrewGenres = {
-            'Drama': 'דרמה',
-            'Action': 'פעולה', 
-            'Comedy': 'קומדיה',
-            'Horror': 'אימה',
-            'Documentary': 'דוקומנטרי',
-            'Thriller': 'מותחן',
-            'Romance': 'רומנטיקה',
-            'Adventure': 'הרפתקאות',
-            'Crime': 'פשע',
-            'Sci-Fi': 'מדע בדיוני'
-        };
-        return hebrewGenres[genre] || genre;
+        // Return English genre names for display
+        return genre;
+    }
+} 
+
+class BulletChart extends BaseChart {
+    constructor(selector, data, crisisData) {
+        super(selector, data, crisisData);
+        this.currentCrisis = '2001'; // Default crisis
+        this.init();
+    }
+
+    init() {
+        this.createSVG();
+        this.createControls();
+        this.updateVisualization();
+    }
+
+    createControls() {
+        // Crisis selector
+        const crisisSelect = d3.select(this.selector)
+            .append("div")
+            .attr("class", "controls")
+            .style("margin-bottom", "20px");
+
+        crisisSelect.append("label")
+            .text("Select Crisis:")
+            .style("margin-right", "10px")
+            .style("font-weight", "bold");
+
+        crisisSelect.append("select")
+            .attr("id", "crisisSelect")
+            .on("change", (event) => {
+                this.currentCrisis = event.target.value;
+                this.updateVisualization();
+            })
+            .selectAll("option")
+            .data(['2001', '2008', '2020'])
+            .enter()
+            .append("option")
+            .attr("value", d => d)
+            .text(d => {
+                const crisisNames = {
+                    '2001': '2001 - September 11 Attacks',
+                    '2008': '2008 - Financial Crisis',
+                    '2020': '2020 - COVID-19 Pandemic'
+                };
+                return crisisNames[d];
+            });
+
+        // Set default value
+        d3.select("#crisisSelect").property("value", this.currentCrisis);
+    }
+
+    updateVisualization() {
+        this.svg.selectAll("*").remove();
+        this.createBulletChart();
+    }
+
+    createBulletChart() {
+        // Get real data from global data
+        const scatterData = window.DATA && window.DATA.scatterChartData ? window.DATA.scatterChartData : [];
+        if (!scatterData.length) {
+            this.svg.append("text")
+                .attr("x", this.width / 2)
+                .attr("y", this.height / 2)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#e74c3c")
+                .attr("font-size", "22px")
+                .attr("font-weight", "bold")
+                .text("No data available");
+            return;
+        }
+
+        // Find crisis year
+        const crisisYear = parseInt(this.currentCrisis);
+        const years = Array.from(new Set(scatterData.map(d => d.year))).sort((a, b) => a - b);
+        const prevYear = Math.max(...years.filter(y => y < crisisYear));
+        const nextYear = Math.min(...years.filter(y => y > crisisYear));
+
+        if (!prevYear || !nextYear) {
+            this.svg.append("text")
+                .attr("x", this.width / 2)
+                .attr("y", this.height / 2)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#e74c3c")
+                .attr("font-size", "22px")
+                .attr("font-weight", "bold")
+                .text("Insufficient data for selected crisis");
+            return;
+        }
+
+        // Create bullet chart data - calculate average ratings for each genre
+        const genres = Array.from(new Set(scatterData.map(d => d.genre)));
+        const bulletData = genres.map(genre => {
+            const beforeData = scatterData.filter(d => d.genre === genre && d.year === prevYear);
+            const afterData = scatterData.filter(d => d.genre === genre && d.year === nextYear);
+            
+            const beforeAvg = beforeData.length > 0 ? 
+                beforeData.reduce((sum, d) => sum + d.rating, 0) / beforeData.length : 0;
+            const afterAvg = afterData.length > 0 ? 
+                afterData.reduce((sum, d) => sum + d.rating, 0) / afterData.length : 0;
+            
+            return {
+                genre,
+                before: beforeAvg,
+                after: afterAvg,
+                change: afterAvg - beforeAvg,
+                beforeCount: beforeData.length,
+                afterCount: afterData.length
+            };
+        }).filter(d => d.before > 0 && d.after > 0 && d.beforeCount >= 2 && d.afterCount >= 2);
+
+        // Sort genres by before rating for better visualization
+        bulletData.sort((a, b) => b.before - a.before);
+
+        // Setup scales for VERTICAL bullet charts
+        const margin = { top: 50, right: 30, bottom: 60, left: 50 };
+        const chartWidth = this.width - margin.left - margin.right;
+        const chartHeight = this.height - margin.top - margin.bottom;
+
+        // Calculate how many charts we can fit
+        const chartsPerRow = 3;
+        const chartSpacing = 40;
+        const bulletWidth = (chartWidth - (chartsPerRow - 1) * chartSpacing) / chartsPerRow;
+        const bulletHeight = 140;
+
+        // Y scale for rating (0-10)
+        const yScale = d3.scaleLinear()
+            .domain([0, 10])
+            .range([bulletHeight, 0]);
+
+        // Color scale for genres - more distinct colors
+        const colorScale = d3.scaleOrdinal()
+            .domain(bulletData.map(d => d.genre))
+            .range(["#2ecc71", "#3498db", "#9b59b6", "#e67e22", "#e74c3c", "#1abc9c", "#f39c12", "#34495e", "#16a085", "#8e44ad"]);
+
+        // Add title
+        this.svg.append("text")
+            .attr("x", this.width / 2)
+            .attr("y", 30)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#2c3e50")
+            .attr("font-size", "18px")
+            .attr("font-weight", "bold")
+            .text(`Bullet Chart - Crisis Impact Analysis (${this.currentCrisis})`);
+
+        // Add subtitle
+        this.svg.append("text")
+            .attr("x", this.width / 2)
+            .attr("y", 50)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#7f8c8d")
+            .attr("font-size", "14px")
+            .text("Rating comparison by genre");
+
+
+
+        // Create bullet charts in a grid layout
+        bulletData.forEach((d, i) => {
+            const row = Math.floor(i / chartsPerRow);
+            const col = i % chartsPerRow;
+            const x = margin.left + col * (bulletWidth + chartSpacing);
+            const y = margin.top + row * (bulletHeight + 40);
+
+            const chartGroup = this.svg.append("g")
+                .attr("transform", `translate(${x}, ${y})`);
+
+            // Background ranges (Poor, Fair, Good, Excellent) - more transparent
+            const ranges = [
+                { min: 0, max: 4, color: "#ff7675", label: "Poor" },
+                { min: 4, max: 6, color: "#fdcb6e", label: "Fair" },
+                { min: 6, max: 8, color: "#74b9ff", label: "Good" },
+                { min: 8, max: 10, color: "#55a3ff", label: "Excellent" }
+            ];
+
+            // Draw background ranges as VERTICAL bars
+            ranges.forEach((range, rangeIndex) => {
+                chartGroup.append("rect")
+                    .attr("x", 0)
+                    .attr("y", yScale(range.max))
+                    .attr("width", bulletWidth)
+                    .attr("height", yScale(range.min) - yScale(range.max))
+                    .attr("fill", range.color)
+                    .attr("opacity", 0.15)
+                    .style("cursor", "pointer")
+                    .on("mouseover", (event) => {
+                        this.showTooltip(event, `
+                            <div style="background: linear-gradient(135deg, ${range.color}, #2c3e50);
+                                       color: white; padding: 12px; border-radius: 8px;
+                                       box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                                <strong>${range.label} Rating Range</strong><br/>
+                                ${range.min}-${range.max}/10
+                            </div>`);
+                    })
+                    .on("mouseout", () => this.hideTooltip());
+            });
+
+            // Draw BEFORE crisis bar (main measure) - VERTICAL
+            chartGroup.append("rect")
+                .attr("x", bulletWidth * 0.15)
+                .attr("y", yScale(d.before))
+                .attr("width", bulletWidth * 0.25)
+                .attr("height", bulletHeight - yScale(d.before))
+                .attr("fill", colorScale(d.genre))
+                .attr("stroke", "#2c3e50")
+                .attr("stroke-width", 1)
+                .style("cursor", "pointer")
+                .style("transition", "all 0.3s ease")
+                .style("border-radius", "2px")
+                .on("mouseover", (event) => {
+                    d3.select(event.target)
+                        .attr("width", bulletWidth * 0.3)
+                        .style("filter", "brightness(1.1)");
+                    this.showTooltip(event, `
+                        <div style="background: linear-gradient(135deg, ${colorScale(d.genre)}, #2c3e50);
+                                   color: white; padding: 12px; border-radius: 8px;
+                                   box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>${d.genre} - BEFORE Crisis</strong><br/>
+                            Rating: ${d.before.toFixed(1)}/10<br/>
+                            Movies: ${d.beforeCount}
+                        </div>`);
+                })
+                .on("mouseout", (event) => {
+                    d3.select(event.target)
+                        .attr("width", bulletWidth * 0.25)
+                        .style("filter", "brightness(1)");
+                    this.hideTooltip();
+                });
+
+            // Draw AFTER crisis bar (comparison) - VERTICAL
+            chartGroup.append("rect")
+                .attr("x", bulletWidth * 0.65)
+                .attr("y", yScale(d.after))
+                .attr("width", bulletWidth * 0.15)
+                .attr("height", bulletHeight - yScale(d.after))
+                .attr("fill", "#e74c3c")
+                .attr("stroke", "#2c3e50")
+                .attr("stroke-width", 1)
+                .style("cursor", "pointer")
+                .style("transition", "all 0.3s ease")
+                .style("border-radius", "2px")
+                .on("mouseover", (event) => {
+                    d3.select(event.target)
+                        .attr("width", bulletWidth * 0.18)
+                        .style("filter", "brightness(1.1)");
+                    this.showTooltip(event, `
+                        <div style="background: linear-gradient(135deg, #e74c3c, #2c3e50);
+                                   color: white; padding: 12px; border-radius: 8px;
+                                   box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>${d.genre} - AFTER Crisis</strong><br/>
+                            Rating: ${d.after.toFixed(1)}/10<br/>
+                            Movies: ${d.afterCount}<br/>
+                            Change: ${d.change > 0 ? '+' : ''}${d.change.toFixed(1)}
+                        </div>`);
+                })
+                .on("mouseout", (event) => {
+                    d3.select(event.target)
+                        .attr("width", bulletWidth * 0.15)
+                        .style("filter", "brightness(1)");
+                    this.hideTooltip();
+                });
+
+            // Add target line (average of all genres before crisis) - VERTICAL
+            const avgBefore = bulletData.reduce((sum, item) => sum + item.before, 0) / bulletData.length;
+            chartGroup.append("line")
+                .attr("x1", 0)
+                .attr("x2", bulletWidth)
+                .attr("y1", yScale(avgBefore))
+                .attr("y2", yScale(avgBefore))
+                .attr("stroke", "#2c3e50")
+                .attr("stroke-width", 3)
+                .attr("stroke-dasharray", "8,4")
+                .style("cursor", "pointer")
+                .on("mouseover", (event) => {
+                    this.showTooltip(event, `
+                        <div style="background: linear-gradient(135deg, #2c3e50, #34495e);
+                                   color: white; padding: 12px; border-radius: 8px;
+                                   box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 13px;">
+                            <strong>Target Line</strong><br/>
+                            Average Rating: ${avgBefore.toFixed(1)}/10<br/>
+                            <small>Average of all genres before crisis</small>
+                        </div>`);
+                })
+                .on("mouseout", () => this.hideTooltip());
+
+            // Add genre label
+            chartGroup.append("text")
+                .attr("x", bulletWidth / 2)
+                .attr("y", bulletHeight + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#2c3e50")
+                .attr("font-size", "13px")
+                .attr("font-weight", "bold")
+                .text(d.genre);
+
+            // Add rating labels
+            chartGroup.append("text")
+                .attr("x", -8)
+                .attr("y", bulletHeight + 8)
+                .attr("text-anchor", "end")
+                .attr("fill", "#7f8c8d")
+                .attr("font-size", "11px")
+                .attr("font-weight", "500")
+                .text("0");
+
+            chartGroup.append("text")
+                .attr("x", -8)
+                .attr("y", 8)
+                .attr("text-anchor", "end")
+                .attr("fill", "#7f8c8d")
+                .attr("font-size", "11px")
+                .attr("font-weight", "500")
+                .text("10");
+        });
+
+        // Add simple legend at bottom
+        this.svg.append("text")
+            .attr("x", this.width / 2)
+            .attr("y", this.height - 10)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#2c3e50")
+            .attr("font-size", "13px")
+            .attr("font-weight", "bold")
+            .text("Colored = Before | Red = After | Line = Average");
     }
 } 

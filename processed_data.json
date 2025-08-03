@@ -94083,5 +94083,267 @@
       ],
       "is_crisis": false
     }
-  ]
+  ],
+  "ratingWaterfallData": {
+    "2001": [
+      {
+        "genre": "Drama",
+        "genre_en": "Drama",
+        "before_rating": 7.49,
+        "after_rating": 7.71,
+        "change": 0.22,
+        "change_percent": 2.9,
+        "before_movies": 146,
+        "after_movies": 189
+      },
+      {
+        "genre": "Action",
+        "genre_en": "Action",
+        "before_rating": 6.04,
+        "after_rating": 6.73,
+        "change": 0.69,
+        "change_percent": 11.4,
+        "before_movies": 101,
+        "after_movies": 118
+      },
+      {
+        "genre": "Comedy",
+        "genre_en": "Comedy",
+        "before_rating": 5.81,
+        "after_rating": 5.37,
+        "change": -0.44,
+        "change_percent": -7.6,
+        "before_movies": 121,
+        "after_movies": 58
+      },
+      {
+        "genre": "Horror",
+        "genre_en": "Horror",
+        "before_rating": 6.22,
+        "after_rating": 6.25,
+        "change": 0.03,
+        "change_percent": 0.6,
+        "before_movies": 53,
+        "after_movies": 170
+      },
+      {
+        "genre": "Documentary",
+        "genre_en": "Documentary",
+        "before_rating": 5.66,
+        "after_rating": 6.43,
+        "change": 0.77,
+        "change_percent": 13.7,
+        "before_movies": 56,
+        "after_movies": 129
+      }
+    ],
+    "2008": [
+      {
+        "genre": "Drama",
+        "genre_en": "Drama",
+        "before_rating": 7.49,
+        "after_rating": 7.35,
+        "change": -0.14,
+        "change_percent": -1.9,
+        "before_movies": 179,
+        "after_movies": 140
+      },
+      {
+        "genre": "Action",
+        "genre_en": "Action",
+        "before_rating": 6.54,
+        "after_rating": 6.95,
+        "change": 0.41,
+        "change_percent": 6.3,
+        "before_movies": 163,
+        "after_movies": 124
+      },
+      {
+        "genre": "Comedy",
+        "genre_en": "Comedy",
+        "before_rating": 6.24,
+        "after_rating": 6.13,
+        "change": -0.11,
+        "change_percent": -1.7,
+        "before_movies": 157,
+        "after_movies": 115
+      },
+      {
+        "genre": "Horror",
+        "genre_en": "Horror",
+        "before_rating": 5.89,
+        "after_rating": 6.63,
+        "change": 0.74,
+        "change_percent": 12.6,
+        "before_movies": 84,
+        "after_movies": 186
+      },
+      {
+        "genre": "Documentary",
+        "genre_en": "Documentary",
+        "before_rating": 7.16,
+        "after_rating": 7.64,
+        "change": 0.48,
+        "change_percent": 6.7,
+        "before_movies": 194,
+        "after_movies": 186
+      }
+    ],
+    "2020": [
+      {
+        "genre": "Drama",
+        "genre_en": "Drama",
+        "before_rating": 6.46,
+        "after_rating": 7.23,
+        "change": 0.77,
+        "change_percent": 12.0,
+        "before_movies": 153,
+        "after_movies": 182
+      },
+      {
+        "genre": "Action",
+        "genre_en": "Action",
+        "before_rating": 6.28,
+        "after_rating": 6.85,
+        "change": 0.57,
+        "change_percent": 9.1,
+        "before_movies": 156,
+        "after_movies": 52
+      },
+      {
+        "genre": "Comedy",
+        "genre_en": "Comedy",
+        "before_rating": 7.27,
+        "after_rating": 7.78,
+        "change": 0.51,
+        "change_percent": 7.0,
+        "before_movies": 186,
+        "after_movies": 192
+      },
+      {
+        "genre": "Horror",
+        "genre_en": "Horror",
+        "before_rating": 7.27,
+        "after_rating": 7.71,
+        "change": 0.45,
+        "change_percent": 6.1,
+        "before_movies": 115,
+        "after_movies": 197
+      },
+      {
+        "genre": "Documentary",
+        "genre_en": "Documentary",
+        "before_rating": 5.98,
+        "after_rating": 6.38,
+        "change": 0.4,
+        "change_percent": 6.6,
+        "before_movies": 90,
+        "after_movies": 80
+      }
+    ],
+    "2022": [
+      {
+        "genre": "Drama",
+        "genre_en": "Drama",
+        "before_rating": 7.41,
+        "after_rating": 8.2,
+        "change": 0.78,
+        "change_percent": 10.6,
+        "before_movies": 72,
+        "after_movies": 115
+      },
+      {
+        "genre": "Action",
+        "genre_en": "Action",
+        "before_rating": 6.19,
+        "after_rating": 6.46,
+        "change": 0.27,
+        "change_percent": 4.4,
+        "before_movies": 68,
+        "after_movies": 90
+      },
+      {
+        "genre": "Comedy",
+        "genre_en": "Comedy",
+        "before_rating": 7.28,
+        "after_rating": 7.12,
+        "change": -0.16,
+        "change_percent": -2.2,
+        "before_movies": 60,
+        "after_movies": 170
+      },
+      {
+        "genre": "Horror",
+        "genre_en": "Horror",
+        "before_rating": 7.26,
+        "after_rating": 8.0,
+        "change": 0.74,
+        "change_percent": 10.2,
+        "before_movies": 192,
+        "after_movies": 164
+      },
+      {
+        "genre": "Documentary",
+        "genre_en": "Documentary",
+        "before_rating": 6.48,
+        "after_rating": 6.42,
+        "change": -0.05,
+        "change_percent": -0.8,
+        "before_movies": 154,
+        "after_movies": 121
+      }
+    ],
+    "2023": [
+      {
+        "genre": "Drama",
+        "genre_en": "Drama",
+        "before_rating": 6.07,
+        "after_rating": 5.86,
+        "change": -0.21,
+        "change_percent": -3.4,
+        "before_movies": 119,
+        "after_movies": 188
+      },
+      {
+        "genre": "Action",
+        "genre_en": "Action",
+        "before_rating": 7.14,
+        "after_rating": 7.42,
+        "change": 0.28,
+        "change_percent": 3.9,
+        "before_movies": 149,
+        "after_movies": 169
+      },
+      {
+        "genre": "Comedy",
+        "genre_en": "Comedy",
+        "before_rating": 7.23,
+        "after_rating": 6.98,
+        "change": -0.24,
+        "change_percent": -3.4,
+        "before_movies": 122,
+        "after_movies": 65
+      },
+      {
+        "genre": "Horror",
+        "genre_en": "Horror",
+        "before_rating": 5.52,
+        "after_rating": 5.05,
+        "change": -0.46,
+        "change_percent": -8.4,
+        "before_movies": 164,
+        "after_movies": 190
+      },
+      {
+        "genre": "Documentary",
+        "genre_en": "Documentary",
+        "before_rating": 5.76,
+        "after_rating": 6.29,
+        "change": 0.53,
+        "change_percent": 9.2,
+        "before_movies": 179,
+        "after_movies": 169
+      }
+    ]
+  }
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ז'אנרים כמראה לתקופות משתנות - ויזואליזציה IMDb</title>
+    <title>Genres as a Mirror to Changing Times - IMDb Visualization</title>
     
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -42,27 +42,31 @@
             position: absolute;
             background: rgba(0, 0, 0, 0.95);
             color: white;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
             pointer-events: none;
             z-index: 9999;
             opacity: 0;
-            transition: opacity 0.3s ease;
-            max-width: 300px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            border: 2px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
+            transition: opacity 0.15s ease;
+            max-width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            /* Prevent layout shifts */
+            transform: translateZ(0);
+            will-change: opacity, transform;
         }
         
         #tooltip h4 {
-            margin: 0 0 8px 0;
-            font-size: 16px;
+            margin: 0 0 6px 0;
+            font-size: 14px;
             font-weight: bold;
         }
         
         #tooltip div {
             line-height: 1.4;
+            font-size: 12px;
         }
         
         /* Improved chart text visibility - Enhanced */
@@ -101,6 +105,56 @@
             animation: spin 1s linear infinite;
         }
         
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Performance optimizations */
+        .chart {
+            /* Prevent layout shifts */
+            transform: translateZ(0);
+            will-change: transform;
+            /* Smooth transitions */
+            transition: all 0.2s ease;
+        }
+        
+        .chart svg {
+            /* Hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .chart circle, .chart rect, .chart path {
+            /* Optimize hover effects */
+            transition: all 0.2s ease;
+            will-change: transform, opacity, filter;
+        }
+        
+        /* Prevent text selection during hover */
+        .chart text {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        /* Smooth legend interactions */
+        .legend g {
+            transition: all 0.2s ease;
+            will-change: transform, opacity;
+        }
+        
+        /* Optimize tooltip positioning */
+        #tooltip {
+            /* Prevent layout shifts */
+            transform: translateZ(0);
+            will-change: opacity, transform;
+            /* Hardware acceleration */
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
         /* Enhanced error states */
         .error {
             background: #e74c3c;
@@ -126,7 +180,7 @@
 </head>
 <body>
     <!-- Back to Home Button -->
-    <button class="back-to-home" onclick="window.location.href='index.html'">🏠 דף הבית</button>
+    <button class="back-to-home" onclick="window.location.href='index.html'">🏠 Home</button>
     
     <!-- Tooltip -->
     <div id="tooltip"></div>
@@ -134,25 +188,25 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="title">סרטים בזמן משבר 🌍</h1>
-            <p class="subtitle">ניתוח השפעת משברים עולמיים על ז'אנרים קולנועיים</p>
+            <h1 class="title">Movies as a Mirror to Changing Times 🌍</h1>
+            <p class="subtitle">Analyzing the Impact of Global Crises on Cinema Genres</p>
             <div class="stats" id="statsContainer">
                 <div class="stat-item">
                     <span class="stat-number" id="totalMovies">-</span>
-                    <span class="stat-label">סרטים</span>
+                    <span class="stat-label">Movies</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" id="totalRatings">-</span>
-                    <span class="stat-label">דירוגים</span>
+                    <span class="stat-label">Ratings</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" id="totalGenres">-</span>
-                    <span class="stat-label">ז'אנרים</span>
+                    <span class="stat-label">Genres</span>
                 </div>
             </div>
             <div id="loadingIndicator" class="loading-indicator">
                 <div class="spinner"></div>
-                <p>טוען נתונים...</p>
+                <p>Loading Data...</p>
             </div>
         </div>
     </header>
@@ -161,12 +215,12 @@
     <nav class="navigation">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="#chart1" class="nav-link active" data-chart="lineChart">מגמות לאורך זמן</a></li>
-                <li><a href="#chart2" class="nav-link" data-chart="barChart">השוואת משברים</a></li>
-                <li><a href="#chart3" class="nav-link" data-chart="pieChart">חלוקת ז'אנרים</a></li>
-                <li><a href="#chart4" class="nav-link" data-chart="dnaChart">DNA הקולנוע</a></li>
-                <li><a href="#chart5" class="nav-link" data-chart="areaChart">השפעת משברים</a></li>
-                <li><a href="#chart6" class="nav-link" data-chart="heatmapChart">מפת חום</a></li>
+                <li><a href="#chart1" class="nav-link active" data-chart="lineChart">Trends Over Time</a></li>
+                <li><a href="#chart2" class="nav-link" data-chart="barChart">Crisis Comparison</a></li>
+                <li><a href="#chart3" class="nav-link" data-chart="pieChart">Genre Distribution</a></li>
+
+                <li><a href="#chart5" class="nav-link" data-chart="bulletChart">Rating Analysis</a></li>
+                <li><a href="#chart6" class="nav-link" data-chart="heatmapChart">Heatmap</a></li>
             </ul>
         </div>
     </nav>
@@ -178,35 +232,35 @@
             <!-- Chart 1: Line Chart - מגמות מספר סרטים לאורך זמן -->
             <section id="chart1" class="chart-section fade-in">
                 <div class="chart-header">
-                    <h2>📈 מגמות מספר סרטים לאורך זמן</h2>
+                    <h2>📈 Trends in Movie Count Over Time</h2>
                     <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> האם מספר הסרטים ששוחררו משתנה בזמן משברים?<br>
-                        הגרף מציג את מספר הסרטים לפי ז'אנר בכל שנה, עם סימון של שנות המשבר.
+                        <strong>Research Question:</strong> Has the number of movies released changed over time during crises?<br>
+                        The graph shows the number of movies released per genre per year, with crisis years marked.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="lineChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="genreFilter">🎭 בחר ז'אנר:</label>
+                            <label for="genreFilter">🎭 Select Genre:</label>
                             <select id="genreFilter">
-                                <option value="all">כל הז'אנרים</option>
-                                <option value="Drama">דרמה</option>
-                                <option value="Action">פעולה</option>
-                                <option value="Comedy">קומדיה</option>
-                                <option value="Horror">אימה</option>
-                                <option value="Documentary">דוקומנטרי</option>
+                                <option value="all">All Genres</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Action">Action</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Documentary">Documentary</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="smoothing">📊 החלקת עקומה:</label>
+                            <label for="smoothing">📊 Smooth Curve:</label>
                             <input type="checkbox" id="smoothing" />
                         </div>
                     </div>
                     <div class="insights" id="lineChartInsights">
-                        <h4>תובנות מרכזיות:</h4>
+                        <h4>Key Insights:</h4>
                         <ul id="lineInsightsList">
-                            <li>טוען נתונים...</li>
+                            <li>Loading insights...</li>
                         </ul>
                     </div>
                 </div>
@@ -215,34 +269,34 @@
             <!-- Chart 2: Bar Chart - השוואת ז'אנרים לפני ואחרי משבר -->
             <section id="chart2" class="chart-section">
                 <div class="chart-header">
-                    <h2>📊 השוואת ז'אנרים לפני ואחרי משבר</h2>
+                    <h2>📊 Crisis-Era Genre Comparison</h2>
                     <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> האם יש שינוי בתפוצת ז'אנרים סביב משברים?<br>
-                        השוואה בין מספר הסרטים בכל ז'אנר שנה לפני המשבר ושנה אחרי המשבר.
+                        <strong>Research Question:</strong> Is there a change in genre popularity around crises?<br>
+                        Comparison of the number of movies in each genre released before and after a crisis.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="barChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="crisisSelect">🌍 בחר משבר:</label>
+                            <label for="crisisSelect">🌍 Select Crisis:</label>
                             <select id="crisisSelect">
-                                <option value="2001">משבר 2001 - פיגועי 11 בספטמבר</option>
-                                <option value="2008">משבר 2008 - המשבר הכלכלי</option>
-                                <option value="2020">משבר 2020 - COVID-19</option>
-                                <option value="2022">משבר 2022 - מלחמת רוסיה-אוקראינה</option>
-                                <option value="2023">משבר 2023 - התקפת 7 באוקטובר</option>
+                                <option value="2001">Crisis 2001 - September 11 Attacks</option>
+                                <option value="2008">Crisis 2008 - Global Financial Crisis</option>
+                                <option value="2020">Crisis 2020 - COVID-19</option>
+                                <option value="2022">Crisis 2022 - Russia-Ukraine War</option>
+                                <option value="2023">Crisis 2023 - 7 October Attack</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="showPercentage">📈 הצג שינוי באחוזים:</label>
+                            <label for="showPercentage">📈 Show Percentage Changes:</label>
                             <input type="checkbox" id="showPercentage" checked />
                         </div>
                     </div>
                     <div class="insights" id="barChartInsights">
-                        <h4>תובנות מרכזיות:</h4>
+                        <h4>Key Insights:</h4>
                         <ul id="barInsightsList">
-                            <li>טוען נתונים...</li>
+                            <li>Loading insights...</li>
                         </ul>
                     </div>
                 </div>
@@ -251,106 +305,84 @@
             <!-- Chart 3: Pie Chart - חלוקת ז'אנרים בשנת משבר -->
             <section id="chart3" class="chart-section">
                 <div class="chart-header">
-                    <h2>🥧 חלוקת ז'אנרים בשנת משבר</h2>
+                    <h2>🥧 Genre Distribution in Crisis Years</h2>
                     <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> אילו ז'אנרים היו דומיננטיים בשנה של משבר?<br>
-                        התפלגות יחסית של ז'אנרים שונים בשנות משבר עיקריות.
+                        <strong>Research Question:</strong> Which genres were dominant in crisis years?<br>
+                        Relative distribution of different genres across major crisis years.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="pieChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="crisisYear">📅 בחר שנת משבר:</label>
+                            <label for="crisisYear">📅 Select Crisis Year:</label>
                             <select id="crisisYear">
-                                <option value="2001">2001 - פיגועי 11 בספטמבר</option>
-                                <option value="2008">2008 - משבר כלכלי</option>
+                                <option value="2001">2001 - September 11 Attacks</option>
+                                <option value="2008">2008 - Global Financial Crisis</option>
                                 <option value="2020">2020 - COVID-19</option>
-                                <option value="2022">2022 - מלחמת רוסיה-אוקראינה</option>
-                                <option value="2023">2023 - התקפת 7 באוקטובר</option>
+                                <option value="2022">2022 - Russia-Ukraine War</option>
+                                <option value="2023">2023 - 7 October Attack</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="pieMode">📊 מצב תצוגה:</label>
+                            <label for="pieMode">📊 Display Mode:</label>
                             <select id="pieMode">
-                                <option value="percentage">אחוזים</option>
-                                <option value="count">מספר סרטים</option>
+                                <option value="percentage">Percentages</option>
+                                <option value="count">Movie Count</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="pieComparison">🔄 השוואה:</label>
+                            <label for="pieComparison">🔄 Comparison:</label>
                             <button id="pieComparison" type="button" class="comparison-btn">
-                                הצג השוואה לפני/אחרי
+                                Show Before/After
                             </button>
                         </div>
                         <div class="control-group">
-                            <label for="pieShowPercentages">📊 הצג אחוזים:</label>
+                            <label for="pieShowPercentages">📊 Show Percentages:</label>
                             <input type="checkbox" id="pieShowPercentages" checked />
                         </div>
                     </div>
                     <div class="insights" id="pieChartInsights">
-                        <h4>תובנות מרכזיות:</h4>
+                        <h4>Key Insights:</h4>
                         <ul id="pieInsightsList">
-                            <li>טוען נתונים...</li>
+                            <li>Loading insights...</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Chart 4: Cinema DNA - DNA הקולנוע -->
-            <section id="chart4" class="chart-section">
-                <div class="chart-header">
-                    <h2>🧬 DNA הקולנוע: איך משברים משנים את הקולנוע?</h2>
-                    <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> האם משברים משנים את הרכב הז'אנרים בקולנוע?<br>
-                        השוואה דינמית של הרכב ז'אנרים לפני ואחרי כל משבר עולמי עם מדד עוצמת השינוי.
-                    </p>
-                </div>
-                <div class="chart-container">
-                    <div id="dnaChart" class="chart"></div>
-                    <div class="insights" id="dnaChartInsights">
-                        <h4>📊 תובנות על DNA הקולנוע:</h4>
-                        <ul id="dnaInsightsList">
-                            <li>🧬 משברים יוצרים שינויים משמעותיים בהרכב הז'אנרים</li>
-                            <li>🎭 דרמות נוטות לעלות בתקופות משבר</li>
-                            <li>😂 קומדיות משמשות כמנגנון התמודדות</li>
-                            <li>📚 דוקומנטריים גדלים כאשר האנשים מחפשים הבנה</li>
-                            <li>🎬 כל משבר יוצר חתימה ייחודית בעולם הקולנוע</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Chart 5: Crisis Impact Analysis - ניתוח השפעת משברים -->
+
+            <!-- Chart 5: Bullet Chart - Crisis Impact Analysis -->
             <section id="chart5" class="chart-section">
                 <div class="chart-header">
-                    <h2>🧠 השפעת משברים על דפוסי צפייה בקולנוע</h2>
+                    <h2>🎯 Average Ratings Before and After Crisis</h2>
                     <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> איך משברים משנים את דפוסי הצפייה, הדירוגים והעדפות הז'אנרים?<br>
-                        ניתוח פסיכולוגי של השפעת משברים על בחירת סרטים ודפוסי בריחה vs התמודדות.
+                        <strong>Research Question:</strong> How do crises affect movie ratings across different genres?<br>
+                        Bullet chart showing average IMDb ratings before and after major crises, with performance ranges.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="areaChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="decadeFilter">📅 בחר עשור:</label>
+                            <label for="decadeFilter">📅 Select Decade:</label>
                             <select id="decadeFilter">
-                                <option value="all">כל התקופה</option>
+                                <option value="all">All Periods</option>
                                 <option value="2000">2000-2009</option>
                                 <option value="2010">2010-2019</option>
                                 <option value="2020">2020-2024</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="showTrend">📊 הצג קו מגמה:</label>
+                            <label for="showTrend">📊 Show Trend Line:</label>
                             <input type="checkbox" id="showTrend" checked />
                         </div>
                     </div>
                     <div class="insights" id="areaChartInsights">
-                        <h4>תובנות מרכזיות:</h4>
+                        <h4>Key Insights:</h4>
                         <ul id="areaInsightsList">
-                            <li>טוען נתונים...</li>
+                            <li>Loading insights...</li>
                         </ul>
                     </div>
                 </div>
@@ -359,36 +391,36 @@
             <!-- Chart 6: Heatmap - ז'אנרים מול שנים -->
             <section id="chart6" class="chart-section">
                 <div class="chart-header">
-                    <h2>🔥 מפת חום ז'אנרים מול שנים</h2>
+                    <h2>🔥 Genre Heatmap Over Years</h2>
                     <p class="chart-description">
-                        <strong>שאלת המחקר:</strong> אילו ז'אנרים היו פופולריים יותר בשנים של משברים?<br>
-                        מפת חום המציגה את עוצמת הפעילות של כל ז'אנר בכל שנה.
+                        <strong>Research Question:</strong> Which genres were more popular in crisis years?<br>
+                        A heatmap showing the intensity of activity for each genre across each year.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="heatmapChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="heatmapMetric">📊 מדד:</label>
+                            <label for="heatmapMetric">📊 Metric:</label>
                             <select id="heatmapMetric">
-                                <option value="count">מספר סרטים</option>
-                                <option value="rating">דירוג ממוצע</option>
-                                <option value="votes">מספר הצבעות</option>
+                                <option value="count">Movie Count</option>
+                                <option value="rating">Average Rating</option>
+                                <option value="votes">Number of Votes</option>
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="colorScheme">🎨 ערכת צבעים:</label>
+                            <label for="colorScheme">🎨 Color Scheme:</label>
                             <select id="colorScheme">
-                                <option value="blues">כחול</option>
-                                <option value="reds">אדום</option>
-                                <option value="viridis">וירידיס</option>
+                                <option value="blues">Blue</option>
+                                <option value="reds">Red</option>
+                                <option value="viridis">Viridis</option>
                             </select>
                         </div>
                     </div>
                     <div class="insights" id="heatmapInsights">
-                        <h4>תובנות מרכזיות:</h4>
+                        <h4>Key Insights:</h4>
                         <ul id="heatmapInsightsList">
-                            <li>טוען נתונים...</li>
+                            <li>Loading insights...</li>
                         </ul>
                     </div>
                 </div>
@@ -400,27 +432,27 @@
     <!-- Summary Section -->
     <section class="summary">
         <div class="container">
-            <h2>📋 סיכום מחקר</h2>
+            <h2>📋 Research Summary</h2>
             <div class="summary-grid">
                 <div class="summary-card">
-                    <h3>🎭 ממצאים עיקריים</h3>
+                    <h3>🎭 Main Findings</h3>
                     <ul id="mainFindings">
-                        <li>טוען נתונים...</li>
+                        <li>Loading insights...</li>
                     </ul>
                 </div>
                 <div class="summary-card">
-                    <h3>🌍 השפעת משברים</h3>
+                    <h3>🌍 Crisis Impact</h3>
                     <ul id="crisisImpact">
-                        <li>טוען נתונים...</li>
+                        <li>Loading insights...</li>
                     </ul>
                 </div>
                 <div class="summary-card">
-                    <h3>📊 מתודולוגיה</h3>
+                    <h3>📊 Methodology</h3>
                     <ul id="methodology">
-                        <li>נתוני IMDb מ-2000 עד 2024</li>
-                        <li>ניתוח של 327,674 סרטים</li>
-                        <li>1.3 מיליון דירוגים</li>
-                        <li>10 ז'אנרים עיקריים</li>
+                        <li>IMDb data from 2000 to 2024</li>
+                        <li>Analysis of 327,674 movies</li>
+                        <li>1.3 million ratings</li>
+                        <li>10 major genres</li>
                     </ul>
                 </div>
             </div>
@@ -432,19 +464,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>📊 נתונים</h4>
-                    <p>מקור: <a href="https://datasets.imdbws.com/" target="_blank">IMDb Datasets</a></p>
-                    <p>תקופה: 2000-2024</p>
+                    <h4>📊 Data</h4>
+                    <p>Source: <a href="https://datasets.imdbws.com/" target="_blank">IMDb Datasets</a></p>
+                    <p>Period: 2000-2024</p>
                 </div>
                 <div class="footer-section">
-                    <h4>🛠️ טכנולוגיות</h4>
+                    <h4>🛠️ Technologies</h4>
                     <p>D3.js, Python, Pandas</p>
                     <p>HTML5, CSS3, JavaScript</p>
                 </div>
                 <div class="footer-section">
-                    <h4>📚 מחקר</h4>
-                    <p>פרויקט ויזואליזציה אקדמי</p>
-                    <p>&copy; 2024 | כל הזכויות שמורות</p>
+                    <h4>📚 Research</h4>
+                    <p>Academic Visualization Project</p>
+                    <p>&copy; 2024 | All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -453,7 +485,7 @@
     <!-- JavaScript -->
     <script src="data.js"></script>
     <script src="charts.js"></script>
-    <script src="dna_chart.js"></script>
+    
     <script src="main.js"></script>
 </body>
 </html>

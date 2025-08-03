@@ -916,10 +916,7 @@ input:focus {
     color: var(--text-color, currentColor) !important;
 }
 
-/* DNA Chart legend specific styling */
-.dna-chart .legend span {
-    color: inherit !important;
-}
+
 
 /* Override any other styles that might interfere */
 .chart .legend text,
