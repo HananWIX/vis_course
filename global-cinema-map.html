@@ -300,6 +300,229 @@
         .footer-section a:hover {
             text-decoration: underline;
         }
+        
+        /* Collaboration Network Styles */
+        .collaboration-controls-panel {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .collaboration-network-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #1a1a2e;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .collaboration-loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #collaboration-network-svg {
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+        }
+        
+        .country-node {
+            stroke: rgba(255, 255, 255, 0.8);
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .country-node:hover {
+            stroke-width: 3px;
+        }
+        
+        .country-node.selected {
+            stroke-width: 4px;
+            stroke: #ffff00;
+        }
+        
+        .collaboration-link {
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-linecap: round;
+            transition: all 0.3s ease;
+        }
+        
+        .collaboration-link.highlighted {
+            stroke: rgba(255, 255, 255, 0.9);
+            stroke-width: 4px;
+            filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.6));
+        }
+        
+        .collaboration-link:hover {
+            stroke: rgba(255, 255, 255, 0.85);
+            filter: drop-shadow(0px 0px 3px rgba(255,255,255,0.5));
+        }
+        
+        .country-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            fill: white;
+            text-anchor: middle;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .country-label.large {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .collaboration-legend {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .collaboration-legend h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0.3rem 0;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .collaboration-info-panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .collaboration-info-panel.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .country-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .country-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .stat-label {
+            font-weight: 600;
+            color: #495057;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .top-partners {
+            margin-top: 0.5rem;
+        }
+        
+        .partner-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .partner-country {
+            font-weight: 500;
+        }
+        
+        .partner-count {
+            font-weight: 600;
+            color: #4a90e2;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .range-value {
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            color: #4a90e2;
+        }
+        
+        /* Collaboration Network Tooltip Styles */
+        .collaboration-tooltip {
+            pointer-events: none;
+            user-select: none;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+        }
+        
+        .collaboration-tooltip div {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -314,14 +537,14 @@
     <!-- Hero Section -->
     <section class="global-hero">
         <div class="container">
-            <h1 class="hero-title">🗺️ Global Cinema Map</h1>
-            <p class="hero-subtitle">
+            <h1 class="hero-title" style="color: #000000 !important;">🗺️ Global Cinema Map</h1>
+            <p class="hero-subtitle" style="color: #000000 !important; font-weight: 500;">
                 Exploring the relationship between socio-economic indicators and cinematic fingerprints of nations worldwide
             </p>
             
             <div class="research-question">
-                <h3>🎯 Central Research Question</h3>
-                <p>
+                <h3 style="color: #000000 !important;">🎯 Central Research Question</h3>
+                <p style="color: #000000 !important; font-weight: 500;">
                     "How do socio-economic indicators of countries reflect and influence their cinematic fingerprint, 
                     and what does this reveal about the relationship between democracy, economy, and creativity?"
                 </p>
@@ -334,24 +557,24 @@
         <div class="container">
             <div class="nav-grid">
                 <div class="nav-item active" data-viz="diversity">
-                    <h4>📊 Interactive Chart</h4>
-                    <p>Sortable Cinema Diversity Analysis</p>
+                    <h4 style="color: #000000 !important;">📊 Interactive Chart</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">Sortable Cinema Diversity Analysis</p>
                 </div>
                 <div class="nav-item" data-viz="influence">
-                    <h4>🌊 Cultural Influence Flows</h4>
-                    <p>Cinema Influence Between Nations</p>
+                    <h4 style="color: #000000 !important;">🌊 Cultural Influence Flows</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">Cinema Influence Between Nations</p>
                 </div>
                 <div class="nav-item" data-viz="quality">
-                    <h4>⚖️ National Quality Gap</h4>
-                    <p>Inequality vs Cinema Quality</p>
+                    <h4 style="color: #000000 !important;">⚖️ National Quality Gap</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">Inequality vs Cinema Quality</p>
                 </div>
                 <div class="nav-item" data-viz="collaboration">
-                    <h4>🤝 Global Collaboration Network</h4>
-                    <p>International Cinema Partnerships</p>
+                    <h4 style="color: #000000 !important;">🤝 Global Collaboration Network</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">International Cinema Partnerships</p>
                 </div>
                 <div class="nav-item" data-viz="timeline">
-                    <h4>📈 Political Events Timeline</h4>
-                    <p>How Politics Affects Cinema</p>
+                    <h4 style="color: #000000 !important;">📈 Political Events Timeline</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">How Politics Affects Cinema</p>
                 </div>
             </div>
         </div>
@@ -361,14 +584,14 @@
     <section id="viz-diversity" class="viz-section active">
         <div class="container">
             <div class="viz-header">
-                <h2 class="viz-title">📊 Interactive Cinema Diversity Chart</h2>
-                <p class="viz-description">
+                <h2 class="viz-title" style="color: #000000 !important;">📊 Interactive Cinema Diversity Chart</h2>
+                <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
                     This sophisticated bar chart displays cinema genre diversity across countries with rich interactive features.
                     Sort by different metrics, hover for detailed statistics, and explore patterns in global movie production.
                     Each bar is colored by diversity level and shows precise values.
                 </p>
                 
-                <div class="research-q">
+                <div class="research-q" style="color: #000000 !important; font-weight: 500;">
                     <strong>Research Question:</strong> Which countries produce the most diverse cinema, and how do they compare across different metrics?
                 </div>
             </div>
@@ -408,14 +631,14 @@
     <section id="viz-influence" class="viz-section">
         <div class="container">
             <div class="viz-header">
-                <h2 class="viz-title">🌊 Cultural Influence Flows</h2>
-                <p class="viz-description">
+                <h2 class="viz-title" style="color: #000000 !important;">🌊 Cultural Influence Flows</h2>
+                <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
                     A dynamic flow diagram showing how cinematic influence travels between countries. 
                     Producer countries on the left, consumer countries on the right, with flow thickness 
                     indicating influence strength and color showing dominant genres.
                 </p>
                 
-                <div class="research-q">
+                <div class="research-q" style="color: #000000 !important; font-weight: 500;">
                     <strong>Research Question:</strong> How does cinematic influence flow between countries, and who are the cultural power centers?
                 </div>
             </div>
@@ -477,14 +700,14 @@
     <section id="viz-quality" class="viz-section">
         <div class="container">
             <div class="viz-header">
-                <h2 class="viz-title">⚖️ National Quality Gap</h2>
-                <p class="viz-description">
+                <h2 class="viz-title" style="color: #000000 !important;">⚖️ National Quality Gap</h2>
+                <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
                     Violin plots showing the distribution of movie quality (IMDb ratings) for each country, 
                     arranged by their economic inequality (Gini coefficient). This reveals whether 
                     economic inequality translates to "two-tier" cinema systems.
                 </p>
                 
-                <div class="research-q">
+                <div class="research-q" style="color: #000000 !important; font-weight: 500;">
                     <strong>Research Question:</strong> Is there a relationship between economic inequality in a country and the quality gap in its cinema?
                 </div>
             </div>
@@ -544,67 +767,80 @@
     <section id="viz-collaboration" class="viz-section">
         <div class="container">
             <div class="viz-header">
-                <h2 class="viz-title">🤝 Global Collaboration Network</h2>
-                <p class="viz-description">
-                    A 3D network graph where countries are nodes and collaborations are edges. 
-                    Node size represents collaboration volume, edge thickness shows partnership strength, 
-                    and colors reveal community clusters of frequently collaborating nations.
+                <h2 class="viz-title" style="color: #000000 !important;">🤝 Global Collaboration Network</h2>
+                <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
+                    An interactive network visualization showing regional cinema collaboration communities. 
+                    Hover over regions for detailed statistics, adjust node sizes, and explore partnership patterns.
+                    Colors distinguish regional communities while link thickness reveals collaboration strength.
                 </p>
                 
-                <div class="research-q">
+                <div class="research-q" style="color: #000000 !important; font-weight: 500;">
                     <strong>Research Question:</strong> What does the map of international cinema collaborations reveal about diplomatic relationships?
                 </div>
             </div>
             
-            <div class="chart-container">
-                <div class="chart-controls">
-                    <div class="control-group">
-                        <label for="collaborationType">Collaboration Type:</label>
-                        <select id="collaborationType">
-                            <option value="all">All Roles</option>
-                            <option value="directors">Directors Only</option>
-                            <option value="actors">Actors Only</option>
-                            <option value="producers">Producers Only</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="networkLayout">Layout Algorithm:</label>
-                        <select id="networkLayout">
-                            <option value="force-directed">Force Directed</option>
-                            <option value="circular">Circular</option>
-                            <option value="geographic">Geographic</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="minCollaborations">Minimum Collaborations:</label>
-                        <select id="minCollaborations">
-                            <option value="5">5+</option>
-                            <option value="10">10+</option>
-                            <option value="25">25+</option>
-                            <option value="50">50+</option>
-                        </select>
-                    </div>
+            <!-- Controls Panel -->
+            <div class="collaboration-controls-panel">
+                <div class="control-group">
+                    <label>Collaboration Type</label>
+                    <select id="collaboration-filter">
+                        <!-- Options will be populated by JS -->
+                    </select>
                 </div>
-                
-                <div class="chart-placeholder">
-                    <div class="placeholder-content">
-                        <h4>🚧 Visualization Under Development</h4>
-                        <p>3D network graph of international collaborations</p>
-                        <p><em>Data processing required: title.principals.tsv + name.basics.tsv + title.akas.tsv</em></p>
-                    </div>
+                <div class="control-group">
+                    <label>Minimum Collaborations</label>
+                    <input type="range" id="min-collaborations" min="1" max="50" value="10">
+                    <span id="min-collab-value">10+</span>
                 </div>
-                
-                <div class="insights">
-                    <h4>Expected Insights:</h4>
-                    <ul>
-                        <li>🤝 Canada-USA, UK-Ireland form tight collaboration clusters</li>
-                        <li>🌍 Geographic proximity influences collaboration patterns</li>
-                        <li>🗣️ Language families create distinct collaboration communities</li>
-                        <li>📺 Streaming platforms are creating new collaboration patterns</li>
-                        <li>🎭 Some surprising partnerships reveal hidden cultural connections</li>
-                    </ul>
+                <div class="control-group">
+                    <label>Node Size</label>
+                    <input type="range" id="node-size" min="0.5" max="2" step="0.1" value="1">
+                    <div class="range-value" id="node-size-value">1x</div>
                 </div>
             </div>
+
+            <!-- Network Visualization Container -->
+            <div class="collaboration-network-container" id="collaboration-network-container">
+                <div class="collaboration-loading-indicator" id="collaboration-loading-indicator">
+                    <div class="spinner"></div>
+                    <p class="loading-text">🚧 Loading collaboration network...</p>
+                </div>
+                <svg id="collaboration-network-svg"></svg>
+            </div>
+
+            <!-- Legend -->
+            <div class="collaboration-legend" id="collaboration-legend" style="display: none;">
+                <h4>🌍 Regional Communities</h4>
+                <div id="collaboration-legend-content"></div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="collaboration-info-panel" id="collaboration-info-panel">
+                <div class="country-info" id="collaboration-country-info">
+                    <h3 id="collaboration-country-name">Select a Region</h3>
+                    <div class="country-stats">
+                        <div class="stat">
+                            <span class="stat-label">Total Collaborations:</span>
+                            <span class="stat-value" id="collaboration-total-collaborations">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Partner Countries:</span>
+                            <span class="stat-value" id="collaboration-partner-count">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Community:</span>
+                            <span class="stat-value" id="collaboration-community">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Top Partners:</span>
+                            <div class="top-partners" id="collaboration-top-partners">
+                                <em style="color: #888;">Click a country to see partnerships</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     
@@ -613,13 +849,13 @@
         <div class="container">
             <div class="viz-header">
                 <h2 class="viz-title">📈 Political Events Timeline</h2>
-                <p class="viz-description">
+                <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
                     Multi-line time series showing movie production by genre for specific countries, 
                     with vertical annotations marking major political events. This reveals how 
                     dramatic political changes affect national cinema production patterns.
                 </p>
                 
-                <div class="research-q">
+                <div class="research-q" style="color: #000000 !important; font-weight: 500;">
                     <strong>Research Question:</strong> How do dramatic political changes affect the cinema production of countries?
                 </div>
             </div>
@@ -677,6 +913,7 @@
     <script src="global_data.js"></script>
     <script src="diversity_bar_chart.js"></script>
     <script src="political_events_timeline.js"></script>
+    <script src="collaboration_network_viz.js?v=7"></script>
     
     <!-- Main JavaScript -->
     <script>
@@ -710,6 +947,31 @@
                         document.dispatchEvent(new CustomEvent('viz-change', {
                             detail: { viz: vizId }
                         }));
+                        
+                        // Initialize collaboration network if needed
+                        if (vizId === 'collaboration') {
+                            console.log('🎯 Tab clicked: collaboration');
+                            
+                            // Make sure container exists before trying to initialize
+                            setTimeout(() => {
+                                const container = document.getElementById('collaboration-network-container');
+                                if (!container) {
+                                    console.error('❌ Container not found yet, retrying...');
+                                    setTimeout(() => {
+                                        if (typeof window.initCollaborationNetwork === 'function') {
+                                            window.initCollaborationNetwork();
+                                        }
+                                    }, 500);
+                                } else {
+                                    console.log('✅ Container found, initializing...');
+                                    if (typeof window.initCollaborationNetwork === 'function') {
+                                        window.initCollaborationNetwork();
+                                    } else {
+                                        console.error('❌ initCollaborationNetwork function not found');
+                                    }
+                                }
+                            }, 300);
+                        }
                         
                         // Update progress bar
                         const progress = ((index + 1) / navItems.length) * 100;

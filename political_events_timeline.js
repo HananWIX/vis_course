@@ -4,9 +4,14 @@
 class PoliticalEventsTimeline {
     constructor(containerId) {
         this.container = d3.select(containerId);
-        this.width = 1200;
-        this.height = 700;
-        this.margin = { top: 100, right: 50, bottom: 100, left: 100 };
+        
+        // Get container dimensions for responsive sizing
+        const containerNode = this.container.node();
+        const containerRect = containerNode.getBoundingClientRect();
+        
+        this.width = Math.max(1000, Math.min(1400, containerRect.width - 40)); // Larger responsive width
+        this.height = 800; // Much larger height for better visibility
+        this.margin = { top: 100, right: 80, bottom: 150, left: 150 }; // Even more space for labels and ticks
         this.innerWidth = this.width - this.margin.left - this.margin.right;
         this.innerHeight = this.height - this.margin.top - this.margin.bottom;
         
@@ -47,6 +52,8 @@ class PoliticalEventsTimeline {
         this.currentCountry = null;
         this.data = null;
         this.showSmoothed = false;  // Default to raw data, smoothing optional
+        this.selectedEvent = null;  // Track selected event for 3-year focus
+        this.viewMode = 'full';     // 'full' or 'focused' (3-year)
         
         this.initializeVisualization();
     }
@@ -57,6 +64,15 @@ class PoliticalEventsTimeline {
         
         // Remove any existing tooltips from body
         d3.selectAll('.timeline-tooltip').remove();
+        
+        // Set container styles for proper sizing
+        this.container
+            .style('width', '100%')
+            .style('max-width', '1200px')
+            .style('margin', '0 auto')
+            .style('padding', '20px')
+            .style('box-sizing', 'border-box')
+            .style('overflow', 'visible');
         
         // Create controls container
         this.controlsContainer = this.container
@@ -73,11 +89,15 @@ class PoliticalEventsTimeline {
             .style('border-radius', '8px')
             .style('border', '1px solid #e9ecef');
         
-        // Create SVG
+        // Create SVG with responsive sizing
         this.svg = this.container
             .append('svg')
             .attr('width', this.width)
-            .attr('height', this.height);
+            .attr('height', this.height)
+            .style('max-width', '100%')
+            .style('height', 'auto')
+            .attr('viewBox', `0 0 ${this.width} ${this.height}`)
+            .attr('preserveAspectRatio', 'xMidYMid meet');
         
         // Create main group
         this.g = this.svg.append('g')
@@ -97,18 +117,18 @@ class PoliticalEventsTimeline {
             .y(d => this.yScale(d.count))
             .curve(d3.curveMonotoneX);
         
-        // Create axes with explicit tick formatting
+        // Create axes with explicit tick formatting and longer tick marks
         this.xAxis = d3.axisBottom(this.xScale)
             .tickFormat(d3.format('d'))
-            .ticks(10)
-            .tickSize(6)
-            .tickPadding(10);
+            .ticks(12)
+            .tickSize(20)
+            .tickPadding(25);
         
         this.yAxis = d3.axisLeft(this.yScale)
-            .ticks(8)
-            .tickFormat(d3.format('.0f'))
-            .tickSize(6)
-            .tickPadding(10);
+            .ticks(10)
+            .tickFormat(d3.format(',.0f'))
+            .tickSize(20)
+            .tickPadding(25);
         
         // Add axis groups
         this.xAxisGroup = this.g.append('g')
@@ -118,11 +138,7 @@ class PoliticalEventsTimeline {
         this.yAxisGroup = this.g.append('g')
             .attr('class', 'y-axis');
             
-        // Debug: Log axis group creation
-        console.log('📊 Axis groups created:', {
-            xAxisGroup: this.xAxisGroup.size(),
-            yAxisGroup: this.yAxisGroup.size()
-        });
+        // Axis groups created successfully
         
         // Create tooltip - attach to body for proper positioning
         this.tooltip = d3.select('body')
@@ -211,6 +227,17 @@ class PoliticalEventsTimeline {
                 </select>
             `);
         
+        // Event selector (initially hidden)
+        this.controlsContainer.append('div')
+            .attr('class', 'event-selector-container')
+            .style('display', 'none')
+            .html(`
+                <label style="margin-right: 10px; font-weight: 600; color: #2c3e50;">Focus on Event:</label>
+                <select id="eventSelector" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; background: white; min-width: 250px;">
+                    <option value="">📊 Full Timeline (All Years)</option>
+                </select>
+            `);
+        
         // Data smoothing toggle
         this.controlsContainer.append('div')
             .attr('class', 'smoothing-toggle-container')
@@ -234,8 +261,25 @@ class PoliticalEventsTimeline {
         d3.select('#countrySelector').on('change', (event) => {
             const selectedCountry = event.target.value;
             if (selectedCountry) {
+                this.selectedEvent = null;  // Reset event selection
+                this.viewMode = 'full';     // Reset to full view
                 this.loadCountryData(selectedCountry);
             }
+        });
+        
+        // Event selector handler
+        d3.select('#eventSelector').on('change', (event) => {
+            const selectedEventIndex = event.target.value;
+            if (selectedEventIndex === '') {
+                // Full timeline view
+                this.selectedEvent = null;
+                this.viewMode = 'full';
+            } else {
+                // 3-year focused view
+                this.selectedEvent = this.data.political_events[parseInt(selectedEventIndex)];
+                this.viewMode = 'focused';
+            }
+            this.updateVisualization();
         });
         
         // Auto-load US data on initialization
@@ -282,12 +326,55 @@ class PoliticalEventsTimeline {
             
             this.data = data;
             this.currentCountry = countryCode;
+            this.populateEventSelector();
             this.updateVisualization();
             
         } catch (error) {
             console.error('Error loading country data:', error);
             this.showError(`Failed to load data for ${countryCode}. ${error.message}`);
         }
+    }
+    
+    populateEventSelector() {
+        const eventSelector = d3.select('#eventSelector');
+        const eventContainer = d3.select('.event-selector-container');
+        
+        if (!this.data || !this.data.political_events || this.data.political_events.length === 0) {
+            // Hide event selector if no events
+            eventContainer.style('display', 'none');
+            return;
+        }
+        
+        // Show event selector
+        eventContainer.style('display', 'block');
+        
+        // Clear existing options and add default
+        eventSelector.selectAll('option').remove();
+        eventSelector.append('option')
+            .attr('value', '')
+            .text('📊 Full Timeline (All Years)');
+        
+        // Add events as options
+        this.data.political_events.forEach((event, index) => {
+            const eventDate = new Date(event.date);
+            const eventYear = eventDate.getFullYear();
+            
+            // Get severity indicator
+            const severityIcon = event.severity === 'high' ? '🔴' : 
+                                event.severity === 'medium' ? '🟡' : '🟢';
+            
+            // Format event option text
+            const eventText = `${severityIcon} ${eventYear}: ${event.event}`;
+            
+            eventSelector.append('option')
+                .attr('value', index)
+                .text(eventText);
+        });
+        
+        // Reset to full timeline
+        eventSelector.property('value', '');
+        this.selectedEvent = null;
+        this.viewMode = 'full';
     }
     
     updateVisualization() {
@@ -303,47 +390,55 @@ class PoliticalEventsTimeline {
         const maxCount = d3.max(lineData, d => d3.max(d.values, v => v.count));
         this.yScale.domain([0, maxCount * 1.1]);
         
-        // Debug: Log scale domains before axis update
-        console.log('📊 Scale domains:', {
-            xScale: this.xScale.domain(),
-            yScale: this.yScale.domain(),
-            maxCount: maxCount
-        });
+        // Update X-scale domain based on view mode
+        if (this.viewMode === 'focused' && this.selectedEvent) {
+            const eventYear = new Date(this.selectedEvent.date).getFullYear();
+            this.xScale.domain([eventYear - 1, eventYear + 1]);
+        } else {
+            this.xScale.domain([2000, 2024]);
+        }
         
-        // Update axes directly (no transition)
-        this.xAxisGroup.call(this.xAxis);
-        this.yAxisGroup.call(this.yAxis);
+        // Scale domains updated
+        
+        // Update X-axis with appropriate ticks for view mode
+        if (this.viewMode === 'focused' && this.selectedEvent) {
+            // For 3-year focused view, show all 3 years
+            const eventYear = new Date(this.selectedEvent.date).getFullYear();
+            this.xAxis.tickValues([eventYear - 1, eventYear, eventYear + 1]);
+        } else {
+            // For full timeline, use default ticks
+            this.xAxis.tickValues(null).ticks(10);
+        }
+        
+        // Update axes (lines only, we'll add tick values manually)
+        this.xAxisGroup.call(this.xAxis.tickFormat("")); // No automatic tick labels
+        this.yAxisGroup.call(this.yAxis.tickFormat("")); // No automatic tick labels
             
-        // Debug: Check if axes have text elements after calling
-        setTimeout(() => {
-            console.log('📊 Axis elements after call:', {
-                xAxisTexts: this.xAxisGroup.selectAll('text').size(),
-                yAxisTexts: this.yAxisGroup.selectAll('text').size()
-            });
-        }, 50);
+        // Manually add X-axis tick values (years)
+        this.addManualXAxisTicks();
         
-        // Style axes immediately after calling
-        this.xAxisGroup.selectAll('text')
-            .style('fill', '#2c3e50')
-            .style('font-size', '13px')
-            .style('font-weight', '600')
-            .style('font-family', 'Arial, sans-serif')
+        // Manually add Y-axis tick values (movie counts)
+        this.addManualYAxisTicks();
+            
+        // Make axis lines and tick marks more prominent
+        this.xAxisGroup.selectAll('path')
+            .style('stroke', '#2c3e50')
+            .style('stroke-width', '3px')
             .style('opacity', 1);
             
-        this.yAxisGroup.selectAll('text')
-            .style('fill', '#2c3e50')
-            .style('font-size', '13px')
-            .style('font-weight', '600')
-            .style('font-family', 'Arial, sans-serif')
+        this.yAxisGroup.selectAll('path')
+            .style('stroke', '#2c3e50')
+            .style('stroke-width', '3px')
             .style('opacity', 1);
             
-        this.xAxisGroup.selectAll('path, line')
-            .style('stroke', '#34495e')
+        // Style tick marks specifically
+        this.xAxisGroup.selectAll('line')
+            .style('stroke', '#2c3e50')
             .style('stroke-width', '2px')
             .style('opacity', 1);
             
-        this.yAxisGroup.selectAll('path, line')
-            .style('stroke', '#34495e')
+        this.yAxisGroup.selectAll('line')
+            .style('stroke', '#2c3e50')
             .style('stroke-width', '2px')
             .style('opacity', 1);
             
@@ -371,15 +466,49 @@ class PoliticalEventsTimeline {
     
     processLineData() {
         const dataSource = this.showSmoothed ? 'genre_counts' : 'raw_genre_counts';
+        let timelineData = this.data.timeline_data;
+        
+        // Handle focused 3-year view
+        if (this.viewMode === 'focused' && this.selectedEvent) {
+            const eventYear = new Date(this.selectedEvent.date).getFullYear();
+            const focusYears = [eventYear - 1, eventYear, eventYear + 1];
+            
+            // Filter timeline data to only include the 3 focus years
+            timelineData = this.data.timeline_data.filter(d => focusYears.includes(d.year));
+            
+            // If we don't have data for all 3 years, create placeholder data with 0 counts
+            focusYears.forEach(year => {
+                if (!timelineData.find(d => d.year === year)) {
+                    const placeholderData = {
+                        year: year,
+                        has_events: year === eventYear,
+                        events: year === eventYear ? [this.selectedEvent] : [],
+                        raw_genre_counts: {},
+                        genre_counts: {}
+                    };
+                    
+                    // Initialize genre counts to 0
+                    this.genres.forEach(genre => {
+                        placeholderData.raw_genre_counts[genre] = 0;
+                        placeholderData.genre_counts[genre] = 0;
+                    });
+                    
+                    timelineData.push(placeholderData);
+                }
+            });
+            
+            // Sort by year
+            timelineData.sort((a, b) => a.year - b.year);
+        }
         
         return this.genres.map(genre => ({
             genre: genre,
             color: this.colorScale(genre),
-            values: this.data.timeline_data.map(d => ({
+            values: timelineData.map(d => ({
                 year: d.year,
-                count: d[dataSource][genre],
+                count: d[dataSource][genre] || 0,
                 hasEvent: d.has_events,
-                events: d.events
+                events: d.events || []
             }))
         }));
     }
@@ -413,10 +542,35 @@ class PoliticalEventsTimeline {
             .attr('class', 'dot')
             .attr('cx', d => this.xScale(d.year))
             .attr('cy', d => this.yScale(d.count))
-            .attr('r', d => d.hasEvent ? 6 : 4)
-            .attr('fill', d => d.color)
-            .attr('stroke', d => d.hasEvent ? '#2c3e50' : 'white')
-            .attr('stroke-width', d => d.hasEvent ? 3 : 1)
+            .attr('r', d => {
+                if (this.viewMode === 'focused' && this.selectedEvent) {
+                    const eventYear = new Date(this.selectedEvent.date).getFullYear();
+                    if (d.year === eventYear) return 8; // Larger for event year
+                    return 5; // Medium for before/after years
+                }
+                return d.hasEvent ? 6 : 4; // Default sizing
+            })
+            .attr('fill', d => {
+                if (this.viewMode === 'focused' && this.selectedEvent) {
+                    const eventYear = new Date(this.selectedEvent.date).getFullYear();
+                    if (d.year === eventYear) return '#e74c3c'; // Red for event year
+                }
+                return d.color;
+            })
+            .attr('stroke', d => {
+                if (this.viewMode === 'focused' && this.selectedEvent) {
+                    const eventYear = new Date(this.selectedEvent.date).getFullYear();
+                    if (d.year === eventYear) return '#c0392b'; // Dark red outline for event year
+                }
+                return d.hasEvent ? '#2c3e50' : 'white';
+            })
+            .attr('stroke-width', d => {
+                if (this.viewMode === 'focused' && this.selectedEvent) {
+                    const eventYear = new Date(this.selectedEvent.date).getFullYear();
+                    if (d.year === eventYear) return 4; // Thicker outline for event year
+                }
+                return d.hasEvent ? 3 : 1;
+            })
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
                 this.showTooltip(event, d);
@@ -520,11 +674,92 @@ class PoliticalEventsTimeline {
             .text(d => d.severity === 'high' ? '!' : d.severity === 'medium' ? '•' : '');
     }
     
+    addManualXAxisTicks() {
+        // Remove any existing manual X-axis tick labels
+        this.g.selectAll('.manual-x-tick').remove();
+        
+        // Generate tick values based on view mode
+        let tickValues;
+        if (this.viewMode === 'focused' && this.selectedEvent) {
+            const eventYear = new Date(this.selectedEvent.date).getFullYear();
+            tickValues = [eventYear - 1, eventYear, eventYear + 1];
+        } else {
+            // Full timeline: show every 2-3 years
+            tickValues = [];
+            for (let year = 2000; year <= 2024; year += 2) {
+                tickValues.push(year);
+            }
+        }
+        
+        // Add manual tick labels
+        this.g.selectAll('.manual-x-tick')
+            .data(tickValues)
+            .enter()
+            .append('text')
+            .attr('class', 'manual-x-tick')
+            .attr('x', d => this.xScale(d))
+            .attr('y', this.innerHeight + 40) // Position below axis line
+            .attr('text-anchor', 'middle')
+            .style('fill', '#000000')
+            .style('font-size', '12px')
+            .style('font-weight', '700')
+            .style('font-family', 'Arial, sans-serif')
+            .style('opacity', 1)
+            .style('text-shadow', '1px 1px 2px rgba(255,255,255,0.8)')
+            .text(d => d);
+        
+        console.log('🔢 Added', tickValues.length, 'manual X-axis ticks:', tickValues);
+    }
+    
+    addManualYAxisTicks() {
+        // Remove any existing manual Y-axis tick labels
+        this.g.selectAll('.manual-y-tick').remove();
+        
+        // Generate tick values for Y-axis with consistent 500-unit increments
+        const yDomain = this.yScale.domain();
+        const maxValue = yDomain[1];
+        const increment = 500;
+        const tickValues = [];
+        
+        // Start at 0 and go up by 500 until we exceed maxValue
+        for (let value = 0; value <= maxValue; value += increment) {
+            tickValues.push(value);
+        }
+        
+        // If maxValue doesn't end on a clean increment, add it
+        if (maxValue % increment !== 0) {
+            tickValues.push(Math.ceil(maxValue / increment) * increment);
+        }
+        
+        // Add manual tick labels
+        this.g.selectAll('.manual-y-tick')
+            .data(tickValues)
+            .enter()
+            .append('text')
+            .attr('class', 'manual-y-tick')
+            .attr('x', -40) // Position left of axis line
+            .attr('y', d => this.yScale(d))
+            .attr('dy', '0.35em') // Center vertically
+            .attr('text-anchor', 'end')
+            .style('fill', '#000000')
+            .style('font-size', '12px')
+            .style('font-weight', '700')
+            .style('font-family', 'Arial, sans-serif')
+            .style('opacity', 1)
+            .style('text-shadow', '1px 1px 2px rgba(255,255,255,0.8)')
+            .text(d => {
+                // Format with commas for large numbers
+                return d.toLocaleString();
+            });
+        
+        console.log('🔢 Added', tickValues.length, 'manual Y-axis ticks:', tickValues);
+    }
+
     addGridLines() {
         // Remove existing grid lines
         this.g.selectAll('.grid-line').remove();
         
-        // Horizontal grid lines (Y-axis)
+        // Horizontal grid lines (Y-axis) - more visible
         const yTicks = this.yScale.ticks(8);
         this.g.selectAll('.grid-line-y')
             .data(yTicks)
@@ -535,11 +770,12 @@ class PoliticalEventsTimeline {
             .attr('x2', this.innerWidth)
             .attr('y1', d => this.yScale(d))
             .attr('y2', d => this.yScale(d))
-            .style('stroke', '#ecf0f1')
+            .style('stroke', '#bdc3c7')
             .style('stroke-width', '1px')
-            .style('opacity', 0.7);
+            .style('opacity', 0.8)
+            .style('stroke-dasharray', '3,3');
         
-        // Vertical grid lines (X-axis)
+        // Vertical grid lines (X-axis) - more visible
         const xTicks = this.xScale.ticks(12);
         this.g.selectAll('.grid-line-x')
             .data(xTicks)
@@ -550,34 +786,37 @@ class PoliticalEventsTimeline {
             .attr('x2', d => this.xScale(d))
             .attr('y1', 0)
             .attr('y2', this.innerHeight)
-            .style('stroke', '#ecf0f1')
+            .style('stroke', '#bdc3c7')
             .style('stroke-width', '1px')
-            .style('opacity', 0.5);
+            .style('opacity', 0.6)
+            .style('stroke-dasharray', '3,3');
     }
 
     updateAxisLabels() {
         // Remove existing labels
         this.g.selectAll('.axis-label').remove();
         
-        // X-axis label
+        // X-axis label (positioned lower for better visibility)
         this.g.append('text')
             .attr('class', 'axis-label')
             .attr('x', this.innerWidth / 2)
-            .attr('y', this.innerHeight + 50)
+            .attr('y', this.innerHeight + 60)
             .attr('text-anchor', 'middle')
-            .attr('font-size', '14px')
+            .attr('font-size', '16px')
             .attr('font-weight', '600')
+            .attr('fill', '#2c3e50')
             .text('Year');
         
-        // Y-axis label
+        // Y-axis label (positioned further left for better visibility)
         this.g.append('text')
             .attr('class', 'axis-label')
             .attr('transform', 'rotate(-90)')
             .attr('x', -this.innerHeight / 2)
-            .attr('y', -60)
+            .attr('y', -80)
             .attr('text-anchor', 'middle')
-            .attr('font-size', '14px')
+            .attr('font-size', '16px')
             .attr('font-weight', '600')
+            .attr('fill', '#2c3e50')
             .text('Number of Movies');
     }
     
@@ -587,6 +826,19 @@ class PoliticalEventsTimeline {
         const countryName = this.data.country.name;
         const dataType = this.showSmoothed ? 'Smoothed' : 'Raw';
         
+        let mainTitle, subtitle;
+        
+        if (this.viewMode === 'focused' && this.selectedEvent) {
+            const eventYear = new Date(this.selectedEvent.date).getFullYear();
+            const yearRange = `${eventYear - 1}-${eventYear + 1}`;
+            
+            mainTitle = `🔍 Focused View: ${this.selectedEvent.event}`;
+            subtitle = `${countryName} • ${dataType} Data • 3-Year Analysis (${yearRange})`;
+        } else {
+            mainTitle = `Political Events Impact on Cinema: ${countryName}`;
+            subtitle = `${dataType} Data • Genre Production Timeline (2000-2024)`;
+        }
+        
         this.titleGroup.append('text')
             .attr('x', this.innerWidth / 2)
             .attr('y', -50)
@@ -594,7 +846,7 @@ class PoliticalEventsTimeline {
             .attr('font-size', '18px')
             .attr('font-weight', '700')
             .attr('fill', '#2c3e50')
-            .text(`Political Events Impact on Cinema: ${countryName}`);
+            .text(mainTitle);
         
         this.titleGroup.append('text')
             .attr('x', this.innerWidth / 2)
@@ -602,7 +854,7 @@ class PoliticalEventsTimeline {
             .attr('text-anchor', 'middle')
             .attr('font-size', '13px')
             .attr('fill', '#7f8c8d')
-            .text(`${dataType} Data • Genre Production Timeline (2000-2024)`);
+            .text(subtitle);
     }
     
     updateLegends() {
