@@ -40,7 +40,6 @@ class QualityGapDashboard {
         this.data = null;
         this.filteredData = null;
         this.currentFilters = {
-            yearRange: '2010-2024',
             region: 'all',
             qualityThreshold: 2.0,
             minMovies: 50,
@@ -91,24 +90,6 @@ class QualityGapDashboard {
             .style('border-radius', '8px')
             .style('margin-bottom', '20px')
             .style('border', '1px solid #dee2e6');
-        
-        // Year Range Filter
-        const yearControl = controlsContainer.append('div').attr('class', 'control-group');
-        yearControl.append('label')
-            .style('font-weight', 'bold')
-            .style('margin-bottom', '5px')
-            .style('display', 'block')
-            .text('Year Range:');
-        yearControl.append('select')
-            .attr('id', 'yearRange')
-            .style('padding', '5px')
-            .style('border-radius', '4px')
-            .style('border', '1px solid #ddd')
-            .html(`
-                <option value="2015-2024">2015-2024 (Recent)</option>
-                <option value="2010-2024" selected>2010-2024 (Full Range)</option>
-                <option value="2020-2024">2020-2024 (COVID Era)</option>
-            `);
         
         
         // Region Filter
@@ -285,7 +266,7 @@ class QualityGapDashboard {
     
     bindFilterEvents() {
         // Bind all filter change events
-        const filters = ['yearRange', 'countryRegion', 'qualityThreshold', 'topCountries'];
+        const filters = ['countryRegion', 'qualityThreshold', 'topCountries'];
         
         filters.forEach(filterId => {
             d3.select(`#${filterId}`).on('change', () => {
@@ -297,7 +278,6 @@ class QualityGapDashboard {
     
     updateFilters() {
         this.currentFilters = {
-            yearRange: d3.select('#yearRange').property('value'),
             region: d3.select('#countryRegion').property('value'),
             qualityThreshold: parseFloat(d3.select('#qualityThreshold').property('value')),
             minMovies: 50, // Fixed for now

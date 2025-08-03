@@ -8,9 +8,11 @@ class DiversityBarChart {
         this.currentSort = 'diversity'; // 'diversity', 'movies', 'rating', 'name'
         
         // Dimensions
-        this.margin = { top: 60, right: 200, bottom: 120, left: 200 };
+        this.margin = { top: 80, right: 200, bottom: 100, left: 220 };
         this.width = 1200 - this.margin.left - this.margin.right;
         this.height = 800 - this.margin.top - this.margin.bottom;
+        this.innerWidth = this.width;
+        this.innerHeight = this.height;
         
         // Scales
         this.xScale = d3.scaleLinear().range([0, this.width]);
@@ -71,17 +73,17 @@ class DiversityBarChart {
             .style('max-width', '300px')
             .style('line-height', '1.4');
         
-        // Add title with better positioning
+        // Add title with English text and proper positioning
         this.g.append('text')
             .attr('class', 'chart-title')
-            .attr('x', this.innerWidth / 2)
-            .attr('y', -40)
+            .attr('x', this.width / 2)
+            .attr('y', -10)
             .attr('text-anchor', 'middle')
-            .style('font-size', '28px')
-            .style('font-weight', 'bold')
+            .style('font-size', '20px')
+            .style('font-weight', '700')
             .style('fill', '#2c3e50')
             .style('font-family', 'Inter, sans-serif')
-            .text('🎬 Cinema Genre Diversity by Country');
+            .text('Cinema Genre Diversity by Country');
         
         console.log('✅ Bar chart structure created');
     }
@@ -105,7 +107,8 @@ class DiversityBarChart {
         sortDiv.append('label')
             .text('📊 Sort by: ')
             .style('font-weight', 'bold')
-            .style('margin-right', '10px');
+            .style('margin-right', '10px')
+            .style('font-family', 'Inter, sans-serif');
         
         const sortSelect = sortDiv.append('select')
             .style('padding', '8px 12px')
@@ -140,6 +143,7 @@ class DiversityBarChart {
             .style('border-radius', '25px')
             .style('cursor', 'pointer')
             .style('font-weight', 'bold')
+            .style('font-family', 'Inter, sans-serif')
             .on('click', () => this.showInfo());
     }
     
@@ -317,30 +321,30 @@ class DiversityBarChart {
         // Remove old labels
         this.g.selectAll('.axis-label').remove();
         
-        // X axis label
+        // X axis label - English with proper positioning
         let xLabel = 'Diversity Index (Shannon)';
         if (this.currentSort === 'movies') xLabel = 'Number of Movies';
         else if (this.currentSort === 'rating') xLabel = 'Average Rating';
         
         this.g.append('text')
-            .attr('class', 'axis-label')
-            .attr('x', this.innerWidth / 2)
-            .attr('y', this.innerHeight + 60) // Match political timeline positioning exactly
+            .attr('class', 'axis-label x-axis-label')
+            .attr('x', this.width / 2)
+            .attr('y', this.height + 90)
             .attr('text-anchor', 'middle')
-            .style('font-size', '16px')
+            .style('font-size', '14px')
             .style('font-weight', '600')
             .style('fill', '#2c3e50')
             .style('font-family', 'Inter, sans-serif')
             .text(xLabel);
         
-        // Y axis label
+        // Y axis label - English with proper positioning
         this.g.append('text')
-            .attr('class', 'axis-label')
+            .attr('class', 'axis-label y-axis-label')
             .attr('transform', 'rotate(-90)')
-            .attr('x', -this.innerHeight / 2)
-            .attr('y', -80) // Adjusted from -100 to -80 for better positioning
+            .attr('x', -this.height / 2)
+            .attr('y', -150)
             .attr('text-anchor', 'middle')
-            .style('font-size', '16px')
+            .style('font-size', '14px')
             .style('font-weight', '600')
             .style('fill', '#2c3e50')
             .style('font-family', 'Inter, sans-serif')
@@ -631,7 +635,7 @@ class DiversityBarChart {
                     { icon: '🎭', text: `<strong>Bar Length:</strong> Genre diversity index (Shannon entropy)` },
                     { icon: '🌈', text: `<strong>Bar Color:</strong> Higher diversity = brighter/warmer colors` },
                     { icon: '📊', text: `<strong>Range:</strong> ${minValue.toFixed(2)} to ${maxValue.toFixed(2)}` },
-                    { icon: '🏆', text: `<strong>Top Diverse:</strong> ${this.data[0]?.country_name} (${this.data[0]?.diversity_index.toFixed(2)})` },
+                    { icon: '🏆', text: `<strong>Most Diverse:</strong> ${this.data[0]?.country_name} (${this.data[0]?.diversity_index.toFixed(2)})` },
                     { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = more balanced genre distribution` }
                 ];
             
@@ -641,7 +645,7 @@ class DiversityBarChart {
                     { icon: '🌈', text: `<strong>Bar Color:</strong> Still shows diversity level for comparison` },
                     { icon: '📊', text: `<strong>Range:</strong> ${minValue.toLocaleString()} to ${maxValue.toLocaleString()} movies` },
                     { icon: '🏆', text: `<strong>Most Productive:</strong> ${this.data[0]?.country_name} (${this.data[0]?.movie_count.toLocaleString()})` },
-                    { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = larger film industry` }
+                    { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = larger cinema industry` }
                 ];
             
             case 'rating':
@@ -668,11 +672,11 @@ class DiversityBarChart {
     }
     
     showInfo() {
-        alert(`📊 Cinema Diversity Bar Chart
+        alert(`📊 Interactive Cinema Diversity Chart
 
-🎯 What it shows:
-• Bar length = Value (diversity/movies/rating)
-• Color intensity = Diversity level
+🎯 What the chart shows:
+• Bar length = value (diversity/movies/rating)
+• Color intensity = diversity level
 • Interactive tooltips with details
 
 🔧 Controls:
@@ -680,8 +684,10 @@ class DiversityBarChart {
 • Hover for country details
 • Smooth animations
 
-📈 Data covers 47 countries from 2000-2024`);
+📈 Data includes 47+ countries from 2000-2024`);
     }
+
+
     
     showError(message) {
         this.container.html(`
