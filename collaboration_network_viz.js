@@ -8,8 +8,10 @@ class CollaborationNetwork2D {
         this.minCollaborations = 10;
         this.collaborationType = 'all';
         this.initialized = false;
-        this.nodeScale = 1.0;  // Add node scale property
+        this.nodeScale = 1.3;  // Add node scale property
         this.tooltipHideTimeout = null;  // For stable tooltip behavior
+        this.selectedNode = null;  // Currently selected node
+        this.selectedLinks = [];  // Currently highlighted links
         
         this.colors = {
             'north_america': '#2E86AB',
@@ -71,17 +73,29 @@ class CollaborationNetwork2D {
             this.tooltip = null;
         }
         
-        // Get container
-        const container = document.getElementById('collaboration-network-container');
+        // Get container (check both possible IDs for different HTML files)
+        let container = document.getElementById('collaboration-network-container');
+        let svgId = '#collaboration-network-svg';
+        let loadingId = 'collaboration-loading-indicator';
+        
         if (!container) {
-            this.log('❌ Container collaboration-network-container not found');
-            throw new Error('Container collaboration-network-container not found');
+            container = document.getElementById('network-container');
+            svgId = '#network-svg';
+            loadingId = 'loading-indicator';
         }
+        
+        if (!container) {
+            this.log('❌ Container not found (tried both collaboration-network-container and network-container)');
+            throw new Error('Container not found');
+        }
+        
+        // Store the SVG selector for later use
+        this.svgSelector = svgId;
         
         this.log(`✅ Container found: ${container.clientWidth}x${container.clientHeight}`);
         
         // Hide loading
-        const loading = document.getElementById('collaboration-loading-indicator');
+        const loading = document.getElementById(loadingId);
         if (loading) {
             loading.style.display = 'none';
         }
@@ -90,11 +104,19 @@ class CollaborationNetwork2D {
         const width = container.clientWidth;
         const height = container.clientHeight;
         
-        const svg = d3.select('#collaboration-network-svg')
+        const svg = d3.select(this.svgSelector)
             .attr('width', width)
             .attr('height', height);
         
         svg.selectAll('*').remove(); // Clear
+        
+        // Add click handler to clear selection when clicking empty space
+        svg.on('click', (event) => {
+            // Only clear if we didn't click on a node (event.target is svg itself)
+            if (event.target.tagName === 'svg') {
+                this.clearSelection();
+            }
+        });
         
         // Get current network data
         const currentNetwork = this.networkData.networks[this.collaborationType];
@@ -162,6 +184,7 @@ class CollaborationNetwork2D {
         
         // Store references for dynamic updates
         this.currentNodes = node;
+        this.currentLinks = link;
         this.currentSimulation = simulation;
         
         // Add regional labels
@@ -211,7 +234,11 @@ class CollaborationNetwork2D {
                 // Add slight delay before hiding to prevent flickering
                 this.tooltipHideTimeout = setTimeout(() => {
                     this.hideTooltip();
-                }, 150);
+                }, 300);
+            })
+            .on('click', (event, d) => {
+                this.selectNode(d);
+                event.stopPropagation();
             });
         
         // Simulation tick
@@ -579,9 +606,109 @@ class CollaborationNetwork2D {
         }
     }
 
+    selectNode(nodeData) {
+        // Clear previous selection
+        this.clearSelection();
+        
+        // Set new selection
+        this.selectedNode = nodeData;
+        
+        // Highlight selected node with yellow border and thicker stroke
+        this.currentNodes
+            .attr('stroke-width', n => n.id === nodeData.id ? 4 : 2)
+            .attr('stroke', n => n.id === nodeData.id ? '#ffff00' : '#fff');
+        
+        // Find and highlight connected links
+        const regionalData = this.aggregateByRegions(this.networkData.networks[this.collaborationType], this.minCollaborations);
+        const connectedLinks = regionalData.links.filter(link => 
+            link.source === nodeData.id || link.target === nodeData.id
+        );
+        
+        // Highlight the connected links
+        this.currentLinks
+            .attr('stroke-opacity', d => {
+                const isConnected = d.source.id === nodeData.id || d.target.id === nodeData.id;
+                if (isConnected) {
+                    return 1.0;  // Full opacity for connected links
+                } else {
+                    return d.weight > 500 ? 0.3 : d.weight > 200 ? 0.25 : d.weight > 100 ? 0.2 : 0.1;  // Dim other links
+                }
+            })
+            .attr('stroke-width', d => {
+                const isConnected = d.source.id === nodeData.id || d.target.id === nodeData.id;
+                if (isConnected) {
+                    return Math.max(6, d.weight > 500 ? 10 : d.weight > 200 ? 7 : d.weight > 100 ? 5 : 3);  // Thicker for connected
+                } else {
+                    return d.weight > 500 ? 4 : d.weight > 200 ? 2.5 : d.weight > 100 ? 1.5 : 0.8;  // Thinner for others
+                }
+            })
+            .attr('stroke', d => {
+                const isConnected = d.source.id === nodeData.id || d.target.id === nodeData.id;
+                if (isConnected) {
+                    return '#ffff00';  // Yellow for connected links
+                } else {
+                    return d.weight > 500 ? '#ffffff' : d.weight > 200 ? '#dddddd' : d.weight > 100 ? '#aaaaaa' : '#777777';
+                }
+            });
+        
+        // Dim non-connected nodes
+        this.currentNodes
+            .attr('opacity', n => {
+                if (n.id === nodeData.id) return 1.0;  // Selected node full opacity
+                const isConnected = connectedLinks.some(link => 
+                    link.source === n.id || link.target === n.id
+                );
+                return isConnected ? 1.0 : 0.3;  // Connected nodes full, others dimmed
+            });
+        
+        this.log(`🎯 Selected node: ${nodeData.name} with ${connectedLinks.length} connections`);
+    }
+
+    clearSelection() {
+        this.selectedNode = null;
+        this.selectedLinks = [];
+        
+        if (this.currentNodes && this.currentLinks) {
+            // Reset node appearance
+            this.currentNodes
+                .attr('stroke-width', 2)
+                .attr('stroke', '#fff')
+                .attr('opacity', 1.0);
+            
+            // Reset link appearance to original state
+            this.currentLinks
+                .attr('stroke', d => {
+                    if (d.weight > 500) return '#ffffff';
+                    if (d.weight > 200) return '#dddddd';
+                    if (d.weight > 100) return '#aaaaaa';
+                    return '#777777';
+                })
+                .attr('stroke-opacity', d => {
+                    if (d.weight > 500) return 0.9;
+                    if (d.weight > 200) return 0.8;
+                    if (d.weight > 100) return 0.6;
+                    return 0.4;
+                })
+                .attr('stroke-width', d => {
+                    if (d.weight > 500) return 8;
+                    if (d.weight > 200) return 5;
+                    if (d.weight > 100) return 3;
+                    return 1.5;
+                });
+        }
+        
+        this.log('🔄 Selection cleared');
+    }
+
     createLegend() {
-        const legendContainer = document.getElementById('collaboration-legend');
-        const legendContent = document.getElementById('collaboration-legend-content');
+        // Check for both possible legend IDs
+        let legendContainer = document.getElementById('collaboration-legend');
+        let legendContent = document.getElementById('collaboration-legend-content');
+        
+        if (!legendContainer) {
+            legendContainer = document.getElementById('legend');
+            legendContent = document.getElementById('legend-content');
+        }
         
         if (!legendContainer || !legendContent) {
             this.log('⚠️ Legend containers not found');
@@ -623,7 +750,12 @@ class CollaborationNetwork2D {
     }
     
     showError(message) {
-        const loading = document.getElementById('collaboration-loading-indicator');
+        // Check for both possible loading indicator IDs
+        let loading = document.getElementById('collaboration-loading-indicator');
+        if (!loading) {
+            loading = document.getElementById('loading-indicator');
+        }
+        
         if (loading) {
             loading.innerHTML = `
                 <div style="color: #fff; text-align: center;">
@@ -653,4 +785,4 @@ window.initCollaborationNetwork = function() {
 };
 
 // Add version info
-console.log('📦 CollaborationNetwork v7.0 loaded - STABLE HOVER TOOLTIPS + LEGEND ONLY');
+console.log('📦 CollaborationNetwork v8.1 loaded - CROSS-PLATFORM COMPATIBILITY + ALL FEATURES');
