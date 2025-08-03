@@ -179,16 +179,22 @@
             padding: 2rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin: 2rem 0;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .chart-placeholder {
-            height: 600px;
+            min-height: 800px;
             background: #f8f9fa;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 2px dashed #dee2e6;
+            width: 100%;
+            overflow: visible;
         }
         
         .placeholder-content {
@@ -560,9 +566,9 @@
                     <h4 style="color: #000000 !important;">📊 Interactive Chart</h4>
                     <p style="color: #000000 !important; font-weight: 500;">Sortable Cinema Diversity Analysis</p>
                 </div>
-                <div class="nav-item" data-viz="influence">
-                    <h4 style="color: #000000 !important;">🌊 Cultural Influence Flows</h4>
-                    <p style="color: #000000 !important; font-weight: 500;">Cinema Influence Between Nations</p>
+                <div class="nav-item" data-viz="quality-gap">
+                    <h4 style="color: #000000 !important;">📊 Quality Gap Dashboard</h4>
+                    <p style="color: #000000 !important; font-weight: 500;">Movie Quantity vs Quality Analysis</p>
                 </div>
                 <div class="nav-item" data-viz="quality">
                     <h4 style="color: #000000 !important;">⚖️ National Quality Gap</h4>
@@ -604,16 +610,10 @@
                     </div>
                 </div>
                 
-                <div class="insights">
-                    <h4>Chart Features:</h4>
-                    <ul>
-                        <li>📊 <strong>Sortable Data:</strong> Sort by diversity, movie count, rating, or name</li>
-                        <li>🎨 <strong>Color Coding:</strong> Bar colors reflect diversity levels</li>
-                        <li>🖱️ <strong>Interactive Tooltips:</strong> Rich details on hover</li>
-                        <li>📈 <strong>Value Labels:</strong> Precise numbers displayed on bars</li>
-                        <li>✨ <strong>Smooth Animations:</strong> Beautiful transitions between views</li>
-                        <li>🏆 <strong>Coverage:</strong> 47 countries with comprehensive data (2000-2024)</li>
-                    </ul>
+                <!-- Dynamic Legend Container - Will be populated by JavaScript based on current sort -->
+                <div id="diversity-legend-container" class="insights">
+                    <h4>📊 Loading Legend...</h4>
+                    <p style="color: #666; font-style: italic;">Legend will update based on your selected sorting option</p>
                 </div>
                 
                 <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid #2196f3;">
@@ -627,70 +627,75 @@
         </div>
     </section>
     
-    <!-- Visualization 2: Cultural Influence Flows -->
-    <section id="viz-influence" class="viz-section">
+    <!-- Visualization 2: Quality Gap Dashboard -->
+    <section id="viz-quality-gap" class="viz-section">
         <div class="container">
             <div class="viz-header">
-                <h2 class="viz-title" style="color: #000000 !important;">🌊 Cultural Influence Flows</h2>
+                <h2 class="viz-title" style="color: #000000 !important;">📊 Quality Gap Dashboard</h2>
                 <p class="viz-description" style="color: #000000 !important; font-weight: 500;">
-                    A dynamic flow diagram showing how cinematic influence travels between countries. 
-                    Producer countries on the left, consumer countries on the right, with flow thickness 
-                    indicating influence strength and color showing dominant genres.
+                    A comprehensive multi-chart dashboard analyzing the relationship between movie quantity and quality across different countries.
+                    Explore scatter plots revealing quantity vs quality patterns, rankings of quality leaders, and trends showing how the 
+                    "quality gap" has evolved over time. Interactive filters allow deep exploration of patterns by year, genre, and region.
                 </p>
                 
                 <div class="research-q" style="color: #000000 !important; font-weight: 500;">
-                    <strong>Research Question:</strong> How does cinematic influence flow between countries, and who are the cultural power centers?
+                    <strong>Research Question:</strong> What is the relationship between movie quantity and quality across different countries, and how has this 'quality gap' evolved over time?
                 </div>
             </div>
             
             <div class="chart-container">
-                <div class="chart-controls">
-                    <div class="control-group">
-                        <label for="flowMetric">Flow Metric:</label>
-                        <select id="flowMetric">
-                            <option value="popularity">Popularity (Votes)</option>
-                            <option value="quality">Quality (Ratings)</option>
-                            <option value="volume">Volume (Movie Count)</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="genreFilter">Genre Focus:</label>
-                        <select id="genreFilter">
-                            <option value="all">All Genres</option>
-                            <option value="drama">Drama</option>
-                            <option value="action">Action</option>
-                            <option value="comedy">Comedy</option>
-                            <option value="documentary">Documentary</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="topCountries">Show Top:</label>
-                        <select id="topCountries">
-                            <option value="20">20 Countries</option>
-                            <option value="15">15 Countries</option>
-                            <option value="10">10 Countries</option>
-                            <option value="5">5 Countries</option>
-                        </select>
-                    </div>
-                </div>
-                
                 <div class="chart-placeholder">
-                    <div class="placeholder-content">
-                        <h4>🚧 Visualization Under Development</h4>
-                        <p>Sankey/Chord diagram showing cultural influence flows</p>
-                        <p><em>Data processing required: title.akas.tsv + title.ratings.tsv + regional popularity analysis</em></p>
+                    <div style="text-align: center; padding: 50px; color: #666;">
+                        <h4>📊 Loading Quality Gap Dashboard...</h4>
+                        <p>Preparing multi-chart analysis of quantity vs quality patterns</p>
                     </div>
                 </div>
                 
                 <div class="insights">
-                    <h4>Expected Insights:</h4>
-                    <ul>
-                        <li>🇺🇸 USA dominates global influence but not in all genres</li>
-                        <li>🌏 Regional power centers: Bollywood, Nollywood, K-cinema</li>
-                        <li>📊 Language barriers create distinct influence clusters</li>
-                        <li>🎭 Different genres follow different influence patterns</li>
-                        <li>⚡ Digital platforms are reshaping traditional flows</li>
-                    </ul>
+                    <h4>🔍 Research Insights & Expected Patterns:</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h5>🎭 Quality vs Quantity Trade-offs:</h5>
+                            <ul>
+                                <li><strong>🇺🇸 Hollywood Effect:</strong> High quantity, mixed quality spectrum</li>
+                                <li><strong>🇫🇷 Art House Pattern:</strong> Lower quantity, higher average quality</li>
+                                <li><strong>🇮🇳 Bollywood Scale:</strong> Massive production, wide quality range</li>
+                                <li><strong>🇰🇷 K-cinema Rise:</strong> Moderate quantity, improving quality trends</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>🌍 Regional & Temporal Patterns:</h5>
+                            <ul>
+                                <li><strong>📈 Streaming Era Impact:</strong> Quality improvements post-2015</li>
+                                <li><strong>🎨 Genre Effects:</strong> Documentaries and dramas show higher ratings</li>
+                                <li><strong>💰 Budget Correlation:</strong> Higher budgets don't guarantee quality</li>
+                                <li><strong>🏆 Awards Impact:</strong> Festival circuits elevate national averages</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #27ae60;">
+                        <h5 style="color: #27ae60; margin-bottom: 1rem;">🎯 Dashboard Features:</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <p><strong>📈 Scatter Plot:</strong> Movie quantity vs average quality by country, with region-based color coding and interactive tooltips.</p>
+                                <p><strong>🏆 Quality Leaders:</strong> Bar chart ranking countries by average rating, showing the quality champions.</p>
+                            </div>
+                            <div>
+                                <p><strong>📊 Trend Analysis:</strong> Timeline showing quality evolution patterns and industry maturation.</p>
+                                <p><strong>🎛️ Interactive Filters:</strong> Year range, genre focus, region selection, quality thresholds, and country limits.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid #ffc107;">
+                        <h5 style="color: #856404; margin-bottom: 0.5rem;">📊 Data Processing Status</h5>
+                        <p style="color: #856404; margin: 0;">
+                            <strong>To generate this dashboard:</strong> Run <code style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">python run_quality_gap_dashboard.py</code> 
+                            to process IMDb data and create the interactive dashboard. This analyzes movie quantity vs quality relationships across 30+ countries 
+                            with rich filtering options and comparative metrics.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -715,49 +720,38 @@
             <div class="chart-container">
                 <div class="chart-controls">
                     <div class="control-group">
-                        <label for="inequalityMetric">Inequality Metric:</label>
-                        <select id="inequalityMetric">
-                            <option value="gini">Gini Coefficient</option>
-                            <option value="income-ratio">Income Ratio (90/10)</option>
-                            <option value="wealth-gap">Wealth Gap Index</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="qualityMetric">Quality Metric:</label>
-                        <select id="qualityMetric">
-                            <option value="imdb-rating">IMDb Rating</option>
-                            <option value="weighted-rating">Weighted Rating</option>
-                            <option value="critic-score">Critic Score</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="countryGroup">Country Group:</label>
+                        <label for="countryGroup">Filter Countries:</label>
                         <select id="countryGroup">
                             <option value="all">All Countries</option>
-                            <option value="developed">Developed</option>
-                            <option value="developing">Developing</option>
-                            <option value="high-production">High Production</option>
+                            <option value="developed">Developed Countries</option>
+                            <option value="developing">Developing Countries</option>
+                            <option value="high-production">High Production (100+ films)</option>
                         </select>
                     </div>
                 </div>
                 
-                <div class="chart-placeholder">
-                    <div class="placeholder-content">
-                        <h4>🚧 Visualization Under Development</h4>
-                        <p>Violin plots showing quality distribution vs inequality</p>
-                        <p><em>Data processing required: title.ratings.tsv + title.akas.tsv + World Bank inequality data</em></p>
+                <!-- Visualization Explanation -->
+                <div class="viz-explanation" style="background: #f8f9fa; border-left: 4px solid #4a90e2; padding: 20px; margin: 20px 0; font-size: 14px; line-height: 1.6;">
+                    <h4 style="color: #2c3e50; margin-bottom: 12px; font-size: 16px;">📊 How to Read This Visualization</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <p style="margin-bottom: 8px;"><strong>🎻 Violin Shapes:</strong> Show the distribution of movie ratings for each country. Wider areas = more movies at that rating level.</p>
+                            <p style="margin-bottom: 8px;"><strong>🟥→🟦 Colors:</strong> Countries are colored by their Gini coefficient (economic inequality). Red = high inequality, Blue = low inequality.</p>
+                        </div>
+                        <div>
+                            <p style="margin-bottom: 8px;"><strong>📦 Box Plots:</strong> White boxes show quartiles (25%-75%), black lines show medians, red dots show mean ratings.</p>
+                            <p style="margin-bottom: 8px;"><strong>📈 Arrangement:</strong> Countries are ordered from highest inequality (left) to lowest inequality (right).</p>
+                        </div>
                     </div>
+                    <p style="margin-top: 12px; font-style: italic; color: #666;"><strong>Key Question:</strong> Do countries with higher economic inequality show wider gaps in movie quality? Look for wider violin shapes in red countries vs. narrow shapes in blue countries.</p>
                 </div>
                 
-                <div class="insights">
-                    <h4>Expected Insights:</h4>
-                    <ul>
-                        <li>📈 Higher inequality correlates with wider quality gaps</li>
-                        <li>🎬 "Elite cinema" vs "mass cinema" clearly visible in unequal societies</li>
-                        <li>🌍 Nordic countries show narrow, high-quality distributions</li>
-                        <li>💡 Some countries defy the pattern - cultural factors matter</li>
-                        <li>📊 Quality gaps are genre-specific</li>
-                    </ul>
+                <div class="chart-placeholder" id="quality-gap-chart">
+                    <div class="loading-indicator" style="text-align: center; padding: 100px; color: #666;">
+                        <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #e9ecef; border-top: 4px solid #4a90e2; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <p style="margin-top: 20px;">Loading Quality Gap Visualization...</p>
+                        <p style="font-size: 14px; opacity: 0.8;">Processing IMDb data for violin plots...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -914,6 +908,7 @@
     <script src="diversity_bar_chart.js"></script>
     <script src="political_events_timeline.js"></script>
     <script src="collaboration_network_viz.js?v=7"></script>
+    <script src="quality_gap_dashboard_viz.js"></script>
     
     <!-- Main JavaScript -->
     <script>
@@ -971,6 +966,30 @@
                                     }
                                 }
                             }, 300);
+                        }
+                        
+                        // Initialize quality gap dashboard if needed
+                        if (vizId === 'quality-gap') {
+                            console.log('🎯 Tab clicked: quality-gap');
+                            
+                            // Make sure container exists before trying to initialize
+                            setTimeout(() => {
+                                const container = document.querySelector('#viz-quality-gap .chart-placeholder');
+                                if (!container) {
+                                    console.error('❌ Quality gap container not found yet, retrying...');
+                                    setTimeout(() => {
+                                        if (typeof window.initQualityGapDashboard === 'function') {
+                                            window.initQualityGapDashboard();
+                                        }
+                                    }, 500);
+                                } else {
+                                    if (typeof window.initQualityGapDashboard === 'function') {
+                                        window.initQualityGapDashboard();
+                                    } else {
+                                        console.error('❌ initQualityGapDashboard function not found');
+                                    }
+                                }
+                            }, 100);
                         }
                         
                         // Update progress bar
@@ -1033,5 +1052,8 @@
         `;
         document.head.appendChild(style);
     </script>
+    
+    <!-- Quality Gap Visualization -->
+    <script src="quality_gap_viz.js"></script>
 </body>
 </html>
