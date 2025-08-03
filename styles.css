@@ -1087,8 +1087,173 @@ input:focus {
     font-family: var(--font-family) !important;
     text-shadow: none !important;
     font-weight: 500 !important;
-    fill: var(--gray-800) !important;
+    fill: var(--dark-color) !important;
     transition: all 0.2s ease;
+}
+
+/* Political Events Timeline Axes Styling - MAXIMUM VISIBILITY */
+#political-timeline-container .x-axis text,
+#political-timeline-container .y-axis text {
+    fill: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8) !important;
+    stroke: none !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+#political-timeline-container .x-axis text {
+    text-anchor: middle !important;
+}
+
+#political-timeline-container .y-axis text {
+    text-anchor: end !important;
+}
+
+/* Force tick marks to be visible */
+#political-timeline-container .x-axis line,
+#political-timeline-container .y-axis line {
+    stroke: #000000 !important;
+    stroke-width: 2px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Manual tick labels - CLEAN AND VISIBLE */
+#political-timeline-container .manual-x-tick,
+#political-timeline-container .manual-y-tick {
+    fill: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8) !important;
+    stroke: none !important;
+    visibility: visible !important;
+    display: block !important;
+    pointer-events: none !important;
+}
+
+#political-timeline-container .x-axis path,
+#political-timeline-container .y-axis path {
+    stroke: var(--dark-color) !important;
+    stroke-width: 3px !important;
+    opacity: 1 !important;
+}
+
+#political-timeline-container .x-axis line,
+#political-timeline-container .y-axis line {
+    stroke: var(--dark-color) !important;
+    stroke-width: 2px !important;
+    opacity: 1 !important;
+}
+
+/* Political Timeline Container - Responsive Layout */
+#political-timeline-container {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    min-height: 900px !important;
+}
+
+#political-timeline-container svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* FORCE BLACK TEXT - Maximum Specificity Override */
+section#viz-timeline div.container div.viz-header p.viz-description,
+section#viz-timeline .viz-header .viz-description,
+section#viz-timeline .viz-description,
+.viz-section .viz-description,
+#viz-timeline p.viz-description {
+    color: #000000 !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    text-shadow: none !important;
+}
+
+section#viz-timeline div.container div.viz-header h2.viz-title,
+section#viz-timeline .viz-header .viz-title,
+section#viz-timeline .viz-title,
+.viz-section .viz-title,
+#viz-timeline h2.viz-title {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+section#viz-timeline div.container div.viz-header div.research-q,
+section#viz-timeline .viz-header .research-q,
+section#viz-timeline .research-q,
+.viz-section .research-q,
+#viz-timeline .research-q {
+    color: #000000 !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+}
+
+/* GLOBAL BLACK TEXT ENFORCEMENT - All Visualization Sections */
+.global-hero h1,
+.global-hero p,
+.global-hero h3,
+.hero-title,
+.hero-subtitle,
+.research-question h3,
+.research-question p,
+.nav-item h4,
+.nav-item p,
+.viz-section .viz-title,
+.viz-section .viz-description,
+.viz-section .research-q,
+.viz-section h2,
+.viz-section h3,
+.viz-section h4,
+.viz-section p,
+section.viz-section h2,
+section.viz-section h3,
+section.viz-section h4,
+section.viz-section p,
+section.viz-section div p,
+#viz-timeline p,
+#viz-diversity p,
+#viz-influence p,
+#viz-quality p,
+#viz-collaboration p,
+.viz-header .viz-title,
+.viz-header .viz-description,
+.viz-header .research-q,
+div.viz-header h2,
+div.viz-header p,
+div.viz-header div {
+    color: #000000 !important;
+    text-shadow: none !important;
+    font-weight: 500 !important;
+}
+
+/* Headers specifically - make them bold */
+.viz-section h2,
+.viz-section h3,
+.viz-section h4,
+section.viz-section h2,
+section.viz-section h3,
+section.viz-section h4,
+.global-hero h1,
+.global-hero h3,
+.nav-item h4,
+.viz-title {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
 }
 
 .chart .color-legend text:hover {
