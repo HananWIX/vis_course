@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "RU",
+    "name": "Russia"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 499,
+        "Documentary": 37,
+        "Comedy": 308,
+        "Action": 128,
+        "Thriller": 120
+      },
+      "raw_genre_counts": {
+        "Drama": 499,
+        "Documentary": 37,
+        "Comedy": 308,
+        "Action": 128,
+        "Thriller": 120
+      },
+      "total_movies": 812,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 527,
+        "Documentary": 40,
+        "Comedy": 352,
+        "Action": 164,
+        "Thriller": 117
+      },
+      "raw_genre_counts": {
+        "Drama": 527,
+        "Documentary": 40,
+        "Comedy": 352,
+        "Action": 164,
+        "Thriller": 117
+      },
+      "total_movies": 881,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 530.3,
+        "Documentary": 50.3,
+        "Comedy": 333.7,
+        "Action": 154.0,
+        "Thriller": 120.7
+      },
+      "raw_genre_counts": {
+        "Drama": 565,
+        "Documentary": 74,
+        "Comedy": 341,
+        "Action": 170,
+        "Thriller": 125
+      },
+      "total_movies": 929,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 548.0,
+        "Documentary": 66.3,
+        "Comedy": 358.0,
+        "Action": 167.0,
+        "Thriller": 122.0
+      },
+      "raw_genre_counts": {
+        "Drama": 552,
+        "Documentary": 85,
+        "Comedy": 381,
+        "Action": 167,
+        "Thriller": 124
+      },
+      "total_movies": 952,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 581.3,
+        "Documentary": 81.3,
+        "Comedy": 373.7,
+        "Action": 174.7,
+        "Thriller": 126.3
+      },
+      "raw_genre_counts": {
+        "Drama": 627,
+        "Documentary": 85,
+        "Comedy": 399,
+        "Action": 187,
+        "Thriller": 130
+      },
+      "total_movies": 1076,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 635.0,
+        "Documentary": 87.3,
+        "Comedy": 405.0,
+        "Action": 175.7,
+        "Thriller": 128.3
+      },
+      "raw_genre_counts": {
+        "Drama": 726,
+        "Documentary": 92,
+        "Comedy": 435,
+        "Action": 173,
+        "Thriller": 131
+      },
+      "total_movies": 1162,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 710.7,
+        "Documentary": 97.0,
+        "Comedy": 439.3,
+        "Action": 185.0,
+        "Thriller": 157.0
+      },
+      "raw_genre_counts": {
+        "Drama": 779,
+        "Documentary": 114,
+        "Comedy": 484,
+        "Action": 195,
+        "Thriller": 210
+      },
+      "total_movies": 1349,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 772.7,
+        "Documentary": 112.7,
+        "Comedy": 466.3,
+        "Action": 187.3,
+        "Thriller": 182.0
+      },
+      "raw_genre_counts": {
+        "Drama": 813,
+        "Documentary": 132,
+        "Comedy": 480,
+        "Action": 194,
+        "Thriller": 205
+      },
+      "total_movies": 1391,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 816.0,
+        "Documentary": 127.3,
+        "Comedy": 480.3,
+        "Action": 205.0,
+        "Thriller": 205.0
+      },
+      "raw_genre_counts": {
+        "Drama": 856,
+        "Documentary": 136,
+        "Comedy": 477,
+        "Action": 226,
+        "Thriller": 200
+      },
+      "total_movies": 1447,
+      "events": [
+        {
+          "year": 2008,
+          "date": "2008-08-08",
+          "event": "Georgia War",
+          "type": "war",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 850.3,
+        "Documentary": 135.7,
+        "Comedy": 488.7,
+        "Action": 226.3,
+        "Thriller": 210.7
+      },
+      "raw_genre_counts": {
+        "Drama": 882,
+        "Documentary": 139,
+        "Comedy": 509,
+        "Action": 259,
+        "Thriller": 227
+      },
+      "total_movies": 1546,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 883.0,
+        "Documentary": 156.0,
+        "Comedy": 498.0,
+        "Action": 255.3,
+        "Thriller": 220.7
+      },
+      "raw_genre_counts": {
+        "Drama": 911,
+        "Documentary": 193,
+        "Comedy": 508,
+        "Action": 281,
+        "Thriller": 235
+      },
+      "total_movies": 1558,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 914.0,
+        "Documentary": 171.3,
+        "Comedy": 527.0,
+        "Action": 274.0,
+        "Thriller": 231.7
+      },
+      "raw_genre_counts": {
+        "Drama": 949,
+        "Documentary": 182,
+        "Comedy": 564,
+        "Action": 282,
+        "Thriller": 233
+      },
+      "total_movies": 1632,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 943.7,
+        "Documentary": 200.3,
+        "Comedy": 543.7,
+        "Action": 282.3,
+        "Thriller": 252.3
+      },
+      "raw_genre_counts": {
+        "Drama": 971,
+        "Documentary": 226,
+        "Comedy": 559,
+        "Action": 284,
+        "Thriller": 289
+      },
+      "total_movies": 1758,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 984.7,
+        "Documentary": 213.0,
+        "Comedy": 571.7,
+        "Action": 294.0,
+        "Thriller": 277.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1034,
+        "Documentary": 231,
+        "Comedy": 592,
+        "Action": 316,
+        "Thriller": 309
+      },
+      "total_movies": 1843,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 1024.0,
+        "Documentary": 234.3,
+        "Comedy": 587.0,
+        "Action": 309.0,
+        "Thriller": 300.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1067,
+        "Documentary": 246,
+        "Comedy": 610,
+        "Action": 327,
+        "Thriller": 304
+      },
+      "total_movies": 1921,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-03-18",
+          "event": "Crimea Annexation",
+          "type": "territorial_conflict",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 1055.3,
+        "Documentary": 241.0,
+        "Comedy": 596.3,
+        "Action": 325.3,
+        "Thriller": 310.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1065,
+        "Documentary": 246,
+        "Comedy": 587,
+        "Action": 333,
+        "Thriller": 317
+      },
+      "total_movies": 1901,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 1081.0,
+        "Documentary": 241.0,
+        "Comedy": 595.3,
+        "Action": 342.7,
+        "Thriller": 320.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1111,
+        "Documentary": 231,
+        "Comedy": 589,
+        "Action": 368,
+        "Thriller": 341
+      },
+      "total_movies": 1975,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 1109.7,
+        "Documentary": 250.3,
+        "Comedy": 601.3,
+        "Action": 358.3,
+        "Thriller": 345.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1153,
+        "Documentary": 274,
+        "Comedy": 628,
+        "Action": 374,
+        "Thriller": 379
+      },
+      "total_movies": 2115,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 1179.7,
+        "Documentary": 255.7,
+        "Comedy": 629.3,
+        "Action": 375.7,
+        "Thriller": 370.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1275,
+        "Documentary": 262,
+        "Comedy": 671,
+        "Action": 385,
+        "Thriller": 392
+      },
+      "total_movies": 2267,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 1271.0,
+        "Documentary": 285.0,
+        "Comedy": 651.3,
+        "Action": 375.3,
+        "Thriller": 381.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1385,
+        "Documentary": 319,
+        "Comedy": 655,
+        "Action": 367,
+        "Thriller": 373
+      },
+      "total_movies": 2372,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 1219.0,
+        "Documentary": 289.7,
+        "Comedy": 605.0,
+        "Action": 326.7,
+        "Thriller": 350.3
+      },
+      "raw_genre_counts": {
+        "Drama": 997,
+        "Documentary": 288,
+        "Comedy": 489,
+        "Action": 228,
+        "Thriller": 286
+      },
+      "total_movies": 1805,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 1120.0,
+        "Documentary": 283.3,
+        "Comedy": 541.0,
+        "Action": 298.7,
+        "Thriller": 324.7
+      },
+      "raw_genre_counts": {
+        "Drama": 978,
+        "Documentary": 243,
+        "Comedy": 479,
+        "Action": 301,
+        "Thriller": 315
+      },
+      "total_movies": 1786,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 994.3,
+        "Documentary": 239.3,
+        "Comedy": 529.3,
+        "Action": 286.3,
+        "Thriller": 329.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1008,
+        "Documentary": 187,
+        "Comedy": 620,
+        "Action": 330,
+        "Thriller": 388
+      },
+      "total_movies": 1928,
+      "events": [
+        {
+          "year": 2022,
+          "date": "2022-02-24",
+          "event": "Ukraine Invasion",
+          "type": "war",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 963.0,
+        "Documentary": 196.0,
+        "Comedy": 545.3,
+        "Action": 316.3,
+        "Thriller": 354.7
+      },
+      "raw_genre_counts": {
+        "Drama": 903,
+        "Documentary": 158,
+        "Comedy": 537,
+        "Action": 318,
+        "Thriller": 361
+      },
+      "total_movies": 1690,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 854.0,
+        "Documentary": 158.3,
+        "Comedy": 522.7,
+        "Action": 301.7,
+        "Thriller": 352.0
+      },
+      "raw_genre_counts": {
+        "Drama": 651,
+        "Documentary": 130,
+        "Comedy": 411,
+        "Action": 257,
+        "Thriller": 307
+      },
+      "total_movies": 1339,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2008,
+      "event": "Georgia War",
+      "event_type": "war",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 813,
+      "event_count": 856,
+      "after_count": 882,
+      "immediate_impact": 5.3,
+      "recovery_rate": 3.0,
+      "event_date": "2008-08-08"
+    },
+    {
+      "year": 2008,
+      "event": "Georgia War",
+      "event_type": "war",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 132,
+      "event_count": 136,
+      "after_count": 139,
+      "immediate_impact": 3.0,
+      "recovery_rate": 2.2,
+      "event_date": "2008-08-08"
+    },
+    {
+      "year": 2008,
+      "event": "Georgia War",
+      "event_type": "war",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 480,
+      "event_count": 477,
+      "after_count": 509,
+      "immediate_impact": -0.6,
+      "recovery_rate": 6.7,
+      "event_date": "2008-08-08"
+    },
+    {
+      "year": 2008,
+      "event": "Georgia War",
+      "event_type": "war",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 194,
+      "event_count": 226,
+      "after_count": 259,
+      "immediate_impact": 16.5,
+      "recovery_rate": 14.6,
+      "event_date": "2008-08-08"
+    },
+    {
+      "year": 2008,
+      "event": "Georgia War",
+      "event_type": "war",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 205,
+      "event_count": 200,
+      "after_count": 227,
+      "immediate_impact": -2.4,
+      "recovery_rate": 13.5,
+      "event_date": "2008-08-08"
+    },
+    {
+      "year": 2014,
+      "event": "Crimea Annexation",
+      "event_type": "territorial_conflict",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1034,
+      "event_count": 1067,
+      "after_count": 1065,
+      "immediate_impact": 3.2,
+      "recovery_rate": -0.2,
+      "event_date": "2014-03-18"
+    },
+    {
+      "year": 2014,
+      "event": "Crimea Annexation",
+      "event_type": "territorial_conflict",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 231,
+      "event_count": 246,
+      "after_count": 246,
+      "immediate_impact": 6.5,
+      "recovery_rate": 0.0,
+      "event_date": "2014-03-18"
+    },
+    {
+      "year": 2014,
+      "event": "Crimea Annexation",
+      "event_type": "territorial_conflict",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 592,
+      "event_count": 610,
+      "after_count": 587,
+      "immediate_impact": 3.0,
+      "recovery_rate": -3.8,
+      "event_date": "2014-03-18"
+    },
+    {
+      "year": 2014,
+      "event": "Crimea Annexation",
+      "event_type": "territorial_conflict",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 316,
+      "event_count": 327,
+      "after_count": 333,
+      "immediate_impact": 3.5,
+      "recovery_rate": 1.8,
+      "event_date": "2014-03-18"
+    },
+    {
+      "year": 2014,
+      "event": "Crimea Annexation",
+      "event_type": "territorial_conflict",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 309,
+      "event_count": 304,
+      "after_count": 317,
+      "immediate_impact": -1.6,
+      "recovery_rate": 4.3,
+      "event_date": "2014-03-18"
+    },
+    {
+      "year": 2022,
+      "event": "Ukraine Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 978,
+      "event_count": 1008,
+      "after_count": 903,
+      "immediate_impact": 3.1,
+      "recovery_rate": -10.4,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Ukraine Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 243,
+      "event_count": 187,
+      "after_count": 158,
+      "immediate_impact": -23.0,
+      "recovery_rate": -15.5,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Ukraine Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 479,
+      "event_count": 620,
+      "after_count": 537,
+      "immediate_impact": 29.4,
+      "recovery_rate": -13.4,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Ukraine Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 301,
+      "event_count": 330,
+      "after_count": 318,
+      "immediate_impact": 9.6,
+      "recovery_rate": -3.6,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Ukraine Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 315,
+      "event_count": 388,
+      "after_count": 361,
+      "immediate_impact": 23.2,
+      "recovery_rate": -7.0,
+      "event_date": "2022-02-24"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2008,
+      "date": "2008-08-08",
+      "event": "Georgia War",
+      "type": "war",
+      "severity": "medium"
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-18",
+      "event": "Crimea Annexation",
+      "type": "territorial_conflict",
+      "severity": "high"
+    },
+    {
+      "year": 2022,
+      "date": "2022-02-24",
+      "event": "Ukraine Invasion",
+      "type": "war",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:14:55.816693",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

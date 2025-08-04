@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "ES",
+    "name": "Spain"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 404,
+        "Documentary": 34,
+        "Comedy": 259,
+        "Action": 94,
+        "Thriller": 129
+      },
+      "raw_genre_counts": {
+        "Drama": 404,
+        "Documentary": 34,
+        "Comedy": 259,
+        "Action": 94,
+        "Thriller": 129
+      },
+      "total_movies": 674,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 403,
+        "Documentary": 36,
+        "Comedy": 251,
+        "Action": 149,
+        "Thriller": 117
+      },
+      "raw_genre_counts": {
+        "Drama": 403,
+        "Documentary": 36,
+        "Comedy": 251,
+        "Action": 149,
+        "Thriller": 117
+      },
+      "total_movies": 706,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 396.7,
+        "Documentary": 42.3,
+        "Comedy": 245.3,
+        "Action": 124.0,
+        "Thriller": 122.7
+      },
+      "raw_genre_counts": {
+        "Drama": 383,
+        "Documentary": 57,
+        "Comedy": 226,
+        "Action": 129,
+        "Thriller": 122
+      },
+      "total_movies": 681,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 372.3,
+        "Documentary": 57.7,
+        "Comedy": 239.7,
+        "Action": 130.0,
+        "Thriller": 111.3
+      },
+      "raw_genre_counts": {
+        "Drama": 331,
+        "Documentary": 80,
+        "Comedy": 242,
+        "Action": 112,
+        "Thriller": 95
+      },
+      "total_movies": 634,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 371.0,
+        "Documentary": 79.0,
+        "Comedy": 232.3,
+        "Action": 121.7,
+        "Thriller": 109.7
+      },
+      "raw_genre_counts": {
+        "Drama": 399,
+        "Documentary": 100,
+        "Comedy": 229,
+        "Action": 124,
+        "Thriller": 112
+      },
+      "total_movies": 739,
+      "events": [
+        {
+          "year": 2004,
+          "date": "2004-03-11",
+          "event": "Madrid Train Bombings",
+          "type": "terrorism",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 380.7,
+        "Documentary": 102.3,
+        "Comedy": 237.3,
+        "Action": 114.3,
+        "Thriller": 100.7
+      },
+      "raw_genre_counts": {
+        "Drama": 412,
+        "Documentary": 127,
+        "Comedy": 241,
+        "Action": 107,
+        "Thriller": 95
+      },
+      "total_movies": 766,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 415.7,
+        "Documentary": 116.7,
+        "Comedy": 243.0,
+        "Action": 111.7,
+        "Thriller": 112.7
+      },
+      "raw_genre_counts": {
+        "Drama": 436,
+        "Documentary": 123,
+        "Comedy": 259,
+        "Action": 104,
+        "Thriller": 131
+      },
+      "total_movies": 827,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 427.0,
+        "Documentary": 128.7,
+        "Comedy": 247.3,
+        "Action": 105.7,
+        "Thriller": 119.0
+      },
+      "raw_genre_counts": {
+        "Drama": 433,
+        "Documentary": 136,
+        "Comedy": 242,
+        "Action": 106,
+        "Thriller": 131
+      },
+      "total_movies": 827,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 420.3,
+        "Documentary": 132.0,
+        "Comedy": 240.3,
+        "Action": 109.7,
+        "Thriller": 128.0
+      },
+      "raw_genre_counts": {
+        "Drama": 392,
+        "Documentary": 137,
+        "Comedy": 220,
+        "Action": 119,
+        "Thriller": 122
+      },
+      "total_movies": 783,
+      "events": [
+        {
+          "year": 2008,
+          "date": "2008-07-01",
+          "event": "Financial Crisis",
+          "type": "economic",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 412.7,
+        "Documentary": 148.3,
+        "Comedy": 233.0,
+        "Action": 121.0,
+        "Thriller": 127.0
+      },
+      "raw_genre_counts": {
+        "Drama": 413,
+        "Documentary": 172,
+        "Comedy": 237,
+        "Action": 138,
+        "Thriller": 128
+      },
+      "total_movies": 868,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 420.3,
+        "Documentary": 167.3,
+        "Comedy": 234.0,
+        "Action": 130.3,
+        "Thriller": 123.7
+      },
+      "raw_genre_counts": {
+        "Drama": 456,
+        "Documentary": 193,
+        "Comedy": 245,
+        "Action": 134,
+        "Thriller": 121
+      },
+      "total_movies": 883,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 441.7,
+        "Documentary": 202.3,
+        "Comedy": 246.3,
+        "Action": 143.0,
+        "Thriller": 126.0
+      },
+      "raw_genre_counts": {
+        "Drama": 456,
+        "Documentary": 242,
+        "Comedy": 257,
+        "Action": 157,
+        "Thriller": 129
+      },
+      "total_movies": 963,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 468.3,
+        "Documentary": 233.3,
+        "Comedy": 247.7,
+        "Action": 155.0,
+        "Thriller": 131.0
+      },
+      "raw_genre_counts": {
+        "Drama": 493,
+        "Documentary": 265,
+        "Comedy": 241,
+        "Action": 174,
+        "Thriller": 143
+      },
+      "total_movies": 1021,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 506.7,
+        "Documentary": 263.7,
+        "Comedy": 265.7,
+        "Action": 168.0,
+        "Thriller": 150.3
+      },
+      "raw_genre_counts": {
+        "Drama": 571,
+        "Documentary": 284,
+        "Comedy": 299,
+        "Action": 173,
+        "Thriller": 179
+      },
+      "total_movies": 1160,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 556.0,
+        "Documentary": 287.3,
+        "Comedy": 281.0,
+        "Action": 178.3,
+        "Thriller": 166.3
+      },
+      "raw_genre_counts": {
+        "Drama": 604,
+        "Documentary": 313,
+        "Comedy": 303,
+        "Action": 188,
+        "Thriller": 177
+      },
+      "total_movies": 1228,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 606.7,
+        "Documentary": 307.3,
+        "Comedy": 316.0,
+        "Action": 187.3,
+        "Thriller": 180.7
+      },
+      "raw_genre_counts": {
+        "Drama": 645,
+        "Documentary": 325,
+        "Comedy": 346,
+        "Action": 201,
+        "Thriller": 186
+      },
+      "total_movies": 1339,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 664.3,
+        "Documentary": 338.3,
+        "Comedy": 337.0,
+        "Action": 221.3,
+        "Thriller": 186.7
+      },
+      "raw_genre_counts": {
+        "Drama": 744,
+        "Documentary": 377,
+        "Comedy": 362,
+        "Action": 275,
+        "Thriller": 197
+      },
+      "total_movies": 1524,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 715.3,
+        "Documentary": 375.0,
+        "Comedy": 364.7,
+        "Action": 241.7,
+        "Thriller": 198.7
+      },
+      "raw_genre_counts": {
+        "Drama": 757,
+        "Documentary": 423,
+        "Comedy": 386,
+        "Action": 249,
+        "Thriller": 213
+      },
+      "total_movies": 1618,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 796.3,
+        "Documentary": 428.0,
+        "Comedy": 391.3,
+        "Action": 261.7,
+        "Thriller": 219.0
+      },
+      "raw_genre_counts": {
+        "Drama": 888,
+        "Documentary": 484,
+        "Comedy": 426,
+        "Action": 261,
+        "Thriller": 247
+      },
+      "total_movies": 1848,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 859.7,
+        "Documentary": 454.7,
+        "Comedy": 424.3,
+        "Action": 256.7,
+        "Thriller": 247.3
+      },
+      "raw_genre_counts": {
+        "Drama": 934,
+        "Documentary": 457,
+        "Comedy": 461,
+        "Action": 260,
+        "Thriller": 282
+      },
+      "total_movies": 1891,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 885.3,
+        "Documentary": 458.0,
+        "Comedy": 429.3,
+        "Action": 243.0,
+        "Thriller": 257.7
+      },
+      "raw_genre_counts": {
+        "Drama": 834,
+        "Documentary": 433,
+        "Comedy": 401,
+        "Action": 208,
+        "Thriller": 244
+      },
+      "total_movies": 1698,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-14",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 884.3,
+        "Documentary": 457.0,
+        "Comedy": 420.7,
+        "Action": 243.0,
+        "Thriller": 265.7
+      },
+      "raw_genre_counts": {
+        "Drama": 885,
+        "Documentary": 481,
+        "Comedy": 400,
+        "Action": 261,
+        "Thriller": 271
+      },
+      "total_movies": 1858,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 904.0,
+        "Documentary": 471.3,
+        "Comedy": 450.3,
+        "Action": 252.7,
+        "Thriller": 292.0
+      },
+      "raw_genre_counts": {
+        "Drama": 993,
+        "Documentary": 500,
+        "Comedy": 550,
+        "Action": 289,
+        "Thriller": 361
+      },
+      "total_movies": 2126,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 985.7,
+        "Documentary": 494.3,
+        "Comedy": 509.0,
+        "Action": 301.7,
+        "Thriller": 348.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1079,
+        "Documentary": 502,
+        "Comedy": 577,
+        "Action": 355,
+        "Thriller": 413
+      },
+      "total_movies": 2286,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 928.0,
+        "Documentary": 477.7,
+        "Comedy": 509.0,
+        "Action": 298.0,
+        "Thriller": 355.0
+      },
+      "raw_genre_counts": {
+        "Drama": 712,
+        "Documentary": 431,
+        "Comedy": 400,
+        "Action": 250,
+        "Thriller": 291
+      },
+      "total_movies": 1665,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2004,
+      "event": "Madrid Train Bombings",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 331,
+      "event_count": 399,
+      "after_count": 412,
+      "immediate_impact": 20.5,
+      "recovery_rate": 3.3,
+      "event_date": "2004-03-11"
+    },
+    {
+      "year": 2004,
+      "event": "Madrid Train Bombings",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 80,
+      "event_count": 100,
+      "after_count": 127,
+      "immediate_impact": 25.0,
+      "recovery_rate": 27.0,
+      "event_date": "2004-03-11"
+    },
+    {
+      "year": 2004,
+      "event": "Madrid Train Bombings",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 242,
+      "event_count": 229,
+      "after_count": 241,
+      "immediate_impact": -5.4,
+      "recovery_rate": 5.2,
+      "event_date": "2004-03-11"
+    },
+    {
+      "year": 2004,
+      "event": "Madrid Train Bombings",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 112,
+      "event_count": 124,
+      "after_count": 107,
+      "immediate_impact": 10.7,
+      "recovery_rate": -13.7,
+      "event_date": "2004-03-11"
+    },
+    {
+      "year": 2004,
+      "event": "Madrid Train Bombings",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 95,
+      "event_count": 112,
+      "after_count": 95,
+      "immediate_impact": 17.9,
+      "recovery_rate": -15.2,
+      "event_date": "2004-03-11"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 433,
+      "event_count": 392,
+      "after_count": 413,
+      "immediate_impact": -9.5,
+      "recovery_rate": 5.4,
+      "event_date": "2008-07-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 136,
+      "event_count": 137,
+      "after_count": 172,
+      "immediate_impact": 0.7,
+      "recovery_rate": 25.5,
+      "event_date": "2008-07-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 242,
+      "event_count": 220,
+      "after_count": 237,
+      "immediate_impact": -9.1,
+      "recovery_rate": 7.7,
+      "event_date": "2008-07-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 106,
+      "event_count": 119,
+      "after_count": 138,
+      "immediate_impact": 12.3,
+      "recovery_rate": 16.0,
+      "event_date": "2008-07-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 131,
+      "event_count": 122,
+      "after_count": 128,
+      "immediate_impact": -6.9,
+      "recovery_rate": 4.9,
+      "event_date": "2008-07-01"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 934,
+      "event_count": 834,
+      "after_count": 885,
+      "immediate_impact": -10.7,
+      "recovery_rate": 6.1,
+      "event_date": "2020-03-14"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 457,
+      "event_count": 433,
+      "after_count": 481,
+      "immediate_impact": -5.3,
+      "recovery_rate": 11.1,
+      "event_date": "2020-03-14"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 461,
+      "event_count": 401,
+      "after_count": 400,
+      "immediate_impact": -13.0,
+      "recovery_rate": -0.2,
+      "event_date": "2020-03-14"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 260,
+      "event_count": 208,
+      "after_count": 261,
+      "immediate_impact": -20.0,
+      "recovery_rate": 25.5,
+      "event_date": "2020-03-14"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 282,
+      "event_count": 244,
+      "after_count": 271,
+      "immediate_impact": -13.5,
+      "recovery_rate": 11.1,
+      "event_date": "2020-03-14"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2004,
+      "date": "2004-03-11",
+      "event": "Madrid Train Bombings",
+      "type": "terrorism",
+      "severity": "high"
+    },
+    {
+      "year": 2008,
+      "date": "2008-07-01",
+      "event": "Financial Crisis",
+      "type": "economic",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-14",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:02:58.903260",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "SE",
+    "name": "Sweden"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 234,
+        "Documentary": 48,
+        "Comedy": 126,
+        "Action": 46,
+        "Thriller": 53
+      },
+      "raw_genre_counts": {
+        "Drama": 234,
+        "Documentary": 48,
+        "Comedy": 126,
+        "Action": 46,
+        "Thriller": 53
+      },
+      "total_movies": 391,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 209,
+        "Documentary": 38,
+        "Comedy": 116,
+        "Action": 65,
+        "Thriller": 37
+      },
+      "raw_genre_counts": {
+        "Drama": 209,
+        "Documentary": 38,
+        "Comedy": 116,
+        "Action": 65,
+        "Thriller": 37
+      },
+      "total_movies": 345,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 225.0,
+        "Documentary": 47.3,
+        "Comedy": 118.7,
+        "Action": 55.0,
+        "Thriller": 45.0
+      },
+      "raw_genre_counts": {
+        "Drama": 232,
+        "Documentary": 56,
+        "Comedy": 114,
+        "Action": 54,
+        "Thriller": 45
+      },
+      "total_movies": 388,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 223.0,
+        "Documentary": 50.3,
+        "Comedy": 124.0,
+        "Action": 62.3,
+        "Thriller": 42.0
+      },
+      "raw_genre_counts": {
+        "Drama": 228,
+        "Documentary": 57,
+        "Comedy": 142,
+        "Action": 68,
+        "Thriller": 44
+      },
+      "total_movies": 403,
+      "events": [
+        {
+          "year": 2003,
+          "date": "2003-09-10",
+          "event": "Anna Lindh Assassination",
+          "type": "political_assassination",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 240.3,
+        "Documentary": 54.7,
+        "Comedy": 134.0,
+        "Action": 63.7,
+        "Thriller": 44.7
+      },
+      "raw_genre_counts": {
+        "Drama": 261,
+        "Documentary": 51,
+        "Comedy": 146,
+        "Action": 69,
+        "Thriller": 45
+      },
+      "total_movies": 443,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 250.0,
+        "Documentary": 55.7,
+        "Comedy": 140.3,
+        "Action": 64.3,
+        "Thriller": 45.0
+      },
+      "raw_genre_counts": {
+        "Drama": 261,
+        "Documentary": 59,
+        "Comedy": 133,
+        "Action": 56,
+        "Thriller": 46
+      },
+      "total_movies": 419,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 273.0,
+        "Documentary": 57.0,
+        "Comedy": 154.7,
+        "Action": 57.7,
+        "Thriller": 49.3
+      },
+      "raw_genre_counts": {
+        "Drama": 297,
+        "Documentary": 61,
+        "Comedy": 185,
+        "Action": 48,
+        "Thriller": 57
+      },
+      "total_movies": 500,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 278.7,
+        "Documentary": 63.3,
+        "Comedy": 152.0,
+        "Action": 52.3,
+        "Thriller": 54.3
+      },
+      "raw_genre_counts": {
+        "Drama": 278,
+        "Documentary": 70,
+        "Comedy": 138,
+        "Action": 53,
+        "Thriller": 60
+      },
+      "total_movies": 472,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 286.3,
+        "Documentary": 73.7,
+        "Comedy": 152.7,
+        "Action": 58.0,
+        "Thriller": 60.7
+      },
+      "raw_genre_counts": {
+        "Drama": 284,
+        "Documentary": 90,
+        "Comedy": 135,
+        "Action": 73,
+        "Thriller": 65
+      },
+      "total_movies": 502,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 280.0,
+        "Documentary": 82.0,
+        "Comedy": 131.7,
+        "Action": 68.0,
+        "Thriller": 65.3
+      },
+      "raw_genre_counts": {
+        "Drama": 278,
+        "Documentary": 86,
+        "Comedy": 122,
+        "Action": 78,
+        "Thriller": 71
+      },
+      "total_movies": 511,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 297.3,
+        "Documentary": 89.0,
+        "Comedy": 140.7,
+        "Action": 81.0,
+        "Thriller": 66.3
+      },
+      "raw_genre_counts": {
+        "Drama": 330,
+        "Documentary": 91,
+        "Comedy": 165,
+        "Action": 92,
+        "Thriller": 63
+      },
+      "total_movies": 563,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 315.0,
+        "Documentary": 92.3,
+        "Comedy": 152.0,
+        "Action": 85.7,
+        "Thriller": 65.7
+      },
+      "raw_genre_counts": {
+        "Drama": 337,
+        "Documentary": 100,
+        "Comedy": 169,
+        "Action": 87,
+        "Thriller": 63
+      },
+      "total_movies": 587,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 353.3,
+        "Documentary": 106.3,
+        "Comedy": 170.3,
+        "Action": 89.0,
+        "Thriller": 70.0
+      },
+      "raw_genre_counts": {
+        "Drama": 393,
+        "Documentary": 128,
+        "Comedy": 177,
+        "Action": 88,
+        "Thriller": 84
+      },
+      "total_movies": 663,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 388.0,
+        "Documentary": 128.3,
+        "Comedy": 173.3,
+        "Action": 90.3,
+        "Thriller": 79.7
+      },
+      "raw_genre_counts": {
+        "Drama": 434,
+        "Documentary": 157,
+        "Comedy": 174,
+        "Action": 96,
+        "Thriller": 92
+      },
+      "total_movies": 731,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 414.3,
+        "Documentary": 150.3,
+        "Comedy": 183.7,
+        "Action": 96.0,
+        "Thriller": 85.0
+      },
+      "raw_genre_counts": {
+        "Drama": 416,
+        "Documentary": 166,
+        "Comedy": 200,
+        "Action": 104,
+        "Thriller": 79
+      },
+      "total_movies": 756,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 422.7,
+        "Documentary": 161.3,
+        "Comedy": 181.7,
+        "Action": 100.0,
+        "Thriller": 84.7
+      },
+      "raw_genre_counts": {
+        "Drama": 418,
+        "Documentary": 161,
+        "Comedy": 171,
+        "Action": 100,
+        "Thriller": 83
+      },
+      "total_movies": 727,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 431.7,
+        "Documentary": 159.0,
+        "Comedy": 188.7,
+        "Action": 108.0,
+        "Thriller": 83.7
+      },
+      "raw_genre_counts": {
+        "Drama": 461,
+        "Documentary": 150,
+        "Comedy": 195,
+        "Action": 120,
+        "Thriller": 89
+      },
+      "total_movies": 783,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 432.0,
+        "Documentary": 156.7,
+        "Comedy": 184.0,
+        "Action": 106.3,
+        "Thriller": 94.0
+      },
+      "raw_genre_counts": {
+        "Drama": 417,
+        "Documentary": 159,
+        "Comedy": 186,
+        "Action": 99,
+        "Thriller": 110
+      },
+      "total_movies": 756,
+      "events": [
+        {
+          "year": 2017,
+          "date": "2017-04-07",
+          "event": "Stockholm Truck Attack",
+          "type": "terrorism",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 455.3,
+        "Documentary": 161.0,
+        "Comedy": 195.7,
+        "Action": 116.0,
+        "Thriller": 96.7
+      },
+      "raw_genre_counts": {
+        "Drama": 488,
+        "Documentary": 174,
+        "Comedy": 206,
+        "Action": 129,
+        "Thriller": 91
+      },
+      "total_movies": 850,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 478.7,
+        "Documentary": 169.7,
+        "Comedy": 208.3,
+        "Action": 114.3,
+        "Thriller": 105.3
+      },
+      "raw_genre_counts": {
+        "Drama": 531,
+        "Documentary": 176,
+        "Comedy": 233,
+        "Action": 115,
+        "Thriller": 115
+      },
+      "total_movies": 909,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 481.3,
+        "Documentary": 169.0,
+        "Comedy": 221.0,
+        "Action": 118.7,
+        "Thriller": 103.0
+      },
+      "raw_genre_counts": {
+        "Drama": 425,
+        "Documentary": 157,
+        "Comedy": 224,
+        "Action": 112,
+        "Thriller": 103
+      },
+      "total_movies": 797,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 529.7,
+        "Documentary": 194.3,
+        "Comedy": 243.3,
+        "Action": 143.3,
+        "Thriller": 136.7
+      },
+      "raw_genre_counts": {
+        "Drama": 633,
+        "Documentary": 250,
+        "Comedy": 273,
+        "Action": 203,
+        "Thriller": 192
+      },
+      "total_movies": 1220,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 637.3,
+        "Documentary": 250.7,
+        "Comedy": 329.7,
+        "Action": 197.3,
+        "Thriller": 210.0
+      },
+      "raw_genre_counts": {
+        "Drama": 854,
+        "Documentary": 345,
+        "Comedy": 492,
+        "Action": 277,
+        "Thriller": 335
+      },
+      "total_movies": 1770,
+      "events": [
+        {
+          "year": 2022,
+          "date": "2022-05-18",
+          "event": "NATO Application",
+          "type": "diplomatic",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 628.3,
+        "Documentary": 260.7,
+        "Comedy": 326.7,
+        "Action": 196.0,
+        "Thriller": 208.7
+      },
+      "raw_genre_counts": {
+        "Drama": 398,
+        "Documentary": 187,
+        "Comedy": 215,
+        "Action": 108,
+        "Thriller": 99
+      },
+      "total_movies": 780,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 530.0,
+        "Documentary": 233.7,
+        "Comedy": 292.7,
+        "Action": 162.0,
+        "Thriller": 178.3
+      },
+      "raw_genre_counts": {
+        "Drama": 338,
+        "Documentary": 169,
+        "Comedy": 171,
+        "Action": 101,
+        "Thriller": 101
+      },
+      "total_movies": 695,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2003,
+      "event": "Anna Lindh Assassination",
+      "event_type": "political_assassination",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 232,
+      "event_count": 228,
+      "after_count": 261,
+      "immediate_impact": -1.7,
+      "recovery_rate": 14.5,
+      "event_date": "2003-09-10"
+    },
+    {
+      "year": 2003,
+      "event": "Anna Lindh Assassination",
+      "event_type": "political_assassination",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 56,
+      "event_count": 57,
+      "after_count": 51,
+      "immediate_impact": 1.8,
+      "recovery_rate": -10.5,
+      "event_date": "2003-09-10"
+    },
+    {
+      "year": 2003,
+      "event": "Anna Lindh Assassination",
+      "event_type": "political_assassination",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 114,
+      "event_count": 142,
+      "after_count": 146,
+      "immediate_impact": 24.6,
+      "recovery_rate": 2.8,
+      "event_date": "2003-09-10"
+    },
+    {
+      "year": 2003,
+      "event": "Anna Lindh Assassination",
+      "event_type": "political_assassination",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 54,
+      "event_count": 68,
+      "after_count": 69,
+      "immediate_impact": 25.9,
+      "recovery_rate": 1.5,
+      "event_date": "2003-09-10"
+    },
+    {
+      "year": 2003,
+      "event": "Anna Lindh Assassination",
+      "event_type": "political_assassination",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 45,
+      "event_count": 44,
+      "after_count": 45,
+      "immediate_impact": -2.2,
+      "recovery_rate": 2.3,
+      "event_date": "2003-09-10"
+    },
+    {
+      "year": 2017,
+      "event": "Stockholm Truck Attack",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 461,
+      "event_count": 417,
+      "after_count": 488,
+      "immediate_impact": -9.5,
+      "recovery_rate": 17.0,
+      "event_date": "2017-04-07"
+    },
+    {
+      "year": 2017,
+      "event": "Stockholm Truck Attack",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 150,
+      "event_count": 159,
+      "after_count": 174,
+      "immediate_impact": 6.0,
+      "recovery_rate": 9.4,
+      "event_date": "2017-04-07"
+    },
+    {
+      "year": 2017,
+      "event": "Stockholm Truck Attack",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 195,
+      "event_count": 186,
+      "after_count": 206,
+      "immediate_impact": -4.6,
+      "recovery_rate": 10.8,
+      "event_date": "2017-04-07"
+    },
+    {
+      "year": 2017,
+      "event": "Stockholm Truck Attack",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 120,
+      "event_count": 99,
+      "after_count": 129,
+      "immediate_impact": -17.5,
+      "recovery_rate": 30.3,
+      "event_date": "2017-04-07"
+    },
+    {
+      "year": 2017,
+      "event": "Stockholm Truck Attack",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 89,
+      "event_count": 110,
+      "after_count": 91,
+      "immediate_impact": 23.6,
+      "recovery_rate": -17.3,
+      "event_date": "2017-04-07"
+    },
+    {
+      "year": 2022,
+      "event": "NATO Application",
+      "event_type": "diplomatic",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 633,
+      "event_count": 854,
+      "after_count": 398,
+      "immediate_impact": 34.9,
+      "recovery_rate": -53.4,
+      "event_date": "2022-05-18"
+    },
+    {
+      "year": 2022,
+      "event": "NATO Application",
+      "event_type": "diplomatic",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 250,
+      "event_count": 345,
+      "after_count": 187,
+      "immediate_impact": 38.0,
+      "recovery_rate": -45.8,
+      "event_date": "2022-05-18"
+    },
+    {
+      "year": 2022,
+      "event": "NATO Application",
+      "event_type": "diplomatic",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 273,
+      "event_count": 492,
+      "after_count": 215,
+      "immediate_impact": 80.2,
+      "recovery_rate": -56.3,
+      "event_date": "2022-05-18"
+    },
+    {
+      "year": 2022,
+      "event": "NATO Application",
+      "event_type": "diplomatic",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 203,
+      "event_count": 277,
+      "after_count": 108,
+      "immediate_impact": 36.5,
+      "recovery_rate": -61.0,
+      "event_date": "2022-05-18"
+    },
+    {
+      "year": 2022,
+      "event": "NATO Application",
+      "event_type": "diplomatic",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 192,
+      "event_count": 335,
+      "after_count": 99,
+      "immediate_impact": 74.5,
+      "recovery_rate": -70.4,
+      "event_date": "2022-05-18"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2003,
+      "date": "2003-09-10",
+      "event": "Anna Lindh Assassination",
+      "type": "political_assassination",
+      "severity": "high"
+    },
+    {
+      "year": 2017,
+      "date": "2017-04-07",
+      "event": "Stockholm Truck Attack",
+      "type": "terrorism",
+      "severity": "high"
+    },
+    {
+      "year": 2022,
+      "date": "2022-05-18",
+      "event": "NATO Application",
+      "type": "diplomatic",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:12:00.452660",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "SA",
+    "name": "Saudi Arabia"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 0.0,
+        "Comedy": 0.0,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 0.0,
+        "Comedy": 0.0,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 0.0,
+        "Comedy": 0.0,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 1.0,
+        "Comedy": 0.0,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 1,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 1,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 2.0,
+        "Documentary": 1.0,
+        "Comedy": 1.0,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 2,
+        "Documentary": 1,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 3,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 1.0,
+        "Documentary": 0.7,
+        "Comedy": 0.5,
+        "Action": 1.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "total_movies": 1,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 1.5,
+        "Documentary": 1.0,
+        "Comedy": 1.0,
+        "Action": 0.5,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1,
+        "Documentary": 1,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 3,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 11.5,
+        "Documentary": 1.0,
+        "Comedy": 0.5,
+        "Action": 0.5,
+        "Thriller": 1.0
+      },
+      "raw_genre_counts": {
+        "Drama": 22,
+        "Documentary": 1,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 1
+      },
+      "total_movies": 24,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 14.3,
+        "Documentary": 1.0,
+        "Comedy": 0.5,
+        "Action": 0.0,
+        "Thriller": 3.0
+      },
+      "raw_genre_counts": {
+        "Drama": 20,
+        "Documentary": 1,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 5
+      },
+      "total_movies": 23,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 14.0,
+        "Documentary": 0.7,
+        "Comedy": 1.0,
+        "Action": 0.0,
+        "Thriller": 2.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 1,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 10.5,
+        "Documentary": 1.5,
+        "Comedy": 1.0,
+        "Action": 0.0,
+        "Thriller": 2.5
+      },
+      "raw_genre_counts": {
+        "Drama": 1,
+        "Documentary": 2,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 3,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 1.5,
+        "Documentary": 1.5,
+        "Comedy": 0.7,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 2,
+        "Documentary": 1,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 3,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 1.0,
+        "Documentary": 1.0,
+        "Comedy": 0.5,
+        "Action": 0.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 0,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 1.0,
+        "Documentary": 0.5,
+        "Comedy": 1.0,
+        "Action": 1.0,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "total_movies": 2,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 1.0,
+        "Comedy": 1.0,
+        "Action": 0.5,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 1,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 2,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 0.0,
+        "Documentary": 1.0,
+        "Comedy": 0.7,
+        "Action": 0.5,
+        "Thriller": 0.0
+      },
+      "raw_genre_counts": {
+        "Drama": 0,
+        "Documentary": 1,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 1,
+      "events": [
+        {
+          "year": 2017,
+          "date": "2017-04-25",
+          "event": "Vision 2030 Launch",
+          "type": "economic",
+          "severity": "positive"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 5.0,
+        "Documentary": 1.3,
+        "Comedy": 1.0,
+        "Action": 0.0,
+        "Thriller": 1.0
+      },
+      "raw_genre_counts": {
+        "Drama": 5,
+        "Documentary": 2,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 1
+      },
+      "total_movies": 7,
+      "events": [
+        {
+          "year": 2018,
+          "date": "2018-10-02",
+          "event": "Khashoggi Killing",
+          "type": "political_scandal",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 8.0,
+        "Documentary": 1.3,
+        "Comedy": 1.5,
+        "Action": 0.0,
+        "Thriller": 0.5
+      },
+      "raw_genre_counts": {
+        "Drama": 11,
+        "Documentary": 1,
+        "Comedy": 2,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 13,
+      "events": [
+        {
+          "year": 2019,
+          "date": "2019-12-11",
+          "event": "Aramco IPO",
+          "type": "economic",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 12.0,
+        "Documentary": 1.0,
+        "Comedy": 3.0,
+        "Action": 5.0,
+        "Thriller": 2.0
+      },
+      "raw_genre_counts": {
+        "Drama": 20,
+        "Documentary": 0,
+        "Comedy": 6,
+        "Action": 5,
+        "Thriller": 3
+      },
+      "total_movies": 29,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 19.0,
+        "Documentary": 2.5,
+        "Comedy": 10.0,
+        "Action": 14.0,
+        "Thriller": 14.0
+      },
+      "raw_genre_counts": {
+        "Drama": 26,
+        "Documentary": 4,
+        "Comedy": 22,
+        "Action": 23,
+        "Thriller": 25
+      },
+      "total_movies": 73,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 19.7,
+        "Documentary": 3.5,
+        "Comedy": 11.0,
+        "Action": 10.0,
+        "Thriller": 10.3
+      },
+      "raw_genre_counts": {
+        "Drama": 13,
+        "Documentary": 3,
+        "Comedy": 5,
+        "Action": 2,
+        "Thriller": 3
+      },
+      "total_movies": 20,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 15.7,
+        "Documentary": 3.3,
+        "Comedy": 11.0,
+        "Action": 8.7,
+        "Thriller": 11.0
+      },
+      "raw_genre_counts": {
+        "Drama": 8,
+        "Documentary": 3,
+        "Comedy": 6,
+        "Action": 1,
+        "Thriller": 5
+      },
+      "total_movies": 16,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 10.3,
+        "Documentary": 3.7,
+        "Comedy": 5.7,
+        "Action": 1.0,
+        "Thriller": 3.3
+      },
+      "raw_genre_counts": {
+        "Drama": 10,
+        "Documentary": 5,
+        "Comedy": 6,
+        "Action": 0,
+        "Thriller": 2
+      },
+      "total_movies": 20,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2017,
+      "event": "Vision 2030 Launch",
+      "event_type": "economic",
+      "severity": "positive",
+      "genre": "Drama",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 5,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2017-04-25"
+    },
+    {
+      "year": 2017,
+      "event": "Vision 2030 Launch",
+      "event_type": "economic",
+      "severity": "positive",
+      "genre": "Documentary",
+      "before_count": 1,
+      "event_count": 1,
+      "after_count": 2,
+      "immediate_impact": 0.0,
+      "recovery_rate": 100.0,
+      "event_date": "2017-04-25"
+    },
+    {
+      "year": 2017,
+      "event": "Vision 2030 Launch",
+      "event_type": "economic",
+      "severity": "positive",
+      "genre": "Comedy",
+      "before_count": 1,
+      "event_count": 0,
+      "after_count": 1,
+      "immediate_impact": -100.0,
+      "recovery_rate": 0,
+      "event_date": "2017-04-25"
+    },
+    {
+      "year": 2017,
+      "event": "Vision 2030 Launch",
+      "event_type": "economic",
+      "severity": "positive",
+      "genre": "Action",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 0,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2017-04-25"
+    },
+    {
+      "year": 2017,
+      "event": "Vision 2030 Launch",
+      "event_type": "economic",
+      "severity": "positive",
+      "genre": "Thriller",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 1,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2017-04-25"
+    },
+    {
+      "year": 2018,
+      "event": "Khashoggi Killing",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 0,
+      "event_count": 5,
+      "after_count": 11,
+      "immediate_impact": 0,
+      "recovery_rate": 120.0,
+      "event_date": "2018-10-02"
+    },
+    {
+      "year": 2018,
+      "event": "Khashoggi Killing",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 1,
+      "event_count": 2,
+      "after_count": 1,
+      "immediate_impact": 100.0,
+      "recovery_rate": -50.0,
+      "event_date": "2018-10-02"
+    },
+    {
+      "year": 2018,
+      "event": "Khashoggi Killing",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 0,
+      "event_count": 1,
+      "after_count": 2,
+      "immediate_impact": 0,
+      "recovery_rate": 100.0,
+      "event_date": "2018-10-02"
+    },
+    {
+      "year": 2018,
+      "event": "Khashoggi Killing",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 0,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2018-10-02"
+    },
+    {
+      "year": 2018,
+      "event": "Khashoggi Killing",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 0,
+      "event_count": 1,
+      "after_count": 0,
+      "immediate_impact": 0,
+      "recovery_rate": -100.0,
+      "event_date": "2018-10-02"
+    },
+    {
+      "year": 2019,
+      "event": "Aramco IPO",
+      "event_type": "economic",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 5,
+      "event_count": 11,
+      "after_count": 20,
+      "immediate_impact": 120.0,
+      "recovery_rate": 81.8,
+      "event_date": "2019-12-11"
+    },
+    {
+      "year": 2019,
+      "event": "Aramco IPO",
+      "event_type": "economic",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 2,
+      "event_count": 1,
+      "after_count": 0,
+      "immediate_impact": -50.0,
+      "recovery_rate": -100.0,
+      "event_date": "2019-12-11"
+    },
+    {
+      "year": 2019,
+      "event": "Aramco IPO",
+      "event_type": "economic",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 1,
+      "event_count": 2,
+      "after_count": 6,
+      "immediate_impact": 100.0,
+      "recovery_rate": 200.0,
+      "event_date": "2019-12-11"
+    },
+    {
+      "year": 2019,
+      "event": "Aramco IPO",
+      "event_type": "economic",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 5,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2019-12-11"
+    },
+    {
+      "year": 2019,
+      "event": "Aramco IPO",
+      "event_type": "economic",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 1,
+      "event_count": 0,
+      "after_count": 3,
+      "immediate_impact": -100.0,
+      "recovery_rate": 0,
+      "event_date": "2019-12-11"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2017,
+      "date": "2017-04-25",
+      "event": "Vision 2030 Launch",
+      "type": "economic",
+      "severity": "positive"
+    },
+    {
+      "year": 2018,
+      "date": "2018-10-02",
+      "event": "Khashoggi Killing",
+      "type": "political_scandal",
+      "severity": "high"
+    },
+    {
+      "year": 2019,
+      "date": "2019-12-11",
+      "event": "Aramco IPO",
+      "type": "economic",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:08:51.386531",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

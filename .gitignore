@@ -129,7 +129,6 @@ venv.bak/
 .pyre/
 
 # Data files (common for data science projects)
-data/
 *.csv
 *.tsv
 *.parquet

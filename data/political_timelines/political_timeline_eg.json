@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "EG",
+    "name": "Egypt"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 57,
+        "Documentary": 0,
+        "Comedy": 31,
+        "Action": 12,
+        "Thriller": 12
+      },
+      "raw_genre_counts": {
+        "Drama": 57,
+        "Documentary": 0,
+        "Comedy": 31,
+        "Action": 12,
+        "Thriller": 12
+      },
+      "total_movies": 84,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 67,
+        "Documentary": 0,
+        "Comedy": 36,
+        "Action": 19,
+        "Thriller": 13
+      },
+      "raw_genre_counts": {
+        "Drama": 67,
+        "Documentary": 0,
+        "Comedy": 36,
+        "Action": 19,
+        "Thriller": 13
+      },
+      "total_movies": 100,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 64.0,
+        "Documentary": 3.0,
+        "Comedy": 32.0,
+        "Action": 19.0,
+        "Thriller": 15.0
+      },
+      "raw_genre_counts": {
+        "Drama": 68,
+        "Documentary": 3,
+        "Comedy": 29,
+        "Action": 26,
+        "Thriller": 20
+      },
+      "total_movies": 105,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 64.7,
+        "Documentary": 2.5,
+        "Comedy": 33.0,
+        "Action": 22.7,
+        "Thriller": 16.3
+      },
+      "raw_genre_counts": {
+        "Drama": 59,
+        "Documentary": 2,
+        "Comedy": 34,
+        "Action": 23,
+        "Thriller": 16
+      },
+      "total_movies": 99,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 68.7,
+        "Documentary": 4.3,
+        "Comedy": 36.7,
+        "Action": 25.7,
+        "Thriller": 17.3
+      },
+      "raw_genre_counts": {
+        "Drama": 79,
+        "Documentary": 8,
+        "Comedy": 47,
+        "Action": 28,
+        "Thriller": 16
+      },
+      "total_movies": 140,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 71.3,
+        "Documentary": 4.3,
+        "Comedy": 44.0,
+        "Action": 26.7,
+        "Thriller": 18.3
+      },
+      "raw_genre_counts": {
+        "Drama": 76,
+        "Documentary": 3,
+        "Comedy": 51,
+        "Action": 29,
+        "Thriller": 23
+      },
+      "total_movies": 135,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 82.7,
+        "Documentary": 5.7,
+        "Comedy": 51.0,
+        "Action": 28.3,
+        "Thriller": 21.3
+      },
+      "raw_genre_counts": {
+        "Drama": 93,
+        "Documentary": 6,
+        "Comedy": 55,
+        "Action": 28,
+        "Thriller": 25
+      },
+      "total_movies": 151,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 89.3,
+        "Documentary": 5.0,
+        "Comedy": 49.7,
+        "Action": 28.7,
+        "Thriller": 29.0
+      },
+      "raw_genre_counts": {
+        "Drama": 99,
+        "Documentary": 6,
+        "Comedy": 43,
+        "Action": 29,
+        "Thriller": 39
+      },
+      "total_movies": 159,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 95.7,
+        "Documentary": 5.3,
+        "Comedy": 54.7,
+        "Action": 34.7,
+        "Thriller": 31.3
+      },
+      "raw_genre_counts": {
+        "Drama": 95,
+        "Documentary": 4,
+        "Comedy": 66,
+        "Action": 47,
+        "Thriller": 30
+      },
+      "total_movies": 177,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 95.7,
+        "Documentary": 4.7,
+        "Comedy": 51.3,
+        "Action": 37.0,
+        "Thriller": 34.3
+      },
+      "raw_genre_counts": {
+        "Drama": 93,
+        "Documentary": 4,
+        "Comedy": 45,
+        "Action": 35,
+        "Thriller": 34
+      },
+      "total_movies": 156,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 101.7,
+        "Documentary": 7.0,
+        "Comedy": 58.0,
+        "Action": 45.7,
+        "Thriller": 32.3
+      },
+      "raw_genre_counts": {
+        "Drama": 117,
+        "Documentary": 13,
+        "Comedy": 63,
+        "Action": 55,
+        "Thriller": 33
+      },
+      "total_movies": 193,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 108.7,
+        "Documentary": 9.7,
+        "Comedy": 56.7,
+        "Action": 45.3,
+        "Thriller": 33.7
+      },
+      "raw_genre_counts": {
+        "Drama": 116,
+        "Documentary": 12,
+        "Comedy": 62,
+        "Action": 46,
+        "Thriller": 34
+      },
+      "total_movies": 193,
+      "events": [
+        {
+          "year": 2011,
+          "date": "2011-01-25",
+          "event": "Arab Spring Revolution",
+          "type": "political_revolution",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 121.3,
+        "Documentary": 12.3,
+        "Comedy": 63.3,
+        "Action": 50.3,
+        "Thriller": 33.3
+      },
+      "raw_genre_counts": {
+        "Drama": 131,
+        "Documentary": 12,
+        "Comedy": 65,
+        "Action": 50,
+        "Thriller": 33
+      },
+      "total_movies": 215,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 126.7,
+        "Documentary": 12.7,
+        "Comedy": 67.0,
+        "Action": 52.0,
+        "Thriller": 38.3
+      },
+      "raw_genre_counts": {
+        "Drama": 133,
+        "Documentary": 14,
+        "Comedy": 74,
+        "Action": 60,
+        "Thriller": 48
+      },
+      "total_movies": 238,
+      "events": [
+        {
+          "year": 2013,
+          "date": "2013-07-03",
+          "event": "Military Coup",
+          "type": "coup",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 137.0,
+        "Documentary": 11.3,
+        "Comedy": 73.7,
+        "Action": 59.7,
+        "Thriller": 43.7
+      },
+      "raw_genre_counts": {
+        "Drama": 147,
+        "Documentary": 8,
+        "Comedy": 82,
+        "Action": 69,
+        "Thriller": 50
+      },
+      "total_movies": 253,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 146.7,
+        "Documentary": 13.3,
+        "Comedy": 71.3,
+        "Action": 64.3,
+        "Thriller": 47.0
+      },
+      "raw_genre_counts": {
+        "Drama": 160,
+        "Documentary": 18,
+        "Comedy": 58,
+        "Action": 64,
+        "Thriller": 43
+      },
+      "total_movies": 268,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 156.3,
+        "Documentary": 17.0,
+        "Comedy": 72.7,
+        "Action": 69.7,
+        "Thriller": 44.7
+      },
+      "raw_genre_counts": {
+        "Drama": 162,
+        "Documentary": 25,
+        "Comedy": 78,
+        "Action": 76,
+        "Thriller": 41
+      },
+      "total_movies": 284,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 166.3,
+        "Documentary": 18.0,
+        "Comedy": 72.0,
+        "Action": 72.3,
+        "Thriller": 50.7
+      },
+      "raw_genre_counts": {
+        "Drama": 177,
+        "Documentary": 11,
+        "Comedy": 80,
+        "Action": 77,
+        "Thriller": 68
+      },
+      "total_movies": 298,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 169.7,
+        "Documentary": 17.7,
+        "Comedy": 82.7,
+        "Action": 77.3,
+        "Thriller": 54.0
+      },
+      "raw_genre_counts": {
+        "Drama": 170,
+        "Documentary": 17,
+        "Comedy": 90,
+        "Action": 79,
+        "Thriller": 53
+      },
+      "total_movies": 298,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 173.7,
+        "Documentary": 12.3,
+        "Comedy": 85.0,
+        "Action": 76.3,
+        "Thriller": 61.3
+      },
+      "raw_genre_counts": {
+        "Drama": 174,
+        "Documentary": 9,
+        "Comedy": 85,
+        "Action": 73,
+        "Thriller": 63
+      },
+      "total_movies": 298,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 173.7,
+        "Documentary": 13.0,
+        "Comedy": 83.7,
+        "Action": 69.7,
+        "Thriller": 59.3
+      },
+      "raw_genre_counts": {
+        "Drama": 177,
+        "Documentary": 13,
+        "Comedy": 76,
+        "Action": 57,
+        "Thriller": 62
+      },
+      "total_movies": 282,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-25",
+          "event": "COVID-19 Measures",
+          "type": "health_crisis",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 226.3,
+        "Documentary": 15.0,
+        "Comedy": 97.0,
+        "Action": 81.7,
+        "Thriller": 80.0
+      },
+      "raw_genre_counts": {
+        "Drama": 328,
+        "Documentary": 23,
+        "Comedy": 130,
+        "Action": 115,
+        "Thriller": 115
+      },
+      "total_movies": 542,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 365.7,
+        "Documentary": 40.0,
+        "Comedy": 174.3,
+        "Action": 143.0,
+        "Thriller": 155.0
+      },
+      "raw_genre_counts": {
+        "Drama": 592,
+        "Documentary": 84,
+        "Comedy": 317,
+        "Action": 257,
+        "Thriller": 288
+      },
+      "total_movies": 1125,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 314.0,
+        "Documentary": 37.3,
+        "Comedy": 161.7,
+        "Action": 129.0,
+        "Thriller": 137.0
+      },
+      "raw_genre_counts": {
+        "Drama": 22,
+        "Documentary": 5,
+        "Comedy": 38,
+        "Action": 15,
+        "Thriller": 8
+      },
+      "total_movies": 65,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 214.0,
+        "Documentary": 31.7,
+        "Comedy": 125.7,
+        "Action": 93.0,
+        "Thriller": 99.0
+      },
+      "raw_genre_counts": {
+        "Drama": 28,
+        "Documentary": 6,
+        "Comedy": 22,
+        "Action": 7,
+        "Thriller": 1
+      },
+      "total_movies": 55,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2011,
+      "event": "Arab Spring Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 117,
+      "event_count": 116,
+      "after_count": 131,
+      "immediate_impact": -0.9,
+      "recovery_rate": 12.9,
+      "event_date": "2011-01-25"
+    },
+    {
+      "year": 2011,
+      "event": "Arab Spring Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 13,
+      "event_count": 12,
+      "after_count": 12,
+      "immediate_impact": -7.7,
+      "recovery_rate": 0.0,
+      "event_date": "2011-01-25"
+    },
+    {
+      "year": 2011,
+      "event": "Arab Spring Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 63,
+      "event_count": 62,
+      "after_count": 65,
+      "immediate_impact": -1.6,
+      "recovery_rate": 4.8,
+      "event_date": "2011-01-25"
+    },
+    {
+      "year": 2011,
+      "event": "Arab Spring Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 55,
+      "event_count": 46,
+      "after_count": 50,
+      "immediate_impact": -16.4,
+      "recovery_rate": 8.7,
+      "event_date": "2011-01-25"
+    },
+    {
+      "year": 2011,
+      "event": "Arab Spring Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 33,
+      "event_count": 34,
+      "after_count": 33,
+      "immediate_impact": 3.0,
+      "recovery_rate": -2.9,
+      "event_date": "2011-01-25"
+    },
+    {
+      "year": 2013,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 131,
+      "event_count": 133,
+      "after_count": 147,
+      "immediate_impact": 1.5,
+      "recovery_rate": 10.5,
+      "event_date": "2013-07-03"
+    },
+    {
+      "year": 2013,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 12,
+      "event_count": 14,
+      "after_count": 8,
+      "immediate_impact": 16.7,
+      "recovery_rate": -42.9,
+      "event_date": "2013-07-03"
+    },
+    {
+      "year": 2013,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 65,
+      "event_count": 74,
+      "after_count": 82,
+      "immediate_impact": 13.8,
+      "recovery_rate": 10.8,
+      "event_date": "2013-07-03"
+    },
+    {
+      "year": 2013,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 50,
+      "event_count": 60,
+      "after_count": 69,
+      "immediate_impact": 20.0,
+      "recovery_rate": 15.0,
+      "event_date": "2013-07-03"
+    },
+    {
+      "year": 2013,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 33,
+      "event_count": 48,
+      "after_count": 50,
+      "immediate_impact": 45.5,
+      "recovery_rate": 4.2,
+      "event_date": "2013-07-03"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 174,
+      "event_count": 177,
+      "after_count": 328,
+      "immediate_impact": 1.7,
+      "recovery_rate": 85.3,
+      "event_date": "2020-03-25"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 9,
+      "event_count": 13,
+      "after_count": 23,
+      "immediate_impact": 44.4,
+      "recovery_rate": 76.9,
+      "event_date": "2020-03-25"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 85,
+      "event_count": 76,
+      "after_count": 130,
+      "immediate_impact": -10.6,
+      "recovery_rate": 71.1,
+      "event_date": "2020-03-25"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 73,
+      "event_count": 57,
+      "after_count": 115,
+      "immediate_impact": -21.9,
+      "recovery_rate": 101.8,
+      "event_date": "2020-03-25"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 63,
+      "event_count": 62,
+      "after_count": 115,
+      "immediate_impact": -1.6,
+      "recovery_rate": 85.5,
+      "event_date": "2020-03-25"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2011,
+      "date": "2011-01-25",
+      "event": "Arab Spring Revolution",
+      "type": "political_revolution",
+      "severity": "high"
+    },
+    {
+      "year": 2013,
+      "date": "2013-07-03",
+      "event": "Military Coup",
+      "type": "coup",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-25",
+      "event": "COVID-19 Measures",
+      "type": "health_crisis",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:06:24.593126",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

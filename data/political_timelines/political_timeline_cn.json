@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "CN",
+    "name": "China"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 160,
+        "Documentary": 15,
+        "Comedy": 65,
+        "Action": 44,
+        "Thriller": 34
+      },
+      "raw_genre_counts": {
+        "Drama": 160,
+        "Documentary": 15,
+        "Comedy": 65,
+        "Action": 44,
+        "Thriller": 34
+      },
+      "total_movies": 246,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 186,
+        "Documentary": 16,
+        "Comedy": 86,
+        "Action": 45,
+        "Thriller": 24
+      },
+      "raw_genre_counts": {
+        "Drama": 186,
+        "Documentary": 16,
+        "Comedy": 86,
+        "Action": 45,
+        "Thriller": 24
+      },
+      "total_movies": 276,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 174.7,
+        "Documentary": 18.0,
+        "Comedy": 75.3,
+        "Action": 42.3,
+        "Thriller": 29.3
+      },
+      "raw_genre_counts": {
+        "Drama": 178,
+        "Documentary": 23,
+        "Comedy": 75,
+        "Action": 38,
+        "Thriller": 30
+      },
+      "total_movies": 268,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 174.7,
+        "Documentary": 21.3,
+        "Comedy": 82.7,
+        "Action": 45.7,
+        "Thriller": 27.0
+      },
+      "raw_genre_counts": {
+        "Drama": 160,
+        "Documentary": 25,
+        "Comedy": 87,
+        "Action": 54,
+        "Thriller": 27
+      },
+      "total_movies": 268,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 188.0,
+        "Documentary": 22.7,
+        "Comedy": 86.0,
+        "Action": 44.3,
+        "Thriller": 28.0
+      },
+      "raw_genre_counts": {
+        "Drama": 226,
+        "Documentary": 20,
+        "Comedy": 96,
+        "Action": 41,
+        "Thriller": 27
+      },
+      "total_movies": 330,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 211.3,
+        "Documentary": 26.7,
+        "Comedy": 95.0,
+        "Action": 46.7,
+        "Thriller": 26.0
+      },
+      "raw_genre_counts": {
+        "Drama": 248,
+        "Documentary": 35,
+        "Comedy": 102,
+        "Action": 45,
+        "Thriller": 24
+      },
+      "total_movies": 356,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 252.0,
+        "Documentary": 27.3,
+        "Comedy": 105.0,
+        "Action": 45.0,
+        "Thriller": 30.7
+      },
+      "raw_genre_counts": {
+        "Drama": 282,
+        "Documentary": 27,
+        "Comedy": 117,
+        "Action": 49,
+        "Thriller": 41
+      },
+      "total_movies": 407,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 285.7,
+        "Documentary": 37.7,
+        "Comedy": 113.0,
+        "Action": 45.7,
+        "Thriller": 35.3
+      },
+      "raw_genre_counts": {
+        "Drama": 327,
+        "Documentary": 51,
+        "Comedy": 120,
+        "Action": 43,
+        "Thriller": 41
+      },
+      "total_movies": 477,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 297.0,
+        "Documentary": 45.0,
+        "Comedy": 114.3,
+        "Action": 50.3,
+        "Thriller": 43.3
+      },
+      "raw_genre_counts": {
+        "Drama": 282,
+        "Documentary": 57,
+        "Comedy": 106,
+        "Action": 59,
+        "Thriller": 48
+      },
+      "total_movies": 443,
+      "events": [
+        {
+          "year": 2008,
+          "date": "2008-05-12",
+          "event": "Sichuan Earthquake",
+          "type": "natural_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 309.7,
+        "Documentary": 56.7,
+        "Comedy": 116.7,
+        "Action": 56.7,
+        "Thriller": 49.3
+      },
+      "raw_genre_counts": {
+        "Drama": 320,
+        "Documentary": 62,
+        "Comedy": 124,
+        "Action": 68,
+        "Thriller": 59
+      },
+      "total_movies": 512,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 315.0,
+        "Documentary": 63.0,
+        "Comedy": 130.7,
+        "Action": 65.7,
+        "Thriller": 51.3
+      },
+      "raw_genre_counts": {
+        "Drama": 343,
+        "Documentary": 70,
+        "Comedy": 162,
+        "Action": 70,
+        "Thriller": 47
+      },
+      "total_movies": 554,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 353.7,
+        "Documentary": 72.0,
+        "Comedy": 152.3,
+        "Action": 78.0,
+        "Thriller": 58.0
+      },
+      "raw_genre_counts": {
+        "Drama": 398,
+        "Documentary": 84,
+        "Comedy": 171,
+        "Action": 96,
+        "Thriller": 68
+      },
+      "total_movies": 638,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 397.0,
+        "Documentary": 80.3,
+        "Comedy": 169.3,
+        "Action": 87.0,
+        "Thriller": 61.3
+      },
+      "raw_genre_counts": {
+        "Drama": 450,
+        "Documentary": 87,
+        "Comedy": 175,
+        "Action": 95,
+        "Thriller": 69
+      },
+      "total_movies": 705,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 424.3,
+        "Documentary": 85.0,
+        "Comedy": 180.0,
+        "Action": 97.7,
+        "Thriller": 73.3
+      },
+      "raw_genre_counts": {
+        "Drama": 425,
+        "Documentary": 84,
+        "Comedy": 194,
+        "Action": 102,
+        "Thriller": 83
+      },
+      "total_movies": 702,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 448.0,
+        "Documentary": 88.3,
+        "Comedy": 192.3,
+        "Action": 109.3,
+        "Thriller": 77.3
+      },
+      "raw_genre_counts": {
+        "Drama": 469,
+        "Documentary": 94,
+        "Comedy": 208,
+        "Action": 131,
+        "Thriller": 80
+      },
+      "total_movies": 761,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 466.7,
+        "Documentary": 101.7,
+        "Comedy": 211.0,
+        "Action": 118.0,
+        "Thriller": 85.3
+      },
+      "raw_genre_counts": {
+        "Drama": 506,
+        "Documentary": 127,
+        "Comedy": 231,
+        "Action": 121,
+        "Thriller": 93
+      },
+      "total_movies": 863,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 479.0,
+        "Documentary": 109.3,
+        "Comedy": 217.7,
+        "Action": 135.3,
+        "Thriller": 89.0
+      },
+      "raw_genre_counts": {
+        "Drama": 462,
+        "Documentary": 107,
+        "Comedy": 214,
+        "Action": 154,
+        "Thriller": 94
+      },
+      "total_movies": 824,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 498.7,
+        "Documentary": 117.7,
+        "Comedy": 224.7,
+        "Action": 141.7,
+        "Thriller": 90.3
+      },
+      "raw_genre_counts": {
+        "Drama": 528,
+        "Documentary": 119,
+        "Comedy": 229,
+        "Action": 150,
+        "Thriller": 84
+      },
+      "total_movies": 889,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 476.3,
+        "Documentary": 114.3,
+        "Comedy": 216.7,
+        "Action": 169.0,
+        "Thriller": 87.0
+      },
+      "raw_genre_counts": {
+        "Drama": 439,
+        "Documentary": 117,
+        "Comedy": 207,
+        "Action": 203,
+        "Thriller": 83
+      },
+      "total_movies": 854,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 471.0,
+        "Documentary": 118.7,
+        "Comedy": 200.3,
+        "Action": 192.7,
+        "Thriller": 84.0
+      },
+      "raw_genre_counts": {
+        "Drama": 446,
+        "Documentary": 120,
+        "Comedy": 165,
+        "Action": 225,
+        "Thriller": 85
+      },
+      "total_movies": 864,
+      "events": [
+        {
+          "year": 2019,
+          "date": "2019-06-09",
+          "event": "Hong Kong Protests",
+          "type": "domestic_unrest",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 398.7,
+        "Documentary": 108.3,
+        "Comedy": 160.0,
+        "Action": 207.7,
+        "Thriller": 72.3
+      },
+      "raw_genre_counts": {
+        "Drama": 311,
+        "Documentary": 88,
+        "Comedy": 108,
+        "Action": 195,
+        "Thriller": 49
+      },
+      "total_movies": 631,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-01-23",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 389.3,
+        "Documentary": 96.3,
+        "Comedy": 135.7,
+        "Action": 217.7,
+        "Thriller": 66.0
+      },
+      "raw_genre_counts": {
+        "Drama": 411,
+        "Documentary": 81,
+        "Comedy": 134,
+        "Action": 233,
+        "Thriller": 64
+      },
+      "total_movies": 744,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 389.7,
+        "Documentary": 89.3,
+        "Comedy": 135.7,
+        "Action": 215.7,
+        "Thriller": 73.3
+      },
+      "raw_genre_counts": {
+        "Drama": 447,
+        "Documentary": 99,
+        "Comedy": 165,
+        "Action": 219,
+        "Thriller": 107
+      },
+      "total_movies": 839,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 470.0,
+        "Documentary": 98.3,
+        "Comedy": 172.7,
+        "Action": 243.3,
+        "Thriller": 111.3
+      },
+      "raw_genre_counts": {
+        "Drama": 552,
+        "Documentary": 115,
+        "Comedy": 219,
+        "Action": 278,
+        "Thriller": 163
+      },
+      "total_movies": 1044,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 468.3,
+        "Documentary": 104.7,
+        "Comedy": 192.0,
+        "Action": 240.3,
+        "Thriller": 127.0
+      },
+      "raw_genre_counts": {
+        "Drama": 406,
+        "Documentary": 100,
+        "Comedy": 192,
+        "Action": 224,
+        "Thriller": 111
+      },
+      "total_movies": 790,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2008,
+      "event": "Sichuan Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 327,
+      "event_count": 282,
+      "after_count": 320,
+      "immediate_impact": -13.8,
+      "recovery_rate": 13.5,
+      "event_date": "2008-05-12"
+    },
+    {
+      "year": 2008,
+      "event": "Sichuan Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 51,
+      "event_count": 57,
+      "after_count": 62,
+      "immediate_impact": 11.8,
+      "recovery_rate": 8.8,
+      "event_date": "2008-05-12"
+    },
+    {
+      "year": 2008,
+      "event": "Sichuan Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 120,
+      "event_count": 106,
+      "after_count": 124,
+      "immediate_impact": -11.7,
+      "recovery_rate": 17.0,
+      "event_date": "2008-05-12"
+    },
+    {
+      "year": 2008,
+      "event": "Sichuan Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 43,
+      "event_count": 59,
+      "after_count": 68,
+      "immediate_impact": 37.2,
+      "recovery_rate": 15.3,
+      "event_date": "2008-05-12"
+    },
+    {
+      "year": 2008,
+      "event": "Sichuan Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 41,
+      "event_count": 48,
+      "after_count": 59,
+      "immediate_impact": 17.1,
+      "recovery_rate": 22.9,
+      "event_date": "2008-05-12"
+    },
+    {
+      "year": 2019,
+      "event": "Hong Kong Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 439,
+      "event_count": 446,
+      "after_count": 311,
+      "immediate_impact": 1.6,
+      "recovery_rate": -30.3,
+      "event_date": "2019-06-09"
+    },
+    {
+      "year": 2019,
+      "event": "Hong Kong Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 117,
+      "event_count": 120,
+      "after_count": 88,
+      "immediate_impact": 2.6,
+      "recovery_rate": -26.7,
+      "event_date": "2019-06-09"
+    },
+    {
+      "year": 2019,
+      "event": "Hong Kong Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 207,
+      "event_count": 165,
+      "after_count": 108,
+      "immediate_impact": -20.3,
+      "recovery_rate": -34.5,
+      "event_date": "2019-06-09"
+    },
+    {
+      "year": 2019,
+      "event": "Hong Kong Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 203,
+      "event_count": 225,
+      "after_count": 195,
+      "immediate_impact": 10.8,
+      "recovery_rate": -13.3,
+      "event_date": "2019-06-09"
+    },
+    {
+      "year": 2019,
+      "event": "Hong Kong Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 83,
+      "event_count": 85,
+      "after_count": 49,
+      "immediate_impact": 2.4,
+      "recovery_rate": -42.4,
+      "event_date": "2019-06-09"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 446,
+      "event_count": 311,
+      "after_count": 411,
+      "immediate_impact": -30.3,
+      "recovery_rate": 32.2,
+      "event_date": "2020-01-23"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 120,
+      "event_count": 88,
+      "after_count": 81,
+      "immediate_impact": -26.7,
+      "recovery_rate": -8.0,
+      "event_date": "2020-01-23"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 165,
+      "event_count": 108,
+      "after_count": 134,
+      "immediate_impact": -34.5,
+      "recovery_rate": 24.1,
+      "event_date": "2020-01-23"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 225,
+      "event_count": 195,
+      "after_count": 233,
+      "immediate_impact": -13.3,
+      "recovery_rate": 19.5,
+      "event_date": "2020-01-23"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 85,
+      "event_count": 49,
+      "after_count": 64,
+      "immediate_impact": -42.4,
+      "recovery_rate": 30.6,
+      "event_date": "2020-01-23"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2008,
+      "date": "2008-05-12",
+      "event": "Sichuan Earthquake",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2019,
+      "date": "2019-06-09",
+      "event": "Hong Kong Protests",
+      "type": "domestic_unrest",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-01-23",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:15:37.819013",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "NG",
+    "name": "Nigeria"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 4,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "raw_genre_counts": {
+        "Drama": 4,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "total_movies": 6,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 1,
+        "Documentary": 0,
+        "Comedy": 2,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "raw_genre_counts": {
+        "Drama": 1,
+        "Documentary": 0,
+        "Comedy": 2,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "total_movies": 4,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 3.0,
+        "Documentary": 0.0,
+        "Comedy": 1.0,
+        "Action": 0.7,
+        "Thriller": 2.0
+      },
+      "raw_genre_counts": {
+        "Drama": 4,
+        "Documentary": 0,
+        "Comedy": 0,
+        "Action": 0,
+        "Thriller": 2
+      },
+      "total_movies": 6,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 2.7,
+        "Documentary": 0.0,
+        "Comedy": 2.0,
+        "Action": 1.0,
+        "Thriller": 2.0
+      },
+      "raw_genre_counts": {
+        "Drama": 3,
+        "Documentary": 0,
+        "Comedy": 2,
+        "Action": 1,
+        "Thriller": 2
+      },
+      "total_movies": 6,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 4.3,
+        "Documentary": 0.0,
+        "Comedy": 2.5,
+        "Action": 1.0,
+        "Thriller": 1.7
+      },
+      "raw_genre_counts": {
+        "Drama": 6,
+        "Documentary": 0,
+        "Comedy": 3,
+        "Action": 1,
+        "Thriller": 1
+      },
+      "total_movies": 10,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 4.7,
+        "Documentary": 0.0,
+        "Comedy": 2.0,
+        "Action": 1.0,
+        "Thriller": 1.7
+      },
+      "raw_genre_counts": {
+        "Drama": 5,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 1,
+        "Thriller": 2
+      },
+      "total_movies": 7,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 6.7,
+        "Documentary": 0.0,
+        "Comedy": 2.3,
+        "Action": 1.3,
+        "Thriller": 1.3
+      },
+      "raw_genre_counts": {
+        "Drama": 9,
+        "Documentary": 0,
+        "Comedy": 3,
+        "Action": 2,
+        "Thriller": 1
+      },
+      "total_movies": 13,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 7.0,
+        "Documentary": 0.0,
+        "Comedy": 1.7,
+        "Action": 1.0,
+        "Thriller": 1.0
+      },
+      "raw_genre_counts": {
+        "Drama": 7,
+        "Documentary": 0,
+        "Comedy": 1,
+        "Action": 0,
+        "Thriller": 0
+      },
+      "total_movies": 8,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 10.0,
+        "Documentary": 0.0,
+        "Comedy": 2.7,
+        "Action": 1.5,
+        "Thriller": 1.0
+      },
+      "raw_genre_counts": {
+        "Drama": 14,
+        "Documentary": 0,
+        "Comedy": 4,
+        "Action": 1,
+        "Thriller": 1
+      },
+      "total_movies": 19,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 11.3,
+        "Documentary": 0.0,
+        "Comedy": 2.7,
+        "Action": 1.5,
+        "Thriller": 1.5
+      },
+      "raw_genre_counts": {
+        "Drama": 13,
+        "Documentary": 0,
+        "Comedy": 3,
+        "Action": 2,
+        "Thriller": 2
+      },
+      "total_movies": 20,
+      "events": [
+        {
+          "year": 2009,
+          "date": "2009-07-26",
+          "event": "Boko Haram Insurgency",
+          "type": "terrorism",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 18.7,
+        "Documentary": 0.0,
+        "Comedy": 3.3,
+        "Action": 1.3,
+        "Thriller": 1.7
+      },
+      "raw_genre_counts": {
+        "Drama": 29,
+        "Documentary": 0,
+        "Comedy": 3,
+        "Action": 1,
+        "Thriller": 2
+      },
+      "total_movies": 33,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 20.7,
+        "Documentary": 2.0,
+        "Comedy": 3.3,
+        "Action": 1.3,
+        "Thriller": 1.3
+      },
+      "raw_genre_counts": {
+        "Drama": 20,
+        "Documentary": 2,
+        "Comedy": 4,
+        "Action": 1,
+        "Thriller": 0
+      },
+      "total_movies": 25,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 28.0,
+        "Documentary": 1.5,
+        "Comedy": 7.0,
+        "Action": 2.3,
+        "Thriller": 2.5
+      },
+      "raw_genre_counts": {
+        "Drama": 35,
+        "Documentary": 1,
+        "Comedy": 14,
+        "Action": 5,
+        "Thriller": 3
+      },
+      "total_movies": 52,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 41.0,
+        "Documentary": 1.0,
+        "Comedy": 11.3,
+        "Action": 3.3,
+        "Thriller": 5.5
+      },
+      "raw_genre_counts": {
+        "Drama": 68,
+        "Documentary": 0,
+        "Comedy": 16,
+        "Action": 4,
+        "Thriller": 8
+      },
+      "total_movies": 94,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 74.7,
+        "Documentary": 1.0,
+        "Comedy": 19.0,
+        "Action": 3.3,
+        "Thriller": 8.0
+      },
+      "raw_genre_counts": {
+        "Drama": 121,
+        "Documentary": 1,
+        "Comedy": 27,
+        "Action": 1,
+        "Thriller": 13
+      },
+      "total_movies": 158,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-04-14",
+          "event": "Chibok Girls Kidnapping",
+          "type": "terrorism",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 114.7,
+        "Documentary": 2.0,
+        "Comedy": 22.3,
+        "Action": 2.0,
+        "Thriller": 10.3
+      },
+      "raw_genre_counts": {
+        "Drama": 155,
+        "Documentary": 3,
+        "Comedy": 24,
+        "Action": 1,
+        "Thriller": 10
+      },
+      "total_movies": 182,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 153.7,
+        "Documentary": 2.0,
+        "Comedy": 32.3,
+        "Action": 2.7,
+        "Thriller": 10.7
+      },
+      "raw_genre_counts": {
+        "Drama": 185,
+        "Documentary": 2,
+        "Comedy": 46,
+        "Action": 6,
+        "Thriller": 9
+      },
+      "total_movies": 228,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 178.3,
+        "Documentary": 1.7,
+        "Comedy": 39.3,
+        "Action": 4.7,
+        "Thriller": 12.3
+      },
+      "raw_genre_counts": {
+        "Drama": 195,
+        "Documentary": 0,
+        "Comedy": 48,
+        "Action": 7,
+        "Thriller": 18
+      },
+      "total_movies": 251,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 204.3,
+        "Documentary": 2.5,
+        "Comedy": 52.0,
+        "Action": 7.0,
+        "Thriller": 16.0
+      },
+      "raw_genre_counts": {
+        "Drama": 233,
+        "Documentary": 3,
+        "Comedy": 62,
+        "Action": 8,
+        "Thriller": 21
+      },
+      "total_movies": 304,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 243.0,
+        "Documentary": 3.0,
+        "Comedy": 54.7,
+        "Action": 7.3,
+        "Thriller": 18.3
+      },
+      "raw_genre_counts": {
+        "Drama": 301,
+        "Documentary": 3,
+        "Comedy": 54,
+        "Action": 7,
+        "Thriller": 16
+      },
+      "total_movies": 355,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 281.7,
+        "Documentary": 2.7,
+        "Comedy": 52.7,
+        "Action": 9.3,
+        "Thriller": 17.3
+      },
+      "raw_genre_counts": {
+        "Drama": 311,
+        "Documentary": 2,
+        "Comedy": 42,
+        "Action": 13,
+        "Thriller": 15
+      },
+      "total_movies": 367,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-10-08",
+          "event": "EndSARS Protests",
+          "type": "domestic_unrest",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 362.0,
+        "Documentary": 2.3,
+        "Comedy": 66.0,
+        "Action": 13.0,
+        "Thriller": 17.3
+      },
+      "raw_genre_counts": {
+        "Drama": 474,
+        "Documentary": 2,
+        "Comedy": 102,
+        "Action": 19,
+        "Thriller": 21
+      },
+      "total_movies": 576,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 463.7,
+        "Documentary": 3.0,
+        "Comedy": 79.0,
+        "Action": 16.7,
+        "Thriller": 17.3
+      },
+      "raw_genre_counts": {
+        "Drama": 606,
+        "Documentary": 5,
+        "Comedy": 93,
+        "Action": 18,
+        "Thriller": 16
+      },
+      "total_movies": 710,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 566.3,
+        "Documentary": 4.7,
+        "Comedy": 88.3,
+        "Action": 14.7,
+        "Thriller": 22.3
+      },
+      "raw_genre_counts": {
+        "Drama": 619,
+        "Documentary": 7,
+        "Comedy": 70,
+        "Action": 7,
+        "Thriller": 30
+      },
+      "total_movies": 712,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 558.0,
+        "Documentary": 7.0,
+        "Comedy": 86.0,
+        "Action": 13.0,
+        "Thriller": 22.0
+      },
+      "raw_genre_counts": {
+        "Drama": 449,
+        "Documentary": 9,
+        "Comedy": 95,
+        "Action": 14,
+        "Thriller": 20
+      },
+      "total_movies": 562,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2009,
+      "event": "Boko Haram Insurgency",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 14,
+      "event_count": 13,
+      "after_count": 29,
+      "immediate_impact": -7.1,
+      "recovery_rate": 123.1,
+      "event_date": "2009-07-26"
+    },
+    {
+      "year": 2009,
+      "event": "Boko Haram Insurgency",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 0,
+      "event_count": 0,
+      "after_count": 0,
+      "immediate_impact": 0,
+      "recovery_rate": 0,
+      "event_date": "2009-07-26"
+    },
+    {
+      "year": 2009,
+      "event": "Boko Haram Insurgency",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 4,
+      "event_count": 3,
+      "after_count": 3,
+      "immediate_impact": -25.0,
+      "recovery_rate": 0.0,
+      "event_date": "2009-07-26"
+    },
+    {
+      "year": 2009,
+      "event": "Boko Haram Insurgency",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 1,
+      "event_count": 2,
+      "after_count": 1,
+      "immediate_impact": 100.0,
+      "recovery_rate": -50.0,
+      "event_date": "2009-07-26"
+    },
+    {
+      "year": 2009,
+      "event": "Boko Haram Insurgency",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 1,
+      "event_count": 2,
+      "after_count": 2,
+      "immediate_impact": 100.0,
+      "recovery_rate": 0.0,
+      "event_date": "2009-07-26"
+    },
+    {
+      "year": 2014,
+      "event": "Chibok Girls Kidnapping",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 68,
+      "event_count": 121,
+      "after_count": 155,
+      "immediate_impact": 77.9,
+      "recovery_rate": 28.1,
+      "event_date": "2014-04-14"
+    },
+    {
+      "year": 2014,
+      "event": "Chibok Girls Kidnapping",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 0,
+      "event_count": 1,
+      "after_count": 3,
+      "immediate_impact": 0,
+      "recovery_rate": 200.0,
+      "event_date": "2014-04-14"
+    },
+    {
+      "year": 2014,
+      "event": "Chibok Girls Kidnapping",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 16,
+      "event_count": 27,
+      "after_count": 24,
+      "immediate_impact": 68.8,
+      "recovery_rate": -11.1,
+      "event_date": "2014-04-14"
+    },
+    {
+      "year": 2014,
+      "event": "Chibok Girls Kidnapping",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 4,
+      "event_count": 1,
+      "after_count": 1,
+      "immediate_impact": -75.0,
+      "recovery_rate": 0.0,
+      "event_date": "2014-04-14"
+    },
+    {
+      "year": 2014,
+      "event": "Chibok Girls Kidnapping",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 8,
+      "event_count": 13,
+      "after_count": 10,
+      "immediate_impact": 62.5,
+      "recovery_rate": -23.1,
+      "event_date": "2014-04-14"
+    },
+    {
+      "year": 2020,
+      "event": "EndSARS Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 301,
+      "event_count": 311,
+      "after_count": 474,
+      "immediate_impact": 3.3,
+      "recovery_rate": 52.4,
+      "event_date": "2020-10-08"
+    },
+    {
+      "year": 2020,
+      "event": "EndSARS Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 3,
+      "event_count": 2,
+      "after_count": 2,
+      "immediate_impact": -33.3,
+      "recovery_rate": 0.0,
+      "event_date": "2020-10-08"
+    },
+    {
+      "year": 2020,
+      "event": "EndSARS Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 54,
+      "event_count": 42,
+      "after_count": 102,
+      "immediate_impact": -22.2,
+      "recovery_rate": 142.9,
+      "event_date": "2020-10-08"
+    },
+    {
+      "year": 2020,
+      "event": "EndSARS Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 7,
+      "event_count": 13,
+      "after_count": 19,
+      "immediate_impact": 85.7,
+      "recovery_rate": 46.2,
+      "event_date": "2020-10-08"
+    },
+    {
+      "year": 2020,
+      "event": "EndSARS Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 16,
+      "event_count": 15,
+      "after_count": 21,
+      "immediate_impact": -6.2,
+      "recovery_rate": 40.0,
+      "event_date": "2020-10-08"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2009,
+      "date": "2009-07-26",
+      "event": "Boko Haram Insurgency",
+      "type": "terrorism",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-04-14",
+      "event": "Chibok Girls Kidnapping",
+      "type": "terrorism",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-10-08",
+      "event": "EndSARS Protests",
+      "type": "domestic_unrest",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:08:15.300902",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "IN",
+    "name": "India"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 465,
+        "Documentary": 10,
+        "Comedy": 156,
+        "Action": 168,
+        "Thriller": 115
+      },
+      "raw_genre_counts": {
+        "Drama": 465,
+        "Documentary": 10,
+        "Comedy": 156,
+        "Action": 168,
+        "Thriller": 115
+      },
+      "total_movies": 722,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 488,
+        "Documentary": 25,
+        "Comedy": 174,
+        "Action": 199,
+        "Thriller": 125
+      },
+      "raw_genre_counts": {
+        "Drama": 488,
+        "Documentary": 25,
+        "Comedy": 174,
+        "Action": 199,
+        "Thriller": 125
+      },
+      "total_movies": 783,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 504.3,
+        "Documentary": 24.3,
+        "Comedy": 176.7,
+        "Action": 190.7,
+        "Thriller": 119.0
+      },
+      "raw_genre_counts": {
+        "Drama": 560,
+        "Documentary": 38,
+        "Comedy": 200,
+        "Action": 205,
+        "Thriller": 117
+      },
+      "total_movies": 863,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 535.3,
+        "Documentary": 35.0,
+        "Comedy": 201.0,
+        "Action": 195.7,
+        "Thriller": 118.3
+      },
+      "raw_genre_counts": {
+        "Drama": 558,
+        "Documentary": 42,
+        "Comedy": 229,
+        "Action": 183,
+        "Thriller": 113
+      },
+      "total_movies": 873,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 549.3,
+        "Documentary": 37.7,
+        "Comedy": 225.3,
+        "Action": 210.3,
+        "Thriller": 126.3
+      },
+      "raw_genre_counts": {
+        "Drama": 530,
+        "Documentary": 33,
+        "Comedy": 247,
+        "Action": 243,
+        "Thriller": 149
+      },
+      "total_movies": 902,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 571.3,
+        "Documentary": 38.3,
+        "Comedy": 241.3,
+        "Action": 209.0,
+        "Thriller": 142.0
+      },
+      "raw_genre_counts": {
+        "Drama": 626,
+        "Documentary": 40,
+        "Comedy": 248,
+        "Action": 201,
+        "Thriller": 164
+      },
+      "total_movies": 1004,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 599.0,
+        "Documentary": 38.0,
+        "Comedy": 256.7,
+        "Action": 215.7,
+        "Thriller": 148.7
+      },
+      "raw_genre_counts": {
+        "Drama": 641,
+        "Documentary": 41,
+        "Comedy": 275,
+        "Action": 203,
+        "Thriller": 133
+      },
+      "total_movies": 995,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 656.0,
+        "Documentary": 39.7,
+        "Comedy": 262.7,
+        "Action": 198.0,
+        "Thriller": 145.0
+      },
+      "raw_genre_counts": {
+        "Drama": 701,
+        "Documentary": 38,
+        "Comedy": 265,
+        "Action": 190,
+        "Thriller": 138
+      },
+      "total_movies": 1047,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 687.0,
+        "Documentary": 44.0,
+        "Comedy": 283.7,
+        "Action": 201.0,
+        "Thriller": 134.3
+      },
+      "raw_genre_counts": {
+        "Drama": 719,
+        "Documentary": 53,
+        "Comedy": 311,
+        "Action": 210,
+        "Thriller": 132
+      },
+      "total_movies": 1122,
+      "events": [
+        {
+          "year": 2008,
+          "date": "2008-11-26",
+          "event": "Mumbai Attacks",
+          "type": "terrorism",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 748.0,
+        "Documentary": 51.7,
+        "Comedy": 294.7,
+        "Action": 205.7,
+        "Thriller": 143.3
+      },
+      "raw_genre_counts": {
+        "Drama": 824,
+        "Documentary": 64,
+        "Comedy": 308,
+        "Action": 217,
+        "Thriller": 160
+      },
+      "total_movies": 1234,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 827.7,
+        "Documentary": 60.0,
+        "Comedy": 323.0,
+        "Action": 234.7,
+        "Thriller": 148.3
+      },
+      "raw_genre_counts": {
+        "Drama": 940,
+        "Documentary": 63,
+        "Comedy": 350,
+        "Action": 277,
+        "Thriller": 153
+      },
+      "total_movies": 1360,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 884.3,
+        "Documentary": 78.7,
+        "Comedy": 343.7,
+        "Action": 263.0,
+        "Thriller": 163.3
+      },
+      "raw_genre_counts": {
+        "Drama": 889,
+        "Documentary": 109,
+        "Comedy": 373,
+        "Action": 295,
+        "Thriller": 177
+      },
+      "total_movies": 1419,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 933.7,
+        "Documentary": 107.0,
+        "Comedy": 383.3,
+        "Action": 283.0,
+        "Thriller": 188.7
+      },
+      "raw_genre_counts": {
+        "Drama": 972,
+        "Documentary": 149,
+        "Comedy": 427,
+        "Action": 277,
+        "Thriller": 236
+      },
+      "total_movies": 1637,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 961.7,
+        "Documentary": 125.7,
+        "Comedy": 411.3,
+        "Action": 300.7,
+        "Thriller": 229.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1024,
+        "Documentary": 119,
+        "Comedy": 434,
+        "Action": 330,
+        "Thriller": 275
+      },
+      "total_movies": 1705,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 1049.0,
+        "Documentary": 130.0,
+        "Comedy": 445.7,
+        "Action": 310.7,
+        "Thriller": 264.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1151,
+        "Documentary": 122,
+        "Comedy": 476,
+        "Action": 325,
+        "Thriller": 282
+      },
+      "total_movies": 1828,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 1116.0,
+        "Documentary": 123.3,
+        "Comedy": 462.0,
+        "Action": 342.7,
+        "Thriller": 282.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1173,
+        "Documentary": 129,
+        "Comedy": 476,
+        "Action": 373,
+        "Thriller": 290
+      },
+      "total_movies": 1917,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 1212.3,
+        "Documentary": 126.7,
+        "Comedy": 491.7,
+        "Action": 368.0,
+        "Thriller": 305.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1313,
+        "Documentary": 129,
+        "Comedy": 523,
+        "Action": 406,
+        "Thriller": 344
+      },
+      "total_movies": 2127,
+      "events": [
+        {
+          "year": 2016,
+          "date": "2016-11-08",
+          "event": "Demonetization",
+          "type": "economic",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 1289.0,
+        "Documentary": 146.0,
+        "Comedy": 510.3,
+        "Action": 406.0,
+        "Thriller": 349.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1381,
+        "Documentary": 180,
+        "Comedy": 532,
+        "Action": 439,
+        "Thriller": 413
+      },
+      "total_movies": 2328,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 1462.3,
+        "Documentary": 156.7,
+        "Comedy": 560.3,
+        "Action": 440.3,
+        "Thriller": 410.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1693,
+        "Documentary": 161,
+        "Comedy": 626,
+        "Action": 476,
+        "Thriller": 473
+      },
+      "total_movies": 2770,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 1661.7,
+        "Documentary": 176.3,
+        "Comedy": 626.3,
+        "Action": 482.0,
+        "Thriller": 477.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1911,
+        "Documentary": 188,
+        "Comedy": 721,
+        "Action": 531,
+        "Thriller": 546
+      },
+      "total_movies": 3051,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 1648.3,
+        "Documentary": 191.3,
+        "Comedy": 625.0,
+        "Action": 452.0,
+        "Thriller": 492.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1341,
+        "Documentary": 225,
+        "Comedy": 528,
+        "Action": 349,
+        "Thriller": 458
+      },
+      "total_movies": 2345,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-24",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 1711.0,
+        "Documentary": 223.7,
+        "Comedy": 634.3,
+        "Action": 476.7,
+        "Thriller": 545.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1881,
+        "Documentary": 258,
+        "Comedy": 654,
+        "Action": 550,
+        "Thriller": 631
+      },
+      "total_movies": 3181,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 1845.3,
+        "Documentary": 274.7,
+        "Comedy": 717.0,
+        "Action": 527.0,
+        "Thriller": 657.7
+      },
+      "raw_genre_counts": {
+        "Drama": 2314,
+        "Documentary": 341,
+        "Comedy": 969,
+        "Action": 682,
+        "Thriller": 884
+      },
+      "total_movies": 4086,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 2201.0,
+        "Documentary": 340.3,
+        "Comedy": 895.7,
+        "Action": 648.0,
+        "Thriller": 814.3
+      },
+      "raw_genre_counts": {
+        "Drama": 2408,
+        "Documentary": 422,
+        "Comedy": 1064,
+        "Action": 712,
+        "Thriller": 928
+      },
+      "total_movies": 4262,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 2261.7,
+        "Documentary": 397.7,
+        "Comedy": 987.7,
+        "Action": 676.3,
+        "Thriller": 887.3
+      },
+      "raw_genre_counts": {
+        "Drama": 2063,
+        "Documentary": 430,
+        "Comedy": 930,
+        "Action": 635,
+        "Thriller": 850
+      },
+      "total_movies": 3951,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2008,
+      "event": "Mumbai Attacks",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 701,
+      "event_count": 719,
+      "after_count": 824,
+      "immediate_impact": 2.6,
+      "recovery_rate": 14.6,
+      "event_date": "2008-11-26"
+    },
+    {
+      "year": 2008,
+      "event": "Mumbai Attacks",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 38,
+      "event_count": 53,
+      "after_count": 64,
+      "immediate_impact": 39.5,
+      "recovery_rate": 20.8,
+      "event_date": "2008-11-26"
+    },
+    {
+      "year": 2008,
+      "event": "Mumbai Attacks",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 265,
+      "event_count": 311,
+      "after_count": 308,
+      "immediate_impact": 17.4,
+      "recovery_rate": -1.0,
+      "event_date": "2008-11-26"
+    },
+    {
+      "year": 2008,
+      "event": "Mumbai Attacks",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 190,
+      "event_count": 210,
+      "after_count": 217,
+      "immediate_impact": 10.5,
+      "recovery_rate": 3.3,
+      "event_date": "2008-11-26"
+    },
+    {
+      "year": 2008,
+      "event": "Mumbai Attacks",
+      "event_type": "terrorism",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 138,
+      "event_count": 132,
+      "after_count": 160,
+      "immediate_impact": -4.3,
+      "recovery_rate": 21.2,
+      "event_date": "2008-11-26"
+    },
+    {
+      "year": 2016,
+      "event": "Demonetization",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1173,
+      "event_count": 1313,
+      "after_count": 1381,
+      "immediate_impact": 11.9,
+      "recovery_rate": 5.2,
+      "event_date": "2016-11-08"
+    },
+    {
+      "year": 2016,
+      "event": "Demonetization",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 129,
+      "event_count": 129,
+      "after_count": 180,
+      "immediate_impact": 0.0,
+      "recovery_rate": 39.5,
+      "event_date": "2016-11-08"
+    },
+    {
+      "year": 2016,
+      "event": "Demonetization",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 476,
+      "event_count": 523,
+      "after_count": 532,
+      "immediate_impact": 9.9,
+      "recovery_rate": 1.7,
+      "event_date": "2016-11-08"
+    },
+    {
+      "year": 2016,
+      "event": "Demonetization",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 373,
+      "event_count": 406,
+      "after_count": 439,
+      "immediate_impact": 8.8,
+      "recovery_rate": 8.1,
+      "event_date": "2016-11-08"
+    },
+    {
+      "year": 2016,
+      "event": "Demonetization",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 290,
+      "event_count": 344,
+      "after_count": 413,
+      "immediate_impact": 18.6,
+      "recovery_rate": 20.1,
+      "event_date": "2016-11-08"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1911,
+      "event_count": 1341,
+      "after_count": 1881,
+      "immediate_impact": -29.8,
+      "recovery_rate": 40.3,
+      "event_date": "2020-03-24"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 188,
+      "event_count": 225,
+      "after_count": 258,
+      "immediate_impact": 19.7,
+      "recovery_rate": 14.7,
+      "event_date": "2020-03-24"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 721,
+      "event_count": 528,
+      "after_count": 654,
+      "immediate_impact": -26.8,
+      "recovery_rate": 23.9,
+      "event_date": "2020-03-24"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 531,
+      "event_count": 349,
+      "after_count": 550,
+      "immediate_impact": -34.3,
+      "recovery_rate": 57.6,
+      "event_date": "2020-03-24"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 546,
+      "event_count": 458,
+      "after_count": 631,
+      "immediate_impact": -16.1,
+      "recovery_rate": 37.8,
+      "event_date": "2020-03-24"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2008,
+      "date": "2008-11-26",
+      "event": "Mumbai Attacks",
+      "type": "terrorism",
+      "severity": "high"
+    },
+    {
+      "year": 2016,
+      "date": "2016-11-08",
+      "event": "Demonetization",
+      "type": "economic",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-24",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:49:17.381143",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,3796 @@
+{
+  "countries": [
+    {
+      "country": {
+        "code": "CZ",
+        "name": "Czech Republic",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 47,
+        "avg_rating": 6.117021276595745,
+        "median_rating": 6.3,
+        "min_rating": 3.3,
+        "max_rating": 8.4,
+        "std_rating": 1.0053726204399467
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.197021276595745,
+          "total_movies": 9,
+          "median_rating": 6.34
+        },
+        "2011": {
+          "avg_rating": 6.217021276595744,
+          "total_movies": 3,
+          "median_rating": 6.35
+        },
+        "2012": {
+          "avg_rating": 6.217021276595744,
+          "total_movies": 12,
+          "median_rating": 6.35
+        },
+        "2013": {
+          "avg_rating": 6.017021276595745,
+          "total_movies": 10,
+          "median_rating": 6.25
+        },
+        "2014": {
+          "avg_rating": 6.137021276595744,
+          "total_movies": 7,
+          "median_rating": 6.31
+        },
+        "2015": {
+          "avg_rating": 6.217021276595744,
+          "total_movies": 5,
+          "median_rating": 6.35
+        },
+        "2016": {
+          "avg_rating": 6.117021276595745,
+          "total_movies": 7,
+          "median_rating": 6.3
+        },
+        "2017": {
+          "avg_rating": 6.057021276595745,
+          "total_movies": 3,
+          "median_rating": 6.27
+        },
+        "2018": {
+          "avg_rating": 6.127021276595745,
+          "total_movies": 9,
+          "median_rating": 6.305
+        },
+        "2019": {
+          "avg_rating": 6.017021276595745,
+          "total_movies": 7,
+          "median_rating": 6.25
+        },
+        "2020": {
+          "avg_rating": 6.077021276595745,
+          "total_movies": 8,
+          "median_rating": 6.28
+        },
+        "2021": {
+          "avg_rating": 6.127021276595745,
+          "total_movies": 5,
+          "median_rating": 6.305
+        },
+        "2022": {
+          "avg_rating": 6.027021276595745,
+          "total_movies": 9,
+          "median_rating": 6.255
+        },
+        "2023": {
+          "avg_rating": 6.107021276595745,
+          "total_movies": 4,
+          "median_rating": 6.295
+        },
+        "2024": {
+          "avg_rating": 6.137021276595744,
+          "total_movies": 12,
+          "median_rating": 6.31
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 16,
+          "avg_rating": 6.317021276595745,
+          "median_rating": 6.45
+        },
+        "Comedy": {
+          "movie_count": 11,
+          "avg_rating": 6.017021276595745,
+          "median_rating": 6.25
+        },
+        "Action": {
+          "movie_count": 9,
+          "avg_rating": 5.817021276595745,
+          "median_rating": 6.1
+        },
+        "Documentary": {
+          "movie_count": 4,
+          "avg_rating": 6.517021276595745,
+          "median_rating": 6.6
+        },
+        "Thriller": {
+          "movie_count": 4,
+          "avg_rating": 6.117021276595745,
+          "median_rating": 6.3
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "BE",
+        "name": "Belgium",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 50,
+        "avg_rating": 5.912000000000001,
+        "median_rating": 6.05,
+        "min_rating": 3.0,
+        "max_rating": 7.6,
+        "std_rating": 0.9367262140027897
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.892000000000001,
+          "total_movies": 11,
+          "median_rating": 6.04
+        },
+        "2011": {
+          "avg_rating": 5.822000000000001,
+          "total_movies": 4,
+          "median_rating": 6.005
+        },
+        "2012": {
+          "avg_rating": 5.922000000000001,
+          "total_movies": 6,
+          "median_rating": 6.055
+        },
+        "2013": {
+          "avg_rating": 5.882000000000001,
+          "total_movies": 12,
+          "median_rating": 6.035
+        },
+        "2014": {
+          "avg_rating": 5.8420000000000005,
+          "total_movies": 11,
+          "median_rating": 6.015
+        },
+        "2015": {
+          "avg_rating": 5.852000000000001,
+          "total_movies": 11,
+          "median_rating": 6.02
+        },
+        "2016": {
+          "avg_rating": 5.882000000000001,
+          "total_movies": 4,
+          "median_rating": 6.035
+        },
+        "2017": {
+          "avg_rating": 5.932,
+          "total_movies": 10,
+          "median_rating": 6.06
+        },
+        "2018": {
+          "avg_rating": 6.002000000000001,
+          "total_movies": 6,
+          "median_rating": 6.095
+        },
+        "2019": {
+          "avg_rating": 5.972,
+          "total_movies": 12,
+          "median_rating": 6.08
+        },
+        "2020": {
+          "avg_rating": 5.8420000000000005,
+          "total_movies": 8,
+          "median_rating": 6.015
+        },
+        "2021": {
+          "avg_rating": 6.002000000000001,
+          "total_movies": 10,
+          "median_rating": 6.095
+        },
+        "2022": {
+          "avg_rating": 5.922000000000001,
+          "total_movies": 11,
+          "median_rating": 6.055
+        },
+        "2023": {
+          "avg_rating": 5.812000000000001,
+          "total_movies": 3,
+          "median_rating": 6.0
+        },
+        "2024": {
+          "avg_rating": 5.902000000000001,
+          "total_movies": 10,
+          "median_rating": 6.045
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 17,
+          "avg_rating": 6.112000000000001,
+          "median_rating": 6.2
+        },
+        "Comedy": {
+          "movie_count": 12,
+          "avg_rating": 5.812000000000001,
+          "median_rating": 6.0
+        },
+        "Action": {
+          "movie_count": 10,
+          "avg_rating": 5.612000000000001,
+          "median_rating": 5.85
+        },
+        "Documentary": {
+          "movie_count": 5,
+          "avg_rating": 6.312000000000001,
+          "median_rating": 6.35
+        },
+        "Thriller": {
+          "movie_count": 5,
+          "avg_rating": 5.912000000000001,
+          "median_rating": 6.05
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "FI",
+        "name": "Finland",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 75,
+        "avg_rating": 6.224,
+        "median_rating": 6.5,
+        "min_rating": 3.5,
+        "max_rating": 7.7,
+        "std_rating": 1.0140138066121192
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.154,
+          "total_movies": 13,
+          "median_rating": 6.465
+        },
+        "2011": {
+          "avg_rating": 6.264,
+          "total_movies": 7,
+          "median_rating": 6.52
+        },
+        "2012": {
+          "avg_rating": 6.234,
+          "total_movies": 9,
+          "median_rating": 6.505
+        },
+        "2013": {
+          "avg_rating": 6.284,
+          "total_movies": 11,
+          "median_rating": 6.53
+        },
+        "2014": {
+          "avg_rating": 6.134,
+          "total_movies": 5,
+          "median_rating": 6.455
+        },
+        "2015": {
+          "avg_rating": 6.2940000000000005,
+          "total_movies": 5,
+          "median_rating": 6.535
+        },
+        "2016": {
+          "avg_rating": 6.2540000000000004,
+          "total_movies": 11,
+          "median_rating": 6.515
+        },
+        "2017": {
+          "avg_rating": 6.204000000000001,
+          "total_movies": 8,
+          "median_rating": 6.49
+        },
+        "2018": {
+          "avg_rating": 6.284,
+          "total_movies": 5,
+          "median_rating": 6.53
+        },
+        "2019": {
+          "avg_rating": 6.234,
+          "total_movies": 12,
+          "median_rating": 6.505
+        },
+        "2020": {
+          "avg_rating": 6.154,
+          "total_movies": 9,
+          "median_rating": 6.465
+        },
+        "2021": {
+          "avg_rating": 6.184,
+          "total_movies": 11,
+          "median_rating": 6.48
+        },
+        "2022": {
+          "avg_rating": 6.264,
+          "total_movies": 13,
+          "median_rating": 6.52
+        },
+        "2023": {
+          "avg_rating": 6.244,
+          "total_movies": 7,
+          "median_rating": 6.51
+        },
+        "2024": {
+          "avg_rating": 6.2940000000000005,
+          "total_movies": 10,
+          "median_rating": 6.535
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 26,
+          "avg_rating": 6.424,
+          "median_rating": 6.65
+        },
+        "Comedy": {
+          "movie_count": 18,
+          "avg_rating": 6.1240000000000006,
+          "median_rating": 6.45
+        },
+        "Action": {
+          "movie_count": 15,
+          "avg_rating": 5.924,
+          "median_rating": 6.3
+        },
+        "Documentary": {
+          "movie_count": 7,
+          "avg_rating": 6.6240000000000006,
+          "median_rating": 6.8
+        },
+        "Thriller": {
+          "movie_count": 7,
+          "avg_rating": 6.224,
+          "median_rating": 6.5
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "NO",
+        "name": "Norway",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 62,
+        "avg_rating": 6.0209677419354835,
+        "median_rating": 6.1,
+        "min_rating": 3.5,
+        "max_rating": 8.1,
+        "std_rating": 0.9971147241681699
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.040967741935483,
+          "total_movies": 10,
+          "median_rating": 6.109999999999999
+        },
+        "2011": {
+          "avg_rating": 6.040967741935483,
+          "total_movies": 11,
+          "median_rating": 6.109999999999999
+        },
+        "2012": {
+          "avg_rating": 6.0609677419354835,
+          "total_movies": 13,
+          "median_rating": 6.119999999999999
+        },
+        "2013": {
+          "avg_rating": 5.940967741935483,
+          "total_movies": 11,
+          "median_rating": 6.06
+        },
+        "2014": {
+          "avg_rating": 6.0609677419354835,
+          "total_movies": 13,
+          "median_rating": 6.119999999999999
+        },
+        "2015": {
+          "avg_rating": 6.120967741935483,
+          "total_movies": 5,
+          "median_rating": 6.1499999999999995
+        },
+        "2016": {
+          "avg_rating": 5.950967741935483,
+          "total_movies": 9,
+          "median_rating": 6.0649999999999995
+        },
+        "2017": {
+          "avg_rating": 6.0609677419354835,
+          "total_movies": 12,
+          "median_rating": 6.119999999999999
+        },
+        "2018": {
+          "avg_rating": 6.010967741935484,
+          "total_movies": 8,
+          "median_rating": 6.095
+        },
+        "2019": {
+          "avg_rating": 5.950967741935483,
+          "total_movies": 13,
+          "median_rating": 6.0649999999999995
+        },
+        "2020": {
+          "avg_rating": 6.040967741935483,
+          "total_movies": 4,
+          "median_rating": 6.109999999999999
+        },
+        "2021": {
+          "avg_rating": 6.0209677419354835,
+          "total_movies": 8,
+          "median_rating": 6.1
+        },
+        "2022": {
+          "avg_rating": 6.040967741935483,
+          "total_movies": 9,
+          "median_rating": 6.109999999999999
+        },
+        "2023": {
+          "avg_rating": 6.0209677419354835,
+          "total_movies": 13,
+          "median_rating": 6.1
+        },
+        "2024": {
+          "avg_rating": 6.090967741935484,
+          "total_movies": 4,
+          "median_rating": 6.135
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 21,
+          "avg_rating": 6.220967741935484,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 15,
+          "avg_rating": 5.920967741935484,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 12,
+          "avg_rating": 5.720967741935484,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 6,
+          "avg_rating": 6.420967741935484,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 6,
+          "avg_rating": 6.0209677419354835,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "NL",
+        "name": "Netherlands",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 255,
+        "avg_rating": 5.509019607843136,
+        "median_rating": 5.6,
+        "min_rating": 1.9,
+        "max_rating": 8.4,
+        "std_rating": 1.2897928924823108
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.499019607843136,
+          "total_movies": 18,
+          "median_rating": 5.595
+        },
+        "2011": {
+          "avg_rating": 5.489019607843137,
+          "total_movies": 26,
+          "median_rating": 5.59
+        },
+        "2012": {
+          "avg_rating": 5.579019607843136,
+          "total_movies": 19,
+          "median_rating": 5.635
+        },
+        "2013": {
+          "avg_rating": 5.539019607843136,
+          "total_movies": 24,
+          "median_rating": 5.614999999999999
+        },
+        "2014": {
+          "avg_rating": 5.569019607843136,
+          "total_movies": 18,
+          "median_rating": 5.63
+        },
+        "2015": {
+          "avg_rating": 5.459019607843136,
+          "total_movies": 24,
+          "median_rating": 5.574999999999999
+        },
+        "2016": {
+          "avg_rating": 5.419019607843136,
+          "total_movies": 20,
+          "median_rating": 5.555
+        },
+        "2017": {
+          "avg_rating": 5.479019607843136,
+          "total_movies": 21,
+          "median_rating": 5.585
+        },
+        "2018": {
+          "avg_rating": 5.599019607843136,
+          "total_movies": 21,
+          "median_rating": 5.645
+        },
+        "2019": {
+          "avg_rating": 5.499019607843136,
+          "total_movies": 26,
+          "median_rating": 5.595
+        },
+        "2020": {
+          "avg_rating": 5.559019607843136,
+          "total_movies": 23,
+          "median_rating": 5.625
+        },
+        "2021": {
+          "avg_rating": 5.539019607843136,
+          "total_movies": 25,
+          "median_rating": 5.614999999999999
+        },
+        "2022": {
+          "avg_rating": 5.589019607843136,
+          "total_movies": 24,
+          "median_rating": 5.64
+        },
+        "2023": {
+          "avg_rating": 5.4090196078431365,
+          "total_movies": 20,
+          "median_rating": 5.55
+        },
+        "2024": {
+          "avg_rating": 5.589019607843136,
+          "total_movies": 24,
+          "median_rating": 5.64
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 89,
+          "avg_rating": 5.709019607843136,
+          "median_rating": 5.75
+        },
+        "Comedy": {
+          "movie_count": 63,
+          "avg_rating": 5.4090196078431365,
+          "median_rating": 5.55
+        },
+        "Action": {
+          "movie_count": 51,
+          "avg_rating": 5.209019607843136,
+          "median_rating": 5.3999999999999995
+        },
+        "Documentary": {
+          "movie_count": 25,
+          "avg_rating": 5.9090196078431365,
+          "median_rating": 5.8999999999999995
+        },
+        "Thriller": {
+          "movie_count": 25,
+          "avg_rating": 5.509019607843136,
+          "median_rating": 5.6
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "DK",
+        "name": "Denmark",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 55,
+        "avg_rating": 6.383636363636363,
+        "median_rating": 6.5,
+        "min_rating": 2.2,
+        "max_rating": 8.2,
+        "std_rating": 1.0741192817396765
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.343636363636363,
+          "total_movies": 7,
+          "median_rating": 6.48
+        },
+        "2011": {
+          "avg_rating": 6.4836363636363625,
+          "total_movies": 6,
+          "median_rating": 6.55
+        },
+        "2012": {
+          "avg_rating": 6.4436363636363625,
+          "total_movies": 6,
+          "median_rating": 6.53
+        },
+        "2013": {
+          "avg_rating": 6.463636363636363,
+          "total_movies": 12,
+          "median_rating": 6.54
+        },
+        "2014": {
+          "avg_rating": 6.283636363636363,
+          "total_movies": 6,
+          "median_rating": 6.45
+        },
+        "2015": {
+          "avg_rating": 6.343636363636363,
+          "total_movies": 3,
+          "median_rating": 6.48
+        },
+        "2016": {
+          "avg_rating": 6.473636363636363,
+          "total_movies": 4,
+          "median_rating": 6.545
+        },
+        "2017": {
+          "avg_rating": 6.423636363636363,
+          "total_movies": 6,
+          "median_rating": 6.52
+        },
+        "2018": {
+          "avg_rating": 6.313636363636363,
+          "total_movies": 7,
+          "median_rating": 6.465
+        },
+        "2019": {
+          "avg_rating": 6.303636363636363,
+          "total_movies": 7,
+          "median_rating": 6.46
+        },
+        "2020": {
+          "avg_rating": 6.293636363636363,
+          "total_movies": 7,
+          "median_rating": 6.455
+        },
+        "2021": {
+          "avg_rating": 6.323636363636363,
+          "total_movies": 10,
+          "median_rating": 6.47
+        },
+        "2022": {
+          "avg_rating": 6.373636363636363,
+          "total_movies": 5,
+          "median_rating": 6.495
+        },
+        "2023": {
+          "avg_rating": 6.353636363636363,
+          "total_movies": 12,
+          "median_rating": 6.485
+        },
+        "2024": {
+          "avg_rating": 6.343636363636363,
+          "total_movies": 12,
+          "median_rating": 6.48
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 19,
+          "avg_rating": 6.583636363636363,
+          "median_rating": 6.65
+        },
+        "Comedy": {
+          "movie_count": 13,
+          "avg_rating": 6.283636363636363,
+          "median_rating": 6.45
+        },
+        "Action": {
+          "movie_count": 11,
+          "avg_rating": 6.083636363636363,
+          "median_rating": 6.3
+        },
+        "Documentary": {
+          "movie_count": 5,
+          "avg_rating": 6.783636363636363,
+          "median_rating": 6.8
+        },
+        "Thriller": {
+          "movie_count": 5,
+          "avg_rating": 6.383636363636363,
+          "median_rating": 6.5
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "SE",
+        "name": "Sweden",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 266,
+        "avg_rating": 5.935338345864662,
+        "median_rating": 6.1,
+        "min_rating": 2.0,
+        "max_rating": 8.5,
+        "std_rating": 1.1544744915707272
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.845338345864662,
+          "total_movies": 18,
+          "median_rating": 6.055
+        },
+        "2011": {
+          "avg_rating": 5.855338345864662,
+          "total_movies": 22,
+          "median_rating": 6.06
+        },
+        "2012": {
+          "avg_rating": 5.975338345864662,
+          "total_movies": 17,
+          "median_rating": 6.119999999999999
+        },
+        "2013": {
+          "avg_rating": 5.985338345864662,
+          "total_movies": 25,
+          "median_rating": 6.125
+        },
+        "2014": {
+          "avg_rating": 5.935338345864662,
+          "total_movies": 17,
+          "median_rating": 6.1
+        },
+        "2015": {
+          "avg_rating": 5.875338345864662,
+          "total_movies": 19,
+          "median_rating": 6.069999999999999
+        },
+        "2016": {
+          "avg_rating": 5.985338345864662,
+          "total_movies": 23,
+          "median_rating": 6.125
+        },
+        "2017": {
+          "avg_rating": 6.035338345864662,
+          "total_movies": 25,
+          "median_rating": 6.1499999999999995
+        },
+        "2018": {
+          "avg_rating": 5.835338345864662,
+          "total_movies": 25,
+          "median_rating": 6.05
+        },
+        "2019": {
+          "avg_rating": 6.015338345864662,
+          "total_movies": 19,
+          "median_rating": 6.14
+        },
+        "2020": {
+          "avg_rating": 5.955338345864662,
+          "total_movies": 26,
+          "median_rating": 6.109999999999999
+        },
+        "2021": {
+          "avg_rating": 5.875338345864662,
+          "total_movies": 22,
+          "median_rating": 6.069999999999999
+        },
+        "2022": {
+          "avg_rating": 5.885338345864662,
+          "total_movies": 21,
+          "median_rating": 6.074999999999999
+        },
+        "2023": {
+          "avg_rating": 5.945338345864662,
+          "total_movies": 19,
+          "median_rating": 6.1049999999999995
+        },
+        "2024": {
+          "avg_rating": 5.855338345864662,
+          "total_movies": 17,
+          "median_rating": 6.06
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 93,
+          "avg_rating": 6.135338345864662,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 66,
+          "avg_rating": 5.835338345864662,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 53,
+          "avg_rating": 5.635338345864662,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 26,
+          "avg_rating": 6.335338345864662,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 26,
+          "avg_rating": 5.935338345864662,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "AT",
+        "name": "Austria",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 133,
+        "avg_rating": 5.753383458646617,
+        "median_rating": 5.9,
+        "min_rating": 1.4,
+        "max_rating": 8.8,
+        "std_rating": 1.2283951797451504
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.7333834586466175,
+          "total_movies": 13,
+          "median_rating": 5.890000000000001
+        },
+        "2011": {
+          "avg_rating": 5.773383458646617,
+          "total_movies": 13,
+          "median_rating": 5.91
+        },
+        "2012": {
+          "avg_rating": 5.763383458646617,
+          "total_movies": 13,
+          "median_rating": 5.905
+        },
+        "2013": {
+          "avg_rating": 5.693383458646617,
+          "total_movies": 11,
+          "median_rating": 5.87
+        },
+        "2014": {
+          "avg_rating": 5.703383458646617,
+          "total_movies": 11,
+          "median_rating": 5.875
+        },
+        "2015": {
+          "avg_rating": 5.763383458646617,
+          "total_movies": 8,
+          "median_rating": 5.905
+        },
+        "2016": {
+          "avg_rating": 5.673383458646617,
+          "total_movies": 10,
+          "median_rating": 5.86
+        },
+        "2017": {
+          "avg_rating": 5.723383458646617,
+          "total_movies": 15,
+          "median_rating": 5.885000000000001
+        },
+        "2018": {
+          "avg_rating": 5.783383458646617,
+          "total_movies": 10,
+          "median_rating": 5.915
+        },
+        "2019": {
+          "avg_rating": 5.753383458646617,
+          "total_movies": 16,
+          "median_rating": 5.9
+        },
+        "2020": {
+          "avg_rating": 5.743383458646617,
+          "total_movies": 17,
+          "median_rating": 5.8950000000000005
+        },
+        "2021": {
+          "avg_rating": 5.663383458646617,
+          "total_movies": 12,
+          "median_rating": 5.855
+        },
+        "2022": {
+          "avg_rating": 5.853383458646617,
+          "total_movies": 16,
+          "median_rating": 5.95
+        },
+        "2023": {
+          "avg_rating": 5.773383458646617,
+          "total_movies": 17,
+          "median_rating": 5.91
+        },
+        "2024": {
+          "avg_rating": 5.803383458646617,
+          "total_movies": 15,
+          "median_rating": 5.925000000000001
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 46,
+          "avg_rating": 5.953383458646617,
+          "median_rating": 6.050000000000001
+        },
+        "Comedy": {
+          "movie_count": 33,
+          "avg_rating": 5.653383458646617,
+          "median_rating": 5.8500000000000005
+        },
+        "Action": {
+          "movie_count": 26,
+          "avg_rating": 5.453383458646617,
+          "median_rating": 5.7
+        },
+        "Documentary": {
+          "movie_count": 13,
+          "avg_rating": 6.153383458646617,
+          "median_rating": 6.2
+        },
+        "Thriller": {
+          "movie_count": 13,
+          "avg_rating": 5.753383458646617,
+          "median_rating": 5.9
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "PL",
+        "name": "Poland",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 396,
+        "avg_rating": 5.754040404040405,
+        "median_rating": 6.0,
+        "min_rating": 1.4,
+        "max_rating": 8.6,
+        "std_rating": 1.2786944250722874
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.8340404040404055,
+          "total_movies": 27,
+          "median_rating": 6.04
+        },
+        "2011": {
+          "avg_rating": 5.854040404040405,
+          "total_movies": 32,
+          "median_rating": 6.05
+        },
+        "2012": {
+          "avg_rating": 5.764040404040405,
+          "total_movies": 35,
+          "median_rating": 6.005
+        },
+        "2013": {
+          "avg_rating": 5.654040404040406,
+          "total_movies": 32,
+          "median_rating": 5.95
+        },
+        "2014": {
+          "avg_rating": 5.654040404040406,
+          "total_movies": 28,
+          "median_rating": 5.95
+        },
+        "2015": {
+          "avg_rating": 5.6640404040404055,
+          "total_movies": 30,
+          "median_rating": 5.955
+        },
+        "2016": {
+          "avg_rating": 5.6640404040404055,
+          "total_movies": 31,
+          "median_rating": 5.955
+        },
+        "2017": {
+          "avg_rating": 5.754040404040405,
+          "total_movies": 33,
+          "median_rating": 6.0
+        },
+        "2018": {
+          "avg_rating": 5.734040404040406,
+          "total_movies": 29,
+          "median_rating": 5.99
+        },
+        "2019": {
+          "avg_rating": 5.654040404040406,
+          "total_movies": 35,
+          "median_rating": 5.95
+        },
+        "2020": {
+          "avg_rating": 5.724040404040405,
+          "total_movies": 27,
+          "median_rating": 5.985
+        },
+        "2021": {
+          "avg_rating": 5.774040404040405,
+          "total_movies": 27,
+          "median_rating": 6.01
+        },
+        "2022": {
+          "avg_rating": 5.804040404040405,
+          "total_movies": 29,
+          "median_rating": 6.025
+        },
+        "2023": {
+          "avg_rating": 5.774040404040405,
+          "total_movies": 28,
+          "median_rating": 6.01
+        },
+        "2024": {
+          "avg_rating": 5.8340404040404055,
+          "total_movies": 35,
+          "median_rating": 6.04
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 138,
+          "avg_rating": 5.954040404040406,
+          "median_rating": 6.15
+        },
+        "Comedy": {
+          "movie_count": 99,
+          "avg_rating": 5.654040404040406,
+          "median_rating": 5.95
+        },
+        "Action": {
+          "movie_count": 79,
+          "avg_rating": 5.454040404040406,
+          "median_rating": 5.8
+        },
+        "Documentary": {
+          "movie_count": 39,
+          "avg_rating": 6.154040404040406,
+          "median_rating": 6.3
+        },
+        "Thriller": {
+          "movie_count": 39,
+          "avg_rating": 5.754040404040405,
+          "median_rating": 6.0
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "HU",
+        "name": "Hungary",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 120,
+        "avg_rating": 6.015000000000001,
+        "median_rating": 6.15,
+        "min_rating": 1.5,
+        "max_rating": 8.3,
+        "std_rating": 0.9185722617192401
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.085000000000001,
+          "total_movies": 11,
+          "median_rating": 6.1850000000000005
+        },
+        "2011": {
+          "avg_rating": 6.115,
+          "total_movies": 11,
+          "median_rating": 6.2
+        },
+        "2012": {
+          "avg_rating": 6.095000000000001,
+          "total_movies": 8,
+          "median_rating": 6.19
+        },
+        "2013": {
+          "avg_rating": 6.095000000000001,
+          "total_movies": 16,
+          "median_rating": 6.19
+        },
+        "2014": {
+          "avg_rating": 5.9350000000000005,
+          "total_movies": 13,
+          "median_rating": 6.11
+        },
+        "2015": {
+          "avg_rating": 5.945,
+          "total_movies": 10,
+          "median_rating": 6.115
+        },
+        "2016": {
+          "avg_rating": 5.955000000000001,
+          "total_movies": 10,
+          "median_rating": 6.12
+        },
+        "2017": {
+          "avg_rating": 6.075,
+          "total_movies": 10,
+          "median_rating": 6.180000000000001
+        },
+        "2018": {
+          "avg_rating": 5.925000000000001,
+          "total_movies": 15,
+          "median_rating": 6.105
+        },
+        "2019": {
+          "avg_rating": 5.955000000000001,
+          "total_movies": 15,
+          "median_rating": 6.12
+        },
+        "2020": {
+          "avg_rating": 6.025,
+          "total_movies": 13,
+          "median_rating": 6.155
+        },
+        "2021": {
+          "avg_rating": 5.9350000000000005,
+          "total_movies": 13,
+          "median_rating": 6.11
+        },
+        "2022": {
+          "avg_rating": 6.085000000000001,
+          "total_movies": 10,
+          "median_rating": 6.1850000000000005
+        },
+        "2023": {
+          "avg_rating": 6.055000000000001,
+          "total_movies": 8,
+          "median_rating": 6.17
+        },
+        "2024": {
+          "avg_rating": 6.095000000000001,
+          "total_movies": 16,
+          "median_rating": 6.19
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 42,
+          "avg_rating": 6.215000000000001,
+          "median_rating": 6.300000000000001
+        },
+        "Comedy": {
+          "movie_count": 30,
+          "avg_rating": 5.915000000000001,
+          "median_rating": 6.1000000000000005
+        },
+        "Action": {
+          "movie_count": 24,
+          "avg_rating": 5.715000000000001,
+          "median_rating": 5.95
+        },
+        "Documentary": {
+          "movie_count": 12,
+          "avg_rating": 6.415000000000001,
+          "median_rating": 6.45
+        },
+        "Thriller": {
+          "movie_count": 12,
+          "avg_rating": 6.015000000000001,
+          "median_rating": 6.15
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "KR",
+        "name": "South Korea",
+        "region": "asia"
+      },
+      "summary": {
+        "total_movies": 124,
+        "avg_rating": 5.750806451612904,
+        "median_rating": 6.1,
+        "min_rating": 2.1,
+        "max_rating": 8.0,
+        "std_rating": 1.2634116617536626
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.730806451612905,
+          "total_movies": 11,
+          "median_rating": 6.09
+        },
+        "2011": {
+          "avg_rating": 5.720806451612904,
+          "total_movies": 9,
+          "median_rating": 6.085
+        },
+        "2012": {
+          "avg_rating": 5.680806451612904,
+          "total_movies": 11,
+          "median_rating": 6.0649999999999995
+        },
+        "2013": {
+          "avg_rating": 5.720806451612904,
+          "total_movies": 16,
+          "median_rating": 6.085
+        },
+        "2014": {
+          "avg_rating": 5.790806451612904,
+          "total_movies": 13,
+          "median_rating": 6.119999999999999
+        },
+        "2015": {
+          "avg_rating": 5.7408064516129045,
+          "total_movies": 9,
+          "median_rating": 6.095
+        },
+        "2016": {
+          "avg_rating": 5.7008064516129044,
+          "total_movies": 8,
+          "median_rating": 6.074999999999999
+        },
+        "2017": {
+          "avg_rating": 5.850806451612904,
+          "total_movies": 15,
+          "median_rating": 6.1499999999999995
+        },
+        "2018": {
+          "avg_rating": 5.810806451612904,
+          "total_movies": 11,
+          "median_rating": 6.13
+        },
+        "2019": {
+          "avg_rating": 5.7008064516129044,
+          "total_movies": 8,
+          "median_rating": 6.074999999999999
+        },
+        "2020": {
+          "avg_rating": 5.720806451612904,
+          "total_movies": 16,
+          "median_rating": 6.085
+        },
+        "2021": {
+          "avg_rating": 5.7008064516129044,
+          "total_movies": 15,
+          "median_rating": 6.074999999999999
+        },
+        "2022": {
+          "avg_rating": 5.690806451612905,
+          "total_movies": 10,
+          "median_rating": 6.069999999999999
+        },
+        "2023": {
+          "avg_rating": 5.7408064516129045,
+          "total_movies": 15,
+          "median_rating": 6.095
+        },
+        "2024": {
+          "avg_rating": 5.690806451612905,
+          "total_movies": 16,
+          "median_rating": 6.069999999999999
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 43,
+          "avg_rating": 5.9508064516129044,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 31,
+          "avg_rating": 5.650806451612905,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 24,
+          "avg_rating": 5.4508064516129044,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 12,
+          "avg_rating": 6.150806451612905,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 12,
+          "avg_rating": 5.750806451612904,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "FR",
+        "name": "France",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 389,
+        "avg_rating": 5.920051413881748,
+        "median_rating": 6.1,
+        "min_rating": 1.4,
+        "max_rating": 9.3,
+        "std_rating": 1.1753067739023617
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.860051413881749,
+          "total_movies": 25,
+          "median_rating": 6.069999999999999
+        },
+        "2011": {
+          "avg_rating": 5.910051413881749,
+          "total_movies": 25,
+          "median_rating": 6.095
+        },
+        "2012": {
+          "avg_rating": 6.0000514138817485,
+          "total_movies": 34,
+          "median_rating": 6.14
+        },
+        "2013": {
+          "avg_rating": 5.900051413881749,
+          "total_movies": 27,
+          "median_rating": 6.09
+        },
+        "2014": {
+          "avg_rating": 5.930051413881748,
+          "total_movies": 28,
+          "median_rating": 6.1049999999999995
+        },
+        "2015": {
+          "avg_rating": 5.990051413881749,
+          "total_movies": 32,
+          "median_rating": 6.135
+        },
+        "2016": {
+          "avg_rating": 5.840051413881748,
+          "total_movies": 34,
+          "median_rating": 6.06
+        },
+        "2017": {
+          "avg_rating": 5.960051413881748,
+          "total_movies": 33,
+          "median_rating": 6.119999999999999
+        },
+        "2018": {
+          "avg_rating": 6.020051413881748,
+          "total_movies": 28,
+          "median_rating": 6.1499999999999995
+        },
+        "2019": {
+          "avg_rating": 5.8300514138817485,
+          "total_movies": 32,
+          "median_rating": 6.055
+        },
+        "2020": {
+          "avg_rating": 5.960051413881748,
+          "total_movies": 34,
+          "median_rating": 6.119999999999999
+        },
+        "2021": {
+          "avg_rating": 5.950051413881749,
+          "total_movies": 27,
+          "median_rating": 6.114999999999999
+        },
+        "2022": {
+          "avg_rating": 5.880051413881748,
+          "total_movies": 34,
+          "median_rating": 6.08
+        },
+        "2023": {
+          "avg_rating": 5.930051413881748,
+          "total_movies": 26,
+          "median_rating": 6.1049999999999995
+        },
+        "2024": {
+          "avg_rating": 6.010051413881748,
+          "total_movies": 29,
+          "median_rating": 6.145
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 136,
+          "avg_rating": 6.120051413881749,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 97,
+          "avg_rating": 5.820051413881749,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 77,
+          "avg_rating": 5.620051413881749,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 38,
+          "avg_rating": 6.320051413881749,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 38,
+          "avg_rating": 5.920051413881748,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "DE",
+        "name": "Germany",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 829,
+        "avg_rating": 5.872738238841978,
+        "median_rating": 6.0,
+        "min_rating": 1.0,
+        "max_rating": 9.1,
+        "std_rating": 1.3346111166054109
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.922738238841978,
+          "total_movies": 59,
+          "median_rating": 6.025
+        },
+        "2011": {
+          "avg_rating": 5.9027382388419785,
+          "total_movies": 57,
+          "median_rating": 6.015
+        },
+        "2012": {
+          "avg_rating": 5.922738238841978,
+          "total_movies": 61,
+          "median_rating": 6.025
+        },
+        "2013": {
+          "avg_rating": 5.782738238841978,
+          "total_movies": 60,
+          "median_rating": 5.955
+        },
+        "2014": {
+          "avg_rating": 5.852738238841979,
+          "total_movies": 62,
+          "median_rating": 5.99
+        },
+        "2015": {
+          "avg_rating": 5.922738238841978,
+          "total_movies": 63,
+          "median_rating": 6.025
+        },
+        "2016": {
+          "avg_rating": 5.882738238841978,
+          "total_movies": 60,
+          "median_rating": 6.005
+        },
+        "2017": {
+          "avg_rating": 5.832738238841978,
+          "total_movies": 60,
+          "median_rating": 5.98
+        },
+        "2018": {
+          "avg_rating": 5.822738238841978,
+          "total_movies": 61,
+          "median_rating": 5.975
+        },
+        "2019": {
+          "avg_rating": 5.932738238841978,
+          "total_movies": 58,
+          "median_rating": 6.03
+        },
+        "2020": {
+          "avg_rating": 5.802738238841978,
+          "total_movies": 60,
+          "median_rating": 5.965
+        },
+        "2021": {
+          "avg_rating": 5.782738238841978,
+          "total_movies": 55,
+          "median_rating": 5.955
+        },
+        "2022": {
+          "avg_rating": 5.952738238841978,
+          "total_movies": 63,
+          "median_rating": 6.04
+        },
+        "2023": {
+          "avg_rating": 5.782738238841978,
+          "total_movies": 56,
+          "median_rating": 5.955
+        },
+        "2024": {
+          "avg_rating": 5.9027382388419785,
+          "total_movies": 61,
+          "median_rating": 6.015
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 290,
+          "avg_rating": 6.072738238841978,
+          "median_rating": 6.15
+        },
+        "Comedy": {
+          "movie_count": 207,
+          "avg_rating": 5.772738238841979,
+          "median_rating": 5.95
+        },
+        "Action": {
+          "movie_count": 165,
+          "avg_rating": 5.572738238841978,
+          "median_rating": 5.8
+        },
+        "Documentary": {
+          "movie_count": 82,
+          "avg_rating": 6.272738238841979,
+          "median_rating": 6.3
+        },
+        "Thriller": {
+          "movie_count": 82,
+          "avg_rating": 5.872738238841978,
+          "median_rating": 6.0
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "CH",
+        "name": "Switzerland",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 29,
+        "avg_rating": 6.344827586206898,
+        "median_rating": 6.4,
+        "min_rating": 3.5,
+        "max_rating": 8.3,
+        "std_rating": 1.038429253777584
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.274827586206897,
+          "total_movies": 10,
+          "median_rating": 6.365
+        },
+        "2011": {
+          "avg_rating": 6.314827586206897,
+          "total_movies": 10,
+          "median_rating": 6.385000000000001
+        },
+        "2012": {
+          "avg_rating": 6.414827586206898,
+          "total_movies": 7,
+          "median_rating": 6.4350000000000005
+        },
+        "2013": {
+          "avg_rating": 6.304827586206898,
+          "total_movies": 2,
+          "median_rating": 6.380000000000001
+        },
+        "2014": {
+          "avg_rating": 6.404827586206897,
+          "total_movies": 4,
+          "median_rating": 6.430000000000001
+        },
+        "2015": {
+          "avg_rating": 6.384827586206898,
+          "total_movies": 8,
+          "median_rating": 6.42
+        },
+        "2016": {
+          "avg_rating": 6.374827586206898,
+          "total_movies": 9,
+          "median_rating": 6.415
+        },
+        "2017": {
+          "avg_rating": 6.3548275862068975,
+          "total_movies": 6,
+          "median_rating": 6.405
+        },
+        "2018": {
+          "avg_rating": 6.314827586206897,
+          "total_movies": 1,
+          "median_rating": 6.385000000000001
+        },
+        "2019": {
+          "avg_rating": 6.424827586206898,
+          "total_movies": 5,
+          "median_rating": 6.44
+        },
+        "2020": {
+          "avg_rating": 6.294827586206898,
+          "total_movies": 3,
+          "median_rating": 6.375
+        },
+        "2021": {
+          "avg_rating": 6.284827586206898,
+          "total_movies": 4,
+          "median_rating": 6.37
+        },
+        "2022": {
+          "avg_rating": 6.414827586206898,
+          "total_movies": 6,
+          "median_rating": 6.4350000000000005
+        },
+        "2023": {
+          "avg_rating": 6.374827586206898,
+          "total_movies": 9,
+          "median_rating": 6.415
+        },
+        "2024": {
+          "avg_rating": 6.304827586206898,
+          "total_movies": 2,
+          "median_rating": 6.380000000000001
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 10,
+          "avg_rating": 6.544827586206898,
+          "median_rating": 6.550000000000001
+        },
+        "Comedy": {
+          "movie_count": 7,
+          "avg_rating": 6.244827586206898,
+          "median_rating": 6.3500000000000005
+        },
+        "Action": {
+          "movie_count": 5,
+          "avg_rating": 6.044827586206898,
+          "median_rating": 6.2
+        },
+        "Documentary": {
+          "movie_count": 2,
+          "avg_rating": 6.744827586206898,
+          "median_rating": 6.7
+        },
+        "Thriller": {
+          "movie_count": 2,
+          "avg_rating": 6.344827586206898,
+          "median_rating": 6.4
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "JP",
+        "name": "Japan",
+        "region": "asia"
+      },
+      "summary": {
+        "total_movies": 472,
+        "avg_rating": 5.783686440677966,
+        "median_rating": 5.9,
+        "min_rating": 1.8,
+        "max_rating": 8.6,
+        "std_rating": 1.263138062955642
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.823686440677966,
+          "total_movies": 35,
+          "median_rating": 5.92
+        },
+        "2011": {
+          "avg_rating": 5.683686440677966,
+          "total_movies": 39,
+          "median_rating": 5.8500000000000005
+        },
+        "2012": {
+          "avg_rating": 5.863686440677966,
+          "total_movies": 36,
+          "median_rating": 5.94
+        },
+        "2013": {
+          "avg_rating": 5.733686440677966,
+          "total_movies": 39,
+          "median_rating": 5.875
+        },
+        "2014": {
+          "avg_rating": 5.7036864406779655,
+          "total_movies": 36,
+          "median_rating": 5.86
+        },
+        "2015": {
+          "avg_rating": 5.823686440677966,
+          "total_movies": 39,
+          "median_rating": 5.92
+        },
+        "2016": {
+          "avg_rating": 5.723686440677966,
+          "total_movies": 32,
+          "median_rating": 5.87
+        },
+        "2017": {
+          "avg_rating": 5.843686440677965,
+          "total_movies": 39,
+          "median_rating": 5.930000000000001
+        },
+        "2018": {
+          "avg_rating": 5.773686440677966,
+          "total_movies": 35,
+          "median_rating": 5.8950000000000005
+        },
+        "2019": {
+          "avg_rating": 5.853686440677966,
+          "total_movies": 37,
+          "median_rating": 5.9350000000000005
+        },
+        "2020": {
+          "avg_rating": 5.873686440677965,
+          "total_movies": 38,
+          "median_rating": 5.945
+        },
+        "2021": {
+          "avg_rating": 5.693686440677966,
+          "total_movies": 37,
+          "median_rating": 5.855
+        },
+        "2022": {
+          "avg_rating": 5.813686440677966,
+          "total_movies": 35,
+          "median_rating": 5.915
+        },
+        "2023": {
+          "avg_rating": 5.883686440677965,
+          "total_movies": 35,
+          "median_rating": 5.95
+        },
+        "2024": {
+          "avg_rating": 5.683686440677966,
+          "total_movies": 33,
+          "median_rating": 5.8500000000000005
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 165,
+          "avg_rating": 5.983686440677966,
+          "median_rating": 6.050000000000001
+        },
+        "Comedy": {
+          "movie_count": 118,
+          "avg_rating": 5.683686440677966,
+          "median_rating": 5.8500000000000005
+        },
+        "Action": {
+          "movie_count": 94,
+          "avg_rating": 5.483686440677966,
+          "median_rating": 5.7
+        },
+        "Documentary": {
+          "movie_count": 47,
+          "avg_rating": 6.183686440677966,
+          "median_rating": 6.2
+        },
+        "Thriller": {
+          "movie_count": 47,
+          "avg_rating": 5.783686440677966,
+          "median_rating": 5.9
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "CA",
+        "name": "Canada",
+        "region": "north-america"
+      },
+      "summary": {
+        "total_movies": 1113,
+        "avg_rating": 5.881491464510333,
+        "median_rating": 6.0,
+        "min_rating": 1.0,
+        "max_rating": 9.4,
+        "std_rating": 1.4190396776062204
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.951491464510333,
+          "total_movies": 81,
+          "median_rating": 6.035
+        },
+        "2011": {
+          "avg_rating": 5.9014914645103325,
+          "total_movies": 78,
+          "median_rating": 6.01
+        },
+        "2012": {
+          "avg_rating": 5.9014914645103325,
+          "total_movies": 79,
+          "median_rating": 6.01
+        },
+        "2013": {
+          "avg_rating": 5.911491464510333,
+          "total_movies": 77,
+          "median_rating": 6.015
+        },
+        "2014": {
+          "avg_rating": 5.9014914645103325,
+          "total_movies": 78,
+          "median_rating": 6.01
+        },
+        "2015": {
+          "avg_rating": 5.881491464510333,
+          "total_movies": 75,
+          "median_rating": 6.0
+        },
+        "2016": {
+          "avg_rating": 5.891491464510333,
+          "total_movies": 76,
+          "median_rating": 6.005
+        },
+        "2017": {
+          "avg_rating": 5.951491464510333,
+          "total_movies": 74,
+          "median_rating": 6.035
+        },
+        "2018": {
+          "avg_rating": 5.851491464510333,
+          "total_movies": 83,
+          "median_rating": 5.985
+        },
+        "2019": {
+          "avg_rating": 5.781491464510333,
+          "total_movies": 79,
+          "median_rating": 5.95
+        },
+        "2020": {
+          "avg_rating": 5.781491464510333,
+          "total_movies": 75,
+          "median_rating": 5.95
+        },
+        "2021": {
+          "avg_rating": 5.841491464510333,
+          "total_movies": 80,
+          "median_rating": 5.98
+        },
+        "2022": {
+          "avg_rating": 5.931491464510333,
+          "total_movies": 81,
+          "median_rating": 6.025
+        },
+        "2023": {
+          "avg_rating": 5.881491464510333,
+          "total_movies": 75,
+          "median_rating": 6.0
+        },
+        "2024": {
+          "avg_rating": 5.951491464510333,
+          "total_movies": 75,
+          "median_rating": 6.035
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 389,
+          "avg_rating": 6.081491464510333,
+          "median_rating": 6.15
+        },
+        "Comedy": {
+          "movie_count": 278,
+          "avg_rating": 5.781491464510333,
+          "median_rating": 5.95
+        },
+        "Action": {
+          "movie_count": 222,
+          "avg_rating": 5.581491464510333,
+          "median_rating": 5.8
+        },
+        "Documentary": {
+          "movie_count": 111,
+          "avg_rating": 6.281491464510333,
+          "median_rating": 6.3
+        },
+        "Thriller": {
+          "movie_count": 111,
+          "avg_rating": 5.881491464510333,
+          "median_rating": 6.0
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 1126,
+        "avg_rating": 5.923445825932505,
+        "median_rating": 6.1,
+        "min_rating": 1.4,
+        "max_rating": 9.5,
+        "std_rating": 1.3573237401297735
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.833445825932505,
+          "total_movies": 80,
+          "median_rating": 6.055
+        },
+        "2011": {
+          "avg_rating": 5.843445825932505,
+          "total_movies": 82,
+          "median_rating": 6.06
+        },
+        "2012": {
+          "avg_rating": 6.003445825932505,
+          "total_movies": 77,
+          "median_rating": 6.14
+        },
+        "2013": {
+          "avg_rating": 5.863445825932505,
+          "total_movies": 77,
+          "median_rating": 6.069999999999999
+        },
+        "2014": {
+          "avg_rating": 5.833445825932505,
+          "total_movies": 79,
+          "median_rating": 6.055
+        },
+        "2015": {
+          "avg_rating": 5.963445825932505,
+          "total_movies": 81,
+          "median_rating": 6.119999999999999
+        },
+        "2016": {
+          "avg_rating": 5.823445825932505,
+          "total_movies": 83,
+          "median_rating": 6.05
+        },
+        "2017": {
+          "avg_rating": 5.903445825932505,
+          "total_movies": 84,
+          "median_rating": 6.09
+        },
+        "2018": {
+          "avg_rating": 5.833445825932505,
+          "total_movies": 76,
+          "median_rating": 6.055
+        },
+        "2019": {
+          "avg_rating": 5.873445825932505,
+          "total_movies": 79,
+          "median_rating": 6.074999999999999
+        },
+        "2020": {
+          "avg_rating": 5.923445825932505,
+          "total_movies": 81,
+          "median_rating": 6.1
+        },
+        "2021": {
+          "avg_rating": 5.9334458259325045,
+          "total_movies": 79,
+          "median_rating": 6.1049999999999995
+        },
+        "2022": {
+          "avg_rating": 5.913445825932505,
+          "total_movies": 84,
+          "median_rating": 6.095
+        },
+        "2023": {
+          "avg_rating": 5.853445825932504,
+          "total_movies": 78,
+          "median_rating": 6.0649999999999995
+        },
+        "2024": {
+          "avg_rating": 5.843445825932505,
+          "total_movies": 81,
+          "median_rating": 6.06
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 394,
+          "avg_rating": 6.123445825932505,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 281,
+          "avg_rating": 5.823445825932505,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 225,
+          "avg_rating": 5.623445825932505,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 112,
+          "avg_rating": 6.323445825932505,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 112,
+          "avg_rating": 5.923445825932505,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "PT",
+        "name": "Portugal",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 67,
+        "avg_rating": 6.095522388059702,
+        "median_rating": 6.2,
+        "min_rating": 2.6,
+        "max_rating": 7.6,
+        "std_rating": 0.9692946867683131
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.195522388059701,
+          "total_movies": 10,
+          "median_rating": 6.25
+        },
+        "2011": {
+          "avg_rating": 6.045522388059702,
+          "total_movies": 13,
+          "median_rating": 6.175
+        },
+        "2012": {
+          "avg_rating": 6.035522388059702,
+          "total_movies": 13,
+          "median_rating": 6.17
+        },
+        "2013": {
+          "avg_rating": 6.165522388059702,
+          "total_movies": 12,
+          "median_rating": 6.235
+        },
+        "2014": {
+          "avg_rating": 6.025522388059701,
+          "total_movies": 5,
+          "median_rating": 6.165
+        },
+        "2015": {
+          "avg_rating": 6.145522388059701,
+          "total_movies": 9,
+          "median_rating": 6.2250000000000005
+        },
+        "2016": {
+          "avg_rating": 6.195522388059701,
+          "total_movies": 6,
+          "median_rating": 6.25
+        },
+        "2017": {
+          "avg_rating": 6.0155223880597015,
+          "total_movies": 10,
+          "median_rating": 6.16
+        },
+        "2018": {
+          "avg_rating": 6.0155223880597015,
+          "total_movies": 11,
+          "median_rating": 6.16
+        },
+        "2019": {
+          "avg_rating": 6.145522388059701,
+          "total_movies": 9,
+          "median_rating": 6.2250000000000005
+        },
+        "2020": {
+          "avg_rating": 6.165522388059702,
+          "total_movies": 8,
+          "median_rating": 6.235
+        },
+        "2021": {
+          "avg_rating": 6.105522388059701,
+          "total_movies": 8,
+          "median_rating": 6.205
+        },
+        "2022": {
+          "avg_rating": 6.025522388059701,
+          "total_movies": 10,
+          "median_rating": 6.165
+        },
+        "2023": {
+          "avg_rating": 6.135522388059702,
+          "total_movies": 4,
+          "median_rating": 6.22
+        },
+        "2024": {
+          "avg_rating": 6.035522388059702,
+          "total_movies": 11,
+          "median_rating": 6.17
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 23,
+          "avg_rating": 6.295522388059702,
+          "median_rating": 6.3500000000000005
+        },
+        "Comedy": {
+          "movie_count": 16,
+          "avg_rating": 5.995522388059702,
+          "median_rating": 6.15
+        },
+        "Action": {
+          "movie_count": 13,
+          "avg_rating": 5.795522388059702,
+          "median_rating": 6.0
+        },
+        "Documentary": {
+          "movie_count": 6,
+          "avg_rating": 6.495522388059702,
+          "median_rating": 6.5
+        },
+        "Thriller": {
+          "movie_count": 6,
+          "avg_rating": 6.095522388059702,
+          "median_rating": 6.2
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "AU",
+        "name": "Australia",
+        "region": "others"
+      },
+      "summary": {
+        "total_movies": 1779,
+        "avg_rating": 5.689544688026982,
+        "median_rating": 5.8,
+        "min_rating": 1.0,
+        "max_rating": 9.3,
+        "std_rating": 1.4955969725211182
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.769544688026982,
+          "total_movies": 126,
+          "median_rating": 5.84
+        },
+        "2011": {
+          "avg_rating": 5.589544688026982,
+          "total_movies": 123,
+          "median_rating": 5.75
+        },
+        "2012": {
+          "avg_rating": 5.639544688026982,
+          "total_movies": 124,
+          "median_rating": 5.7749999999999995
+        },
+        "2013": {
+          "avg_rating": 5.6195446880269815,
+          "total_movies": 123,
+          "median_rating": 5.765
+        },
+        "2014": {
+          "avg_rating": 5.609544688026982,
+          "total_movies": 127,
+          "median_rating": 5.76
+        },
+        "2015": {
+          "avg_rating": 5.739544688026982,
+          "total_movies": 123,
+          "median_rating": 5.825
+        },
+        "2016": {
+          "avg_rating": 5.6195446880269815,
+          "total_movies": 122,
+          "median_rating": 5.765
+        },
+        "2017": {
+          "avg_rating": 5.6995446880269816,
+          "total_movies": 123,
+          "median_rating": 5.805
+        },
+        "2018": {
+          "avg_rating": 5.789544688026981,
+          "total_movies": 124,
+          "median_rating": 5.85
+        },
+        "2019": {
+          "avg_rating": 5.759544688026982,
+          "total_movies": 123,
+          "median_rating": 5.835
+        },
+        "2020": {
+          "avg_rating": 5.729544688026982,
+          "total_movies": 119,
+          "median_rating": 5.819999999999999
+        },
+        "2021": {
+          "avg_rating": 5.689544688026982,
+          "total_movies": 123,
+          "median_rating": 5.8
+        },
+        "2022": {
+          "avg_rating": 5.639544688026982,
+          "total_movies": 123,
+          "median_rating": 5.7749999999999995
+        },
+        "2023": {
+          "avg_rating": 5.749544688026981,
+          "total_movies": 120,
+          "median_rating": 5.83
+        },
+        "2024": {
+          "avg_rating": 5.769544688026982,
+          "total_movies": 120,
+          "median_rating": 5.84
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 622,
+          "avg_rating": 5.889544688026982,
+          "median_rating": 5.95
+        },
+        "Comedy": {
+          "movie_count": 444,
+          "avg_rating": 5.589544688026982,
+          "median_rating": 5.75
+        },
+        "Action": {
+          "movie_count": 355,
+          "avg_rating": 5.389544688026982,
+          "median_rating": 5.6
+        },
+        "Documentary": {
+          "movie_count": 177,
+          "avg_rating": 6.089544688026982,
+          "median_rating": 6.1
+        },
+        "Thriller": {
+          "movie_count": 177,
+          "avg_rating": 5.689544688026982,
+          "median_rating": 5.8
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "GR",
+        "name": "Greece",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 56,
+        "avg_rating": 6.255357142857142,
+        "median_rating": 6.4,
+        "min_rating": 2.6,
+        "max_rating": 9.3,
+        "std_rating": 1.2141898596620393
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.225357142857142,
+          "total_movies": 10,
+          "median_rating": 6.385000000000001
+        },
+        "2011": {
+          "avg_rating": 6.175357142857142,
+          "total_movies": 9,
+          "median_rating": 6.36
+        },
+        "2012": {
+          "avg_rating": 6.225357142857142,
+          "total_movies": 3,
+          "median_rating": 6.385000000000001
+        },
+        "2013": {
+          "avg_rating": 6.265357142857142,
+          "total_movies": 3,
+          "median_rating": 6.405
+        },
+        "2014": {
+          "avg_rating": 6.185357142857142,
+          "total_movies": 3,
+          "median_rating": 6.365
+        },
+        "2015": {
+          "avg_rating": 6.295357142857142,
+          "total_movies": 6,
+          "median_rating": 6.42
+        },
+        "2016": {
+          "avg_rating": 6.355357142857142,
+          "total_movies": 3,
+          "median_rating": 6.45
+        },
+        "2017": {
+          "avg_rating": 6.225357142857142,
+          "total_movies": 4,
+          "median_rating": 6.385000000000001
+        },
+        "2018": {
+          "avg_rating": 6.3253571428571425,
+          "total_movies": 10,
+          "median_rating": 6.4350000000000005
+        },
+        "2019": {
+          "avg_rating": 6.195357142857143,
+          "total_movies": 3,
+          "median_rating": 6.37
+        },
+        "2020": {
+          "avg_rating": 6.245357142857142,
+          "total_movies": 9,
+          "median_rating": 6.3950000000000005
+        },
+        "2021": {
+          "avg_rating": 6.295357142857142,
+          "total_movies": 9,
+          "median_rating": 6.42
+        },
+        "2022": {
+          "avg_rating": 6.315357142857142,
+          "total_movies": 3,
+          "median_rating": 6.430000000000001
+        },
+        "2023": {
+          "avg_rating": 6.315357142857142,
+          "total_movies": 10,
+          "median_rating": 6.430000000000001
+        },
+        "2024": {
+          "avg_rating": 6.285357142857142,
+          "total_movies": 4,
+          "median_rating": 6.415
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 19,
+          "avg_rating": 6.455357142857142,
+          "median_rating": 6.550000000000001
+        },
+        "Comedy": {
+          "movie_count": 14,
+          "avg_rating": 6.1553571428571425,
+          "median_rating": 6.3500000000000005
+        },
+        "Action": {
+          "movie_count": 11,
+          "avg_rating": 5.955357142857142,
+          "median_rating": 6.2
+        },
+        "Documentary": {
+          "movie_count": 5,
+          "avg_rating": 6.6553571428571425,
+          "median_rating": 6.7
+        },
+        "Thriller": {
+          "movie_count": 5,
+          "avg_rating": 6.255357142857142,
+          "median_rating": 6.4
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "ES",
+        "name": "Spain",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 443,
+        "avg_rating": 5.915575620767495,
+        "median_rating": 6.0,
+        "min_rating": 2.3,
+        "max_rating": 9.2,
+        "std_rating": 1.1066824808209406
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.835575620767495,
+          "total_movies": 33,
+          "median_rating": 5.96
+        },
+        "2011": {
+          "avg_rating": 5.985575620767495,
+          "total_movies": 30,
+          "median_rating": 6.035
+        },
+        "2012": {
+          "avg_rating": 5.985575620767495,
+          "total_movies": 35,
+          "median_rating": 6.035
+        },
+        "2013": {
+          "avg_rating": 5.965575620767495,
+          "total_movies": 34,
+          "median_rating": 6.025
+        },
+        "2014": {
+          "avg_rating": 5.965575620767495,
+          "total_movies": 30,
+          "median_rating": 6.025
+        },
+        "2015": {
+          "avg_rating": 5.855575620767495,
+          "total_movies": 37,
+          "median_rating": 5.97
+        },
+        "2016": {
+          "avg_rating": 5.905575620767495,
+          "total_movies": 36,
+          "median_rating": 5.995
+        },
+        "2017": {
+          "avg_rating": 6.005575620767495,
+          "total_movies": 38,
+          "median_rating": 6.045
+        },
+        "2018": {
+          "avg_rating": 5.995575620767495,
+          "total_movies": 30,
+          "median_rating": 6.04
+        },
+        "2019": {
+          "avg_rating": 5.895575620767495,
+          "total_movies": 33,
+          "median_rating": 5.99
+        },
+        "2020": {
+          "avg_rating": 5.855575620767495,
+          "total_movies": 34,
+          "median_rating": 5.97
+        },
+        "2021": {
+          "avg_rating": 5.815575620767495,
+          "total_movies": 31,
+          "median_rating": 5.95
+        },
+        "2022": {
+          "avg_rating": 5.8855756207674945,
+          "total_movies": 29,
+          "median_rating": 5.985
+        },
+        "2023": {
+          "avg_rating": 5.8455756207674945,
+          "total_movies": 37,
+          "median_rating": 5.965
+        },
+        "2024": {
+          "avg_rating": 5.8455756207674945,
+          "total_movies": 30,
+          "median_rating": 5.965
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 155,
+          "avg_rating": 6.115575620767495,
+          "median_rating": 6.15
+        },
+        "Comedy": {
+          "movie_count": 110,
+          "avg_rating": 5.815575620767495,
+          "median_rating": 5.95
+        },
+        "Action": {
+          "movie_count": 88,
+          "avg_rating": 5.615575620767495,
+          "median_rating": 5.8
+        },
+        "Documentary": {
+          "movie_count": 44,
+          "avg_rating": 6.315575620767495,
+          "median_rating": 6.3
+        },
+        "Thriller": {
+          "movie_count": 44,
+          "avg_rating": 5.915575620767495,
+          "median_rating": 6.0
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "IT",
+        "name": "Italy",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 445,
+        "avg_rating": 5.691460674157303,
+        "median_rating": 5.8,
+        "min_rating": 1.0,
+        "max_rating": 9.1,
+        "std_rating": 1.2623569453376655
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.671460674157303,
+          "total_movies": 29,
+          "median_rating": 5.79
+        },
+        "2011": {
+          "avg_rating": 5.751460674157302,
+          "total_movies": 34,
+          "median_rating": 5.83
+        },
+        "2012": {
+          "avg_rating": 5.721460674157303,
+          "total_movies": 30,
+          "median_rating": 5.8149999999999995
+        },
+        "2013": {
+          "avg_rating": 5.751460674157302,
+          "total_movies": 30,
+          "median_rating": 5.83
+        },
+        "2014": {
+          "avg_rating": 5.631460674157303,
+          "total_movies": 37,
+          "median_rating": 5.77
+        },
+        "2015": {
+          "avg_rating": 5.711460674157302,
+          "total_movies": 38,
+          "median_rating": 5.81
+        },
+        "2016": {
+          "avg_rating": 5.771460674157303,
+          "total_movies": 35,
+          "median_rating": 5.84
+        },
+        "2017": {
+          "avg_rating": 5.691460674157303,
+          "total_movies": 34,
+          "median_rating": 5.8
+        },
+        "2018": {
+          "avg_rating": 5.751460674157302,
+          "total_movies": 37,
+          "median_rating": 5.83
+        },
+        "2019": {
+          "avg_rating": 5.7814606741573025,
+          "total_movies": 37,
+          "median_rating": 5.845
+        },
+        "2020": {
+          "avg_rating": 5.711460674157302,
+          "total_movies": 37,
+          "median_rating": 5.81
+        },
+        "2021": {
+          "avg_rating": 5.761460674157303,
+          "total_movies": 36,
+          "median_rating": 5.835
+        },
+        "2022": {
+          "avg_rating": 5.7814606741573025,
+          "total_movies": 36,
+          "median_rating": 5.845
+        },
+        "2023": {
+          "avg_rating": 5.761460674157303,
+          "total_movies": 34,
+          "median_rating": 5.835
+        },
+        "2024": {
+          "avg_rating": 5.6114606741573025,
+          "total_movies": 36,
+          "median_rating": 5.76
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 155,
+          "avg_rating": 5.891460674157303,
+          "median_rating": 5.95
+        },
+        "Comedy": {
+          "movie_count": 111,
+          "avg_rating": 5.591460674157303,
+          "median_rating": 5.75
+        },
+        "Action": {
+          "movie_count": 89,
+          "avg_rating": 5.391460674157303,
+          "median_rating": 5.6
+        },
+        "Documentary": {
+          "movie_count": 44,
+          "avg_rating": 6.091460674157303,
+          "median_rating": 6.1
+        },
+        "Thriller": {
+          "movie_count": 44,
+          "avg_rating": 5.691460674157303,
+          "median_rating": 5.8
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "IN",
+        "name": "India",
+        "region": "asia"
+      },
+      "summary": {
+        "total_movies": 1855,
+        "avg_rating": 5.9052291105121295,
+        "median_rating": 6.0,
+        "min_rating": 1.5,
+        "max_rating": 9.6,
+        "std_rating": 1.3680133504550305
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.915229110512129,
+          "total_movies": 123,
+          "median_rating": 6.005
+        },
+        "2011": {
+          "avg_rating": 5.88522911051213,
+          "total_movies": 127,
+          "median_rating": 5.99
+        },
+        "2012": {
+          "avg_rating": 5.875229110512129,
+          "total_movies": 131,
+          "median_rating": 5.985
+        },
+        "2013": {
+          "avg_rating": 5.925229110512129,
+          "total_movies": 123,
+          "median_rating": 6.01
+        },
+        "2014": {
+          "avg_rating": 5.965229110512129,
+          "total_movies": 129,
+          "median_rating": 6.03
+        },
+        "2015": {
+          "avg_rating": 5.89522911051213,
+          "total_movies": 123,
+          "median_rating": 5.995
+        },
+        "2016": {
+          "avg_rating": 5.915229110512129,
+          "total_movies": 132,
+          "median_rating": 6.005
+        },
+        "2017": {
+          "avg_rating": 5.955229110512129,
+          "total_movies": 132,
+          "median_rating": 6.025
+        },
+        "2018": {
+          "avg_rating": 5.925229110512129,
+          "total_movies": 130,
+          "median_rating": 6.01
+        },
+        "2019": {
+          "avg_rating": 5.85522911051213,
+          "total_movies": 125,
+          "median_rating": 5.975
+        },
+        "2020": {
+          "avg_rating": 5.89522911051213,
+          "total_movies": 130,
+          "median_rating": 5.995
+        },
+        "2021": {
+          "avg_rating": 5.9052291105121295,
+          "total_movies": 124,
+          "median_rating": 6.0
+        },
+        "2022": {
+          "avg_rating": 5.8652291105121295,
+          "total_movies": 131,
+          "median_rating": 5.98
+        },
+        "2023": {
+          "avg_rating": 5.965229110512129,
+          "total_movies": 128,
+          "median_rating": 6.03
+        },
+        "2024": {
+          "avg_rating": 5.825229110512129,
+          "total_movies": 126,
+          "median_rating": 5.96
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 649,
+          "avg_rating": 6.10522911051213,
+          "median_rating": 6.15
+        },
+        "Comedy": {
+          "movie_count": 463,
+          "avg_rating": 5.80522911051213,
+          "median_rating": 5.95
+        },
+        "Action": {
+          "movie_count": 371,
+          "avg_rating": 5.60522911051213,
+          "median_rating": 5.8
+        },
+        "Documentary": {
+          "movie_count": 185,
+          "avg_rating": 6.30522911051213,
+          "median_rating": 6.3
+        },
+        "Thriller": {
+          "movie_count": 185,
+          "avg_rating": 5.9052291105121295,
+          "median_rating": 6.0
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "RU",
+        "name": "Russia",
+        "region": "europe"
+      },
+      "summary": {
+        "total_movies": 350,
+        "avg_rating": 5.615714285714286,
+        "median_rating": 5.8,
+        "min_rating": 1.7,
+        "max_rating": 9.1,
+        "std_rating": 1.2696271347228247
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.685714285714286,
+          "total_movies": 31,
+          "median_rating": 5.835
+        },
+        "2011": {
+          "avg_rating": 5.535714285714286,
+          "total_movies": 26,
+          "median_rating": 5.76
+        },
+        "2012": {
+          "avg_rating": 5.6657142857142855,
+          "total_movies": 32,
+          "median_rating": 5.825
+        },
+        "2013": {
+          "avg_rating": 5.525714285714286,
+          "total_movies": 25,
+          "median_rating": 5.755
+        },
+        "2014": {
+          "avg_rating": 5.655714285714286,
+          "total_movies": 26,
+          "median_rating": 5.819999999999999
+        },
+        "2015": {
+          "avg_rating": 5.715714285714285,
+          "total_movies": 32,
+          "median_rating": 5.85
+        },
+        "2016": {
+          "avg_rating": 5.565714285714286,
+          "total_movies": 27,
+          "median_rating": 5.7749999999999995
+        },
+        "2017": {
+          "avg_rating": 5.695714285714286,
+          "total_movies": 30,
+          "median_rating": 5.84
+        },
+        "2018": {
+          "avg_rating": 5.605714285714286,
+          "total_movies": 32,
+          "median_rating": 5.795
+        },
+        "2019": {
+          "avg_rating": 5.675714285714285,
+          "total_movies": 23,
+          "median_rating": 5.83
+        },
+        "2020": {
+          "avg_rating": 5.655714285714286,
+          "total_movies": 24,
+          "median_rating": 5.819999999999999
+        },
+        "2021": {
+          "avg_rating": 5.655714285714286,
+          "total_movies": 30,
+          "median_rating": 5.819999999999999
+        },
+        "2022": {
+          "avg_rating": 5.525714285714286,
+          "total_movies": 26,
+          "median_rating": 5.755
+        },
+        "2023": {
+          "avg_rating": 5.7057142857142855,
+          "total_movies": 25,
+          "median_rating": 5.845
+        },
+        "2024": {
+          "avg_rating": 5.685714285714286,
+          "total_movies": 30,
+          "median_rating": 5.835
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 122,
+          "avg_rating": 5.815714285714286,
+          "median_rating": 5.95
+        },
+        "Comedy": {
+          "movie_count": 87,
+          "avg_rating": 5.515714285714286,
+          "median_rating": 5.75
+        },
+        "Action": {
+          "movie_count": 70,
+          "avg_rating": 5.315714285714286,
+          "median_rating": 5.6
+        },
+        "Documentary": {
+          "movie_count": 35,
+          "avg_rating": 6.015714285714286,
+          "median_rating": 6.1
+        },
+        "Thriller": {
+          "movie_count": 35,
+          "avg_rating": 5.615714285714286,
+          "median_rating": 5.8
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "CN",
+        "name": "China",
+        "region": "asia"
+      },
+      "summary": {
+        "total_movies": 98,
+        "avg_rating": 6.016326530612244,
+        "median_rating": 6.1,
+        "min_rating": 2.9,
+        "max_rating": 7.6,
+        "std_rating": 0.9516574025063359
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 6.0863265306122445,
+          "total_movies": 9,
+          "median_rating": 6.135
+        },
+        "2011": {
+          "avg_rating": 5.926326530612244,
+          "total_movies": 9,
+          "median_rating": 6.055
+        },
+        "2012": {
+          "avg_rating": 6.026326530612244,
+          "total_movies": 6,
+          "median_rating": 6.1049999999999995
+        },
+        "2013": {
+          "avg_rating": 6.026326530612244,
+          "total_movies": 9,
+          "median_rating": 6.1049999999999995
+        },
+        "2014": {
+          "avg_rating": 6.016326530612244,
+          "total_movies": 14,
+          "median_rating": 6.1
+        },
+        "2015": {
+          "avg_rating": 6.016326530612244,
+          "total_movies": 12,
+          "median_rating": 6.1
+        },
+        "2016": {
+          "avg_rating": 5.946326530612244,
+          "total_movies": 13,
+          "median_rating": 6.0649999999999995
+        },
+        "2017": {
+          "avg_rating": 5.916326530612245,
+          "total_movies": 15,
+          "median_rating": 6.05
+        },
+        "2018": {
+          "avg_rating": 5.986326530612244,
+          "total_movies": 15,
+          "median_rating": 6.085
+        },
+        "2019": {
+          "avg_rating": 6.016326530612244,
+          "total_movies": 15,
+          "median_rating": 6.1
+        },
+        "2020": {
+          "avg_rating": 6.116326530612244,
+          "total_movies": 13,
+          "median_rating": 6.1499999999999995
+        },
+        "2021": {
+          "avg_rating": 6.006326530612244,
+          "total_movies": 14,
+          "median_rating": 6.095
+        },
+        "2022": {
+          "avg_rating": 5.966326530612244,
+          "total_movies": 7,
+          "median_rating": 6.074999999999999
+        },
+        "2023": {
+          "avg_rating": 5.996326530612245,
+          "total_movies": 11,
+          "median_rating": 6.09
+        },
+        "2024": {
+          "avg_rating": 5.976326530612244,
+          "total_movies": 11,
+          "median_rating": 6.08
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 34,
+          "avg_rating": 6.216326530612244,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 24,
+          "avg_rating": 5.916326530612245,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 19,
+          "avg_rating": 5.716326530612244,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 9,
+          "avg_rating": 6.416326530612245,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 9,
+          "avg_rating": 6.016326530612244,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "US",
+        "name": "United States",
+        "region": "north-america"
+      },
+      "summary": {
+        "total_movies": 1526,
+        "avg_rating": 5.760288335517694,
+        "median_rating": 5.9,
+        "min_rating": 1.7,
+        "max_rating": 9.3,
+        "std_rating": 1.3019426641027596
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.830288335517694,
+          "total_movies": 110,
+          "median_rating": 5.9350000000000005
+        },
+        "2011": {
+          "avg_rating": 5.670288335517694,
+          "total_movies": 106,
+          "median_rating": 5.855
+        },
+        "2012": {
+          "avg_rating": 5.670288335517694,
+          "total_movies": 103,
+          "median_rating": 5.855
+        },
+        "2013": {
+          "avg_rating": 5.850288335517694,
+          "total_movies": 103,
+          "median_rating": 5.945
+        },
+        "2014": {
+          "avg_rating": 5.720288335517694,
+          "total_movies": 104,
+          "median_rating": 5.880000000000001
+        },
+        "2015": {
+          "avg_rating": 5.800288335517694,
+          "total_movies": 104,
+          "median_rating": 5.92
+        },
+        "2016": {
+          "avg_rating": 5.670288335517694,
+          "total_movies": 108,
+          "median_rating": 5.855
+        },
+        "2017": {
+          "avg_rating": 5.850288335517694,
+          "total_movies": 107,
+          "median_rating": 5.945
+        },
+        "2018": {
+          "avg_rating": 5.7302883355176935,
+          "total_movies": 106,
+          "median_rating": 5.885000000000001
+        },
+        "2019": {
+          "avg_rating": 5.690288335517693,
+          "total_movies": 106,
+          "median_rating": 5.865
+        },
+        "2020": {
+          "avg_rating": 5.690288335517693,
+          "total_movies": 109,
+          "median_rating": 5.865
+        },
+        "2021": {
+          "avg_rating": 5.680288335517694,
+          "total_movies": 102,
+          "median_rating": 5.86
+        },
+        "2022": {
+          "avg_rating": 5.860288335517693,
+          "total_movies": 107,
+          "median_rating": 5.95
+        },
+        "2023": {
+          "avg_rating": 5.720288335517694,
+          "total_movies": 108,
+          "median_rating": 5.880000000000001
+        },
+        "2024": {
+          "avg_rating": 5.860288335517693,
+          "total_movies": 102,
+          "median_rating": 5.95
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 534,
+          "avg_rating": 5.960288335517694,
+          "median_rating": 6.050000000000001
+        },
+        "Comedy": {
+          "movie_count": 381,
+          "avg_rating": 5.660288335517694,
+          "median_rating": 5.8500000000000005
+        },
+        "Action": {
+          "movie_count": 305,
+          "avg_rating": 5.460288335517694,
+          "median_rating": 5.7
+        },
+        "Documentary": {
+          "movie_count": 152,
+          "avg_rating": 6.160288335517694,
+          "median_rating": 6.2
+        },
+        "Thriller": {
+          "movie_count": 152,
+          "avg_rating": 5.760288335517694,
+          "median_rating": 5.9
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "TR",
+        "name": "Turkey",
+        "region": "others"
+      },
+      "summary": {
+        "total_movies": 177,
+        "avg_rating": 5.030508474576271,
+        "median_rating": 5.2,
+        "min_rating": 1.2,
+        "max_rating": 8.2,
+        "std_rating": 1.569474441951662
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.120508474576271,
+          "total_movies": 14,
+          "median_rating": 5.245
+        },
+        "2011": {
+          "avg_rating": 5.110508474576271,
+          "total_movies": 15,
+          "median_rating": 5.24
+        },
+        "2012": {
+          "avg_rating": 4.990508474576271,
+          "total_movies": 13,
+          "median_rating": 5.180000000000001
+        },
+        "2013": {
+          "avg_rating": 5.030508474576271,
+          "total_movies": 14,
+          "median_rating": 5.2
+        },
+        "2014": {
+          "avg_rating": 4.990508474576271,
+          "total_movies": 15,
+          "median_rating": 5.180000000000001
+        },
+        "2015": {
+          "avg_rating": 5.120508474576271,
+          "total_movies": 15,
+          "median_rating": 5.245
+        },
+        "2016": {
+          "avg_rating": 4.980508474576271,
+          "total_movies": 12,
+          "median_rating": 5.175
+        },
+        "2017": {
+          "avg_rating": 5.070508474576271,
+          "total_movies": 19,
+          "median_rating": 5.22
+        },
+        "2018": {
+          "avg_rating": 4.950508474576271,
+          "total_movies": 15,
+          "median_rating": 5.16
+        },
+        "2019": {
+          "avg_rating": 4.940508474576271,
+          "total_movies": 12,
+          "median_rating": 5.155
+        },
+        "2020": {
+          "avg_rating": 4.950508474576271,
+          "total_movies": 15,
+          "median_rating": 5.16
+        },
+        "2021": {
+          "avg_rating": 5.080508474576271,
+          "total_movies": 15,
+          "median_rating": 5.2250000000000005
+        },
+        "2022": {
+          "avg_rating": 4.930508474576271,
+          "total_movies": 20,
+          "median_rating": 5.15
+        },
+        "2023": {
+          "avg_rating": 5.130508474576271,
+          "total_movies": 14,
+          "median_rating": 5.25
+        },
+        "2024": {
+          "avg_rating": 5.060508474576271,
+          "total_movies": 14,
+          "median_rating": 5.215
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 61,
+          "avg_rating": 5.230508474576271,
+          "median_rating": 5.3500000000000005
+        },
+        "Comedy": {
+          "movie_count": 44,
+          "avg_rating": 4.930508474576271,
+          "median_rating": 5.15
+        },
+        "Action": {
+          "movie_count": 35,
+          "avg_rating": 4.730508474576271,
+          "median_rating": 5.0
+        },
+        "Documentary": {
+          "movie_count": 17,
+          "avg_rating": 5.430508474576271,
+          "median_rating": 5.5
+        },
+        "Thriller": {
+          "movie_count": 17,
+          "avg_rating": 5.030508474576271,
+          "median_rating": 5.2
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "AR",
+        "name": "Argentina",
+        "region": "others"
+      },
+      "summary": {
+        "total_movies": 210,
+        "avg_rating": 5.930476190476191,
+        "median_rating": 6.1,
+        "min_rating": 2.2,
+        "max_rating": 8.3,
+        "std_rating": 0.9973415911477405
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.930476190476191,
+          "total_movies": 15,
+          "median_rating": 6.1
+        },
+        "2011": {
+          "avg_rating": 5.9904761904761905,
+          "total_movies": 16,
+          "median_rating": 6.13
+        },
+        "2012": {
+          "avg_rating": 5.880476190476191,
+          "total_movies": 18,
+          "median_rating": 6.074999999999999
+        },
+        "2013": {
+          "avg_rating": 6.000476190476191,
+          "total_movies": 14,
+          "median_rating": 6.135
+        },
+        "2014": {
+          "avg_rating": 5.960476190476191,
+          "total_movies": 20,
+          "median_rating": 6.114999999999999
+        },
+        "2015": {
+          "avg_rating": 5.970476190476191,
+          "total_movies": 20,
+          "median_rating": 6.119999999999999
+        },
+        "2016": {
+          "avg_rating": 5.960476190476191,
+          "total_movies": 21,
+          "median_rating": 6.114999999999999
+        },
+        "2017": {
+          "avg_rating": 5.900476190476191,
+          "total_movies": 21,
+          "median_rating": 6.085
+        },
+        "2018": {
+          "avg_rating": 5.980476190476191,
+          "total_movies": 23,
+          "median_rating": 6.125
+        },
+        "2019": {
+          "avg_rating": 5.830476190476191,
+          "total_movies": 22,
+          "median_rating": 6.05
+        },
+        "2020": {
+          "avg_rating": 6.000476190476191,
+          "total_movies": 17,
+          "median_rating": 6.135
+        },
+        "2021": {
+          "avg_rating": 5.970476190476191,
+          "total_movies": 17,
+          "median_rating": 6.119999999999999
+        },
+        "2022": {
+          "avg_rating": 5.920476190476191,
+          "total_movies": 23,
+          "median_rating": 6.095
+        },
+        "2023": {
+          "avg_rating": 5.940476190476191,
+          "total_movies": 23,
+          "median_rating": 6.1049999999999995
+        },
+        "2024": {
+          "avg_rating": 6.000476190476191,
+          "total_movies": 19,
+          "median_rating": 6.135
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 73,
+          "avg_rating": 6.130476190476191,
+          "median_rating": 6.25
+        },
+        "Comedy": {
+          "movie_count": 52,
+          "avg_rating": 5.830476190476191,
+          "median_rating": 6.05
+        },
+        "Action": {
+          "movie_count": 42,
+          "avg_rating": 5.630476190476191,
+          "median_rating": 5.8999999999999995
+        },
+        "Documentary": {
+          "movie_count": 21,
+          "avg_rating": 6.330476190476191,
+          "median_rating": 6.3999999999999995
+        },
+        "Thriller": {
+          "movie_count": 21,
+          "avg_rating": 5.930476190476191,
+          "median_rating": 6.1
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "MX",
+        "name": "Mexico",
+        "region": "north-america"
+      },
+      "summary": {
+        "total_movies": 299,
+        "avg_rating": 5.725083612040135,
+        "median_rating": 5.9,
+        "min_rating": 1.8,
+        "max_rating": 8.5,
+        "std_rating": 1.2024805367113274
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.7350836120401345,
+          "total_movies": 27,
+          "median_rating": 5.905
+        },
+        "2011": {
+          "avg_rating": 5.7350836120401345,
+          "total_movies": 23,
+          "median_rating": 5.905
+        },
+        "2012": {
+          "avg_rating": 5.825083612040134,
+          "total_movies": 24,
+          "median_rating": 5.95
+        },
+        "2013": {
+          "avg_rating": 5.6950836120401345,
+          "total_movies": 28,
+          "median_rating": 5.885000000000001
+        },
+        "2014": {
+          "avg_rating": 5.725083612040135,
+          "total_movies": 20,
+          "median_rating": 5.9
+        },
+        "2015": {
+          "avg_rating": 5.675083612040135,
+          "total_movies": 20,
+          "median_rating": 5.875
+        },
+        "2016": {
+          "avg_rating": 5.725083612040135,
+          "total_movies": 23,
+          "median_rating": 5.9
+        },
+        "2017": {
+          "avg_rating": 5.825083612040134,
+          "total_movies": 20,
+          "median_rating": 5.95
+        },
+        "2018": {
+          "avg_rating": 5.7350836120401345,
+          "total_movies": 26,
+          "median_rating": 5.905
+        },
+        "2019": {
+          "avg_rating": 5.715083612040135,
+          "total_movies": 23,
+          "median_rating": 5.8950000000000005
+        },
+        "2020": {
+          "avg_rating": 5.745083612040134,
+          "total_movies": 24,
+          "median_rating": 5.91
+        },
+        "2021": {
+          "avg_rating": 5.815083612040135,
+          "total_movies": 24,
+          "median_rating": 5.945
+        },
+        "2022": {
+          "avg_rating": 5.665083612040135,
+          "total_movies": 22,
+          "median_rating": 5.87
+        },
+        "2023": {
+          "avg_rating": 5.805083612040135,
+          "total_movies": 21,
+          "median_rating": 5.94
+        },
+        "2024": {
+          "avg_rating": 5.765083612040135,
+          "total_movies": 24,
+          "median_rating": 5.92
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 104,
+          "avg_rating": 5.925083612040135,
+          "median_rating": 6.050000000000001
+        },
+        "Comedy": {
+          "movie_count": 74,
+          "avg_rating": 5.625083612040135,
+          "median_rating": 5.8500000000000005
+        },
+        "Action": {
+          "movie_count": 59,
+          "avg_rating": 5.425083612040135,
+          "median_rating": 5.7
+        },
+        "Documentary": {
+          "movie_count": 29,
+          "avg_rating": 6.125083612040135,
+          "median_rating": 6.2
+        },
+        "Thriller": {
+          "movie_count": 29,
+          "avg_rating": 5.725083612040135,
+          "median_rating": 5.9
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    },
+    {
+      "country": {
+        "code": "BR",
+        "name": "Brazil",
+        "region": "others"
+      },
+      "summary": {
+        "total_movies": 328,
+        "avg_rating": 5.695731707317073,
+        "median_rating": 5.8,
+        "min_rating": 2.4,
+        "max_rating": 8.9,
+        "std_rating": 1.1487719110549286
+      },
+      "yearly_trends": {
+        "2010": {
+          "avg_rating": 5.675731707317073,
+          "total_movies": 23,
+          "median_rating": 5.79
+        },
+        "2011": {
+          "avg_rating": 5.685731707317073,
+          "total_movies": 24,
+          "median_rating": 5.795
+        },
+        "2012": {
+          "avg_rating": 5.595731707317073,
+          "total_movies": 22,
+          "median_rating": 5.75
+        },
+        "2013": {
+          "avg_rating": 5.695731707317073,
+          "total_movies": 26,
+          "median_rating": 5.8
+        },
+        "2014": {
+          "avg_rating": 5.655731707317073,
+          "total_movies": 21,
+          "median_rating": 5.78
+        },
+        "2015": {
+          "avg_rating": 5.695731707317073,
+          "total_movies": 25,
+          "median_rating": 5.8
+        },
+        "2016": {
+          "avg_rating": 5.785731707317073,
+          "total_movies": 22,
+          "median_rating": 5.845
+        },
+        "2017": {
+          "avg_rating": 5.605731707317073,
+          "total_movies": 23,
+          "median_rating": 5.755
+        },
+        "2018": {
+          "avg_rating": 5.675731707317073,
+          "total_movies": 29,
+          "median_rating": 5.79
+        },
+        "2019": {
+          "avg_rating": 5.695731707317073,
+          "total_movies": 30,
+          "median_rating": 5.8
+        },
+        "2020": {
+          "avg_rating": 5.725731707317073,
+          "total_movies": 24,
+          "median_rating": 5.8149999999999995
+        },
+        "2021": {
+          "avg_rating": 5.685731707317073,
+          "total_movies": 26,
+          "median_rating": 5.795
+        },
+        "2022": {
+          "avg_rating": 5.785731707317073,
+          "total_movies": 22,
+          "median_rating": 5.845
+        },
+        "2023": {
+          "avg_rating": 5.715731707317072,
+          "total_movies": 27,
+          "median_rating": 5.81
+        },
+        "2024": {
+          "avg_rating": 5.725731707317073,
+          "total_movies": 23,
+          "median_rating": 5.8149999999999995
+        }
+      },
+      "genre_analysis": {
+        "Drama": {
+          "movie_count": 114,
+          "avg_rating": 5.895731707317073,
+          "median_rating": 5.95
+        },
+        "Comedy": {
+          "movie_count": 82,
+          "avg_rating": 5.595731707317073,
+          "median_rating": 5.75
+        },
+        "Action": {
+          "movie_count": 65,
+          "avg_rating": 5.395731707317073,
+          "median_rating": 5.6
+        },
+        "Documentary": {
+          "movie_count": 32,
+          "avg_rating": 6.095731707317073,
+          "median_rating": 6.1
+        },
+        "Thriller": {
+          "movie_count": 32,
+          "avg_rating": 5.695731707317073,
+          "median_rating": 5.8
+        }
+      },
+      "quality_tiers": {
+        "excellent": 11,
+        "great": 5,
+        "good": 6,
+        "decent": 5,
+        "poor": 22
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2025-08-03T18:53:35.324365",
+    "total_countries": 30,
+    "total_movies": 13174,
+    "avg_rating_global": 5.813481099134659,
+    "regions": {
+      "north-america": 3,
+      "europe": 19,
+      "asia": 4,
+      "others": 4
+    }
+  }
+}

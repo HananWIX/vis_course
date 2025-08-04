@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "CA",
+    "name": "Canada"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 419,
+        "Documentary": 95,
+        "Comedy": 257,
+        "Action": 106,
+        "Thriller": 117
+      },
+      "raw_genre_counts": {
+        "Drama": 419,
+        "Documentary": 95,
+        "Comedy": 257,
+        "Action": 106,
+        "Thriller": 117
+      },
+      "total_movies": 760,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 432,
+        "Documentary": 123,
+        "Comedy": 239,
+        "Action": 144,
+        "Thriller": 120
+      },
+      "raw_genre_counts": {
+        "Drama": 432,
+        "Documentary": 123,
+        "Comedy": 239,
+        "Action": 144,
+        "Thriller": 120
+      },
+      "total_movies": 810,
+      "events": [
+        {
+          "year": 2001,
+          "date": "2001-09-11",
+          "event": "9/11 Response",
+          "type": "security_crisis",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 446.7,
+        "Documentary": 116.0,
+        "Comedy": 255.7,
+        "Action": 128.3,
+        "Thriller": 116.7
+      },
+      "raw_genre_counts": {
+        "Drama": 489,
+        "Documentary": 130,
+        "Comedy": 271,
+        "Action": 135,
+        "Thriller": 113
+      },
+      "total_movies": 860,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 456.7,
+        "Documentary": 143.0,
+        "Comedy": 264.0,
+        "Action": 133.0,
+        "Thriller": 113.7
+      },
+      "raw_genre_counts": {
+        "Drama": 449,
+        "Documentary": 176,
+        "Comedy": 282,
+        "Action": 120,
+        "Thriller": 108
+      },
+      "total_movies": 866,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 475.0,
+        "Documentary": 160.3,
+        "Comedy": 281.7,
+        "Action": 133.3,
+        "Thriller": 115.3
+      },
+      "raw_genre_counts": {
+        "Drama": 487,
+        "Documentary": 175,
+        "Comedy": 292,
+        "Action": 145,
+        "Thriller": 125
+      },
+      "total_movies": 949,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 492.7,
+        "Documentary": 172.0,
+        "Comedy": 293.0,
+        "Action": 132.7,
+        "Thriller": 111.7
+      },
+      "raw_genre_counts": {
+        "Drama": 542,
+        "Documentary": 165,
+        "Comedy": 305,
+        "Action": 133,
+        "Thriller": 102
+      },
+      "total_movies": 965,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 531.3,
+        "Documentary": 189.3,
+        "Comedy": 319.0,
+        "Action": 133.7,
+        "Thriller": 128.0
+      },
+      "raw_genre_counts": {
+        "Drama": 565,
+        "Documentary": 228,
+        "Comedy": 360,
+        "Action": 123,
+        "Thriller": 157
+      },
+      "total_movies": 1133,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 566.7,
+        "Documentary": 205.3,
+        "Comedy": 334.7,
+        "Action": 128.0,
+        "Thriller": 140.3
+      },
+      "raw_genre_counts": {
+        "Drama": 593,
+        "Documentary": 223,
+        "Comedy": 339,
+        "Action": 128,
+        "Thriller": 162
+      },
+      "total_movies": 1157,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 603.3,
+        "Documentary": 233.3,
+        "Comedy": 350.3,
+        "Action": 140.7,
+        "Thriller": 165.7
+      },
+      "raw_genre_counts": {
+        "Drama": 652,
+        "Documentary": 249,
+        "Comedy": 352,
+        "Action": 171,
+        "Thriller": 178
+      },
+      "total_movies": 1273,
+      "events": [
+        {
+          "year": 2008,
+          "date": "2008-10-01",
+          "event": "Financial Crisis",
+          "type": "economic",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 657.0,
+        "Documentary": 252.0,
+        "Comedy": 369.7,
+        "Action": 169.3,
+        "Thriller": 183.3
+      },
+      "raw_genre_counts": {
+        "Drama": 726,
+        "Documentary": 284,
+        "Comedy": 418,
+        "Action": 209,
+        "Thriller": 210
+      },
+      "total_movies": 1455,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 700.7,
+        "Documentary": 289.0,
+        "Comedy": 402.0,
+        "Action": 207.3,
+        "Thriller": 199.0
+      },
+      "raw_genre_counts": {
+        "Drama": 724,
+        "Documentary": 334,
+        "Comedy": 436,
+        "Action": 242,
+        "Thriller": 209
+      },
+      "total_movies": 1448,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 750.0,
+        "Documentary": 326.0,
+        "Comedy": 431.3,
+        "Action": 230.3,
+        "Thriller": 216.0
+      },
+      "raw_genre_counts": {
+        "Drama": 800,
+        "Documentary": 360,
+        "Comedy": 440,
+        "Action": 240,
+        "Thriller": 229
+      },
+      "total_movies": 1591,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 799.0,
+        "Documentary": 376.7,
+        "Comedy": 452.7,
+        "Action": 242.3,
+        "Thriller": 235.3
+      },
+      "raw_genre_counts": {
+        "Drama": 873,
+        "Documentary": 436,
+        "Comedy": 482,
+        "Action": 245,
+        "Thriller": 268
+      },
+      "total_movies": 1794,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 874.7,
+        "Documentary": 410.0,
+        "Comedy": 483.3,
+        "Action": 250.3,
+        "Thriller": 269.7
+      },
+      "raw_genre_counts": {
+        "Drama": 951,
+        "Documentary": 434,
+        "Comedy": 528,
+        "Action": 266,
+        "Thriller": 312
+      },
+      "total_movies": 1910,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 958.0,
+        "Documentary": 445.0,
+        "Comedy": 516.7,
+        "Action": 263.3,
+        "Thriller": 299.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1050,
+        "Documentary": 465,
+        "Comedy": 540,
+        "Action": 279,
+        "Thriller": 319
+      },
+      "total_movies": 2022,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 1048.3,
+        "Documentary": 465.3,
+        "Comedy": 543.3,
+        "Action": 291.7,
+        "Thriller": 319.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1144,
+        "Documentary": 497,
+        "Comedy": 562,
+        "Action": 330,
+        "Thriller": 327
+      },
+      "total_movies": 2168,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 1119.3,
+        "Documentary": 487.0,
+        "Comedy": 562.3,
+        "Action": 324.3,
+        "Thriller": 329.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1164,
+        "Documentary": 499,
+        "Comedy": 585,
+        "Action": 364,
+        "Thriller": 341
+      },
+      "total_movies": 2301,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 1189.0,
+        "Documentary": 531.0,
+        "Comedy": 582.7,
+        "Action": 347.7,
+        "Thriller": 350.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1259,
+        "Documentary": 597,
+        "Comedy": 601,
+        "Action": 349,
+        "Thriller": 384
+      },
+      "total_movies": 2520,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 1292.7,
+        "Documentary": 573.3,
+        "Comedy": 637.0,
+        "Action": 368.7,
+        "Thriller": 392.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1455,
+        "Documentary": 624,
+        "Comedy": 725,
+        "Action": 393,
+        "Thriller": 452
+      },
+      "total_movies": 2888,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 1516.7,
+        "Documentary": 676.3,
+        "Comedy": 746.3,
+        "Action": 405.0,
+        "Thriller": 458.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1836,
+        "Documentary": 808,
+        "Comedy": 913,
+        "Action": 473,
+        "Thriller": 540
+      },
+      "total_movies": 3615,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 1584.7,
+        "Documentary": 708.3,
+        "Comedy": 788.7,
+        "Action": 400.0,
+        "Thriller": 493.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1463,
+        "Documentary": 693,
+        "Comedy": 728,
+        "Action": 334,
+        "Thriller": 489
+      },
+      "total_movies": 3005,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-16",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 1678.0,
+        "Documentary": 760.7,
+        "Comedy": 805.3,
+        "Action": 437.7,
+        "Thriller": 542.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1735,
+        "Documentary": 781,
+        "Comedy": 775,
+        "Action": 506,
+        "Thriller": 598
+      },
+      "total_movies": 3528,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 1785.7,
+        "Documentary": 837.3,
+        "Comedy": 870.3,
+        "Action": 471.3,
+        "Thriller": 634.0
+      },
+      "raw_genre_counts": {
+        "Drama": 2159,
+        "Documentary": 1038,
+        "Comedy": 1108,
+        "Action": 574,
+        "Thriller": 815
+      },
+      "total_movies": 4579,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 2170.0,
+        "Documentary": 973.7,
+        "Comedy": 1076.0,
+        "Action": 607.3,
+        "Thriller": 814.0
+      },
+      "raw_genre_counts": {
+        "Drama": 2616,
+        "Documentary": 1102,
+        "Comedy": 1345,
+        "Action": 742,
+        "Thriller": 1029
+      },
+      "total_movies": 5364,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 2306.3,
+        "Documentary": 1083.7,
+        "Comedy": 1207.3,
+        "Action": 653.3,
+        "Thriller": 920.7
+      },
+      "raw_genre_counts": {
+        "Drama": 2144,
+        "Documentary": 1111,
+        "Comedy": 1169,
+        "Action": 644,
+        "Thriller": 918
+      },
+      "total_movies": 4897,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2001,
+      "event": "9/11 Response",
+      "event_type": "security_crisis",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 419,
+      "event_count": 432,
+      "after_count": 489,
+      "immediate_impact": 3.1,
+      "recovery_rate": 13.2,
+      "event_date": "2001-09-11"
+    },
+    {
+      "year": 2001,
+      "event": "9/11 Response",
+      "event_type": "security_crisis",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 95,
+      "event_count": 123,
+      "after_count": 130,
+      "immediate_impact": 29.5,
+      "recovery_rate": 5.7,
+      "event_date": "2001-09-11"
+    },
+    {
+      "year": 2001,
+      "event": "9/11 Response",
+      "event_type": "security_crisis",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 257,
+      "event_count": 239,
+      "after_count": 271,
+      "immediate_impact": -7.0,
+      "recovery_rate": 13.4,
+      "event_date": "2001-09-11"
+    },
+    {
+      "year": 2001,
+      "event": "9/11 Response",
+      "event_type": "security_crisis",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 106,
+      "event_count": 144,
+      "after_count": 135,
+      "immediate_impact": 35.8,
+      "recovery_rate": -6.2,
+      "event_date": "2001-09-11"
+    },
+    {
+      "year": 2001,
+      "event": "9/11 Response",
+      "event_type": "security_crisis",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 117,
+      "event_count": 120,
+      "after_count": 113,
+      "immediate_impact": 2.6,
+      "recovery_rate": -5.8,
+      "event_date": "2001-09-11"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 593,
+      "event_count": 652,
+      "after_count": 726,
+      "immediate_impact": 9.9,
+      "recovery_rate": 11.3,
+      "event_date": "2008-10-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 223,
+      "event_count": 249,
+      "after_count": 284,
+      "immediate_impact": 11.7,
+      "recovery_rate": 14.1,
+      "event_date": "2008-10-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 339,
+      "event_count": 352,
+      "after_count": 418,
+      "immediate_impact": 3.8,
+      "recovery_rate": 18.8,
+      "event_date": "2008-10-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 128,
+      "event_count": 171,
+      "after_count": 209,
+      "immediate_impact": 33.6,
+      "recovery_rate": 22.2,
+      "event_date": "2008-10-01"
+    },
+    {
+      "year": 2008,
+      "event": "Financial Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 162,
+      "event_count": 178,
+      "after_count": 210,
+      "immediate_impact": 9.9,
+      "recovery_rate": 18.0,
+      "event_date": "2008-10-01"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1836,
+      "event_count": 1463,
+      "after_count": 1735,
+      "immediate_impact": -20.3,
+      "recovery_rate": 18.6,
+      "event_date": "2020-03-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 808,
+      "event_count": 693,
+      "after_count": 781,
+      "immediate_impact": -14.2,
+      "recovery_rate": 12.7,
+      "event_date": "2020-03-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 913,
+      "event_count": 728,
+      "after_count": 775,
+      "immediate_impact": -20.3,
+      "recovery_rate": 6.5,
+      "event_date": "2020-03-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 473,
+      "event_count": 334,
+      "after_count": 506,
+      "immediate_impact": -29.4,
+      "recovery_rate": 51.5,
+      "event_date": "2020-03-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 540,
+      "event_count": 489,
+      "after_count": 598,
+      "immediate_impact": -9.4,
+      "recovery_rate": 22.3,
+      "event_date": "2020-03-16"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2001,
+      "date": "2001-09-11",
+      "event": "9/11 Response",
+      "type": "security_crisis",
+      "severity": "medium"
+    },
+    {
+      "year": 2008,
+      "date": "2008-10-01",
+      "event": "Financial Crisis",
+      "type": "economic",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-16",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:05:47.849691",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

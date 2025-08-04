@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "PL",
+    "name": "Poland"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 439,
+        "Documentary": 42,
+        "Comedy": 250,
+        "Action": 81,
+        "Thriller": 101
+      },
+      "raw_genre_counts": {
+        "Drama": 439,
+        "Documentary": 42,
+        "Comedy": 250,
+        "Action": 81,
+        "Thriller": 101
+      },
+      "total_movies": 688,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 444,
+        "Documentary": 38,
+        "Comedy": 259,
+        "Action": 112,
+        "Thriller": 91
+      },
+      "raw_genre_counts": {
+        "Drama": 444,
+        "Documentary": 38,
+        "Comedy": 259,
+        "Action": 112,
+        "Thriller": 91
+      },
+      "total_movies": 702,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 446.0,
+        "Documentary": 46.7,
+        "Comedy": 250.0,
+        "Action": 102.7,
+        "Thriller": 94.3
+      },
+      "raw_genre_counts": {
+        "Drama": 455,
+        "Documentary": 60,
+        "Comedy": 241,
+        "Action": 115,
+        "Thriller": 91
+      },
+      "total_movies": 712,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 441.7,
+        "Documentary": 56.3,
+        "Comedy": 257.0,
+        "Action": 108.7,
+        "Thriller": 87.7
+      },
+      "raw_genre_counts": {
+        "Drama": 426,
+        "Documentary": 71,
+        "Comedy": 271,
+        "Action": 99,
+        "Thriller": 81
+      },
+      "total_movies": 712,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 467.3,
+        "Documentary": 70.7,
+        "Comedy": 257.3,
+        "Action": 109.0,
+        "Thriller": 88.3
+      },
+      "raw_genre_counts": {
+        "Drama": 521,
+        "Documentary": 81,
+        "Comedy": 260,
+        "Action": 113,
+        "Thriller": 93
+      },
+      "total_movies": 834,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 491.0,
+        "Documentary": 78.7,
+        "Comedy": 269.0,
+        "Action": 103.7,
+        "Thriller": 87.3
+      },
+      "raw_genre_counts": {
+        "Drama": 526,
+        "Documentary": 84,
+        "Comedy": 276,
+        "Action": 99,
+        "Thriller": 88
+      },
+      "total_movies": 826,
+      "events": [
+        {
+          "year": 2005,
+          "date": "2005-10-23",
+          "event": "Kaczyński Government",
+          "type": "political_shift",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 536.3,
+        "Documentary": 102.0,
+        "Comedy": 285.7,
+        "Action": 101.7,
+        "Thriller": 99.3
+      },
+      "raw_genre_counts": {
+        "Drama": 562,
+        "Documentary": 141,
+        "Comedy": 321,
+        "Action": 93,
+        "Thriller": 117
+      },
+      "total_movies": 976,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 563.0,
+        "Documentary": 120.3,
+        "Comedy": 297.7,
+        "Action": 95.7,
+        "Thriller": 110.7
+      },
+      "raw_genre_counts": {
+        "Drama": 601,
+        "Documentary": 136,
+        "Comedy": 296,
+        "Action": 95,
+        "Thriller": 127
+      },
+      "total_movies": 988,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 590.0,
+        "Documentary": 138.7,
+        "Comedy": 302.3,
+        "Action": 105.7,
+        "Thriller": 125.0
+      },
+      "raw_genre_counts": {
+        "Drama": 607,
+        "Documentary": 139,
+        "Comedy": 290,
+        "Action": 129,
+        "Thriller": 131
+      },
+      "total_movies": 1002,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 610.3,
+        "Documentary": 143.7,
+        "Comedy": 294.0,
+        "Action": 115.7,
+        "Thriller": 130.3
+      },
+      "raw_genre_counts": {
+        "Drama": 623,
+        "Documentary": 156,
+        "Comedy": 296,
+        "Action": 123,
+        "Thriller": 133
+      },
+      "total_movies": 1053,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 617.3,
+        "Documentary": 162.0,
+        "Comedy": 297.3,
+        "Action": 130.3,
+        "Thriller": 128.7
+      },
+      "raw_genre_counts": {
+        "Drama": 622,
+        "Documentary": 191,
+        "Comedy": 306,
+        "Action": 139,
+        "Thriller": 122
+      },
+      "total_movies": 1050,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 637.7,
+        "Documentary": 186.7,
+        "Comedy": 301.0,
+        "Action": 136.7,
+        "Thriller": 127.7
+      },
+      "raw_genre_counts": {
+        "Drama": 668,
+        "Documentary": 213,
+        "Comedy": 301,
+        "Action": 148,
+        "Thriller": 128
+      },
+      "total_movies": 1118,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 649.0,
+        "Documentary": 210.3,
+        "Comedy": 307.3,
+        "Action": 148.3,
+        "Thriller": 136.0
+      },
+      "raw_genre_counts": {
+        "Drama": 657,
+        "Documentary": 227,
+        "Comedy": 315,
+        "Action": 158,
+        "Thriller": 158
+      },
+      "total_movies": 1164,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 670.7,
+        "Documentary": 223.0,
+        "Comedy": 309.3,
+        "Action": 154.7,
+        "Thriller": 146.7
+      },
+      "raw_genre_counts": {
+        "Drama": 687,
+        "Documentary": 229,
+        "Comedy": 312,
+        "Action": 158,
+        "Thriller": 154
+      },
+      "total_movies": 1171,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 691.3,
+        "Documentary": 223.0,
+        "Comedy": 322.3,
+        "Action": 166.7,
+        "Thriller": 159.7
+      },
+      "raw_genre_counts": {
+        "Drama": 730,
+        "Documentary": 213,
+        "Comedy": 340,
+        "Action": 184,
+        "Thriller": 167
+      },
+      "total_movies": 1227,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 713.7,
+        "Documentary": 233.0,
+        "Comedy": 324.3,
+        "Action": 172.0,
+        "Thriller": 162.7
+      },
+      "raw_genre_counts": {
+        "Drama": 724,
+        "Documentary": 257,
+        "Comedy": 321,
+        "Action": 174,
+        "Thriller": 167
+      },
+      "total_movies": 1267,
+      "events": [
+        {
+          "year": 2015,
+          "date": "2015-10-25",
+          "event": "PiS Party Victory",
+          "type": "political_shift",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 751.7,
+        "Documentary": 274.7,
+        "Comedy": 338.7,
+        "Action": 194.3,
+        "Thriller": 176.3
+      },
+      "raw_genre_counts": {
+        "Drama": 801,
+        "Documentary": 354,
+        "Comedy": 355,
+        "Action": 225,
+        "Thriller": 195
+      },
+      "total_movies": 1502,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 795.3,
+        "Documentary": 314.0,
+        "Comedy": 352.7,
+        "Action": 196.0,
+        "Thriller": 199.7
+      },
+      "raw_genre_counts": {
+        "Drama": 861,
+        "Documentary": 331,
+        "Comedy": 382,
+        "Action": 189,
+        "Thriller": 237
+      },
+      "total_movies": 1548,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 854.0,
+        "Documentary": 340.7,
+        "Comedy": 376.0,
+        "Action": 204.3,
+        "Thriller": 216.0
+      },
+      "raw_genre_counts": {
+        "Drama": 900,
+        "Documentary": 337,
+        "Comedy": 391,
+        "Action": 199,
+        "Thriller": 216
+      },
+      "total_movies": 1627,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 904.3,
+        "Documentary": 329.3,
+        "Comedy": 394.7,
+        "Action": 201.3,
+        "Thriller": 234.0
+      },
+      "raw_genre_counts": {
+        "Drama": 952,
+        "Documentary": 320,
+        "Comedy": 411,
+        "Action": 216,
+        "Thriller": 249
+      },
+      "total_movies": 1675,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 880.0,
+        "Documentary": 322.3,
+        "Comedy": 389.3,
+        "Action": 196.0,
+        "Thriller": 226.0
+      },
+      "raw_genre_counts": {
+        "Drama": 788,
+        "Documentary": 310,
+        "Comedy": 366,
+        "Action": 173,
+        "Thriller": 213
+      },
+      "total_movies": 1472,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-06-28",
+          "event": "Presidential Election Crisis",
+          "type": "political_crisis",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 913.3,
+        "Documentary": 336.7,
+        "Comedy": 398.0,
+        "Action": 214.0,
+        "Thriller": 250.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1000,
+        "Documentary": 380,
+        "Comedy": 417,
+        "Action": 253,
+        "Thriller": 290
+      },
+      "total_movies": 1849,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 977.0,
+        "Documentary": 388.0,
+        "Comedy": 460.7,
+        "Action": 250.0,
+        "Thriller": 307.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1143,
+        "Documentary": 474,
+        "Comedy": 599,
+        "Action": 324,
+        "Thriller": 420
+      },
+      "total_movies": 2316,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 929.7,
+        "Documentary": 372.3,
+        "Comedy": 447.7,
+        "Action": 251.7,
+        "Thriller": 302.0
+      },
+      "raw_genre_counts": {
+        "Drama": 646,
+        "Documentary": 263,
+        "Comedy": 327,
+        "Action": 178,
+        "Thriller": 196
+      },
+      "total_movies": 1241,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 752.7,
+        "Documentary": 327.7,
+        "Comedy": 383.3,
+        "Action": 211.0,
+        "Thriller": 255.7
+      },
+      "raw_genre_counts": {
+        "Drama": 469,
+        "Documentary": 246,
+        "Comedy": 224,
+        "Action": 131,
+        "Thriller": 151
+      },
+      "total_movies": 971,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2005,
+      "event": "Kaczyński Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 521,
+      "event_count": 526,
+      "after_count": 562,
+      "immediate_impact": 1.0,
+      "recovery_rate": 6.8,
+      "event_date": "2005-10-23"
+    },
+    {
+      "year": 2005,
+      "event": "Kaczyński Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 81,
+      "event_count": 84,
+      "after_count": 141,
+      "immediate_impact": 3.7,
+      "recovery_rate": 67.9,
+      "event_date": "2005-10-23"
+    },
+    {
+      "year": 2005,
+      "event": "Kaczyński Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 260,
+      "event_count": 276,
+      "after_count": 321,
+      "immediate_impact": 6.2,
+      "recovery_rate": 16.3,
+      "event_date": "2005-10-23"
+    },
+    {
+      "year": 2005,
+      "event": "Kaczyński Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 113,
+      "event_count": 99,
+      "after_count": 93,
+      "immediate_impact": -12.4,
+      "recovery_rate": -6.1,
+      "event_date": "2005-10-23"
+    },
+    {
+      "year": 2005,
+      "event": "Kaczyński Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 93,
+      "event_count": 88,
+      "after_count": 117,
+      "immediate_impact": -5.4,
+      "recovery_rate": 33.0,
+      "event_date": "2005-10-23"
+    },
+    {
+      "year": 2015,
+      "event": "PiS Party Victory",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 730,
+      "event_count": 724,
+      "after_count": 801,
+      "immediate_impact": -0.8,
+      "recovery_rate": 10.6,
+      "event_date": "2015-10-25"
+    },
+    {
+      "year": 2015,
+      "event": "PiS Party Victory",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 213,
+      "event_count": 257,
+      "after_count": 354,
+      "immediate_impact": 20.7,
+      "recovery_rate": 37.7,
+      "event_date": "2015-10-25"
+    },
+    {
+      "year": 2015,
+      "event": "PiS Party Victory",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 340,
+      "event_count": 321,
+      "after_count": 355,
+      "immediate_impact": -5.6,
+      "recovery_rate": 10.6,
+      "event_date": "2015-10-25"
+    },
+    {
+      "year": 2015,
+      "event": "PiS Party Victory",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 184,
+      "event_count": 174,
+      "after_count": 225,
+      "immediate_impact": -5.4,
+      "recovery_rate": 29.3,
+      "event_date": "2015-10-25"
+    },
+    {
+      "year": 2015,
+      "event": "PiS Party Victory",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 167,
+      "event_count": 167,
+      "after_count": 195,
+      "immediate_impact": 0.0,
+      "recovery_rate": 16.8,
+      "event_date": "2015-10-25"
+    },
+    {
+      "year": 2020,
+      "event": "Presidential Election Crisis",
+      "event_type": "political_crisis",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 952,
+      "event_count": 788,
+      "after_count": 1000,
+      "immediate_impact": -17.2,
+      "recovery_rate": 26.9,
+      "event_date": "2020-06-28"
+    },
+    {
+      "year": 2020,
+      "event": "Presidential Election Crisis",
+      "event_type": "political_crisis",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 320,
+      "event_count": 310,
+      "after_count": 380,
+      "immediate_impact": -3.1,
+      "recovery_rate": 22.6,
+      "event_date": "2020-06-28"
+    },
+    {
+      "year": 2020,
+      "event": "Presidential Election Crisis",
+      "event_type": "political_crisis",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 411,
+      "event_count": 366,
+      "after_count": 417,
+      "immediate_impact": -10.9,
+      "recovery_rate": 13.9,
+      "event_date": "2020-06-28"
+    },
+    {
+      "year": 2020,
+      "event": "Presidential Election Crisis",
+      "event_type": "political_crisis",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 216,
+      "event_count": 173,
+      "after_count": 253,
+      "immediate_impact": -19.9,
+      "recovery_rate": 46.2,
+      "event_date": "2020-06-28"
+    },
+    {
+      "year": 2020,
+      "event": "Presidential Election Crisis",
+      "event_type": "political_crisis",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 249,
+      "event_count": 213,
+      "after_count": 290,
+      "immediate_impact": -14.5,
+      "recovery_rate": 36.2,
+      "event_date": "2020-06-28"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2005,
+      "date": "2005-10-23",
+      "event": "Kaczyński Government",
+      "type": "political_shift",
+      "severity": "medium"
+    },
+    {
+      "year": 2015,
+      "date": "2015-10-25",
+      "event": "PiS Party Victory",
+      "type": "political_shift",
+      "severity": "medium"
+    },
+    {
+      "year": 2020,
+      "date": "2020-06-28",
+      "event": "Presidential Election Crisis",
+      "type": "political_crisis",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:11:21.682660",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

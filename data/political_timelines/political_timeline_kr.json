@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "KR",
+    "name": "South Korea"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 62,
+        "Documentary": 6,
+        "Comedy": 29,
+        "Action": 16,
+        "Thriller": 21
+      },
+      "raw_genre_counts": {
+        "Drama": 62,
+        "Documentary": 6,
+        "Comedy": 29,
+        "Action": 16,
+        "Thriller": 21
+      },
+      "total_movies": 100,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 95,
+        "Documentary": 9,
+        "Comedy": 31,
+        "Action": 27,
+        "Thriller": 18
+      },
+      "raw_genre_counts": {
+        "Drama": 95,
+        "Documentary": 9,
+        "Comedy": 31,
+        "Action": 27,
+        "Thriller": 18
+      },
+      "total_movies": 131,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 83.3,
+        "Documentary": 6.3,
+        "Comedy": 37.0,
+        "Action": 26.0,
+        "Thriller": 18.3
+      },
+      "raw_genre_counts": {
+        "Drama": 93,
+        "Documentary": 4,
+        "Comedy": 51,
+        "Action": 35,
+        "Thriller": 16
+      },
+      "total_movies": 144,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 90.0,
+        "Documentary": 6.0,
+        "Comedy": 42.0,
+        "Action": 30.0,
+        "Thriller": 15.3
+      },
+      "raw_genre_counts": {
+        "Drama": 82,
+        "Documentary": 5,
+        "Comedy": 44,
+        "Action": 28,
+        "Thriller": 12
+      },
+      "total_movies": 129,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 93.7,
+        "Documentary": 5.0,
+        "Comedy": 51.7,
+        "Action": 32.7,
+        "Thriller": 14.7
+      },
+      "raw_genre_counts": {
+        "Drama": 106,
+        "Documentary": 6,
+        "Comedy": 60,
+        "Action": 35,
+        "Thriller": 16
+      },
+      "total_movies": 170,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 91.3,
+        "Documentary": 5.7,
+        "Comedy": 51.0,
+        "Action": 32.0,
+        "Thriller": 16.0
+      },
+      "raw_genre_counts": {
+        "Drama": 86,
+        "Documentary": 6,
+        "Comedy": 49,
+        "Action": 33,
+        "Thriller": 20
+      },
+      "total_movies": 145,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 105.7,
+        "Documentary": 7.7,
+        "Comedy": 60.3,
+        "Action": 34.3,
+        "Thriller": 21.7
+      },
+      "raw_genre_counts": {
+        "Drama": 125,
+        "Documentary": 11,
+        "Comedy": 72,
+        "Action": 35,
+        "Thriller": 29
+      },
+      "total_movies": 201,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 108.7,
+        "Documentary": 8.7,
+        "Comedy": 60.0,
+        "Action": 30.7,
+        "Thriller": 29.3
+      },
+      "raw_genre_counts": {
+        "Drama": 115,
+        "Documentary": 9,
+        "Comedy": 59,
+        "Action": 24,
+        "Thriller": 39
+      },
+      "total_movies": 185,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 122.0,
+        "Documentary": 10.0,
+        "Comedy": 63.0,
+        "Action": 33.0,
+        "Thriller": 32.0
+      },
+      "raw_genre_counts": {
+        "Drama": 126,
+        "Documentary": 10,
+        "Comedy": 58,
+        "Action": 40,
+        "Thriller": 28
+      },
+      "total_movies": 204,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 135.7,
+        "Documentary": 13.3,
+        "Comedy": 57.0,
+        "Action": 34.3,
+        "Thriller": 32.7
+      },
+      "raw_genre_counts": {
+        "Drama": 166,
+        "Documentary": 21,
+        "Comedy": 54,
+        "Action": 39,
+        "Thriller": 31
+      },
+      "total_movies": 247,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 144.3,
+        "Documentary": 16.7,
+        "Comedy": 59.0,
+        "Action": 42.3,
+        "Thriller": 32.3
+      },
+      "raw_genre_counts": {
+        "Drama": 141,
+        "Documentary": 19,
+        "Comedy": 65,
+        "Action": 48,
+        "Thriller": 38
+      },
+      "total_movies": 225,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 158.7,
+        "Documentary": 20.7,
+        "Comedy": 62.3,
+        "Action": 45.3,
+        "Thriller": 36.3
+      },
+      "raw_genre_counts": {
+        "Drama": 169,
+        "Documentary": 22,
+        "Comedy": 68,
+        "Action": 49,
+        "Thriller": 40
+      },
+      "total_movies": 261,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 157.7,
+        "Documentary": 23.7,
+        "Comedy": 68.3,
+        "Action": 46.3,
+        "Thriller": 39.3
+      },
+      "raw_genre_counts": {
+        "Drama": 163,
+        "Documentary": 30,
+        "Comedy": 72,
+        "Action": 42,
+        "Thriller": 40
+      },
+      "total_movies": 265,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 171.0,
+        "Documentary": 32.3,
+        "Comedy": 66.7,
+        "Action": 46.7,
+        "Thriller": 42.0
+      },
+      "raw_genre_counts": {
+        "Drama": 181,
+        "Documentary": 45,
+        "Comedy": 60,
+        "Action": 49,
+        "Thriller": 46
+      },
+      "total_movies": 277,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 182.3,
+        "Documentary": 39.7,
+        "Comedy": 67.0,
+        "Action": 50.0,
+        "Thriller": 44.3
+      },
+      "raw_genre_counts": {
+        "Drama": 203,
+        "Documentary": 44,
+        "Comedy": 69,
+        "Action": 59,
+        "Thriller": 47
+      },
+      "total_movies": 307,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-04-16",
+          "event": "Sewol Ferry Disaster",
+          "type": "disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 203.3,
+        "Documentary": 41.0,
+        "Comedy": 66.0,
+        "Action": 54.7,
+        "Thriller": 50.7
+      },
+      "raw_genre_counts": {
+        "Drama": 226,
+        "Documentary": 34,
+        "Comedy": 69,
+        "Action": 56,
+        "Thriller": 59
+      },
+      "total_movies": 342,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 223.7,
+        "Documentary": 39.0,
+        "Comedy": 72.7,
+        "Action": 60.3,
+        "Thriller": 51.0
+      },
+      "raw_genre_counts": {
+        "Drama": 242,
+        "Documentary": 39,
+        "Comedy": 80,
+        "Action": 66,
+        "Thriller": 47
+      },
+      "total_movies": 369,
+      "events": [
+        {
+          "year": 2016,
+          "date": "2016-10-24",
+          "event": "Park Geun-hye Scandal",
+          "type": "political_scandal",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 251.3,
+        "Documentary": 44.0,
+        "Comedy": 78.0,
+        "Action": 67.0,
+        "Thriller": 55.3
+      },
+      "raw_genre_counts": {
+        "Drama": 286,
+        "Documentary": 59,
+        "Comedy": 85,
+        "Action": 79,
+        "Thriller": 60
+      },
+      "total_movies": 448,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 259.0,
+        "Documentary": 49.7,
+        "Comedy": 81.7,
+        "Action": 75.0,
+        "Thriller": 59.7
+      },
+      "raw_genre_counts": {
+        "Drama": 249,
+        "Documentary": 51,
+        "Comedy": 80,
+        "Action": 80,
+        "Thriller": 72
+      },
+      "total_movies": 416,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 273.7,
+        "Documentary": 55.3,
+        "Comedy": 89.0,
+        "Action": 85.0,
+        "Thriller": 69.3
+      },
+      "raw_genre_counts": {
+        "Drama": 286,
+        "Documentary": 56,
+        "Comedy": 102,
+        "Action": 96,
+        "Thriller": 76
+      },
+      "total_movies": 474,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 285.0,
+        "Documentary": 55.7,
+        "Comedy": 100.3,
+        "Action": 86.0,
+        "Thriller": 78.0
+      },
+      "raw_genre_counts": {
+        "Drama": 320,
+        "Documentary": 60,
+        "Comedy": 119,
+        "Action": 82,
+        "Thriller": 86
+      },
+      "total_movies": 517,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-02-29",
+          "event": "COVID-19 Outbreak",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 412.7,
+        "Documentary": 92.0,
+        "Comedy": 152.0,
+        "Action": 132.3,
+        "Thriller": 123.7
+      },
+      "raw_genre_counts": {
+        "Drama": 632,
+        "Documentary": 160,
+        "Comedy": 235,
+        "Action": 219,
+        "Thriller": 209
+      },
+      "total_movies": 1127,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 574.0,
+        "Documentary": 156.7,
+        "Comedy": 247.3,
+        "Action": 194.3,
+        "Thriller": 208.0
+      },
+      "raw_genre_counts": {
+        "Drama": 770,
+        "Documentary": 250,
+        "Comedy": 388,
+        "Action": 282,
+        "Thriller": 329
+      },
+      "total_movies": 1543,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 511.7,
+        "Documentary": 149.3,
+        "Comedy": 221.3,
+        "Action": 178.3,
+        "Thriller": 189.0
+      },
+      "raw_genre_counts": {
+        "Drama": 133,
+        "Documentary": 38,
+        "Comedy": 41,
+        "Action": 34,
+        "Thriller": 29
+      },
+      "total_movies": 225,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 336.7,
+        "Documentary": 104.0,
+        "Comedy": 158.3,
+        "Action": 118.7,
+        "Thriller": 136.0
+      },
+      "raw_genre_counts": {
+        "Drama": 107,
+        "Documentary": 24,
+        "Comedy": 46,
+        "Action": 40,
+        "Thriller": 50
+      },
+      "total_movies": 207,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2014,
+      "event": "Sewol Ferry Disaster",
+      "event_type": "disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 181,
+      "event_count": 203,
+      "after_count": 226,
+      "immediate_impact": 12.2,
+      "recovery_rate": 11.3,
+      "event_date": "2014-04-16"
+    },
+    {
+      "year": 2014,
+      "event": "Sewol Ferry Disaster",
+      "event_type": "disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 45,
+      "event_count": 44,
+      "after_count": 34,
+      "immediate_impact": -2.2,
+      "recovery_rate": -22.7,
+      "event_date": "2014-04-16"
+    },
+    {
+      "year": 2014,
+      "event": "Sewol Ferry Disaster",
+      "event_type": "disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 60,
+      "event_count": 69,
+      "after_count": 69,
+      "immediate_impact": 15.0,
+      "recovery_rate": 0.0,
+      "event_date": "2014-04-16"
+    },
+    {
+      "year": 2014,
+      "event": "Sewol Ferry Disaster",
+      "event_type": "disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 49,
+      "event_count": 59,
+      "after_count": 56,
+      "immediate_impact": 20.4,
+      "recovery_rate": -5.1,
+      "event_date": "2014-04-16"
+    },
+    {
+      "year": 2014,
+      "event": "Sewol Ferry Disaster",
+      "event_type": "disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 46,
+      "event_count": 47,
+      "after_count": 59,
+      "immediate_impact": 2.2,
+      "recovery_rate": 25.5,
+      "event_date": "2014-04-16"
+    },
+    {
+      "year": 2016,
+      "event": "Park Geun-hye Scandal",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 226,
+      "event_count": 242,
+      "after_count": 286,
+      "immediate_impact": 7.1,
+      "recovery_rate": 18.2,
+      "event_date": "2016-10-24"
+    },
+    {
+      "year": 2016,
+      "event": "Park Geun-hye Scandal",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 34,
+      "event_count": 39,
+      "after_count": 59,
+      "immediate_impact": 14.7,
+      "recovery_rate": 51.3,
+      "event_date": "2016-10-24"
+    },
+    {
+      "year": 2016,
+      "event": "Park Geun-hye Scandal",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 69,
+      "event_count": 80,
+      "after_count": 85,
+      "immediate_impact": 15.9,
+      "recovery_rate": 6.2,
+      "event_date": "2016-10-24"
+    },
+    {
+      "year": 2016,
+      "event": "Park Geun-hye Scandal",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 56,
+      "event_count": 66,
+      "after_count": 79,
+      "immediate_impact": 17.9,
+      "recovery_rate": 19.7,
+      "event_date": "2016-10-24"
+    },
+    {
+      "year": 2016,
+      "event": "Park Geun-hye Scandal",
+      "event_type": "political_scandal",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 59,
+      "event_count": 47,
+      "after_count": 60,
+      "immediate_impact": -20.3,
+      "recovery_rate": 27.7,
+      "event_date": "2016-10-24"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Outbreak",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 286,
+      "event_count": 320,
+      "after_count": 632,
+      "immediate_impact": 11.9,
+      "recovery_rate": 97.5,
+      "event_date": "2020-02-29"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Outbreak",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 56,
+      "event_count": 60,
+      "after_count": 160,
+      "immediate_impact": 7.1,
+      "recovery_rate": 166.7,
+      "event_date": "2020-02-29"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Outbreak",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 102,
+      "event_count": 119,
+      "after_count": 235,
+      "immediate_impact": 16.7,
+      "recovery_rate": 97.5,
+      "event_date": "2020-02-29"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Outbreak",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 96,
+      "event_count": 82,
+      "after_count": 219,
+      "immediate_impact": -14.6,
+      "recovery_rate": 167.1,
+      "event_date": "2020-02-29"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Outbreak",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 76,
+      "event_count": 86,
+      "after_count": 209,
+      "immediate_impact": 13.2,
+      "recovery_rate": 143.0,
+      "event_date": "2020-02-29"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2014,
+      "date": "2014-04-16",
+      "event": "Sewol Ferry Disaster",
+      "type": "disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2016,
+      "date": "2016-10-24",
+      "event": "Park Geun-hye Scandal",
+      "type": "political_scandal",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-02-29",
+      "event": "COVID-19 Outbreak",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:50:37.722569",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}
