@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מחקר ויזואליזציה - נתוני IMDb</title>
+    <title>Data Visualization Research - IMDb Data</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -135,24 +135,22 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="hero-title">🎬 מחקר ויזואליזציה: נתוני IMDb</h1>
-            <p class="hero-subtitle">ניתוח מעמיק של תעשיית הקולנוע העולמית 2000-2024</p>
+            <h1 class="hero-title">🎬 Data Visualization Research: IMDb Data</h1>
+            <p class="hero-subtitle">In-depth analysis of the global film industry 2000-2024</p>
             
             <!-- Research Navigation -->
             <div class="research-nav">
                 <div class="research-card" onclick="navigateToResearch('crisis')">
-                    <h3>🌍 סרטים בזמן משבר</h3>
-                    <p>איך משברים עולמיים משפיעים על ז'אנרים קולנועיים ודפוסי צפייה? ניתוח השפעת אירועי עולם על תעשיית הקולנוע.</p>
-                    <button class="research-btn">חקור משברים וקולנוע</button>
+                    <h3>🌍 Films During Crisis</h3>
+                    <p>How do global crises affect film genres and viewing patterns? Analysis of world events' impact on the film industry.</p>
+                    <button class="research-btn">Explore Crises and Cinema</button>
                 </div>
                 
                 <div class="research-card" onclick="navigateToResearch('global')">
-                    <h3>🗺️ המפה הקולנועית הגלובלית</h3>
-                    <p>מיפוי הקשר בين מדדים חברתיים-כלכליים לטביעת האצבע הקולנועית של מדינות שונות ברחבי העולם.</p>
-                    <button class="research-btn">גלה מפה גלובלית</button>
+                    <h3>🗺️ Global Cinema Map</h3>
+                    <p>Mapping the connection between socio-economic indicators and the cinematic fingerprint of different countries worldwide.</p>
+                    <button class="research-btn">Discover Global Map</button>
                 </div>
-                
-                
             </div>
         </div>
     </section>
@@ -160,127 +158,127 @@
     <!-- Data Overview Section -->
     <section class="data-overview">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">📊 סקירת הנתונים</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">מקור הנתונים, היקף ואיכות המידע במחקר</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">📊 Data Overview</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">Data source, scope and quality of information in the research</p>
             
             <div class="data-cards">
                 <div class="data-card">
-                    <h4>🎬 מקור הנתונים</h4>
+                    <h4>🎬 Data Source</h4>
                     <div class="data-stat">
-                        <span>מקור:</span>
+                        <span>Source:</span>
                         <span class="stat-value">IMDb Official Datasets</span>
                     </div>
                     <div class="data-stat">
-                        <span>עדכון:</span>
-                        <span class="stat-value">יומי</span>
+                        <span>Update:</span>
+                        <span class="stat-value">Daily</span>
                     </div>
                     <div class="data-stat">
-                        <span>פורמט:</span>
+                        <span>Format:</span>
                         <span class="stat-value">TSV (Tab-Separated Values)</span>
                     </div>
                     <div class="data-stat">
-                        <span>קידוד:</span>
+                        <span>Encoding:</span>
                         <span class="stat-value">UTF-8</span>
                     </div>
                 </div>
                 
                 <div class="data-card">
-                    <h4>📈 היקף הנתונים</h4>
+                    <h4>📈 Data Scope</h4>
                     <div class="data-stat">
-                        <span>תקופת מחקר:</span>
+                        <span>Research Period:</span>
                         <span class="stat-value">2000-2024</span>
                     </div>
                     <div class="data-stat">
-                        <span>מספר סרטים:</span>
+                        <span>Number of Films:</span>
                         <span class="stat-value">~400,000</span>
                     </div>
                     <div class="data-stat">
-                        <span>מספר דירוגים:</span>
-                        <span class="stat-value">~15 מיליון</span>
+                        <span>Number of Ratings:</span>
+                        <span class="stat-value">~15 million</span>
                     </div>
                     <div class="data-stat">
-                        <span>מדינות מכוסות:</span>
+                        <span>Countries Covered:</span>
                         <span class="stat-value">195+</span>
                     </div>
                 </div>
                 
                 <div class="data-card">
-                    <h4>🗃️ קבצי הנתונים</h4>
+                    <h4>🗃️ Data Files</h4>
                     <div class="data-stat">
                         <span>title.basics.tsv:</span>
-                        <span class="stat-value">מידע בסיסי על סרטים</span>
+                        <span class="stat-value">Basic film information</span>
                     </div>
                     <div class="data-stat">
                         <span>title.akas.tsv:</span>
-                        <span class="stat-value">שמות מקומיים ומדינות</span>
+                        <span class="stat-value">Local names and countries</span>
                     </div>
                     <div class="data-stat">
                         <span>title.ratings.tsv:</span>
-                        <span class="stat-value">דירוגים והצבעות</span>
+                        <span class="stat-value">Ratings and votes</span>
                     </div>
                     <div class="data-stat">
                         <span>title.principals.tsv:</span>
-                        <span class="stat-value">שחקנים ויוצרים</span>
+                        <span class="stat-value">Actors and creators</span>
                     </div>
                 </div>
                 
                 <div class="data-card">
-                    <h4>🎭 ז'אנרים נכללים</h4>
+                    <h4>🎭 Included Genres</h4>
                     <div class="data-stat">
                         <span>Drama:</span>
-                        <span class="stat-value">דרמה</span>
+                        <span class="stat-value">Drama</span>
                     </div>
                     <div class="data-stat">
                         <span>Action:</span>
-                        <span class="stat-value">פעולה</span>
+                        <span class="stat-value">Action</span>
                     </div>
                     <div class="data-stat">
                         <span>Comedy:</span>
-                        <span class="stat-value">קומדיה</span>
+                        <span class="stat-value">Comedy</span>
                     </div>
                     <div class="data-stat">
-                        <span>+7 נוספים:</span>
-                        <span class="stat-value">אימה, דוקומנטרי, מותחן...</span>
-                    </div>
-                </div>
-                
-                <div class="data-card">
-                    <h4>🌍 כיסוי גיאוגרפי</h4>
-                    <div class="data-stat">
-                        <span>ארה"ב:</span>
-                        <span class="stat-value">~40% מהנתונים</span>
-                    </div>
-                    <div class="data-stat">
-                        <span>אירופה:</span>
-                        <span class="stat-value">~25% מהנתונים</span>
-                    </div>
-                    <div class="data-stat">
-                        <span>אסיה:</span>
-                        <span class="stat-value">~20% מהנתונים</span>
-                    </div>
-                    <div class="data-stat">
-                        <span>אחרים:</span>
-                        <span class="stat-value">~15% מהנתונים</span>
+                        <span>+7 more:</span>
+                        <span class="stat-value">Horror, Documentary, Thriller...</span>
                     </div>
                 </div>
                 
                 <div class="data-card">
-                    <h4>📊 איכות הנתונים</h4>
+                    <h4>🌍 Geographic Coverage</h4>
                     <div class="data-stat">
-                        <span>שיעור השלמה:</span>
+                        <span>USA:</span>
+                        <span class="stat-value">~40% of data</span>
+                    </div>
+                    <div class="data-stat">
+                        <span>Europe:</span>
+                        <span class="stat-value">~25% of data</span>
+                    </div>
+                    <div class="data-stat">
+                        <span>Asia:</span>
+                        <span class="stat-value">~20% of data</span>
+                    </div>
+                    <div class="data-stat">
+                        <span>Others:</span>
+                        <span class="stat-value">~15% of data</span>
+                    </div>
+                </div>
+                
+                <div class="data-card">
+                    <h4>📊 Data Quality</h4>
+                    <div class="data-stat">
+                        <span>Completion Rate:</span>
                         <span class="stat-value">92%</span>
                     </div>
                     <div class="data-stat">
-                        <span>דיוק נתונים:</span>
-                        <span class="stat-value">גבוה (מקור רשמי)</span>
+                        <span>Data Accuracy:</span>
+                        <span class="stat-value">High (Official source)</span>
                     </div>
                     <div class="data-stat">
-                        <span>עדכון:</span>
-                        <span class="stat-value">יומי מ-IMDb</span>
+                        <span>Update:</span>
+                        <span class="stat-value">Daily from IMDb</span>
                     </div>
                     <div class="data-stat">
-                        <span>וולידציה:</span>
-                        <span class="stat-value">מעובד ונוקה</span>
+                        <span>Validation:</span>
+                        <span class="stat-value">Processed and cleaned</span>
                     </div>
                 </div>
             </div>
@@ -292,19 +290,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>📊 נתונים</h4>
-                    <p>מקור: <a href="https://datasets.imdbws.com/" target="_blank">IMDb Datasets</a></p>
-                    <p>תקופה: 2000-2024</p>
+                    <h4>📊 Data</h4>
+                    <p>Source: <a href="https://datasets.imdbws.com/" target="_blank">IMDb Datasets</a></p>
+                    <p>Period: 2000-2024</p>
                 </div>
                 <div class="footer-section">
-                    <h4>🛠️ טכנולוגיות</h4>
+                    <h4>🛠️ Technologies</h4>
                     <p>D3.js, Python, Pandas</p>
                     <p>HTML5, CSS3, JavaScript</p>
                 </div>
                 <div class="footer-section">
-                    <h4>📚 מחקר</h4>
-                    <p>פרויקט ויזואליזציה אקדמי</p>
-                    <p>&copy; 2024 | כל הזכויות שמורות</p>
+                    <h4>📚 Research</h4>
+                    <p>Academic Visualization Project</p>
+                    <p>&copy; 2024 | All Rights Reserved</p>
                 </div>
             </div>
         </div>

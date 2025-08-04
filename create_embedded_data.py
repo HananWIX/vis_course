@@ -2,7 +2,7 @@ import json
 import random
 
 # קריאת הנתונים המלאים
-print("טוען נתונים...")
+print("Loading data...")
 with open('processed_data.json', 'r', encoding='utf-8') as f:
     full_data = json.load(f)
 

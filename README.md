@@ -1,201 +1,152 @@
-# 🎬 ויזואליזציה IMDb - ניתוח השפעת משברים על הקולנוע
+# 🎬 IMDb Visualization - Crisis Impact on Cinema Analysis
 
-## 📊 תיאור הפרויקט
-פרויקט ויזואליזציה מתקדם המנתח את השפעת משברים עולמיים על תעשיית הקולנוע באמצעות נתוני IMDb מ-2000 עד 2024.
+## Overview
 
-## 🔍 ניתוח הבעיות והפתרונות
+Advanced visualization project analyzing the impact of global crises on the film industry using IMDb data from 2000 to 2024.
 
-### 🎨 **בעיות עיצוב ויזואלי שזוהו:**
+## Features
 
-#### 1. **בעיות צבעים וקריאות:**
-- **בעיה:** צבעים לא עקביים בין גרפים
-- **פתרון:** יצירת מערכת צבעים אחידה עם משתני CSS
-- **בעיה:** טקסט לא קריא על רקעים צבעוניים
-- **פתרון:** הוספת text-shadow ו-backdrop-filter
+### 📊 Interactive Visualizations
+- **Time Trends Chart** - Movie count trends over time
+- **Crisis Comparison Chart** - Genre comparison before and after crises
+- **Genre Distribution Chart** - Pie chart analysis
+- **Cinema DNA** - Dynamic analysis
+- **Crisis Impact Analysis** - Psychological analysis
+- **Heat Map** - Genres vs years
 
-#### 2. **בעיות גודל ומיקום:**
-- **בעיה:** גודל גרפים לא מותאם למסך
-- **פתרון:** הגדלת הגרפים ל-600px גובה ו-1000px רוחב
-- **בעיה:** מקרא לא ברור וצפוף
-- **פתרון:** הגדלת מרווחים ושיפור סידור המקרא
+### 🌍 Global Cinema Map
+- **Interactive Chart** - Sortable cinema diversity analysis
+- **Quality Gap Dashboard** - Movie quantity vs quality analysis
+- **National Quality Gap** - Inequality vs cinema quality
+- **Global Collaboration Network** - International cinema partnerships
+- **Political Events Timeline** - How politics affects cinema
 
-#### 3. **בעיות אנימציות:**
-- **בעיה:** אנימציות לא חלקות
-- **פתרון:** שימוש ב-cubic-bezier transitions
-- **בעיה:** אפקטים ויזואליים לא מותאמים
-- **פתרון:** הוספת drop-shadow ו-blur effects
+## Technology Stack
 
-### ⚡ **בעיות פונקציונליות שזוהו:**
+- **Frontend**: HTML5, CSS3, JavaScript ES6+
+- **Visualization**: D3.js v7
+- **Backend**: Python 3.8+
+- **Data Processing**: Pandas, NumPy
+- **Data Source**: IMDb Official Datasets
 
-#### 1. **בעיות Tooltip:**
-- **בעיה:** Tooltips לא מופיעים כראוי
-- **פתרון:** שיפור מערכת ה-tooltip עם backdrop-filter
-- **בעיה:** מיקום לא מדויק
-- **פתרון:** חישוב מיקום משופר עם offset
+## Installation
 
-#### 2. **בעיות אינטראקטיביות:**
-- **בעיה:** אירועים לא מגיבים כראוי
-- **פתרון:** שיפור event listeners עם debouncing
-- **בעיה:** מצבי טעינה לא ברורים
-- **פתרון:** הוספת loading states ו-error handling
-
-#### 3. **בעיות נתונים:**
-- **בעיה:** נתונים לא נטענים כראוי
-- **פתרון:** שיפור error handling ו-loading states
-- **בעיה:** גרפים לא מתעדכנים
-- **פתרון:** שיפור מערכת העדכון
-
-### 🚀 **בעיות ביצועים שזוהו:**
-
-#### 1. **בעיות טעינה:**
-- **בעיה:** גרפים כבדים מדי
-- **פתרון:** אופטימיזציה של D3.js ו-CSS
-- **בעיה:** אנימציות לא מותאמות
-- **פתרון:** שימוש ב-requestAnimationFrame
-
-#### 2. **בעיות רספונסיביות:**
-- **בעיה:** גרפים לא מתאימים למסך
-- **פתרון:** שיפור responsive design
-- **בעיה:** resize לא חלק
-- **פתרון:** debouncing של resize events
-
-## 🛠️ **פתרונות מיושמים:**
-
-### 1. **שיפורי CSS:**
-```css
-/* Enhanced color palette */
-:root {
-    --primary-color: #4a90e2;
-    --secondary-color: #7b68ee;
-    --accent-color: #ff6b6b;
-    --accent-secondary: #4ecdc4;
-}
-
-/* Enhanced transitions */
---transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-/* Enhanced shadows */
---shadow-lg: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-```
-
-### 2. **שיפורי JavaScript:**
-```javascript
-// Enhanced tooltip system
-showTooltip(event, content) {
-    const tooltip = d3.select("#tooltip");
-    tooltip.style("display", "block")
-        .transition()
-        .duration(200)
-        .style("opacity", 0.95);
-}
-
-// Enhanced loading states
-showLoadingState() {
-    this.isLoading = true;
-    document.querySelectorAll('.chart').forEach(chart => {
-        chart.classList.add('loading');
-    });
-}
-```
-
-### 3. **שיפורי HTML:**
-```html
-<!-- Enhanced tooltip -->
-<div id="tooltip" style="backdrop-filter: blur(10px);"></div>
-
-<!-- Enhanced loading states -->
-<div class="loading-indicator">
-    <div class="spinner"></div>
-    <p>טוען נתונים...</p>
-</div>
-```
-
-## 📈 **תוצאות השיפור:**
-
-### ✅ **שיפורים ויזואליים:**
-- צבעים עקביים ואחידים
-- טקסט קריא יותר עם text-shadow
-- אנימציות חלקות יותר
-- גרפים גדולים יותר ונוחים יותר
-
-### ✅ **שיפורים פונקציונליים:**
-- Tooltips עובדים בצורה מושלמת
-- אינטראקציות חלקות יותר
-- מצבי טעינה ברורים
-- error handling משופר
-
-### ✅ **שיפורי ביצועים:**
-- טעינה מהירה יותר
-- אנימציות מותאמות
-- responsive design משופר
-- memory usage מותאם
-
-## 🎯 **מאפיינים עיקריים:**
-
-### 📊 **גרפים זמינים:**
-1. **גרף קווי** - מגמות לאורך זמן
-2. **גרף עמודות** - השוואת משברים
-3. **גרף עוגה** - חלוקת ז'אנרים
-4. **DNA הקולנוע** - ניתוח דינמי
-5. **ניתוח השפעת משברים** - פסיכולוגי
-6. **מפת חום** - ז'אנרים מול שנים
-
-### 🎨 **תכונות עיצוב:**
-- עיצוב מודרני ונקי
-- אנימציות חלקות
-- צבעים עקביים
-- טיפוגרפיה ברורה
-- responsive design
-
-### ⚡ **תכונות טכניות:**
-- D3.js מתקדם
-- CSS Grid ו-Flexbox
-- JavaScript ES6+
-- Error handling מתקדם
-- Performance optimization
-
-## 🚀 **התקנה והפעלה:**
-
-1. **התקנת תלויות:**
+1. Clone the repository:
 ```bash
-npm install
+git clone <repository-url>
+cd vis_course
 ```
 
-2. **הפעלת השרת:**
+2. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run data preprocessing:
+```bash
+python run_preprocessing.py
+```
+
+4. Start the application:
 ```bash
 python -m http.server 8000
 ```
 
-3. **גישה לאפליקציה:**
+5. Open your browser and navigate to:
 ```
 http://localhost:8000
 ```
 
-## 📚 **טכנולוגיות בשימוש:**
+## Data Processing
 
-- **Frontend:** HTML5, CSS3, JavaScript ES6+
-- **Visualization:** D3.js v7
-- **Styling:** CSS Grid, Flexbox, CSS Variables
-- **Performance:** RequestAnimationFrame, Debouncing
-- **Accessibility:** ARIA labels, Keyboard navigation
+### Preprocessing Pipeline
 
-## 🤝 **תרומה לפרויקט:**
+1. **Data Loading**: Load IMDb datasets (title.basics.tsv, title.ratings.tsv, etc.)
+2. **Data Cleaning**: Remove duplicates, handle missing values
+3. **Feature Engineering**: Extract genres, calculate metrics
+4. **Crisis Mapping**: Map crisis events to specific years
+5. **Visualization Data**: Generate chart-specific datasets
 
-1. Fork את הפרויקט
-2. צור branch חדש
-3. בצע את השינויים
-4. שלח Pull Request
+### Data Sources
 
-## 📄 **רישיון:**
+- **Primary**: IMDb Official Datasets
+- **Secondary**: World Bank, Freedom House, Democracy Index
+- **Period**: 2000-2024
+- **Coverage**: 195+ countries, 400,000+ movies
 
-MIT License - ראה קובץ LICENSE לפרטים נוספים.
+## Project Structure
 
-## 👥 **צוות הפיתוח:**
+```
+vis_course/
+├── index.html                 # Main homepage
+├── crisis-research.html       # Crisis analysis page
+├── global-cinema-map.html     # Global cinema map
+├── data/                      # Data files
+│   ├── political_timelines/   # Political events data
+│   └── quality_gap_dashboard/ # Quality gap data
+├── *.js                       # JavaScript visualization files
+├── *.py                       # Python processing scripts
+└── styles.css                 # Styling
+```
 
-- **מפתח ראשי:** [שם המפתח]
-- **מעצב UX/UI:** [שם המעצב]
-- **אנליסט נתונים:** [שם האנליסט]
+## Usage
+
+### Crisis Research Page
+
+1. **Time Trends**: Analyze movie production trends over time
+2. **Crisis Comparison**: Compare genres before and after specific crises
+3. **Genre Distribution**: View genre breakdown in crisis years
+4. **Cinema DNA**: Explore dynamic genre composition changes
+5. **Crisis Impact**: Psychological analysis of viewing patterns
+6. **Heat Map**: Visualize genre popularity across years
+
+### Global Cinema Map
+
+1. **Interactive Chart**: Sort countries by various metrics
+2. **Quality Gap Dashboard**: Analyze quantity vs quality relationships
+3. **National Quality Gap**: Study inequality's impact on cinema
+4. **Collaboration Network**: Explore international partnerships
+5. **Political Timeline**: Examine political events' effects
+
+## Research Insights
+
+### Crisis Impact Patterns
+
+- **Documentary Decline**: Documentary production drops during political crackdowns
+- **Drama Sensitivity**: Drama and social commentary show immediate impact
+- **Comedy Coping**: Comedy production increases as coping mechanism
+- **Recovery Patterns**: Recovery varies by country and regime type
+- **Anticipatory Changes**: Some countries show changes before major events
+
+### Quality vs Quantity Trade-offs
+
+- **🇺🇸 Hollywood Effect**: High quantity, mixed quality spectrum
+- **🇫🇷 Art House Pattern**: Lower quantity, higher average quality
+- **🇮🇳 Bollywood Scale**: Massive production, wide quality range
+- **🇰🇷 K-cinema Rise**: Moderate quantity, improving quality trends
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- IMDb for providing comprehensive film data
+- D3.js community for excellent visualization tools
+- Academic institutions for research methodology
+
+## Contact
+
+For questions or contributions, please open an issue or contact the development team.
 
 ---
 
-**© 2024 - כל הזכויות שמורות** 
+*"Understanding global cinema through the lens of democracy, economy, and human creativity"* 

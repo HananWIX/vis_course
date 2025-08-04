@@ -163,7 +163,7 @@ class IMDbDataProcessor:
     
     def create_bar_chart_data(self, merged_df):
         """יצירת נתונים לגרף עמודות - השוואה לפני/אחרי משבר"""
-        self.log("יוצר נתונים לגרף עמודות...")
+        self.log("Creating bar chart data...")
         
         bar_data = {}
         
@@ -195,8 +195,8 @@ class IMDbDataProcessor:
         return bar_data
     
     def create_pie_chart_data(self, merged_df):
-        """יצירת נתונים לגרף עוגה - חלוקת ז'אנרים בשנת משבר"""
-        self.log("יוצר נתונים לגרף עוגה...")
+        """Creating data for pie chart - genre distribution in crisis year"""
+        self.log("Creating pie chart data...")
         
         pie_data = {}
         
@@ -226,7 +226,7 @@ class IMDbDataProcessor:
     
     def create_scatter_chart_data(self, merged_df):
         """יצירת נתונים לגרף פיזור - דירוגים מול שנים"""
-        self.log("יוצר נתונים לגרף פיזור...")
+        self.log("Creating scatter plot data...")
         
         # סינון נתונים תקינים
         valid_data = merged_df[
@@ -256,7 +256,7 @@ class IMDbDataProcessor:
     
     def create_area_chart_data(self, merged_df):
         """יצירת נתונים לגרף אזור - תפוצת סרטים לפי עשור"""
-        self.log("יוצר נתונים לגרף אזור...")
+        self.log("Creating area chart data...")
         
         area_data = []
         
@@ -276,8 +276,8 @@ class IMDbDataProcessor:
         return area_data
     
     def create_heatmap_data(self, merged_df):
-        """יצירת נתונים למפת חום - ז'אנרים מול שנים"""
-        self.log("יוצר נתונים למפת חום...")
+        """Creating data for heat map - genres vs years"""
+        self.log("Creating heat map data...")
         
         heatmap_data = []
         years = list(range(2000, 2025, 2))  # כל שנתיים
@@ -307,7 +307,7 @@ class IMDbDataProcessor:
     
     def create_bubble_chart_data(self, merged_df):
         """יצירת נתונים לגרף בועות - דירוג מול פופולריות"""
-        self.log("יוצר נתונים לגרף בועות...")
+        self.log("Creating bubble chart data...")
         
         # קיבוץ לפי שנה וז'אנר
         bubble_data = []
