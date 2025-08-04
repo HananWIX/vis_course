@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "IT",
+    "name": "Italy"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 328,
+        "Documentary": 66,
+        "Comedy": 210,
+        "Action": 86,
+        "Thriller": 101
+      },
+      "raw_genre_counts": {
+        "Drama": 328,
+        "Documentary": 66,
+        "Comedy": 210,
+        "Action": 86,
+        "Thriller": 101
+      },
+      "total_movies": 609,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 332,
+        "Documentary": 54,
+        "Comedy": 210,
+        "Action": 103,
+        "Thriller": 91
+      },
+      "raw_genre_counts": {
+        "Drama": 332,
+        "Documentary": 54,
+        "Comedy": 210,
+        "Action": 103,
+        "Thriller": 91
+      },
+      "total_movies": 604,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 341.7,
+        "Documentary": 64.3,
+        "Comedy": 209.3,
+        "Action": 97.0,
+        "Thriller": 96.7
+      },
+      "raw_genre_counts": {
+        "Drama": 365,
+        "Documentary": 73,
+        "Comedy": 208,
+        "Action": 102,
+        "Thriller": 98
+      },
+      "total_movies": 649,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 341.0,
+        "Documentary": 66.3,
+        "Comedy": 214.3,
+        "Action": 105.0,
+        "Thriller": 93.0
+      },
+      "raw_genre_counts": {
+        "Drama": 326,
+        "Documentary": 72,
+        "Comedy": 225,
+        "Action": 110,
+        "Thriller": 90
+      },
+      "total_movies": 617,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 352.3,
+        "Documentary": 77.0,
+        "Comedy": 212.7,
+        "Action": 110.0,
+        "Thriller": 91.3
+      },
+      "raw_genre_counts": {
+        "Drama": 366,
+        "Documentary": 86,
+        "Comedy": 205,
+        "Action": 118,
+        "Thriller": 86
+      },
+      "total_movies": 669,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 360.3,
+        "Documentary": 88.0,
+        "Comedy": 217.3,
+        "Action": 108.3,
+        "Thriller": 90.3
+      },
+      "raw_genre_counts": {
+        "Drama": 389,
+        "Documentary": 106,
+        "Comedy": 222,
+        "Action": 97,
+        "Thriller": 95
+      },
+      "total_movies": 707,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 381.7,
+        "Documentary": 105.7,
+        "Comedy": 227.0,
+        "Action": 100.3,
+        "Thriller": 98.7
+      },
+      "raw_genre_counts": {
+        "Drama": 390,
+        "Documentary": 125,
+        "Comedy": 254,
+        "Action": 86,
+        "Thriller": 115
+      },
+      "total_movies": 773,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 396.7,
+        "Documentary": 121.0,
+        "Comedy": 234.3,
+        "Action": 92.7,
+        "Thriller": 104.7
+      },
+      "raw_genre_counts": {
+        "Drama": 411,
+        "Documentary": 132,
+        "Comedy": 227,
+        "Action": 95,
+        "Thriller": 104
+      },
+      "total_movies": 775,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 399.0,
+        "Documentary": 147.7,
+        "Comedy": 239.7,
+        "Action": 96.3,
+        "Thriller": 108.7
+      },
+      "raw_genre_counts": {
+        "Drama": 396,
+        "Documentary": 186,
+        "Comedy": 238,
+        "Action": 108,
+        "Thriller": 107
+      },
+      "total_movies": 825,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 394.3,
+        "Documentary": 170.0,
+        "Comedy": 234.0,
+        "Action": 108.0,
+        "Thriller": 111.7
+      },
+      "raw_genre_counts": {
+        "Drama": 376,
+        "Documentary": 192,
+        "Comedy": 237,
+        "Action": 121,
+        "Thriller": 124
+      },
+      "total_movies": 848,
+      "events": [
+        {
+          "year": 2009,
+          "date": "2009-04-06",
+          "event": "L'Aquila Earthquake",
+          "type": "natural_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 405.3,
+        "Documentary": 203.3,
+        "Comedy": 241.7,
+        "Action": 123.7,
+        "Thriller": 114.3
+      },
+      "raw_genre_counts": {
+        "Drama": 444,
+        "Documentary": 232,
+        "Comedy": 250,
+        "Action": 142,
+        "Thriller": 112
+      },
+      "total_movies": 906,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 419.7,
+        "Documentary": 223.3,
+        "Comedy": 249.3,
+        "Action": 132.0,
+        "Thriller": 116.7
+      },
+      "raw_genre_counts": {
+        "Drama": 439,
+        "Documentary": 246,
+        "Comedy": 261,
+        "Action": 133,
+        "Thriller": 114
+      },
+      "total_movies": 936,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 451.7,
+        "Documentary": 253.3,
+        "Comedy": 257.0,
+        "Action": 137.3,
+        "Thriller": 119.7
+      },
+      "raw_genre_counts": {
+        "Drama": 472,
+        "Documentary": 282,
+        "Comedy": 260,
+        "Action": 137,
+        "Thriller": 133
+      },
+      "total_movies": 1029,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 473.7,
+        "Documentary": 270.7,
+        "Comedy": 265.7,
+        "Action": 144.0,
+        "Thriller": 139.0
+      },
+      "raw_genre_counts": {
+        "Drama": 510,
+        "Documentary": 284,
+        "Comedy": 276,
+        "Action": 162,
+        "Thriller": 170
+      },
+      "total_movies": 1098,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 527.3,
+        "Documentary": 288.0,
+        "Comedy": 288.0,
+        "Action": 159.3,
+        "Thriller": 152.3
+      },
+      "raw_genre_counts": {
+        "Drama": 600,
+        "Documentary": 298,
+        "Comedy": 328,
+        "Action": 179,
+        "Thriller": 154
+      },
+      "total_movies": 1202,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 576.3,
+        "Documentary": 328.3,
+        "Comedy": 311.3,
+        "Action": 176.3,
+        "Thriller": 164.0
+      },
+      "raw_genre_counts": {
+        "Drama": 619,
+        "Documentary": 403,
+        "Comedy": 330,
+        "Action": 188,
+        "Thriller": 168
+      },
+      "total_movies": 1345,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 628.7,
+        "Documentary": 361.0,
+        "Comedy": 340.3,
+        "Action": 193.0,
+        "Thriller": 160.0
+      },
+      "raw_genre_counts": {
+        "Drama": 667,
+        "Documentary": 382,
+        "Comedy": 363,
+        "Action": 212,
+        "Thriller": 158
+      },
+      "total_movies": 1415,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 673.0,
+        "Documentary": 393.7,
+        "Comedy": 355.3,
+        "Action": 203.3,
+        "Thriller": 184.3
+      },
+      "raw_genre_counts": {
+        "Drama": 733,
+        "Documentary": 396,
+        "Comedy": 373,
+        "Action": 210,
+        "Thriller": 227
+      },
+      "total_movies": 1539,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 743.0,
+        "Documentary": 407.3,
+        "Comedy": 392.7,
+        "Action": 223.0,
+        "Thriller": 205.0
+      },
+      "raw_genre_counts": {
+        "Drama": 829,
+        "Documentary": 444,
+        "Comedy": 442,
+        "Action": 247,
+        "Thriller": 230
+      },
+      "total_movies": 1749,
+      "events": [
+        {
+          "year": 2018,
+          "date": "2018-08-14",
+          "event": "Genoa Bridge Collapse",
+          "type": "infrastructure_disaster",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 847.0,
+        "Documentary": 444.7,
+        "Comedy": 437.0,
+        "Action": 252.7,
+        "Thriller": 250.0
+      },
+      "raw_genre_counts": {
+        "Drama": 979,
+        "Documentary": 494,
+        "Comedy": 496,
+        "Action": 301,
+        "Thriller": 293
+      },
+      "total_movies": 2009,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 848.0,
+        "Documentary": 449.7,
+        "Comedy": 450.3,
+        "Action": 244.3,
+        "Thriller": 252.0
+      },
+      "raw_genre_counts": {
+        "Drama": 736,
+        "Documentary": 411,
+        "Comedy": 413,
+        "Action": 185,
+        "Thriller": 233
+      },
+      "total_movies": 1578,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-09",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 858.3,
+        "Documentary": 471.7,
+        "Comedy": 422.0,
+        "Action": 242.3,
+        "Thriller": 262.0
+      },
+      "raw_genre_counts": {
+        "Drama": 860,
+        "Documentary": 510,
+        "Comedy": 357,
+        "Action": 241,
+        "Thriller": 260
+      },
+      "total_movies": 1822,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 885.0,
+        "Documentary": 485.7,
+        "Comedy": 452.7,
+        "Action": 249.0,
+        "Thriller": 290.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1059,
+        "Documentary": 536,
+        "Comedy": 588,
+        "Action": 321,
+        "Thriller": 377
+      },
+      "total_movies": 2300,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 971.7,
+        "Documentary": 521.3,
+        "Comedy": 497.7,
+        "Action": 301.7,
+        "Thriller": 334.7
+      },
+      "raw_genre_counts": {
+        "Drama": 996,
+        "Documentary": 518,
+        "Comedy": 548,
+        "Action": 343,
+        "Thriller": 367
+      },
+      "total_movies": 2173,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 963.3,
+        "Documentary": 532.0,
+        "Comedy": 533.3,
+        "Action": 304.3,
+        "Thriller": 345.7
+      },
+      "raw_genre_counts": {
+        "Drama": 835,
+        "Documentary": 542,
+        "Comedy": 464,
+        "Action": 249,
+        "Thriller": 293
+      },
+      "total_movies": 1925,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2009,
+      "event": "L'Aquila Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 396,
+      "event_count": 376,
+      "after_count": 444,
+      "immediate_impact": -5.1,
+      "recovery_rate": 18.1,
+      "event_date": "2009-04-06"
+    },
+    {
+      "year": 2009,
+      "event": "L'Aquila Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 186,
+      "event_count": 192,
+      "after_count": 232,
+      "immediate_impact": 3.2,
+      "recovery_rate": 20.8,
+      "event_date": "2009-04-06"
+    },
+    {
+      "year": 2009,
+      "event": "L'Aquila Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 238,
+      "event_count": 237,
+      "after_count": 250,
+      "immediate_impact": -0.4,
+      "recovery_rate": 5.5,
+      "event_date": "2009-04-06"
+    },
+    {
+      "year": 2009,
+      "event": "L'Aquila Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 108,
+      "event_count": 121,
+      "after_count": 142,
+      "immediate_impact": 12.0,
+      "recovery_rate": 17.4,
+      "event_date": "2009-04-06"
+    },
+    {
+      "year": 2009,
+      "event": "L'Aquila Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 107,
+      "event_count": 124,
+      "after_count": 112,
+      "immediate_impact": 15.9,
+      "recovery_rate": -9.7,
+      "event_date": "2009-04-06"
+    },
+    {
+      "year": 2018,
+      "event": "Genoa Bridge Collapse",
+      "event_type": "infrastructure_disaster",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 733,
+      "event_count": 829,
+      "after_count": 979,
+      "immediate_impact": 13.1,
+      "recovery_rate": 18.1,
+      "event_date": "2018-08-14"
+    },
+    {
+      "year": 2018,
+      "event": "Genoa Bridge Collapse",
+      "event_type": "infrastructure_disaster",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 396,
+      "event_count": 444,
+      "after_count": 494,
+      "immediate_impact": 12.1,
+      "recovery_rate": 11.3,
+      "event_date": "2018-08-14"
+    },
+    {
+      "year": 2018,
+      "event": "Genoa Bridge Collapse",
+      "event_type": "infrastructure_disaster",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 373,
+      "event_count": 442,
+      "after_count": 496,
+      "immediate_impact": 18.5,
+      "recovery_rate": 12.2,
+      "event_date": "2018-08-14"
+    },
+    {
+      "year": 2018,
+      "event": "Genoa Bridge Collapse",
+      "event_type": "infrastructure_disaster",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 210,
+      "event_count": 247,
+      "after_count": 301,
+      "immediate_impact": 17.6,
+      "recovery_rate": 21.9,
+      "event_date": "2018-08-14"
+    },
+    {
+      "year": 2018,
+      "event": "Genoa Bridge Collapse",
+      "event_type": "infrastructure_disaster",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 227,
+      "event_count": 230,
+      "after_count": 293,
+      "immediate_impact": 1.3,
+      "recovery_rate": 27.4,
+      "event_date": "2018-08-14"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 979,
+      "event_count": 736,
+      "after_count": 860,
+      "immediate_impact": -24.8,
+      "recovery_rate": 16.8,
+      "event_date": "2020-03-09"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 494,
+      "event_count": 411,
+      "after_count": 510,
+      "immediate_impact": -16.8,
+      "recovery_rate": 24.1,
+      "event_date": "2020-03-09"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 496,
+      "event_count": 413,
+      "after_count": 357,
+      "immediate_impact": -16.7,
+      "recovery_rate": -13.6,
+      "event_date": "2020-03-09"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 301,
+      "event_count": 185,
+      "after_count": 241,
+      "immediate_impact": -38.5,
+      "recovery_rate": 30.3,
+      "event_date": "2020-03-09"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 293,
+      "event_count": 233,
+      "after_count": 260,
+      "immediate_impact": -20.5,
+      "recovery_rate": 11.6,
+      "event_date": "2020-03-09"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2009,
+      "date": "2009-04-06",
+      "event": "L'Aquila Earthquake",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2018,
+      "date": "2018-08-14",
+      "event": "Genoa Bridge Collapse",
+      "type": "infrastructure_disaster",
+      "severity": "medium"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-09",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:56:47.631669",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

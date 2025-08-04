@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "TH",
+    "name": "Thailand"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 40,
+        "Documentary": 1,
+        "Comedy": 27,
+        "Action": 19,
+        "Thriller": 14
+      },
+      "raw_genre_counts": {
+        "Drama": 40,
+        "Documentary": 1,
+        "Comedy": 27,
+        "Action": 19,
+        "Thriller": 14
+      },
+      "total_movies": 71,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 48,
+        "Documentary": 0,
+        "Comedy": 21,
+        "Action": 30,
+        "Thriller": 18
+      },
+      "raw_genre_counts": {
+        "Drama": 48,
+        "Documentary": 0,
+        "Comedy": 21,
+        "Action": 30,
+        "Thriller": 18
+      },
+      "total_movies": 85,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 50.3,
+        "Documentary": 0.5,
+        "Comedy": 27.7,
+        "Action": 28.0,
+        "Thriller": 19.0
+      },
+      "raw_genre_counts": {
+        "Drama": 63,
+        "Documentary": 0,
+        "Comedy": 35,
+        "Action": 35,
+        "Thriller": 25
+      },
+      "total_movies": 109,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 58.3,
+        "Documentary": 2.0,
+        "Comedy": 34.0,
+        "Action": 36.7,
+        "Thriller": 23.3
+      },
+      "raw_genre_counts": {
+        "Drama": 64,
+        "Documentary": 2,
+        "Comedy": 46,
+        "Action": 45,
+        "Thriller": 27
+      },
+      "total_movies": 136,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 62.0,
+        "Documentary": 3.0,
+        "Comedy": 42.7,
+        "Action": 43.0,
+        "Thriller": 26.3
+      },
+      "raw_genre_counts": {
+        "Drama": 59,
+        "Documentary": 4,
+        "Comedy": 47,
+        "Action": 49,
+        "Thriller": 27
+      },
+      "total_movies": 145,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 62.0,
+        "Documentary": 3.3,
+        "Comedy": 47.7,
+        "Action": 47.0,
+        "Thriller": 25.0
+      },
+      "raw_genre_counts": {
+        "Drama": 63,
+        "Documentary": 4,
+        "Comedy": 50,
+        "Action": 47,
+        "Thriller": 21
+      },
+      "total_movies": 134,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 63.7,
+        "Documentary": 4.0,
+        "Comedy": 51.0,
+        "Action": 43.0,
+        "Thriller": 23.3
+      },
+      "raw_genre_counts": {
+        "Drama": 69,
+        "Documentary": 4,
+        "Comedy": 56,
+        "Action": 33,
+        "Thriller": 22
+      },
+      "total_movies": 139,
+      "events": [
+        {
+          "year": 2006,
+          "date": "2006-09-19",
+          "event": "Military Coup",
+          "type": "coup",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 67.0,
+        "Documentary": 3.7,
+        "Comedy": 53.7,
+        "Action": 40.7,
+        "Thriller": 26.3
+      },
+      "raw_genre_counts": {
+        "Drama": 69,
+        "Documentary": 3,
+        "Comedy": 55,
+        "Action": 42,
+        "Thriller": 36
+      },
+      "total_movies": 153,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 75.3,
+        "Documentary": 3.0,
+        "Comedy": 56.3,
+        "Action": 45.3,
+        "Thriller": 30.7
+      },
+      "raw_genre_counts": {
+        "Drama": 88,
+        "Documentary": 2,
+        "Comedy": 58,
+        "Action": 61,
+        "Thriller": 34
+      },
+      "total_movies": 174,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 75.3,
+        "Documentary": 3.7,
+        "Comedy": 56.0,
+        "Action": 49.7,
+        "Thriller": 35.0
+      },
+      "raw_genre_counts": {
+        "Drama": 69,
+        "Documentary": 6,
+        "Comedy": 55,
+        "Action": 46,
+        "Thriller": 35
+      },
+      "total_movies": 166,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 81.0,
+        "Documentary": 4.3,
+        "Comedy": 57.3,
+        "Action": 54.7,
+        "Thriller": 35.0
+      },
+      "raw_genre_counts": {
+        "Drama": 86,
+        "Documentary": 5,
+        "Comedy": 59,
+        "Action": 57,
+        "Thriller": 36
+      },
+      "total_movies": 181,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 81.7,
+        "Documentary": 4.7,
+        "Comedy": 58.3,
+        "Action": 54.0,
+        "Thriller": 34.3
+      },
+      "raw_genre_counts": {
+        "Drama": 90,
+        "Documentary": 3,
+        "Comedy": 61,
+        "Action": 59,
+        "Thriller": 32
+      },
+      "total_movies": 172,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 91.7,
+        "Documentary": 6.0,
+        "Comedy": 60.3,
+        "Action": 54.7,
+        "Thriller": 34.0
+      },
+      "raw_genre_counts": {
+        "Drama": 99,
+        "Documentary": 10,
+        "Comedy": 61,
+        "Action": 48,
+        "Thriller": 34
+      },
+      "total_movies": 194,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 99.7,
+        "Documentary": 6.3,
+        "Comedy": 58.0,
+        "Action": 56.7,
+        "Thriller": 36.7
+      },
+      "raw_genre_counts": {
+        "Drama": 110,
+        "Documentary": 6,
+        "Comedy": 52,
+        "Action": 63,
+        "Thriller": 44
+      },
+      "total_movies": 202,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 109.3,
+        "Documentary": 9.7,
+        "Comedy": 60.7,
+        "Action": 61.3,
+        "Thriller": 42.0
+      },
+      "raw_genre_counts": {
+        "Drama": 119,
+        "Documentary": 13,
+        "Comedy": 69,
+        "Action": 73,
+        "Thriller": 48
+      },
+      "total_movies": 236,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-05-22",
+          "event": "Second Military Coup",
+          "type": "coup",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 119.3,
+        "Documentary": 9.7,
+        "Comedy": 62.0,
+        "Action": 65.7,
+        "Thriller": 42.7
+      },
+      "raw_genre_counts": {
+        "Drama": 129,
+        "Documentary": 10,
+        "Comedy": 65,
+        "Action": 61,
+        "Thriller": 36
+      },
+      "total_movies": 231,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 127.0,
+        "Documentary": 10.3,
+        "Comedy": 64.0,
+        "Action": 74.3,
+        "Thriller": 43.3
+      },
+      "raw_genre_counts": {
+        "Drama": 133,
+        "Documentary": 8,
+        "Comedy": 58,
+        "Action": 89,
+        "Thriller": 46
+      },
+      "total_movies": 251,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 133.7,
+        "Documentary": 10.0,
+        "Comedy": 62.0,
+        "Action": 77.3,
+        "Thriller": 45.3
+      },
+      "raw_genre_counts": {
+        "Drama": 139,
+        "Documentary": 12,
+        "Comedy": 63,
+        "Action": 82,
+        "Thriller": 54
+      },
+      "total_movies": 253,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 133.3,
+        "Documentary": 9.7,
+        "Comedy": 63.7,
+        "Action": 88.0,
+        "Thriller": 49.0
+      },
+      "raw_genre_counts": {
+        "Drama": 128,
+        "Documentary": 9,
+        "Comedy": 70,
+        "Action": 93,
+        "Thriller": 47
+      },
+      "total_movies": 256,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 140.0,
+        "Documentary": 10.0,
+        "Comedy": 69.0,
+        "Action": 89.0,
+        "Thriller": 54.0
+      },
+      "raw_genre_counts": {
+        "Drama": 153,
+        "Documentary": 9,
+        "Comedy": 74,
+        "Action": 92,
+        "Thriller": 61
+      },
+      "total_movies": 283,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 141.0,
+        "Documentary": 9.7,
+        "Comedy": 73.3,
+        "Action": 83.3,
+        "Thriller": 49.3
+      },
+      "raw_genre_counts": {
+        "Drama": 142,
+        "Documentary": 11,
+        "Comedy": 76,
+        "Action": 65,
+        "Thriller": 40
+      },
+      "total_movies": 244,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-07-18",
+          "event": "Pro-Democracy Protests",
+          "type": "domestic_unrest",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 175.3,
+        "Documentary": 10.0,
+        "Comedy": 85.0,
+        "Action": 91.0,
+        "Thriller": 59.7
+      },
+      "raw_genre_counts": {
+        "Drama": 231,
+        "Documentary": 10,
+        "Comedy": 105,
+        "Action": 116,
+        "Thriller": 78
+      },
+      "total_movies": 400,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 290.3,
+        "Documentary": 32.7,
+        "Comedy": 154.7,
+        "Action": 137.3,
+        "Thriller": 116.7
+      },
+      "raw_genre_counts": {
+        "Drama": 498,
+        "Documentary": 77,
+        "Comedy": 283,
+        "Action": 231,
+        "Thriller": 232
+      },
+      "total_movies": 960,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 258.0,
+        "Documentary": 31.0,
+        "Comedy": 138.7,
+        "Action": 125.0,
+        "Thriller": 108.7
+      },
+      "raw_genre_counts": {
+        "Drama": 45,
+        "Documentary": 6,
+        "Comedy": 28,
+        "Action": 28,
+        "Thriller": 16
+      },
+      "total_movies": 92,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 198.7,
+        "Documentary": 28.7,
+        "Comedy": 117.3,
+        "Action": 95.7,
+        "Thriller": 94.3
+      },
+      "raw_genre_counts": {
+        "Drama": 53,
+        "Documentary": 3,
+        "Comedy": 41,
+        "Action": 28,
+        "Thriller": 35
+      },
+      "total_movies": 127,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2006,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 63,
+      "event_count": 69,
+      "after_count": 69,
+      "immediate_impact": 9.5,
+      "recovery_rate": 0.0,
+      "event_date": "2006-09-19"
+    },
+    {
+      "year": 2006,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 4,
+      "event_count": 4,
+      "after_count": 3,
+      "immediate_impact": 0.0,
+      "recovery_rate": -25.0,
+      "event_date": "2006-09-19"
+    },
+    {
+      "year": 2006,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 50,
+      "event_count": 56,
+      "after_count": 55,
+      "immediate_impact": 12.0,
+      "recovery_rate": -1.8,
+      "event_date": "2006-09-19"
+    },
+    {
+      "year": 2006,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 47,
+      "event_count": 33,
+      "after_count": 42,
+      "immediate_impact": -29.8,
+      "recovery_rate": 27.3,
+      "event_date": "2006-09-19"
+    },
+    {
+      "year": 2006,
+      "event": "Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 21,
+      "event_count": 22,
+      "after_count": 36,
+      "immediate_impact": 4.8,
+      "recovery_rate": 63.6,
+      "event_date": "2006-09-19"
+    },
+    {
+      "year": 2014,
+      "event": "Second Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 110,
+      "event_count": 119,
+      "after_count": 129,
+      "immediate_impact": 8.2,
+      "recovery_rate": 8.4,
+      "event_date": "2014-05-22"
+    },
+    {
+      "year": 2014,
+      "event": "Second Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 6,
+      "event_count": 13,
+      "after_count": 10,
+      "immediate_impact": 116.7,
+      "recovery_rate": -23.1,
+      "event_date": "2014-05-22"
+    },
+    {
+      "year": 2014,
+      "event": "Second Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 52,
+      "event_count": 69,
+      "after_count": 65,
+      "immediate_impact": 32.7,
+      "recovery_rate": -5.8,
+      "event_date": "2014-05-22"
+    },
+    {
+      "year": 2014,
+      "event": "Second Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 63,
+      "event_count": 73,
+      "after_count": 61,
+      "immediate_impact": 15.9,
+      "recovery_rate": -16.4,
+      "event_date": "2014-05-22"
+    },
+    {
+      "year": 2014,
+      "event": "Second Military Coup",
+      "event_type": "coup",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 44,
+      "event_count": 48,
+      "after_count": 36,
+      "immediate_impact": 9.1,
+      "recovery_rate": -25.0,
+      "event_date": "2014-05-22"
+    },
+    {
+      "year": 2020,
+      "event": "Pro-Democracy Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 153,
+      "event_count": 142,
+      "after_count": 231,
+      "immediate_impact": -7.2,
+      "recovery_rate": 62.7,
+      "event_date": "2020-07-18"
+    },
+    {
+      "year": 2020,
+      "event": "Pro-Democracy Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 9,
+      "event_count": 11,
+      "after_count": 10,
+      "immediate_impact": 22.2,
+      "recovery_rate": -9.1,
+      "event_date": "2020-07-18"
+    },
+    {
+      "year": 2020,
+      "event": "Pro-Democracy Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 74,
+      "event_count": 76,
+      "after_count": 105,
+      "immediate_impact": 2.7,
+      "recovery_rate": 38.2,
+      "event_date": "2020-07-18"
+    },
+    {
+      "year": 2020,
+      "event": "Pro-Democracy Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 92,
+      "event_count": 65,
+      "after_count": 116,
+      "immediate_impact": -29.3,
+      "recovery_rate": 78.5,
+      "event_date": "2020-07-18"
+    },
+    {
+      "year": 2020,
+      "event": "Pro-Democracy Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 61,
+      "event_count": 40,
+      "after_count": 78,
+      "immediate_impact": -34.4,
+      "recovery_rate": 95.0,
+      "event_date": "2020-07-18"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2006,
+      "date": "2006-09-19",
+      "event": "Military Coup",
+      "type": "coup",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-05-22",
+      "event": "Second Military Coup",
+      "type": "coup",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-07-18",
+      "event": "Pro-Democracy Protests",
+      "type": "domestic_unrest",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:10:42.486675",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

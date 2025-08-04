@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "TR",
+    "name": "Turkey"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 184,
+        "Documentary": 12,
+        "Comedy": 93,
+        "Action": 47,
+        "Thriller": 49
+      },
+      "raw_genre_counts": {
+        "Drama": 184,
+        "Documentary": 12,
+        "Comedy": 93,
+        "Action": 47,
+        "Thriller": 49
+      },
+      "total_movies": 294,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 203,
+        "Documentary": 6,
+        "Comedy": 99,
+        "Action": 60,
+        "Thriller": 48
+      },
+      "raw_genre_counts": {
+        "Drama": 203,
+        "Documentary": 6,
+        "Comedy": 99,
+        "Action": 60,
+        "Thriller": 48
+      },
+      "total_movies": 306,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 195.3,
+        "Documentary": 8.0,
+        "Comedy": 100.7,
+        "Action": 55.3,
+        "Thriller": 51.0
+      },
+      "raw_genre_counts": {
+        "Drama": 199,
+        "Documentary": 6,
+        "Comedy": 110,
+        "Action": 59,
+        "Thriller": 56
+      },
+      "total_movies": 313,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 194.7,
+        "Documentary": 9.7,
+        "Comedy": 105.0,
+        "Action": 58.0,
+        "Thriller": 49.0
+      },
+      "raw_genre_counts": {
+        "Drama": 182,
+        "Documentary": 17,
+        "Comedy": 106,
+        "Action": 55,
+        "Thriller": 43
+      },
+      "total_movies": 298,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 204.7,
+        "Documentary": 13.3,
+        "Comedy": 111.0,
+        "Action": 58.0,
+        "Thriller": 48.3
+      },
+      "raw_genre_counts": {
+        "Drama": 233,
+        "Documentary": 17,
+        "Comedy": 117,
+        "Action": 60,
+        "Thriller": 46
+      },
+      "total_movies": 368,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 214.3,
+        "Documentary": 17.0,
+        "Comedy": 119.7,
+        "Action": 58.7,
+        "Thriller": 46.3
+      },
+      "raw_genre_counts": {
+        "Drama": 228,
+        "Documentary": 17,
+        "Comedy": 136,
+        "Action": 61,
+        "Thriller": 50
+      },
+      "total_movies": 371,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 245.7,
+        "Documentary": 19.0,
+        "Comedy": 138.7,
+        "Action": 59.0,
+        "Thriller": 53.7
+      },
+      "raw_genre_counts": {
+        "Drama": 276,
+        "Documentary": 23,
+        "Comedy": 163,
+        "Action": 56,
+        "Thriller": 65
+      },
+      "total_movies": 450,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 275.0,
+        "Documentary": 22.0,
+        "Comedy": 147.7,
+        "Action": 61.3,
+        "Thriller": 66.3
+      },
+      "raw_genre_counts": {
+        "Drama": 321,
+        "Documentary": 26,
+        "Comedy": 144,
+        "Action": 67,
+        "Thriller": 84
+      },
+      "total_movies": 500,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 315.0,
+        "Documentary": 31.0,
+        "Comedy": 156.3,
+        "Action": 69.0,
+        "Thriller": 80.7
+      },
+      "raw_genre_counts": {
+        "Drama": 348,
+        "Documentary": 44,
+        "Comedy": 162,
+        "Action": 84,
+        "Thriller": 93
+      },
+      "total_movies": 568,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 328.3,
+        "Documentary": 32.7,
+        "Comedy": 155.3,
+        "Action": 79.7,
+        "Thriller": 88.3
+      },
+      "raw_genre_counts": {
+        "Drama": 316,
+        "Documentary": 28,
+        "Comedy": 160,
+        "Action": 88,
+        "Thriller": 88
+      },
+      "total_movies": 521,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 328.0,
+        "Documentary": 36.7,
+        "Comedy": 165.0,
+        "Action": 90.7,
+        "Thriller": 91.3
+      },
+      "raw_genre_counts": {
+        "Drama": 320,
+        "Documentary": 38,
+        "Comedy": 173,
+        "Action": 100,
+        "Thriller": 93
+      },
+      "total_movies": 523,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 338.3,
+        "Documentary": 39.7,
+        "Comedy": 171.3,
+        "Action": 100.3,
+        "Thriller": 91.7
+      },
+      "raw_genre_counts": {
+        "Drama": 379,
+        "Documentary": 53,
+        "Comedy": 181,
+        "Action": 113,
+        "Thriller": 94
+      },
+      "total_movies": 613,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 357.0,
+        "Documentary": 48.0,
+        "Comedy": 174.3,
+        "Action": 106.7,
+        "Thriller": 92.7
+      },
+      "raw_genre_counts": {
+        "Drama": 372,
+        "Documentary": 53,
+        "Comedy": 169,
+        "Action": 107,
+        "Thriller": 91
+      },
+      "total_movies": 603,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 387.7,
+        "Documentary": 54.7,
+        "Comedy": 184.0,
+        "Action": 109.7,
+        "Thriller": 101.0
+      },
+      "raw_genre_counts": {
+        "Drama": 412,
+        "Documentary": 58,
+        "Comedy": 202,
+        "Action": 109,
+        "Thriller": 118
+      },
+      "total_movies": 681,
+      "events": [
+        {
+          "year": 2013,
+          "date": "2013-05-28",
+          "event": "Gezi Park Protests",
+          "type": "domestic_unrest",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 411.0,
+        "Documentary": 56.0,
+        "Comedy": 206.0,
+        "Action": 120.0,
+        "Thriller": 110.0
+      },
+      "raw_genre_counts": {
+        "Drama": 449,
+        "Documentary": 57,
+        "Comedy": 247,
+        "Action": 144,
+        "Thriller": 121
+      },
+      "total_movies": 773,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 445.3,
+        "Documentary": 60.7,
+        "Comedy": 228.3,
+        "Action": 124.3,
+        "Thriller": 116.0
+      },
+      "raw_genre_counts": {
+        "Drama": 475,
+        "Documentary": 67,
+        "Comedy": 236,
+        "Action": 120,
+        "Thriller": 109
+      },
+      "total_movies": 783,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 480.7,
+        "Documentary": 68.7,
+        "Comedy": 241.7,
+        "Action": 143.0,
+        "Thriller": 113.0
+      },
+      "raw_genre_counts": {
+        "Drama": 518,
+        "Documentary": 82,
+        "Comedy": 242,
+        "Action": 165,
+        "Thriller": 109
+      },
+      "total_movies": 873,
+      "events": [
+        {
+          "year": 2016,
+          "date": "2016-07-15",
+          "event": "Failed Coup Attempt",
+          "type": "coup_attempt",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 508.0,
+        "Documentary": 77.0,
+        "Comedy": 248.7,
+        "Action": 139.3,
+        "Thriller": 119.0
+      },
+      "raw_genre_counts": {
+        "Drama": 531,
+        "Documentary": 82,
+        "Comedy": 268,
+        "Action": 133,
+        "Thriller": 139
+      },
+      "total_movies": 896,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 534.3,
+        "Documentary": 83.3,
+        "Comedy": 269.0,
+        "Action": 152.0,
+        "Thriller": 130.7
+      },
+      "raw_genre_counts": {
+        "Drama": 554,
+        "Documentary": 86,
+        "Comedy": 297,
+        "Action": 158,
+        "Thriller": 144
+      },
+      "total_movies": 965,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 550.7,
+        "Documentary": 89.7,
+        "Comedy": 281.3,
+        "Action": 148.3,
+        "Thriller": 144.3
+      },
+      "raw_genre_counts": {
+        "Drama": 567,
+        "Documentary": 101,
+        "Comedy": 279,
+        "Action": 154,
+        "Thriller": 150
+      },
+      "total_movies": 975,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 533.7,
+        "Documentary": 95.3,
+        "Comedy": 273.7,
+        "Action": 141.3,
+        "Thriller": 139.3
+      },
+      "raw_genre_counts": {
+        "Drama": 480,
+        "Documentary": 99,
+        "Comedy": 245,
+        "Action": 112,
+        "Thriller": 124
+      },
+      "total_movies": 802,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-21",
+          "event": "COVID-19 Measures",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 566.7,
+        "Documentary": 120.7,
+        "Comedy": 279.0,
+        "Action": 159.3,
+        "Thriller": 163.3
+      },
+      "raw_genre_counts": {
+        "Drama": 653,
+        "Documentary": 162,
+        "Comedy": 313,
+        "Action": 212,
+        "Thriller": 216
+      },
+      "total_movies": 1200,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 602.0,
+        "Documentary": 144.0,
+        "Comedy": 326.3,
+        "Action": 187.3,
+        "Thriller": 203.0
+      },
+      "raw_genre_counts": {
+        "Drama": 673,
+        "Documentary": 171,
+        "Comedy": 421,
+        "Action": 238,
+        "Thriller": 269
+      },
+      "total_movies": 1361,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 592.0,
+        "Documentary": 146.3,
+        "Comedy": 343.7,
+        "Action": 207.0,
+        "Thriller": 213.3
+      },
+      "raw_genre_counts": {
+        "Drama": 450,
+        "Documentary": 106,
+        "Comedy": 297,
+        "Action": 171,
+        "Thriller": 155
+      },
+      "total_movies": 888,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 500.7,
+        "Documentary": 125.3,
+        "Comedy": 323.3,
+        "Action": 179.7,
+        "Thriller": 184.0
+      },
+      "raw_genre_counts": {
+        "Drama": 379,
+        "Documentary": 99,
+        "Comedy": 252,
+        "Action": 130,
+        "Thriller": 128
+      },
+      "total_movies": 789,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2013,
+      "event": "Gezi Park Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 372,
+      "event_count": 412,
+      "after_count": 449,
+      "immediate_impact": 10.8,
+      "recovery_rate": 9.0,
+      "event_date": "2013-05-28"
+    },
+    {
+      "year": 2013,
+      "event": "Gezi Park Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 53,
+      "event_count": 58,
+      "after_count": 57,
+      "immediate_impact": 9.4,
+      "recovery_rate": -1.7,
+      "event_date": "2013-05-28"
+    },
+    {
+      "year": 2013,
+      "event": "Gezi Park Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 169,
+      "event_count": 202,
+      "after_count": 247,
+      "immediate_impact": 19.5,
+      "recovery_rate": 22.3,
+      "event_date": "2013-05-28"
+    },
+    {
+      "year": 2013,
+      "event": "Gezi Park Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 107,
+      "event_count": 109,
+      "after_count": 144,
+      "immediate_impact": 1.9,
+      "recovery_rate": 32.1,
+      "event_date": "2013-05-28"
+    },
+    {
+      "year": 2013,
+      "event": "Gezi Park Protests",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 91,
+      "event_count": 118,
+      "after_count": 121,
+      "immediate_impact": 29.7,
+      "recovery_rate": 2.5,
+      "event_date": "2013-05-28"
+    },
+    {
+      "year": 2016,
+      "event": "Failed Coup Attempt",
+      "event_type": "coup_attempt",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 475,
+      "event_count": 518,
+      "after_count": 531,
+      "immediate_impact": 9.1,
+      "recovery_rate": 2.5,
+      "event_date": "2016-07-15"
+    },
+    {
+      "year": 2016,
+      "event": "Failed Coup Attempt",
+      "event_type": "coup_attempt",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 67,
+      "event_count": 82,
+      "after_count": 82,
+      "immediate_impact": 22.4,
+      "recovery_rate": 0.0,
+      "event_date": "2016-07-15"
+    },
+    {
+      "year": 2016,
+      "event": "Failed Coup Attempt",
+      "event_type": "coup_attempt",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 236,
+      "event_count": 242,
+      "after_count": 268,
+      "immediate_impact": 2.5,
+      "recovery_rate": 10.7,
+      "event_date": "2016-07-15"
+    },
+    {
+      "year": 2016,
+      "event": "Failed Coup Attempt",
+      "event_type": "coup_attempt",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 120,
+      "event_count": 165,
+      "after_count": 133,
+      "immediate_impact": 37.5,
+      "recovery_rate": -19.4,
+      "event_date": "2016-07-15"
+    },
+    {
+      "year": 2016,
+      "event": "Failed Coup Attempt",
+      "event_type": "coup_attempt",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 109,
+      "event_count": 109,
+      "after_count": 139,
+      "immediate_impact": 0.0,
+      "recovery_rate": 27.5,
+      "event_date": "2016-07-15"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 567,
+      "event_count": 480,
+      "after_count": 653,
+      "immediate_impact": -15.3,
+      "recovery_rate": 36.0,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 101,
+      "event_count": 99,
+      "after_count": 162,
+      "immediate_impact": -2.0,
+      "recovery_rate": 63.6,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 279,
+      "event_count": 245,
+      "after_count": 313,
+      "immediate_impact": -12.2,
+      "recovery_rate": 27.8,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 154,
+      "event_count": 112,
+      "after_count": 212,
+      "immediate_impact": -27.3,
+      "recovery_rate": 89.3,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Measures",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 150,
+      "event_count": 124,
+      "after_count": 216,
+      "immediate_impact": -17.3,
+      "recovery_rate": 74.2,
+      "event_date": "2020-03-21"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2013,
+      "date": "2013-05-28",
+      "event": "Gezi Park Protests",
+      "type": "domestic_unrest",
+      "severity": "medium"
+    },
+    {
+      "year": 2016,
+      "date": "2016-07-15",
+      "event": "Failed Coup Attempt",
+      "type": "coup_attempt",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-21",
+      "event": "COVID-19 Measures",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:03:37.824886",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

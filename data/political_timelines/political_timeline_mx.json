@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "MX",
+    "name": "Mexico"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 193,
+        "Documentary": 26,
+        "Comedy": 109,
+        "Action": 82,
+        "Thriller": 66
+      },
+      "raw_genre_counts": {
+        "Drama": 193,
+        "Documentary": 26,
+        "Comedy": 109,
+        "Action": 82,
+        "Thriller": 66
+      },
+      "total_movies": 362,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 206,
+        "Documentary": 31,
+        "Comedy": 124,
+        "Action": 101,
+        "Thriller": 65
+      },
+      "raw_genre_counts": {
+        "Drama": 206,
+        "Documentary": 31,
+        "Comedy": 124,
+        "Action": 101,
+        "Thriller": 65
+      },
+      "total_movies": 398,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 205.0,
+        "Documentary": 29.0,
+        "Comedy": 112.7,
+        "Action": 95.0,
+        "Thriller": 71.7
+      },
+      "raw_genre_counts": {
+        "Drama": 216,
+        "Documentary": 30,
+        "Comedy": 105,
+        "Action": 102,
+        "Thriller": 84
+      },
+      "total_movies": 399,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 209.7,
+        "Documentary": 34.0,
+        "Comedy": 119.7,
+        "Action": 97.3,
+        "Thriller": 71.0
+      },
+      "raw_genre_counts": {
+        "Drama": 207,
+        "Documentary": 41,
+        "Comedy": 130,
+        "Action": 89,
+        "Thriller": 64
+      },
+      "total_movies": 399,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 215.0,
+        "Documentary": 44.0,
+        "Comedy": 125.0,
+        "Action": 90.7,
+        "Thriller": 71.7
+      },
+      "raw_genre_counts": {
+        "Drama": 222,
+        "Documentary": 61,
+        "Comedy": 140,
+        "Action": 81,
+        "Thriller": 67
+      },
+      "total_movies": 441,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 212.0,
+        "Documentary": 56.7,
+        "Comedy": 136.7,
+        "Action": 76.7,
+        "Thriller": 65.7
+      },
+      "raw_genre_counts": {
+        "Drama": 207,
+        "Documentary": 68,
+        "Comedy": 140,
+        "Action": 60,
+        "Thriller": 66
+      },
+      "total_movies": 422,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 224.0,
+        "Documentary": 67.7,
+        "Comedy": 146.3,
+        "Action": 68.3,
+        "Thriller": 75.3
+      },
+      "raw_genre_counts": {
+        "Drama": 243,
+        "Documentary": 74,
+        "Comedy": 159,
+        "Action": 64,
+        "Thriller": 93
+      },
+      "total_movies": 500,
+      "events": [
+        {
+          "year": 2006,
+          "date": "2006-12-11",
+          "event": "Drug War Escalation",
+          "type": "internal_conflict",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 237.7,
+        "Documentary": 68.3,
+        "Comedy": 143.0,
+        "Action": 61.0,
+        "Thriller": 83.0
+      },
+      "raw_genre_counts": {
+        "Drama": 263,
+        "Documentary": 63,
+        "Comedy": 130,
+        "Action": 59,
+        "Thriller": 90
+      },
+      "total_movies": 480,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 251.0,
+        "Documentary": 78.0,
+        "Comedy": 140.3,
+        "Action": 68.7,
+        "Thriller": 87.0
+      },
+      "raw_genre_counts": {
+        "Drama": 247,
+        "Documentary": 97,
+        "Comedy": 132,
+        "Action": 83,
+        "Thriller": 78
+      },
+      "total_movies": 500,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 251.3,
+        "Documentary": 84.3,
+        "Comedy": 129.7,
+        "Action": 75.3,
+        "Thriller": 84.7
+      },
+      "raw_genre_counts": {
+        "Drama": 244,
+        "Documentary": 93,
+        "Comedy": 127,
+        "Action": 84,
+        "Thriller": 86
+      },
+      "total_movies": 504,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 248.7,
+        "Documentary": 100.0,
+        "Comedy": 130.3,
+        "Action": 87.0,
+        "Thriller": 79.7
+      },
+      "raw_genre_counts": {
+        "Drama": 255,
+        "Documentary": 110,
+        "Comedy": 132,
+        "Action": 94,
+        "Thriller": 75
+      },
+      "total_movies": 496,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 262.0,
+        "Documentary": 95.3,
+        "Comedy": 137.0,
+        "Action": 95.7,
+        "Thriller": 82.3
+      },
+      "raw_genre_counts": {
+        "Drama": 287,
+        "Documentary": 83,
+        "Comedy": 152,
+        "Action": 109,
+        "Thriller": 86
+      },
+      "total_movies": 534,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 276.7,
+        "Documentary": 95.7,
+        "Comedy": 143.0,
+        "Action": 103.3,
+        "Thriller": 88.0
+      },
+      "raw_genre_counts": {
+        "Drama": 288,
+        "Documentary": 94,
+        "Comedy": 145,
+        "Action": 107,
+        "Thriller": 103
+      },
+      "total_movies": 566,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 300.7,
+        "Documentary": 92.0,
+        "Comedy": 154.7,
+        "Action": 109.3,
+        "Thriller": 95.3
+      },
+      "raw_genre_counts": {
+        "Drama": 327,
+        "Documentary": 99,
+        "Comedy": 167,
+        "Action": 112,
+        "Thriller": 97
+      },
+      "total_movies": 636,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 333.7,
+        "Documentary": 98.7,
+        "Comedy": 167.7,
+        "Action": 115.0,
+        "Thriller": 106.3
+      },
+      "raw_genre_counts": {
+        "Drama": 386,
+        "Documentary": 103,
+        "Comedy": 191,
+        "Action": 126,
+        "Thriller": 119
+      },
+      "total_movies": 701,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-09-26",
+          "event": "Ayotzinapa Students",
+          "type": "human_rights_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 360.3,
+        "Documentary": 98.0,
+        "Comedy": 182.0,
+        "Action": 118.3,
+        "Thriller": 109.3
+      },
+      "raw_genre_counts": {
+        "Drama": 368,
+        "Documentary": 92,
+        "Comedy": 188,
+        "Action": 117,
+        "Thriller": 112
+      },
+      "total_movies": 674,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 399.0,
+        "Documentary": 109.7,
+        "Comedy": 197.0,
+        "Action": 137.0,
+        "Thriller": 104.3
+      },
+      "raw_genre_counts": {
+        "Drama": 443,
+        "Documentary": 134,
+        "Comedy": 212,
+        "Action": 168,
+        "Thriller": 82
+      },
+      "total_movies": 801,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 427.3,
+        "Documentary": 120.3,
+        "Comedy": 205.0,
+        "Action": 143.0,
+        "Thriller": 107.3
+      },
+      "raw_genre_counts": {
+        "Drama": 471,
+        "Documentary": 135,
+        "Comedy": 215,
+        "Action": 144,
+        "Thriller": 128
+      },
+      "total_movies": 862,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 497.3,
+        "Documentary": 139.3,
+        "Comedy": 227.3,
+        "Action": 158.7,
+        "Thriller": 124.0
+      },
+      "raw_genre_counts": {
+        "Drama": 578,
+        "Documentary": 149,
+        "Comedy": 255,
+        "Action": 164,
+        "Thriller": 162
+      },
+      "total_movies": 1037,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 550.7,
+        "Documentary": 155.3,
+        "Comedy": 260.0,
+        "Action": 162.0,
+        "Thriller": 155.0
+      },
+      "raw_genre_counts": {
+        "Drama": 603,
+        "Documentary": 182,
+        "Comedy": 310,
+        "Action": 178,
+        "Thriller": 175
+      },
+      "total_movies": 1124,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 583.7,
+        "Documentary": 168.0,
+        "Comedy": 286.3,
+        "Action": 164.0,
+        "Thriller": 167.0
+      },
+      "raw_genre_counts": {
+        "Drama": 570,
+        "Documentary": 173,
+        "Comedy": 294,
+        "Action": 150,
+        "Thriller": 164
+      },
+      "total_movies": 1054,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-30",
+          "event": "COVID-19 Emergency",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 567.7,
+        "Documentary": 169.0,
+        "Comedy": 280.7,
+        "Action": 174.0,
+        "Thriller": 168.0
+      },
+      "raw_genre_counts": {
+        "Drama": 530,
+        "Documentary": 152,
+        "Comedy": 238,
+        "Action": 194,
+        "Thriller": 165
+      },
+      "total_movies": 1006,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 584.0,
+        "Documentary": 189.0,
+        "Comedy": 291.7,
+        "Action": 183.0,
+        "Thriller": 186.0
+      },
+      "raw_genre_counts": {
+        "Drama": 652,
+        "Documentary": 242,
+        "Comedy": 343,
+        "Action": 205,
+        "Thriller": 229
+      },
+      "total_movies": 1328,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 684.7,
+        "Documentary": 237.7,
+        "Comedy": 359.0,
+        "Action": 239.7,
+        "Thriller": 246.0
+      },
+      "raw_genre_counts": {
+        "Drama": 872,
+        "Documentary": 319,
+        "Comedy": 496,
+        "Action": 320,
+        "Thriller": 344
+      },
+      "total_movies": 1820,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 718.0,
+        "Documentary": 285.7,
+        "Comedy": 394.7,
+        "Action": 253.7,
+        "Thriller": 277.7
+      },
+      "raw_genre_counts": {
+        "Drama": 630,
+        "Documentary": 296,
+        "Comedy": 345,
+        "Action": 236,
+        "Thriller": 260
+      },
+      "total_movies": 1404,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2006,
+      "event": "Drug War Escalation",
+      "event_type": "internal_conflict",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 207,
+      "event_count": 243,
+      "after_count": 263,
+      "immediate_impact": 17.4,
+      "recovery_rate": 8.2,
+      "event_date": "2006-12-11"
+    },
+    {
+      "year": 2006,
+      "event": "Drug War Escalation",
+      "event_type": "internal_conflict",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 68,
+      "event_count": 74,
+      "after_count": 63,
+      "immediate_impact": 8.8,
+      "recovery_rate": -14.9,
+      "event_date": "2006-12-11"
+    },
+    {
+      "year": 2006,
+      "event": "Drug War Escalation",
+      "event_type": "internal_conflict",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 140,
+      "event_count": 159,
+      "after_count": 130,
+      "immediate_impact": 13.6,
+      "recovery_rate": -18.2,
+      "event_date": "2006-12-11"
+    },
+    {
+      "year": 2006,
+      "event": "Drug War Escalation",
+      "event_type": "internal_conflict",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 60,
+      "event_count": 64,
+      "after_count": 59,
+      "immediate_impact": 6.7,
+      "recovery_rate": -7.8,
+      "event_date": "2006-12-11"
+    },
+    {
+      "year": 2006,
+      "event": "Drug War Escalation",
+      "event_type": "internal_conflict",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 66,
+      "event_count": 93,
+      "after_count": 90,
+      "immediate_impact": 40.9,
+      "recovery_rate": -3.2,
+      "event_date": "2006-12-11"
+    },
+    {
+      "year": 2014,
+      "event": "Ayotzinapa Students",
+      "event_type": "human_rights_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 327,
+      "event_count": 386,
+      "after_count": 368,
+      "immediate_impact": 18.0,
+      "recovery_rate": -4.7,
+      "event_date": "2014-09-26"
+    },
+    {
+      "year": 2014,
+      "event": "Ayotzinapa Students",
+      "event_type": "human_rights_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 99,
+      "event_count": 103,
+      "after_count": 92,
+      "immediate_impact": 4.0,
+      "recovery_rate": -10.7,
+      "event_date": "2014-09-26"
+    },
+    {
+      "year": 2014,
+      "event": "Ayotzinapa Students",
+      "event_type": "human_rights_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 167,
+      "event_count": 191,
+      "after_count": 188,
+      "immediate_impact": 14.4,
+      "recovery_rate": -1.6,
+      "event_date": "2014-09-26"
+    },
+    {
+      "year": 2014,
+      "event": "Ayotzinapa Students",
+      "event_type": "human_rights_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 112,
+      "event_count": 126,
+      "after_count": 117,
+      "immediate_impact": 12.5,
+      "recovery_rate": -7.1,
+      "event_date": "2014-09-26"
+    },
+    {
+      "year": 2014,
+      "event": "Ayotzinapa Students",
+      "event_type": "human_rights_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 97,
+      "event_count": 119,
+      "after_count": 112,
+      "immediate_impact": 22.7,
+      "recovery_rate": -5.9,
+      "event_date": "2014-09-26"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 603,
+      "event_count": 570,
+      "after_count": 530,
+      "immediate_impact": -5.5,
+      "recovery_rate": -7.0,
+      "event_date": "2020-03-30"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 182,
+      "event_count": 173,
+      "after_count": 152,
+      "immediate_impact": -4.9,
+      "recovery_rate": -12.1,
+      "event_date": "2020-03-30"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 310,
+      "event_count": 294,
+      "after_count": 238,
+      "immediate_impact": -5.2,
+      "recovery_rate": -19.0,
+      "event_date": "2020-03-30"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 178,
+      "event_count": 150,
+      "after_count": 194,
+      "immediate_impact": -15.7,
+      "recovery_rate": 29.3,
+      "event_date": "2020-03-30"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 175,
+      "event_count": 164,
+      "after_count": 165,
+      "immediate_impact": -6.3,
+      "recovery_rate": 0.6,
+      "event_date": "2020-03-30"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2006,
+      "date": "2006-12-11",
+      "event": "Drug War Escalation",
+      "type": "internal_conflict",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-09-26",
+      "event": "Ayotzinapa Students",
+      "type": "human_rights_crisis",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-30",
+      "event": "COVID-19 Emergency",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:04:18.182789",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

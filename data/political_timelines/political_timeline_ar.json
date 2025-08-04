@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "AR",
+    "name": "Argentina"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 252,
+        "Documentary": 19,
+        "Comedy": 143,
+        "Action": 57,
+        "Thriller": 72
+      },
+      "raw_genre_counts": {
+        "Drama": 252,
+        "Documentary": 19,
+        "Comedy": 143,
+        "Action": 57,
+        "Thriller": 72
+      },
+      "total_movies": 404,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 260,
+        "Documentary": 41,
+        "Comedy": 155,
+        "Action": 77,
+        "Thriller": 60
+      },
+      "raw_genre_counts": {
+        "Drama": 260,
+        "Documentary": 41,
+        "Comedy": 155,
+        "Action": 77,
+        "Thriller": 60
+      },
+      "total_movies": 445,
+      "events": [
+        {
+          "year": 2001,
+          "date": "2001-12-19",
+          "event": "Economic Crisis",
+          "type": "economic",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 258.7,
+        "Documentary": 35.3,
+        "Comedy": 143.7,
+        "Action": 67.3,
+        "Thriller": 65.7
+      },
+      "raw_genre_counts": {
+        "Drama": 264,
+        "Documentary": 46,
+        "Comedy": 133,
+        "Action": 68,
+        "Thriller": 65
+      },
+      "total_movies": 438,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 254.3,
+        "Documentary": 49.3,
+        "Comedy": 145.7,
+        "Action": 72.7,
+        "Thriller": 58.7
+      },
+      "raw_genre_counts": {
+        "Drama": 239,
+        "Documentary": 61,
+        "Comedy": 149,
+        "Action": 73,
+        "Thriller": 51
+      },
+      "total_movies": 432,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 262.0,
+        "Documentary": 63.3,
+        "Comedy": 149.3,
+        "Action": 71.7,
+        "Thriller": 58.3
+      },
+      "raw_genre_counts": {
+        "Drama": 283,
+        "Documentary": 83,
+        "Comedy": 166,
+        "Action": 74,
+        "Thriller": 59
+      },
+      "total_movies": 519,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 283.0,
+        "Documentary": 76.7,
+        "Comedy": 165.7,
+        "Action": 74.3,
+        "Thriller": 56.0
+      },
+      "raw_genre_counts": {
+        "Drama": 327,
+        "Documentary": 86,
+        "Comedy": 182,
+        "Action": 76,
+        "Thriller": 58
+      },
+      "total_movies": 566,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 325.0,
+        "Documentary": 91.0,
+        "Comedy": 182.3,
+        "Action": 70.7,
+        "Thriller": 68.0
+      },
+      "raw_genre_counts": {
+        "Drama": 365,
+        "Documentary": 104,
+        "Comedy": 199,
+        "Action": 62,
+        "Thriller": 87
+      },
+      "total_movies": 645,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 336.3,
+        "Documentary": 92.3,
+        "Comedy": 178.7,
+        "Action": 67.3,
+        "Thriller": 76.3
+      },
+      "raw_genre_counts": {
+        "Drama": 317,
+        "Documentary": 87,
+        "Comedy": 155,
+        "Action": 64,
+        "Thriller": 84
+      },
+      "total_movies": 550,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 343.0,
+        "Documentary": 106.3,
+        "Comedy": 180.0,
+        "Action": 68.7,
+        "Thriller": 83.7
+      },
+      "raw_genre_counts": {
+        "Drama": 347,
+        "Documentary": 128,
+        "Comedy": 186,
+        "Action": 80,
+        "Thriller": 80
+      },
+      "total_movies": 653,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 332.0,
+        "Documentary": 121.3,
+        "Comedy": 171.3,
+        "Action": 75.7,
+        "Thriller": 83.7
+      },
+      "raw_genre_counts": {
+        "Drama": 332,
+        "Documentary": 149,
+        "Comedy": 173,
+        "Action": 83,
+        "Thriller": 87
+      },
+      "total_movies": 660,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 320.0,
+        "Documentary": 123.3,
+        "Comedy": 171.0,
+        "Action": 82.3,
+        "Thriller": 78.7
+      },
+      "raw_genre_counts": {
+        "Drama": 281,
+        "Documentary": 93,
+        "Comedy": 154,
+        "Action": 84,
+        "Thriller": 69
+      },
+      "total_movies": 513,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 291.7,
+        "Documentary": 109.0,
+        "Comedy": 160.0,
+        "Action": 83.7,
+        "Thriller": 71.3
+      },
+      "raw_genre_counts": {
+        "Drama": 262,
+        "Documentary": 85,
+        "Comedy": 153,
+        "Action": 84,
+        "Thriller": 58
+      },
+      "total_movies": 489,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 269.0,
+        "Documentary": 94.3,
+        "Comedy": 146.3,
+        "Action": 80.0,
+        "Thriller": 67.0
+      },
+      "raw_genre_counts": {
+        "Drama": 264,
+        "Documentary": 105,
+        "Comedy": 132,
+        "Action": 72,
+        "Thriller": 74
+      },
+      "total_movies": 500,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 262.0,
+        "Documentary": 94.3,
+        "Comedy": 146.7,
+        "Action": 79.3,
+        "Thriller": 71.3
+      },
+      "raw_genre_counts": {
+        "Drama": 260,
+        "Documentary": 93,
+        "Comedy": 155,
+        "Action": 82,
+        "Thriller": 82
+      },
+      "total_movies": 517,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 274.7,
+        "Documentary": 112.0,
+        "Comedy": 146.3,
+        "Action": 79.3,
+        "Thriller": 74.7
+      },
+      "raw_genre_counts": {
+        "Drama": 300,
+        "Documentary": 138,
+        "Comedy": 152,
+        "Action": 84,
+        "Thriller": 68
+      },
+      "total_movies": 583,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 285.3,
+        "Documentary": 122.0,
+        "Comedy": 149.0,
+        "Action": 82.7,
+        "Thriller": 75.3
+      },
+      "raw_genre_counts": {
+        "Drama": 296,
+        "Documentary": 135,
+        "Comedy": 140,
+        "Action": 82,
+        "Thriller": 76
+      },
+      "total_movies": 564,
+      "events": [
+        {
+          "year": 2015,
+          "date": "2015-12-10",
+          "event": "Macri Government",
+          "type": "political_shift",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 310.0,
+        "Documentary": 140.7,
+        "Comedy": 149.7,
+        "Action": 90.0,
+        "Thriller": 69.3
+      },
+      "raw_genre_counts": {
+        "Drama": 334,
+        "Documentary": 149,
+        "Comedy": 157,
+        "Action": 104,
+        "Thriller": 64
+      },
+      "total_movies": 639,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 330.3,
+        "Documentary": 133.7,
+        "Comedy": 151.3,
+        "Action": 91.3,
+        "Thriller": 75.7
+      },
+      "raw_genre_counts": {
+        "Drama": 361,
+        "Documentary": 117,
+        "Comedy": 157,
+        "Action": 88,
+        "Thriller": 87
+      },
+      "total_movies": 626,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 365.7,
+        "Documentary": 139.3,
+        "Comedy": 166.3,
+        "Action": 100.0,
+        "Thriller": 79.3
+      },
+      "raw_genre_counts": {
+        "Drama": 402,
+        "Documentary": 152,
+        "Comedy": 185,
+        "Action": 108,
+        "Thriller": 87
+      },
+      "total_movies": 733,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 388.3,
+        "Documentary": 148.0,
+        "Comedy": 178.0,
+        "Action": 102.0,
+        "Thriller": 93.3
+      },
+      "raw_genre_counts": {
+        "Drama": 402,
+        "Documentary": 175,
+        "Comedy": 192,
+        "Action": 110,
+        "Thriller": 106
+      },
+      "total_movies": 769,
+      "events": [
+        {
+          "year": 2019,
+          "date": "2019-12-10",
+          "event": "Fernández Election",
+          "type": "political_shift",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 392.3,
+        "Documentary": 159.7,
+        "Comedy": 185.7,
+        "Action": 101.0,
+        "Thriller": 95.0
+      },
+      "raw_genre_counts": {
+        "Drama": 373,
+        "Documentary": 152,
+        "Comedy": 180,
+        "Action": 85,
+        "Thriller": 92
+      },
+      "total_movies": 685,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 412.7,
+        "Documentary": 174.0,
+        "Comedy": 192.3,
+        "Action": 109.0,
+        "Thriller": 98.7
+      },
+      "raw_genre_counts": {
+        "Drama": 463,
+        "Documentary": 195,
+        "Comedy": 205,
+        "Action": 132,
+        "Thriller": 98
+      },
+      "total_movies": 868,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 429.3,
+        "Documentary": 190.3,
+        "Comedy": 234.7,
+        "Action": 116.7,
+        "Thriller": 101.7
+      },
+      "raw_genre_counts": {
+        "Drama": 452,
+        "Documentary": 224,
+        "Comedy": 319,
+        "Action": 133,
+        "Thriller": 115
+      },
+      "total_movies": 968,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 456.3,
+        "Documentary": 206.7,
+        "Comedy": 267.3,
+        "Action": 137.0,
+        "Thriller": 112.3
+      },
+      "raw_genre_counts": {
+        "Drama": 454,
+        "Documentary": 201,
+        "Comedy": 278,
+        "Action": 146,
+        "Thriller": 124
+      },
+      "total_movies": 901,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 411.0,
+        "Documentary": 198.3,
+        "Comedy": 261.3,
+        "Action": 129.7,
+        "Thriller": 112.0
+      },
+      "raw_genre_counts": {
+        "Drama": 327,
+        "Documentary": 170,
+        "Comedy": 187,
+        "Action": 110,
+        "Thriller": 97
+      },
+      "total_movies": 694,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2001,
+      "event": "Economic Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 252,
+      "event_count": 260,
+      "after_count": 264,
+      "immediate_impact": 3.2,
+      "recovery_rate": 1.5,
+      "event_date": "2001-12-19"
+    },
+    {
+      "year": 2001,
+      "event": "Economic Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 19,
+      "event_count": 41,
+      "after_count": 46,
+      "immediate_impact": 115.8,
+      "recovery_rate": 12.2,
+      "event_date": "2001-12-19"
+    },
+    {
+      "year": 2001,
+      "event": "Economic Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 143,
+      "event_count": 155,
+      "after_count": 133,
+      "immediate_impact": 8.4,
+      "recovery_rate": -14.2,
+      "event_date": "2001-12-19"
+    },
+    {
+      "year": 2001,
+      "event": "Economic Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 57,
+      "event_count": 77,
+      "after_count": 68,
+      "immediate_impact": 35.1,
+      "recovery_rate": -11.7,
+      "event_date": "2001-12-19"
+    },
+    {
+      "year": 2001,
+      "event": "Economic Crisis",
+      "event_type": "economic",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 72,
+      "event_count": 60,
+      "after_count": 65,
+      "immediate_impact": -16.7,
+      "recovery_rate": 8.3,
+      "event_date": "2001-12-19"
+    },
+    {
+      "year": 2015,
+      "event": "Macri Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 300,
+      "event_count": 296,
+      "after_count": 334,
+      "immediate_impact": -1.3,
+      "recovery_rate": 12.8,
+      "event_date": "2015-12-10"
+    },
+    {
+      "year": 2015,
+      "event": "Macri Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 138,
+      "event_count": 135,
+      "after_count": 149,
+      "immediate_impact": -2.2,
+      "recovery_rate": 10.4,
+      "event_date": "2015-12-10"
+    },
+    {
+      "year": 2015,
+      "event": "Macri Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 152,
+      "event_count": 140,
+      "after_count": 157,
+      "immediate_impact": -7.9,
+      "recovery_rate": 12.1,
+      "event_date": "2015-12-10"
+    },
+    {
+      "year": 2015,
+      "event": "Macri Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 84,
+      "event_count": 82,
+      "after_count": 104,
+      "immediate_impact": -2.4,
+      "recovery_rate": 26.8,
+      "event_date": "2015-12-10"
+    },
+    {
+      "year": 2015,
+      "event": "Macri Government",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 68,
+      "event_count": 76,
+      "after_count": 64,
+      "immediate_impact": 11.8,
+      "recovery_rate": -15.8,
+      "event_date": "2015-12-10"
+    },
+    {
+      "year": 2019,
+      "event": "Fernández Election",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 402,
+      "event_count": 402,
+      "after_count": 373,
+      "immediate_impact": 0.0,
+      "recovery_rate": -7.2,
+      "event_date": "2019-12-10"
+    },
+    {
+      "year": 2019,
+      "event": "Fernández Election",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 152,
+      "event_count": 175,
+      "after_count": 152,
+      "immediate_impact": 15.1,
+      "recovery_rate": -13.1,
+      "event_date": "2019-12-10"
+    },
+    {
+      "year": 2019,
+      "event": "Fernández Election",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 185,
+      "event_count": 192,
+      "after_count": 180,
+      "immediate_impact": 3.8,
+      "recovery_rate": -6.2,
+      "event_date": "2019-12-10"
+    },
+    {
+      "year": 2019,
+      "event": "Fernández Election",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 108,
+      "event_count": 110,
+      "after_count": 85,
+      "immediate_impact": 1.9,
+      "recovery_rate": -22.7,
+      "event_date": "2019-12-10"
+    },
+    {
+      "year": 2019,
+      "event": "Fernández Election",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 87,
+      "event_count": 106,
+      "after_count": 92,
+      "immediate_impact": 21.8,
+      "recovery_rate": -13.2,
+      "event_date": "2019-12-10"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2001,
+      "date": "2001-12-19",
+      "event": "Economic Crisis",
+      "type": "economic",
+      "severity": "high"
+    },
+    {
+      "year": 2015,
+      "date": "2015-12-10",
+      "event": "Macri Government",
+      "type": "political_shift",
+      "severity": "medium"
+    },
+    {
+      "year": 2019,
+      "date": "2019-12-10",
+      "event": "Fernández Election",
+      "type": "political_shift",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:09:29.598237",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

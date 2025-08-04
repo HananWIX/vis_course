@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "ID",
+    "name": "Indonesia"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 43,
+        "Documentary": 1,
+        "Comedy": 24,
+        "Action": 8,
+        "Thriller": 11
+      },
+      "raw_genre_counts": {
+        "Drama": 43,
+        "Documentary": 1,
+        "Comedy": 24,
+        "Action": 8,
+        "Thriller": 11
+      },
+      "total_movies": 65,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 51,
+        "Documentary": 1,
+        "Comedy": 22,
+        "Action": 22,
+        "Thriller": 13
+      },
+      "raw_genre_counts": {
+        "Drama": 51,
+        "Documentary": 1,
+        "Comedy": 22,
+        "Action": 22,
+        "Thriller": 13
+      },
+      "total_movies": 78,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 56.0,
+        "Documentary": 1.3,
+        "Comedy": 22.7,
+        "Action": 15.3,
+        "Thriller": 13.3
+      },
+      "raw_genre_counts": {
+        "Drama": 74,
+        "Documentary": 2,
+        "Comedy": 22,
+        "Action": 16,
+        "Thriller": 16
+      },
+      "total_movies": 96,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 64.7,
+        "Documentary": 1.0,
+        "Comedy": 24.0,
+        "Action": 20.7,
+        "Thriller": 15.0
+      },
+      "raw_genre_counts": {
+        "Drama": 69,
+        "Documentary": 0,
+        "Comedy": 28,
+        "Action": 24,
+        "Thriller": 16
+      },
+      "total_movies": 107,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 71.0,
+        "Documentary": 2.5,
+        "Comedy": 27.0,
+        "Action": 22.3,
+        "Thriller": 16.3
+      },
+      "raw_genre_counts": {
+        "Drama": 70,
+        "Documentary": 3,
+        "Comedy": 31,
+        "Action": 27,
+        "Thriller": 17
+      },
+      "total_movies": 115,
+      "events": [
+        {
+          "year": 2004,
+          "date": "2004-12-26",
+          "event": "Indian Ocean Tsunami",
+          "type": "natural_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 71.7,
+        "Documentary": 3.0,
+        "Comedy": 31.3,
+        "Action": 27.0,
+        "Thriller": 17.7
+      },
+      "raw_genre_counts": {
+        "Drama": 76,
+        "Documentary": 3,
+        "Comedy": 35,
+        "Action": 30,
+        "Thriller": 20
+      },
+      "total_movies": 123,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 77.3,
+        "Documentary": 2.7,
+        "Comedy": 34.0,
+        "Action": 26.3,
+        "Thriller": 21.3
+      },
+      "raw_genre_counts": {
+        "Drama": 86,
+        "Documentary": 2,
+        "Comedy": 36,
+        "Action": 22,
+        "Thriller": 27
+      },
+      "total_movies": 128,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 82.0,
+        "Documentary": 4.3,
+        "Comedy": 40.3,
+        "Action": 25.3,
+        "Thriller": 25.3
+      },
+      "raw_genre_counts": {
+        "Drama": 84,
+        "Documentary": 8,
+        "Comedy": 50,
+        "Action": 24,
+        "Thriller": 29
+      },
+      "total_movies": 148,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 94.7,
+        "Documentary": 5.3,
+        "Comedy": 50.3,
+        "Action": 25.7,
+        "Thriller": 27.3
+      },
+      "raw_genre_counts": {
+        "Drama": 114,
+        "Documentary": 6,
+        "Comedy": 65,
+        "Action": 31,
+        "Thriller": 26
+      },
+      "total_movies": 196,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 102.3,
+        "Documentary": 6.0,
+        "Comedy": 62.3,
+        "Action": 30.3,
+        "Thriller": 33.0
+      },
+      "raw_genre_counts": {
+        "Drama": 109,
+        "Documentary": 4,
+        "Comedy": 72,
+        "Action": 36,
+        "Thriller": 44
+      },
+      "total_movies": 203,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 112.7,
+        "Documentary": 4.7,
+        "Comedy": 68.3,
+        "Action": 36.7,
+        "Thriller": 33.3
+      },
+      "raw_genre_counts": {
+        "Drama": 115,
+        "Documentary": 4,
+        "Comedy": 68,
+        "Action": 43,
+        "Thriller": 30
+      },
+      "total_movies": 198,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 128.3,
+        "Documentary": 6.3,
+        "Comedy": 73.7,
+        "Action": 43.0,
+        "Thriller": 37.0
+      },
+      "raw_genre_counts": {
+        "Drama": 161,
+        "Documentary": 11,
+        "Comedy": 81,
+        "Action": 50,
+        "Thriller": 37
+      },
+      "total_movies": 252,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 144.3,
+        "Documentary": 8.0,
+        "Comedy": 70.7,
+        "Action": 48.3,
+        "Thriller": 33.3
+      },
+      "raw_genre_counts": {
+        "Drama": 157,
+        "Documentary": 9,
+        "Comedy": 63,
+        "Action": 52,
+        "Thriller": 33
+      },
+      "total_movies": 238,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 159.3,
+        "Documentary": 12.3,
+        "Comedy": 66.0,
+        "Action": 53.3,
+        "Thriller": 40.0
+      },
+      "raw_genre_counts": {
+        "Drama": 160,
+        "Documentary": 17,
+        "Comedy": 54,
+        "Action": 58,
+        "Thriller": 50
+      },
+      "total_movies": 256,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 159.3,
+        "Documentary": 12.0,
+        "Comedy": 63.0,
+        "Action": 62.3,
+        "Thriller": 47.0
+      },
+      "raw_genre_counts": {
+        "Drama": 161,
+        "Documentary": 10,
+        "Comedy": 72,
+        "Action": 77,
+        "Thriller": 58
+      },
+      "total_movies": 273,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-10-20",
+          "event": "Jokowi Presidency",
+          "type": "political_shift",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 166.7,
+        "Documentary": 13.7,
+        "Comedy": 68.0,
+        "Action": 67.3,
+        "Thriller": 49.0
+      },
+      "raw_genre_counts": {
+        "Drama": 179,
+        "Documentary": 14,
+        "Comedy": 78,
+        "Action": 67,
+        "Thriller": 39
+      },
+      "total_movies": 295,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 179.3,
+        "Documentary": 15.0,
+        "Comedy": 76.7,
+        "Action": 76.0,
+        "Thriller": 47.7
+      },
+      "raw_genre_counts": {
+        "Drama": 198,
+        "Documentary": 21,
+        "Comedy": 80,
+        "Action": 84,
+        "Thriller": 46
+      },
+      "total_movies": 333,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 191.7,
+        "Documentary": 17.3,
+        "Comedy": 81.0,
+        "Action": 81.7,
+        "Thriller": 49.0
+      },
+      "raw_genre_counts": {
+        "Drama": 198,
+        "Documentary": 17,
+        "Comedy": 85,
+        "Action": 94,
+        "Thriller": 62
+      },
+      "total_movies": 343,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 211.0,
+        "Documentary": 16.7,
+        "Comedy": 93.3,
+        "Action": 87.3,
+        "Thriller": 54.7
+      },
+      "raw_genre_counts": {
+        "Drama": 237,
+        "Documentary": 12,
+        "Comedy": 115,
+        "Action": 84,
+        "Thriller": 56
+      },
+      "total_movies": 384,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 246.7,
+        "Documentary": 14.0,
+        "Comedy": 110.0,
+        "Action": 91.3,
+        "Thriller": 66.0
+      },
+      "raw_genre_counts": {
+        "Drama": 305,
+        "Documentary": 13,
+        "Comedy": 130,
+        "Action": 96,
+        "Thriller": 80
+      },
+      "total_movies": 466,
+      "events": [
+        {
+          "year": 2019,
+          "date": "2019-05-22",
+          "event": "Jakarta Election Riots",
+          "type": "domestic_unrest",
+          "severity": "medium"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 298.7,
+        "Documentary": 15.7,
+        "Comedy": 136.0,
+        "Action": 94.3,
+        "Thriller": 83.7
+      },
+      "raw_genre_counts": {
+        "Drama": 354,
+        "Documentary": 22,
+        "Comedy": 163,
+        "Action": 103,
+        "Thriller": 115
+      },
+      "total_movies": 571,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 477.0,
+        "Documentary": 42.0,
+        "Comedy": 202.7,
+        "Action": 165.7,
+        "Thriller": 170.3
+      },
+      "raw_genre_counts": {
+        "Drama": 772,
+        "Documentary": 91,
+        "Comedy": 315,
+        "Action": 298,
+        "Thriller": 316
+      },
+      "total_movies": 1332,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 603.3,
+        "Documentary": 78.0,
+        "Comedy": 274.0,
+        "Action": 233.0,
+        "Thriller": 258.3
+      },
+      "raw_genre_counts": {
+        "Drama": 684,
+        "Documentary": 121,
+        "Comedy": 344,
+        "Action": 298,
+        "Thriller": 344
+      },
+      "total_movies": 1312,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 537.0,
+        "Documentary": 76.7,
+        "Comedy": 247.0,
+        "Action": 224.7,
+        "Thriller": 239.0
+      },
+      "raw_genre_counts": {
+        "Drama": 155,
+        "Documentary": 18,
+        "Comedy": 82,
+        "Action": 78,
+        "Thriller": 57
+      },
+      "total_movies": 278,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 315.3,
+        "Documentary": 49.3,
+        "Comedy": 158.3,
+        "Action": 132.7,
+        "Thriller": 149.0
+      },
+      "raw_genre_counts": {
+        "Drama": 107,
+        "Documentary": 9,
+        "Comedy": 49,
+        "Action": 22,
+        "Thriller": 46
+      },
+      "total_movies": 176,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2004,
+      "event": "Indian Ocean Tsunami",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 69,
+      "event_count": 70,
+      "after_count": 76,
+      "immediate_impact": 1.4,
+      "recovery_rate": 8.6,
+      "event_date": "2004-12-26"
+    },
+    {
+      "year": 2004,
+      "event": "Indian Ocean Tsunami",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 0,
+      "event_count": 3,
+      "after_count": 3,
+      "immediate_impact": 0,
+      "recovery_rate": 0.0,
+      "event_date": "2004-12-26"
+    },
+    {
+      "year": 2004,
+      "event": "Indian Ocean Tsunami",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 28,
+      "event_count": 31,
+      "after_count": 35,
+      "immediate_impact": 10.7,
+      "recovery_rate": 12.9,
+      "event_date": "2004-12-26"
+    },
+    {
+      "year": 2004,
+      "event": "Indian Ocean Tsunami",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 24,
+      "event_count": 27,
+      "after_count": 30,
+      "immediate_impact": 12.5,
+      "recovery_rate": 11.1,
+      "event_date": "2004-12-26"
+    },
+    {
+      "year": 2004,
+      "event": "Indian Ocean Tsunami",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 16,
+      "event_count": 17,
+      "after_count": 20,
+      "immediate_impact": 6.2,
+      "recovery_rate": 17.6,
+      "event_date": "2004-12-26"
+    },
+    {
+      "year": 2014,
+      "event": "Jokowi Presidency",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 160,
+      "event_count": 161,
+      "after_count": 179,
+      "immediate_impact": 0.6,
+      "recovery_rate": 11.2,
+      "event_date": "2014-10-20"
+    },
+    {
+      "year": 2014,
+      "event": "Jokowi Presidency",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 17,
+      "event_count": 10,
+      "after_count": 14,
+      "immediate_impact": -41.2,
+      "recovery_rate": 40.0,
+      "event_date": "2014-10-20"
+    },
+    {
+      "year": 2014,
+      "event": "Jokowi Presidency",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 54,
+      "event_count": 72,
+      "after_count": 78,
+      "immediate_impact": 33.3,
+      "recovery_rate": 8.3,
+      "event_date": "2014-10-20"
+    },
+    {
+      "year": 2014,
+      "event": "Jokowi Presidency",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 58,
+      "event_count": 77,
+      "after_count": 67,
+      "immediate_impact": 32.8,
+      "recovery_rate": -13.0,
+      "event_date": "2014-10-20"
+    },
+    {
+      "year": 2014,
+      "event": "Jokowi Presidency",
+      "event_type": "political_shift",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 50,
+      "event_count": 58,
+      "after_count": 39,
+      "immediate_impact": 16.0,
+      "recovery_rate": -32.8,
+      "event_date": "2014-10-20"
+    },
+    {
+      "year": 2019,
+      "event": "Jakarta Election Riots",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Drama",
+      "before_count": 237,
+      "event_count": 305,
+      "after_count": 354,
+      "immediate_impact": 28.7,
+      "recovery_rate": 16.1,
+      "event_date": "2019-05-22"
+    },
+    {
+      "year": 2019,
+      "event": "Jakarta Election Riots",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Documentary",
+      "before_count": 12,
+      "event_count": 13,
+      "after_count": 22,
+      "immediate_impact": 8.3,
+      "recovery_rate": 69.2,
+      "event_date": "2019-05-22"
+    },
+    {
+      "year": 2019,
+      "event": "Jakarta Election Riots",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Comedy",
+      "before_count": 115,
+      "event_count": 130,
+      "after_count": 163,
+      "immediate_impact": 13.0,
+      "recovery_rate": 25.4,
+      "event_date": "2019-05-22"
+    },
+    {
+      "year": 2019,
+      "event": "Jakarta Election Riots",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Action",
+      "before_count": 84,
+      "event_count": 96,
+      "after_count": 103,
+      "immediate_impact": 14.3,
+      "recovery_rate": 7.3,
+      "event_date": "2019-05-22"
+    },
+    {
+      "year": 2019,
+      "event": "Jakarta Election Riots",
+      "event_type": "domestic_unrest",
+      "severity": "medium",
+      "genre": "Thriller",
+      "before_count": 56,
+      "event_count": 80,
+      "after_count": 115,
+      "immediate_impact": 42.9,
+      "recovery_rate": 43.8,
+      "event_date": "2019-05-22"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2004,
+      "date": "2004-12-26",
+      "event": "Indian Ocean Tsunami",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-10-20",
+      "event": "Jokowi Presidency",
+      "type": "political_shift",
+      "severity": "medium"
+    },
+    {
+      "year": 2019,
+      "date": "2019-05-22",
+      "event": "Jakarta Election Riots",
+      "type": "domestic_unrest",
+      "severity": "medium"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:10:06.189820",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

@@ -1,0 +1,765 @@
+{
+  "country": {
+    "code": "JP",
+    "name": "Japan"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 367,
+        "Documentary": 39,
+        "Comedy": 206,
+        "Action": 94,
+        "Thriller": 88
+      },
+      "raw_genre_counts": {
+        "Drama": 367,
+        "Documentary": 39,
+        "Comedy": 206,
+        "Action": 94,
+        "Thriller": 88
+      },
+      "total_movies": 610,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 417,
+        "Documentary": 58,
+        "Comedy": 204,
+        "Action": 143,
+        "Thriller": 71
+      },
+      "raw_genre_counts": {
+        "Drama": 417,
+        "Documentary": 58,
+        "Comedy": 204,
+        "Action": 143,
+        "Thriller": 71
+      },
+      "total_movies": 687,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 400.3,
+        "Documentary": 53.0,
+        "Comedy": 206.3,
+        "Action": 122.7,
+        "Thriller": 82.3
+      },
+      "raw_genre_counts": {
+        "Drama": 417,
+        "Documentary": 62,
+        "Comedy": 209,
+        "Action": 131,
+        "Thriller": 88
+      },
+      "total_movies": 681,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 410.3,
+        "Documentary": 63.3,
+        "Comedy": 214.0,
+        "Action": 141.3,
+        "Thriller": 81.7
+      },
+      "raw_genre_counts": {
+        "Drama": 397,
+        "Documentary": 70,
+        "Comedy": 229,
+        "Action": 150,
+        "Thriller": 86
+      },
+      "total_movies": 686,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 431.0,
+        "Documentary": 66.7,
+        "Comedy": 231.3,
+        "Action": 144.3,
+        "Thriller": 89.0
+      },
+      "raw_genre_counts": {
+        "Drama": 479,
+        "Documentary": 68,
+        "Comedy": 256,
+        "Action": 152,
+        "Thriller": 93
+      },
+      "total_movies": 810,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 463.0,
+        "Documentary": 73.7,
+        "Comedy": 251.7,
+        "Action": 150.7,
+        "Thriller": 89.0
+      },
+      "raw_genre_counts": {
+        "Drama": 513,
+        "Documentary": 83,
+        "Comedy": 270,
+        "Action": 150,
+        "Thriller": 88
+      },
+      "total_movies": 850,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 521.0,
+        "Documentary": 87.0,
+        "Comedy": 276.7,
+        "Action": 151.0,
+        "Thriller": 108.3
+      },
+      "raw_genre_counts": {
+        "Drama": 571,
+        "Documentary": 110,
+        "Comedy": 304,
+        "Action": 151,
+        "Thriller": 144
+      },
+      "total_movies": 1000,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 559.0,
+        "Documentary": 95.0,
+        "Comedy": 284.3,
+        "Action": 149.7,
+        "Thriller": 125.7
+      },
+      "raw_genre_counts": {
+        "Drama": 593,
+        "Documentary": 92,
+        "Comedy": 279,
+        "Action": 148,
+        "Thriller": 145
+      },
+      "total_movies": 989,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 607.0,
+        "Documentary": 109.0,
+        "Comedy": 290.7,
+        "Action": 164.3,
+        "Thriller": 140.7
+      },
+      "raw_genre_counts": {
+        "Drama": 657,
+        "Documentary": 125,
+        "Comedy": 289,
+        "Action": 194,
+        "Thriller": 133
+      },
+      "total_movies": 1102,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 658.7,
+        "Documentary": 115.3,
+        "Comedy": 296.3,
+        "Action": 188.3,
+        "Thriller": 145.7
+      },
+      "raw_genre_counts": {
+        "Drama": 726,
+        "Documentary": 129,
+        "Comedy": 321,
+        "Action": 223,
+        "Thriller": 159
+      },
+      "total_movies": 1238,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 691.7,
+        "Documentary": 133.3,
+        "Comedy": 310.0,
+        "Action": 220.7,
+        "Thriller": 150.0
+      },
+      "raw_genre_counts": {
+        "Drama": 692,
+        "Documentary": 146,
+        "Comedy": 320,
+        "Action": 245,
+        "Thriller": 158
+      },
+      "total_movies": 1178,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 728.3,
+        "Documentary": 157.7,
+        "Comedy": 339.3,
+        "Action": 242.3,
+        "Thriller": 161.7
+      },
+      "raw_genre_counts": {
+        "Drama": 767,
+        "Documentary": 198,
+        "Comedy": 377,
+        "Action": 259,
+        "Thriller": 168
+      },
+      "total_movies": 1378,
+      "events": [
+        {
+          "year": 2011,
+          "date": "2011-03-11",
+          "event": "Tohoku Earthquake",
+          "type": "natural_disaster",
+          "severity": "high"
+        },
+        {
+          "year": 2011,
+          "date": "2011-03-12",
+          "event": "Fukushima Nuclear Disaster",
+          "type": "nuclear_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 753.7,
+        "Documentary": 197.3,
+        "Comedy": 354.7,
+        "Action": 253.7,
+        "Thriller": 172.3
+      },
+      "raw_genre_counts": {
+        "Drama": 802,
+        "Documentary": 248,
+        "Comedy": 367,
+        "Action": 257,
+        "Thriller": 191
+      },
+      "total_movies": 1448,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 790.7,
+        "Documentary": 225.0,
+        "Comedy": 378.3,
+        "Action": 271.0,
+        "Thriller": 199.0
+      },
+      "raw_genre_counts": {
+        "Drama": 803,
+        "Documentary": 229,
+        "Comedy": 391,
+        "Action": 297,
+        "Thriller": 238
+      },
+      "total_movies": 1499,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 826.0,
+        "Documentary": 238.7,
+        "Comedy": 393.0,
+        "Action": 291.0,
+        "Thriller": 217.0
+      },
+      "raw_genre_counts": {
+        "Drama": 873,
+        "Documentary": 239,
+        "Comedy": 421,
+        "Action": 319,
+        "Thriller": 222
+      },
+      "total_movies": 1615,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 880.3,
+        "Documentary": 248.3,
+        "Comedy": 408.3,
+        "Action": 314.3,
+        "Thriller": 234.7
+      },
+      "raw_genre_counts": {
+        "Drama": 965,
+        "Documentary": 277,
+        "Comedy": 413,
+        "Action": 327,
+        "Thriller": 244
+      },
+      "total_movies": 1723,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 956.0,
+        "Documentary": 265.3,
+        "Comedy": 424.0,
+        "Action": 344.0,
+        "Thriller": 240.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1030,
+        "Documentary": 280,
+        "Comedy": 438,
+        "Action": 386,
+        "Thriller": 254
+      },
+      "total_movies": 1853,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 1014.0,
+        "Documentary": 280.3,
+        "Comedy": 432.3,
+        "Action": 360.7,
+        "Thriller": 256.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1047,
+        "Documentary": 284,
+        "Comedy": 446,
+        "Action": 369,
+        "Thriller": 270
+      },
+      "total_movies": 1878,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 1046.0,
+        "Documentary": 275.3,
+        "Comedy": 441.7,
+        "Action": 375.7,
+        "Thriller": 266.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1061,
+        "Documentary": 262,
+        "Comedy": 441,
+        "Action": 372,
+        "Thriller": 274
+      },
+      "total_movies": 1886,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 1060.7,
+        "Documentary": 269.0,
+        "Comedy": 444.3,
+        "Action": 361.7,
+        "Thriller": 270.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1074,
+        "Documentary": 261,
+        "Comedy": 446,
+        "Action": 344,
+        "Thriller": 268
+      },
+      "total_movies": 1852,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 963.7,
+        "Documentary": 249.3,
+        "Comedy": 407.0,
+        "Action": 313.3,
+        "Thriller": 251.0
+      },
+      "raw_genre_counts": {
+        "Drama": 756,
+        "Documentary": 225,
+        "Comedy": 334,
+        "Action": 224,
+        "Thriller": 211
+      },
+      "total_movies": 1387,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-04-16",
+          "event": "COVID-19 Emergency",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 922.3,
+        "Documentary": 251.7,
+        "Comedy": 376.7,
+        "Action": 287.3,
+        "Thriller": 243.3
+      },
+      "raw_genre_counts": {
+        "Drama": 937,
+        "Documentary": 269,
+        "Comedy": 350,
+        "Action": 294,
+        "Thriller": 251
+      },
+      "total_movies": 1674,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 969.0,
+        "Documentary": 278.7,
+        "Comedy": 415.3,
+        "Action": 304.3,
+        "Thriller": 295.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1214,
+        "Documentary": 342,
+        "Comedy": 562,
+        "Action": 395,
+        "Thriller": 423
+      },
+      "total_movies": 2282,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 1189.3,
+        "Documentary": 325.7,
+        "Comedy": 527.3,
+        "Action": 393.0,
+        "Thriller": 396.7
+      },
+      "raw_genre_counts": {
+        "Drama": 1417,
+        "Documentary": 366,
+        "Comedy": 670,
+        "Action": 490,
+        "Thriller": 516
+      },
+      "total_movies": 2660,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 1191.7,
+        "Documentary": 327.3,
+        "Comedy": 576.3,
+        "Action": 408.0,
+        "Thriller": 435.0
+      },
+      "raw_genre_counts": {
+        "Drama": 944,
+        "Documentary": 274,
+        "Comedy": 497,
+        "Action": 339,
+        "Thriller": 366
+      },
+      "total_movies": 1878,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2011,
+      "event": "Tohoku Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 692,
+      "event_count": 767,
+      "after_count": 802,
+      "immediate_impact": 10.8,
+      "recovery_rate": 4.6,
+      "event_date": "2011-03-11"
+    },
+    {
+      "year": 2011,
+      "event": "Fukushima Nuclear Disaster",
+      "event_type": "nuclear_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 692,
+      "event_count": 767,
+      "after_count": 802,
+      "immediate_impact": 10.8,
+      "recovery_rate": 4.6,
+      "event_date": "2011-03-12"
+    },
+    {
+      "year": 2011,
+      "event": "Tohoku Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 146,
+      "event_count": 198,
+      "after_count": 248,
+      "immediate_impact": 35.6,
+      "recovery_rate": 25.3,
+      "event_date": "2011-03-11"
+    },
+    {
+      "year": 2011,
+      "event": "Fukushima Nuclear Disaster",
+      "event_type": "nuclear_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 146,
+      "event_count": 198,
+      "after_count": 248,
+      "immediate_impact": 35.6,
+      "recovery_rate": 25.3,
+      "event_date": "2011-03-12"
+    },
+    {
+      "year": 2011,
+      "event": "Tohoku Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 320,
+      "event_count": 377,
+      "after_count": 367,
+      "immediate_impact": 17.8,
+      "recovery_rate": -2.7,
+      "event_date": "2011-03-11"
+    },
+    {
+      "year": 2011,
+      "event": "Fukushima Nuclear Disaster",
+      "event_type": "nuclear_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 320,
+      "event_count": 377,
+      "after_count": 367,
+      "immediate_impact": 17.8,
+      "recovery_rate": -2.7,
+      "event_date": "2011-03-12"
+    },
+    {
+      "year": 2011,
+      "event": "Tohoku Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 245,
+      "event_count": 259,
+      "after_count": 257,
+      "immediate_impact": 5.7,
+      "recovery_rate": -0.8,
+      "event_date": "2011-03-11"
+    },
+    {
+      "year": 2011,
+      "event": "Fukushima Nuclear Disaster",
+      "event_type": "nuclear_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 245,
+      "event_count": 259,
+      "after_count": 257,
+      "immediate_impact": 5.7,
+      "recovery_rate": -0.8,
+      "event_date": "2011-03-12"
+    },
+    {
+      "year": 2011,
+      "event": "Tohoku Earthquake",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 158,
+      "event_count": 168,
+      "after_count": 191,
+      "immediate_impact": 6.3,
+      "recovery_rate": 13.7,
+      "event_date": "2011-03-11"
+    },
+    {
+      "year": 2011,
+      "event": "Fukushima Nuclear Disaster",
+      "event_type": "nuclear_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 158,
+      "event_count": 168,
+      "after_count": 191,
+      "immediate_impact": 6.3,
+      "recovery_rate": 13.7,
+      "event_date": "2011-03-12"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1074,
+      "event_count": 756,
+      "after_count": 937,
+      "immediate_impact": -29.6,
+      "recovery_rate": 23.9,
+      "event_date": "2020-04-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 261,
+      "event_count": 225,
+      "after_count": 269,
+      "immediate_impact": -13.8,
+      "recovery_rate": 19.6,
+      "event_date": "2020-04-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 446,
+      "event_count": 334,
+      "after_count": 350,
+      "immediate_impact": -25.1,
+      "recovery_rate": 4.8,
+      "event_date": "2020-04-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 344,
+      "event_count": 224,
+      "after_count": 294,
+      "immediate_impact": -34.9,
+      "recovery_rate": 31.2,
+      "event_date": "2020-04-16"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Emergency",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 268,
+      "event_count": 211,
+      "after_count": 251,
+      "immediate_impact": -21.3,
+      "recovery_rate": 19.0,
+      "event_date": "2020-04-16"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2011,
+      "date": "2011-03-11",
+      "event": "Tohoku Earthquake",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2011,
+      "date": "2011-03-12",
+      "event": "Fukushima Nuclear Disaster",
+      "type": "nuclear_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-04-16",
+      "event": "COVID-19 Emergency",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 2,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:42:53.281307",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

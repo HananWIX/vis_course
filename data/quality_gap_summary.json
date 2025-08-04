@@ -1,0 +1,32 @@
+{
+  "generated": "2025-08-03T17:45:35.527064",
+  "countries": 30,
+  "totalMovies": 13174,
+  "dataFields": [
+    "country",
+    "countryName",
+    "gini",
+    "movieCount",
+    "meanRating",
+    "medianRating",
+    "stdRating",
+    "minRating",
+    "maxRating",
+    "ratingRange",
+    "developmentLevel",
+    "distribution",
+    "q1",
+    "q3",
+    "iqr",
+    "highQualityPercent",
+    "lowQualityPercent"
+  ],
+  "giniRange": [
+    25.3,
+    53.4
+  ],
+  "ratingRange": [
+    5.030508474576271,
+    6.383636363636363
+  ]
+}

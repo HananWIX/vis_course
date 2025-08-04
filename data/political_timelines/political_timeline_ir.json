@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "IR",
+    "name": "Iran"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 48,
+        "Documentary": 4,
+        "Comedy": 12,
+        "Action": 2,
+        "Thriller": 1
+      },
+      "raw_genre_counts": {
+        "Drama": 48,
+        "Documentary": 4,
+        "Comedy": 12,
+        "Action": 2,
+        "Thriller": 1
+      },
+      "total_movies": 59,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 58,
+        "Documentary": 12,
+        "Comedy": 11,
+        "Action": 6,
+        "Thriller": 8
+      },
+      "raw_genre_counts": {
+        "Drama": 58,
+        "Documentary": 12,
+        "Comedy": 11,
+        "Action": 6,
+        "Thriller": 8
+      },
+      "total_movies": 84,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 53.0,
+        "Documentary": 11.7,
+        "Comedy": 13.0,
+        "Action": 4.0,
+        "Thriller": 4.7
+      },
+      "raw_genre_counts": {
+        "Drama": 53,
+        "Documentary": 19,
+        "Comedy": 16,
+        "Action": 4,
+        "Thriller": 5
+      },
+      "total_movies": 86,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 63.0,
+        "Documentary": 15.0,
+        "Comedy": 17.7,
+        "Action": 6.7,
+        "Thriller": 6.3
+      },
+      "raw_genre_counts": {
+        "Drama": 78,
+        "Documentary": 14,
+        "Comedy": 26,
+        "Action": 10,
+        "Thriller": 6
+      },
+      "total_movies": 108,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 67.7,
+        "Documentary": 14.7,
+        "Comedy": 21.3,
+        "Action": 8.7,
+        "Thriller": 5.7
+      },
+      "raw_genre_counts": {
+        "Drama": 72,
+        "Documentary": 11,
+        "Comedy": 22,
+        "Action": 12,
+        "Thriller": 6
+      },
+      "total_movies": 103,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 75.7,
+        "Documentary": 26.0,
+        "Comedy": 25.0,
+        "Action": 11.3,
+        "Thriller": 7.7
+      },
+      "raw_genre_counts": {
+        "Drama": 77,
+        "Documentary": 53,
+        "Comedy": 27,
+        "Action": 12,
+        "Thriller": 11
+      },
+      "total_movies": 157,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 77.0,
+        "Documentary": 27.3,
+        "Comedy": 29.3,
+        "Action": 10.3,
+        "Thriller": 8.7
+      },
+      "raw_genre_counts": {
+        "Drama": 82,
+        "Documentary": 18,
+        "Comedy": 39,
+        "Action": 7,
+        "Thriller": 9
+      },
+      "total_movies": 131,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 86.3,
+        "Documentary": 28.0,
+        "Comedy": 33.0,
+        "Action": 11.7,
+        "Thriller": 9.7
+      },
+      "raw_genre_counts": {
+        "Drama": 100,
+        "Documentary": 13,
+        "Comedy": 33,
+        "Action": 16,
+        "Thriller": 9
+      },
+      "total_movies": 146,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 102.3,
+        "Documentary": 18.0,
+        "Comedy": 37.3,
+        "Action": 14.3,
+        "Thriller": 12.0
+      },
+      "raw_genre_counts": {
+        "Drama": 125,
+        "Documentary": 23,
+        "Comedy": 40,
+        "Action": 20,
+        "Thriller": 18
+      },
+      "total_movies": 199,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 122.3,
+        "Documentary": 23.3,
+        "Comedy": 49.3,
+        "Action": 17.3,
+        "Thriller": 16.7
+      },
+      "raw_genre_counts": {
+        "Drama": 142,
+        "Documentary": 34,
+        "Comedy": 75,
+        "Action": 16,
+        "Thriller": 23
+      },
+      "total_movies": 244,
+      "events": [
+        {
+          "year": 2009,
+          "date": "2009-06-12",
+          "event": "Green Movement",
+          "type": "domestic_unrest",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 129.0,
+        "Documentary": 25.0,
+        "Comedy": 58.3,
+        "Action": 18.0,
+        "Thriller": 19.7
+      },
+      "raw_genre_counts": {
+        "Drama": 120,
+        "Documentary": 18,
+        "Comedy": 60,
+        "Action": 18,
+        "Thriller": 18
+      },
+      "total_movies": 199,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 130.3,
+        "Documentary": 26.3,
+        "Comedy": 63.7,
+        "Action": 15.3,
+        "Thriller": 15.0
+      },
+      "raw_genre_counts": {
+        "Drama": 129,
+        "Documentary": 27,
+        "Comedy": 56,
+        "Action": 12,
+        "Thriller": 4
+      },
+      "total_movies": 200,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 127.3,
+        "Documentary": 24.7,
+        "Comedy": 56.3,
+        "Action": 13.7,
+        "Thriller": 9.0
+      },
+      "raw_genre_counts": {
+        "Drama": 133,
+        "Documentary": 29,
+        "Comedy": 53,
+        "Action": 11,
+        "Thriller": 5
+      },
+      "total_movies": 201,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 128.3,
+        "Documentary": 28.0,
+        "Comedy": 51.3,
+        "Action": 11.7,
+        "Thriller": 8.7
+      },
+      "raw_genre_counts": {
+        "Drama": 123,
+        "Documentary": 28,
+        "Comedy": 45,
+        "Action": 12,
+        "Thriller": 17
+      },
+      "total_movies": 194,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 130.3,
+        "Documentary": 27.3,
+        "Comedy": 46.3,
+        "Action": 10.0,
+        "Thriller": 10.3
+      },
+      "raw_genre_counts": {
+        "Drama": 135,
+        "Documentary": 25,
+        "Comedy": 41,
+        "Action": 7,
+        "Thriller": 9
+      },
+      "total_movies": 187,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 124.3,
+        "Documentary": 30.3,
+        "Comedy": 38.3,
+        "Action": 9.7,
+        "Thriller": 11.7
+      },
+      "raw_genre_counts": {
+        "Drama": 115,
+        "Documentary": 38,
+        "Comedy": 29,
+        "Action": 10,
+        "Thriller": 9
+      },
+      "total_movies": 171,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 133.0,
+        "Documentary": 35.0,
+        "Comedy": 32.0,
+        "Action": 10.3,
+        "Thriller": 10.7
+      },
+      "raw_genre_counts": {
+        "Drama": 149,
+        "Documentary": 42,
+        "Comedy": 26,
+        "Action": 14,
+        "Thriller": 14
+      },
+      "total_movies": 209,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 141.7,
+        "Documentary": 51.7,
+        "Comedy": 33.0,
+        "Action": 12.7,
+        "Thriller": 12.3
+      },
+      "raw_genre_counts": {
+        "Drama": 161,
+        "Documentary": 75,
+        "Comedy": 44,
+        "Action": 14,
+        "Thriller": 14
+      },
+      "total_movies": 265,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 137.7,
+        "Documentary": 54.0,
+        "Comedy": 35.7,
+        "Action": 12.7,
+        "Thriller": 13.7
+      },
+      "raw_genre_counts": {
+        "Drama": 103,
+        "Documentary": 45,
+        "Comedy": 37,
+        "Action": 10,
+        "Thriller": 13
+      },
+      "total_movies": 171,
+      "events": [
+        {
+          "year": 2018,
+          "date": "2018-05-08",
+          "event": "US Nuclear Deal Exit",
+          "type": "sanctions",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 125.7,
+        "Documentary": 54.7,
+        "Comedy": 41.3,
+        "Action": 12.0,
+        "Thriller": 12.3
+      },
+      "raw_genre_counts": {
+        "Drama": 113,
+        "Documentary": 44,
+        "Comedy": 43,
+        "Action": 12,
+        "Thriller": 10
+      },
+      "total_movies": 191,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 103.0,
+        "Documentary": 40.3,
+        "Comedy": 32.3,
+        "Action": 10.0,
+        "Thriller": 12.3
+      },
+      "raw_genre_counts": {
+        "Drama": 93,
+        "Documentary": 32,
+        "Comedy": 17,
+        "Action": 8,
+        "Thriller": 14
+      },
+      "total_movies": 147,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 98.3,
+        "Documentary": 37.7,
+        "Comedy": 26.3,
+        "Action": 8.3,
+        "Thriller": 10.0
+      },
+      "raw_genre_counts": {
+        "Drama": 89,
+        "Documentary": 37,
+        "Comedy": 19,
+        "Action": 5,
+        "Thriller": 6
+      },
+      "total_movies": 143,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 83.3,
+        "Documentary": 33.3,
+        "Comedy": 18.7,
+        "Action": 5.7,
+        "Thriller": 10.0
+      },
+      "raw_genre_counts": {
+        "Drama": 68,
+        "Documentary": 31,
+        "Comedy": 20,
+        "Action": 4,
+        "Thriller": 10
+      },
+      "total_movies": 116,
+      "events": [
+        {
+          "year": 2022,
+          "date": "2022-09-16",
+          "event": "Mahsa Amini Protests",
+          "type": "domestic_unrest",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 76.0,
+        "Documentary": 30.3,
+        "Comedy": 19.3,
+        "Action": 3.7,
+        "Thriller": 6.7
+      },
+      "raw_genre_counts": {
+        "Drama": 71,
+        "Documentary": 23,
+        "Comedy": 19,
+        "Action": 2,
+        "Thriller": 4
+      },
+      "total_movies": 111,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 65.3,
+        "Documentary": 29.0,
+        "Comedy": 19.3,
+        "Action": 2.3,
+        "Thriller": 5.7
+      },
+      "raw_genre_counts": {
+        "Drama": 57,
+        "Documentary": 33,
+        "Comedy": 19,
+        "Action": 1,
+        "Thriller": 3
+      },
+      "total_movies": 108,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2009,
+      "event": "Green Movement",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 125,
+      "event_count": 142,
+      "after_count": 120,
+      "immediate_impact": 13.6,
+      "recovery_rate": -15.5,
+      "event_date": "2009-06-12"
+    },
+    {
+      "year": 2009,
+      "event": "Green Movement",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 23,
+      "event_count": 34,
+      "after_count": 18,
+      "immediate_impact": 47.8,
+      "recovery_rate": -47.1,
+      "event_date": "2009-06-12"
+    },
+    {
+      "year": 2009,
+      "event": "Green Movement",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 40,
+      "event_count": 75,
+      "after_count": 60,
+      "immediate_impact": 87.5,
+      "recovery_rate": -20.0,
+      "event_date": "2009-06-12"
+    },
+    {
+      "year": 2009,
+      "event": "Green Movement",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 20,
+      "event_count": 16,
+      "after_count": 18,
+      "immediate_impact": -20.0,
+      "recovery_rate": 12.5,
+      "event_date": "2009-06-12"
+    },
+    {
+      "year": 2009,
+      "event": "Green Movement",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 18,
+      "event_count": 23,
+      "after_count": 18,
+      "immediate_impact": 27.8,
+      "recovery_rate": -21.7,
+      "event_date": "2009-06-12"
+    },
+    {
+      "year": 2018,
+      "event": "US Nuclear Deal Exit",
+      "event_type": "sanctions",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 161,
+      "event_count": 103,
+      "after_count": 113,
+      "immediate_impact": -36.0,
+      "recovery_rate": 9.7,
+      "event_date": "2018-05-08"
+    },
+    {
+      "year": 2018,
+      "event": "US Nuclear Deal Exit",
+      "event_type": "sanctions",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 75,
+      "event_count": 45,
+      "after_count": 44,
+      "immediate_impact": -40.0,
+      "recovery_rate": -2.2,
+      "event_date": "2018-05-08"
+    },
+    {
+      "year": 2018,
+      "event": "US Nuclear Deal Exit",
+      "event_type": "sanctions",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 44,
+      "event_count": 37,
+      "after_count": 43,
+      "immediate_impact": -15.9,
+      "recovery_rate": 16.2,
+      "event_date": "2018-05-08"
+    },
+    {
+      "year": 2018,
+      "event": "US Nuclear Deal Exit",
+      "event_type": "sanctions",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 14,
+      "event_count": 10,
+      "after_count": 12,
+      "immediate_impact": -28.6,
+      "recovery_rate": 20.0,
+      "event_date": "2018-05-08"
+    },
+    {
+      "year": 2018,
+      "event": "US Nuclear Deal Exit",
+      "event_type": "sanctions",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 14,
+      "event_count": 13,
+      "after_count": 10,
+      "immediate_impact": -7.1,
+      "recovery_rate": -23.1,
+      "event_date": "2018-05-08"
+    },
+    {
+      "year": 2022,
+      "event": "Mahsa Amini Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 89,
+      "event_count": 68,
+      "after_count": 71,
+      "immediate_impact": -23.6,
+      "recovery_rate": 4.4,
+      "event_date": "2022-09-16"
+    },
+    {
+      "year": 2022,
+      "event": "Mahsa Amini Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 37,
+      "event_count": 31,
+      "after_count": 23,
+      "immediate_impact": -16.2,
+      "recovery_rate": -25.8,
+      "event_date": "2022-09-16"
+    },
+    {
+      "year": 2022,
+      "event": "Mahsa Amini Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 19,
+      "event_count": 20,
+      "after_count": 19,
+      "immediate_impact": 5.3,
+      "recovery_rate": -5.0,
+      "event_date": "2022-09-16"
+    },
+    {
+      "year": 2022,
+      "event": "Mahsa Amini Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 5,
+      "event_count": 4,
+      "after_count": 2,
+      "immediate_impact": -20.0,
+      "recovery_rate": -50.0,
+      "event_date": "2022-09-16"
+    },
+    {
+      "year": 2022,
+      "event": "Mahsa Amini Protests",
+      "event_type": "domestic_unrest",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 6,
+      "event_count": 10,
+      "after_count": 4,
+      "immediate_impact": 66.7,
+      "recovery_rate": -60.0,
+      "event_date": "2022-09-16"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2009,
+      "date": "2009-06-12",
+      "event": "Green Movement",
+      "type": "domestic_unrest",
+      "severity": "high"
+    },
+    {
+      "year": 2018,
+      "date": "2018-05-08",
+      "event": "US Nuclear Deal Exit",
+      "type": "sanctions",
+      "severity": "high"
+    },
+    {
+      "year": 2022,
+      "date": "2022-09-16",
+      "event": "Mahsa Amini Protests",
+      "type": "domestic_unrest",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:14:10.585999",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

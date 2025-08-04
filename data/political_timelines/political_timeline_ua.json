@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "UA",
+    "name": "Ukraine"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 131,
+        "Documentary": 1,
+        "Comedy": 89,
+        "Action": 45,
+        "Thriller": 39
+      },
+      "raw_genre_counts": {
+        "Drama": 131,
+        "Documentary": 1,
+        "Comedy": 89,
+        "Action": 45,
+        "Thriller": 39
+      },
+      "total_movies": 218,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 134,
+        "Documentary": 2,
+        "Comedy": 101,
+        "Action": 59,
+        "Thriller": 34
+      },
+      "raw_genre_counts": {
+        "Drama": 134,
+        "Documentary": 2,
+        "Comedy": 101,
+        "Action": 59,
+        "Thriller": 34
+      },
+      "total_movies": 238,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 133.7,
+        "Documentary": 2.3,
+        "Comedy": 95.0,
+        "Action": 53.3,
+        "Thriller": 39.7
+      },
+      "raw_genre_counts": {
+        "Drama": 136,
+        "Documentary": 4,
+        "Comedy": 95,
+        "Action": 56,
+        "Thriller": 46
+      },
+      "total_movies": 246,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 132.0,
+        "Documentary": 3.7,
+        "Comedy": 104.0,
+        "Action": 58.3,
+        "Thriller": 39.0
+      },
+      "raw_genre_counts": {
+        "Drama": 126,
+        "Documentary": 5,
+        "Comedy": 116,
+        "Action": 60,
+        "Thriller": 37
+      },
+      "total_movies": 244,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 136.7,
+        "Documentary": 3.7,
+        "Comedy": 108.0,
+        "Action": 64.3,
+        "Thriller": 38.0
+      },
+      "raw_genre_counts": {
+        "Drama": 148,
+        "Documentary": 2,
+        "Comedy": 113,
+        "Action": 77,
+        "Thriller": 31
+      },
+      "total_movies": 274,
+      "events": [
+        {
+          "year": 2004,
+          "date": "2004-11-21",
+          "event": "Orange Revolution",
+          "type": "political_revolution",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 145.7,
+        "Documentary": 6.7,
+        "Comedy": 116.0,
+        "Action": 67.7,
+        "Thriller": 35.3
+      },
+      "raw_genre_counts": {
+        "Drama": 163,
+        "Documentary": 13,
+        "Comedy": 119,
+        "Action": 66,
+        "Thriller": 38
+      },
+      "total_movies": 285,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 165.0,
+        "Documentary": 7.3,
+        "Comedy": 123.3,
+        "Action": 67.3,
+        "Thriller": 40.7
+      },
+      "raw_genre_counts": {
+        "Drama": 184,
+        "Documentary": 7,
+        "Comedy": 138,
+        "Action": 59,
+        "Thriller": 53
+      },
+      "total_movies": 329,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 182.7,
+        "Documentary": 9.0,
+        "Comedy": 127.7,
+        "Action": 62.7,
+        "Thriller": 51.0
+      },
+      "raw_genre_counts": {
+        "Drama": 201,
+        "Documentary": 7,
+        "Comedy": 126,
+        "Action": 63,
+        "Thriller": 62
+      },
+      "total_movies": 348,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 189.7,
+        "Documentary": 9.7,
+        "Comedy": 133.7,
+        "Action": 68.3,
+        "Thriller": 58.3
+      },
+      "raw_genre_counts": {
+        "Drama": 184,
+        "Documentary": 15,
+        "Comedy": 137,
+        "Action": 83,
+        "Thriller": 60
+      },
+      "total_movies": 357,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 189.7,
+        "Documentary": 11.3,
+        "Comedy": 133.3,
+        "Action": 78.0,
+        "Thriller": 63.7
+      },
+      "raw_genre_counts": {
+        "Drama": 184,
+        "Documentary": 12,
+        "Comedy": 137,
+        "Action": 88,
+        "Thriller": 69
+      },
+      "total_movies": 372,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 190.3,
+        "Documentary": 16.0,
+        "Comedy": 141.0,
+        "Action": 88.7,
+        "Thriller": 63.7
+      },
+      "raw_genre_counts": {
+        "Drama": 203,
+        "Documentary": 21,
+        "Comedy": 149,
+        "Action": 95,
+        "Thriller": 62
+      },
+      "total_movies": 369,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 206.3,
+        "Documentary": 18.7,
+        "Comedy": 151.0,
+        "Action": 96.7,
+        "Thriller": 66.0
+      },
+      "raw_genre_counts": {
+        "Drama": 232,
+        "Documentary": 23,
+        "Comedy": 167,
+        "Action": 107,
+        "Thriller": 67
+      },
+      "total_movies": 431,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 218.0,
+        "Documentary": 23.3,
+        "Comedy": 159.7,
+        "Action": 103.7,
+        "Thriller": 68.7
+      },
+      "raw_genre_counts": {
+        "Drama": 219,
+        "Documentary": 26,
+        "Comedy": 163,
+        "Action": 109,
+        "Thriller": 77
+      },
+      "total_movies": 428,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 233.0,
+        "Documentary": 27.3,
+        "Comedy": 165.3,
+        "Action": 107.3,
+        "Thriller": 73.7
+      },
+      "raw_genre_counts": {
+        "Drama": 248,
+        "Documentary": 33,
+        "Comedy": 166,
+        "Action": 106,
+        "Thriller": 77
+      },
+      "total_movies": 466,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 234.3,
+        "Documentary": 36.3,
+        "Comedy": 164.3,
+        "Action": 113.0,
+        "Thriller": 73.7
+      },
+      "raw_genre_counts": {
+        "Drama": 236,
+        "Documentary": 50,
+        "Comedy": 164,
+        "Action": 124,
+        "Thriller": 67
+      },
+      "total_movies": 454,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-02-22",
+          "event": "Euromaidan Revolution",
+          "type": "political_revolution",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 234.0,
+        "Documentary": 45.0,
+        "Comedy": 156.7,
+        "Action": 113.3,
+        "Thriller": 70.7
+      },
+      "raw_genre_counts": {
+        "Drama": 218,
+        "Documentary": 52,
+        "Comedy": 140,
+        "Action": 110,
+        "Thriller": 68
+      },
+      "total_movies": 436,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 227.3,
+        "Documentary": 49.0,
+        "Comedy": 150.3,
+        "Action": 122.0,
+        "Thriller": 67.0
+      },
+      "raw_genre_counts": {
+        "Drama": 228,
+        "Documentary": 45,
+        "Comedy": 147,
+        "Action": 132,
+        "Thriller": 66
+      },
+      "total_movies": 454,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 242.7,
+        "Documentary": 49.7,
+        "Comedy": 156.3,
+        "Action": 120.0,
+        "Thriller": 72.0
+      },
+      "raw_genre_counts": {
+        "Drama": 282,
+        "Documentary": 52,
+        "Comedy": 182,
+        "Action": 118,
+        "Thriller": 82
+      },
+      "total_movies": 529,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 271.3,
+        "Documentary": 54.3,
+        "Comedy": 176.3,
+        "Action": 124.3,
+        "Thriller": 78.7
+      },
+      "raw_genre_counts": {
+        "Drama": 304,
+        "Documentary": 66,
+        "Comedy": 200,
+        "Action": 123,
+        "Thriller": 88
+      },
+      "total_movies": 589,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 315.3,
+        "Documentary": 72.0,
+        "Comedy": 192.0,
+        "Action": 122.0,
+        "Thriller": 93.7
+      },
+      "raw_genre_counts": {
+        "Drama": 360,
+        "Documentary": 98,
+        "Comedy": 194,
+        "Action": 125,
+        "Thriller": 111
+      },
+      "total_movies": 668,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 310.7,
+        "Documentary": 84.0,
+        "Comedy": 182.7,
+        "Action": 113.0,
+        "Thriller": 90.7
+      },
+      "raw_genre_counts": {
+        "Drama": 268,
+        "Documentary": 88,
+        "Comedy": 154,
+        "Action": 91,
+        "Thriller": 73
+      },
+      "total_movies": 519,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 306.3,
+        "Documentary": 91.7,
+        "Comedy": 175.7,
+        "Action": 111.7,
+        "Thriller": 92.3
+      },
+      "raw_genre_counts": {
+        "Drama": 291,
+        "Documentary": 89,
+        "Comedy": 179,
+        "Action": 119,
+        "Thriller": 93
+      },
+      "total_movies": 593,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 282.0,
+        "Documentary": 95.0,
+        "Comedy": 181.7,
+        "Action": 113.7,
+        "Thriller": 94.0
+      },
+      "raw_genre_counts": {
+        "Drama": 287,
+        "Documentary": 108,
+        "Comedy": 212,
+        "Action": 131,
+        "Thriller": 116
+      },
+      "total_movies": 654,
+      "events": [
+        {
+          "year": 2022,
+          "date": "2022-02-24",
+          "event": "Russian Invasion",
+          "type": "war",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 295.0,
+        "Documentary": 98.0,
+        "Comedy": 203.0,
+        "Action": 131.0,
+        "Thriller": 109.0
+      },
+      "raw_genre_counts": {
+        "Drama": 307,
+        "Documentary": 97,
+        "Comedy": 218,
+        "Action": 143,
+        "Thriller": 118
+      },
+      "total_movies": 652,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 259.3,
+        "Documentary": 99.3,
+        "Comedy": 199.7,
+        "Action": 126.0,
+        "Thriller": 109.3
+      },
+      "raw_genre_counts": {
+        "Drama": 184,
+        "Documentary": 93,
+        "Comedy": 169,
+        "Action": 104,
+        "Thriller": 94
+      },
+      "total_movies": 492,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2004,
+      "event": "Orange Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 126,
+      "event_count": 148,
+      "after_count": 163,
+      "immediate_impact": 17.5,
+      "recovery_rate": 10.1,
+      "event_date": "2004-11-21"
+    },
+    {
+      "year": 2004,
+      "event": "Orange Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 5,
+      "event_count": 2,
+      "after_count": 13,
+      "immediate_impact": -60.0,
+      "recovery_rate": 550.0,
+      "event_date": "2004-11-21"
+    },
+    {
+      "year": 2004,
+      "event": "Orange Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 116,
+      "event_count": 113,
+      "after_count": 119,
+      "immediate_impact": -2.6,
+      "recovery_rate": 5.3,
+      "event_date": "2004-11-21"
+    },
+    {
+      "year": 2004,
+      "event": "Orange Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 60,
+      "event_count": 77,
+      "after_count": 66,
+      "immediate_impact": 28.3,
+      "recovery_rate": -14.3,
+      "event_date": "2004-11-21"
+    },
+    {
+      "year": 2004,
+      "event": "Orange Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 37,
+      "event_count": 31,
+      "after_count": 38,
+      "immediate_impact": -16.2,
+      "recovery_rate": 22.6,
+      "event_date": "2004-11-21"
+    },
+    {
+      "year": 2014,
+      "event": "Euromaidan Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 248,
+      "event_count": 236,
+      "after_count": 218,
+      "immediate_impact": -4.8,
+      "recovery_rate": -7.6,
+      "event_date": "2014-02-22"
+    },
+    {
+      "year": 2014,
+      "event": "Euromaidan Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 33,
+      "event_count": 50,
+      "after_count": 52,
+      "immediate_impact": 51.5,
+      "recovery_rate": 4.0,
+      "event_date": "2014-02-22"
+    },
+    {
+      "year": 2014,
+      "event": "Euromaidan Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 166,
+      "event_count": 164,
+      "after_count": 140,
+      "immediate_impact": -1.2,
+      "recovery_rate": -14.6,
+      "event_date": "2014-02-22"
+    },
+    {
+      "year": 2014,
+      "event": "Euromaidan Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 106,
+      "event_count": 124,
+      "after_count": 110,
+      "immediate_impact": 17.0,
+      "recovery_rate": -11.3,
+      "event_date": "2014-02-22"
+    },
+    {
+      "year": 2014,
+      "event": "Euromaidan Revolution",
+      "event_type": "political_revolution",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 77,
+      "event_count": 67,
+      "after_count": 68,
+      "immediate_impact": -13.0,
+      "recovery_rate": 1.5,
+      "event_date": "2014-02-22"
+    },
+    {
+      "year": 2022,
+      "event": "Russian Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 291,
+      "event_count": 287,
+      "after_count": 307,
+      "immediate_impact": -1.4,
+      "recovery_rate": 7.0,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Russian Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 89,
+      "event_count": 108,
+      "after_count": 97,
+      "immediate_impact": 21.3,
+      "recovery_rate": -10.2,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Russian Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 179,
+      "event_count": 212,
+      "after_count": 218,
+      "immediate_impact": 18.4,
+      "recovery_rate": 2.8,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Russian Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 119,
+      "event_count": 131,
+      "after_count": 143,
+      "immediate_impact": 10.1,
+      "recovery_rate": 9.2,
+      "event_date": "2022-02-24"
+    },
+    {
+      "year": 2022,
+      "event": "Russian Invasion",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 93,
+      "event_count": 116,
+      "after_count": 118,
+      "immediate_impact": 24.7,
+      "recovery_rate": 1.7,
+      "event_date": "2022-02-24"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2004,
+      "date": "2004-11-21",
+      "event": "Orange Revolution",
+      "type": "political_revolution",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-02-22",
+      "event": "Euromaidan Revolution",
+      "type": "political_revolution",
+      "severity": "high"
+    },
+    {
+      "year": 2022,
+      "date": "2022-02-24",
+      "event": "Russian Invasion",
+      "type": "war",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:16:18.411209",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

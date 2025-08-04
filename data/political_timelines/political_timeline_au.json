@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "AU",
+    "name": "Australia"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 299,
+        "Documentary": 56,
+        "Comedy": 195,
+        "Action": 86,
+        "Thriller": 98
+      },
+      "raw_genre_counts": {
+        "Drama": 299,
+        "Documentary": 56,
+        "Comedy": 195,
+        "Action": 86,
+        "Thriller": 98
+      },
+      "total_movies": 545,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 314,
+        "Documentary": 45,
+        "Comedy": 200,
+        "Action": 102,
+        "Thriller": 86
+      },
+      "raw_genre_counts": {
+        "Drama": 314,
+        "Documentary": 45,
+        "Comedy": 200,
+        "Action": 102,
+        "Thriller": 86
+      },
+      "total_movies": 557,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 306.0,
+        "Documentary": 52.3,
+        "Comedy": 193.0,
+        "Action": 95.3,
+        "Thriller": 88.0
+      },
+      "raw_genre_counts": {
+        "Drama": 305,
+        "Documentary": 56,
+        "Comedy": 184,
+        "Action": 98,
+        "Thriller": 80
+      },
+      "total_movies": 533,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 307.0,
+        "Documentary": 57.0,
+        "Comedy": 198.3,
+        "Action": 95.7,
+        "Thriller": 82.3
+      },
+      "raw_genre_counts": {
+        "Drama": 302,
+        "Documentary": 70,
+        "Comedy": 211,
+        "Action": 87,
+        "Thriller": 81
+      },
+      "total_movies": 559,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 320.7,
+        "Documentary": 64.7,
+        "Comedy": 207.3,
+        "Action": 99.0,
+        "Thriller": 82.3
+      },
+      "raw_genre_counts": {
+        "Drama": 355,
+        "Documentary": 68,
+        "Comedy": 227,
+        "Action": 112,
+        "Thriller": 86
+      },
+      "total_movies": 645,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 347.3,
+        "Documentary": 76.0,
+        "Comedy": 230.3,
+        "Action": 98.3,
+        "Thriller": 84.3
+      },
+      "raw_genre_counts": {
+        "Drama": 385,
+        "Documentary": 90,
+        "Comedy": 253,
+        "Action": 96,
+        "Thriller": 86
+      },
+      "total_movies": 690,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 380.3,
+        "Documentary": 87.0,
+        "Comedy": 252.3,
+        "Action": 101.3,
+        "Thriller": 98.0
+      },
+      "raw_genre_counts": {
+        "Drama": 401,
+        "Documentary": 103,
+        "Comedy": 277,
+        "Action": 96,
+        "Thriller": 122
+      },
+      "total_movies": 768,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 409.0,
+        "Documentary": 108.3,
+        "Comedy": 270.3,
+        "Action": 99.0,
+        "Thriller": 112.7
+      },
+      "raw_genre_counts": {
+        "Drama": 441,
+        "Documentary": 132,
+        "Comedy": 281,
+        "Action": 105,
+        "Thriller": 130
+      },
+      "total_movies": 846,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 443.0,
+        "Documentary": 132.0,
+        "Comedy": 277.7,
+        "Action": 119.0,
+        "Thriller": 133.0
+      },
+      "raw_genre_counts": {
+        "Drama": 487,
+        "Documentary": 161,
+        "Comedy": 275,
+        "Action": 156,
+        "Thriller": 147
+      },
+      "total_movies": 945,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 491.0,
+        "Documentary": 147.0,
+        "Comedy": 305.3,
+        "Action": 139.7,
+        "Thriller": 151.7
+      },
+      "raw_genre_counts": {
+        "Drama": 545,
+        "Documentary": 148,
+        "Comedy": 360,
+        "Action": 158,
+        "Thriller": 178
+      },
+      "total_movies": 1076,
+      "events": [
+        {
+          "year": 2009,
+          "date": "2009-02-07",
+          "event": "Black Saturday Bushfires",
+          "type": "natural_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 521.3,
+        "Documentary": 162.7,
+        "Comedy": 317.3,
+        "Action": 160.0,
+        "Thriller": 165.7
+      },
+      "raw_genre_counts": {
+        "Drama": 532,
+        "Documentary": 179,
+        "Comedy": 317,
+        "Action": 166,
+        "Thriller": 172
+      },
+      "total_movies": 1011,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 555.3,
+        "Documentary": 178.3,
+        "Comedy": 338.0,
+        "Action": 170.3,
+        "Thriller": 173.7
+      },
+      "raw_genre_counts": {
+        "Drama": 589,
+        "Documentary": 208,
+        "Comedy": 337,
+        "Action": 187,
+        "Thriller": 171
+      },
+      "total_movies": 1124,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 587.0,
+        "Documentary": 209.0,
+        "Comedy": 334.0,
+        "Action": 181.0,
+        "Thriller": 185.7
+      },
+      "raw_genre_counts": {
+        "Drama": 640,
+        "Documentary": 240,
+        "Comedy": 348,
+        "Action": 190,
+        "Thriller": 214
+      },
+      "total_movies": 1256,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 640.3,
+        "Documentary": 238.0,
+        "Comedy": 352.7,
+        "Action": 204.0,
+        "Thriller": 206.3
+      },
+      "raw_genre_counts": {
+        "Drama": 692,
+        "Documentary": 266,
+        "Comedy": 373,
+        "Action": 235,
+        "Thriller": 234
+      },
+      "total_movies": 1365,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 719.0,
+        "Documentary": 271.0,
+        "Comedy": 385.0,
+        "Action": 226.7,
+        "Thriller": 245.0
+      },
+      "raw_genre_counts": {
+        "Drama": 825,
+        "Documentary": 307,
+        "Comedy": 434,
+        "Action": 255,
+        "Thriller": 287
+      },
+      "total_movies": 1593,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 791.7,
+        "Documentary": 291.0,
+        "Comedy": 410.7,
+        "Action": 250.7,
+        "Thriller": 257.0
+      },
+      "raw_genre_counts": {
+        "Drama": 858,
+        "Documentary": 300,
+        "Comedy": 425,
+        "Action": 262,
+        "Thriller": 250
+      },
+      "total_movies": 1593,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 874.0,
+        "Documentary": 310.0,
+        "Comedy": 442.0,
+        "Action": 276.0,
+        "Thriller": 280.7
+      },
+      "raw_genre_counts": {
+        "Drama": 939,
+        "Documentary": 323,
+        "Comedy": 467,
+        "Action": 311,
+        "Thriller": 305
+      },
+      "total_movies": 1777,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 947.7,
+        "Documentary": 340.7,
+        "Comedy": 472.3,
+        "Action": 300.3,
+        "Thriller": 304.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1046,
+        "Documentary": 399,
+        "Comedy": 525,
+        "Action": 328,
+        "Thriller": 357
+      },
+      "total_movies": 2059,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 1074.3,
+        "Documentary": 393.7,
+        "Comedy": 545.7,
+        "Action": 342.7,
+        "Thriller": 352.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1238,
+        "Documentary": 459,
+        "Comedy": 645,
+        "Action": 389,
+        "Thriller": 394
+      },
+      "total_movies": 2420,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 1229.3,
+        "Documentary": 453.7,
+        "Comedy": 631.3,
+        "Action": 377.0,
+        "Thriller": 398.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1404,
+        "Documentary": 503,
+        "Comedy": 724,
+        "Action": 414,
+        "Thriller": 444
+      },
+      "total_movies": 2702,
+      "events": [
+        {
+          "year": 2019,
+          "date": "2019-12-01",
+          "event": "Bushfire Crisis",
+          "type": "natural_disaster",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 1238.3,
+        "Documentary": 477.7,
+        "Comedy": 639.7,
+        "Action": 364.7,
+        "Thriller": 412.3
+      },
+      "raw_genre_counts": {
+        "Drama": 1073,
+        "Documentary": 471,
+        "Comedy": 550,
+        "Action": 291,
+        "Thriller": 399
+      },
+      "total_movies": 2208,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-21",
+          "event": "COVID-19 Lockdown",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 1227.0,
+        "Documentary": 498.3,
+        "Comedy": 596.7,
+        "Action": 355.7,
+        "Thriller": 422.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1204,
+        "Documentary": 521,
+        "Comedy": 516,
+        "Action": 362,
+        "Thriller": 423
+      },
+      "total_movies": 2424,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 1313.7,
+        "Documentary": 550.3,
+        "Comedy": 643.0,
+        "Action": 372.0,
+        "Thriller": 501.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1664,
+        "Documentary": 659,
+        "Comedy": 863,
+        "Action": 463,
+        "Thriller": 681
+      },
+      "total_movies": 3421,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 1700.0,
+        "Documentary": 669.3,
+        "Comedy": 836.3,
+        "Action": 500.0,
+        "Thriller": 676.0
+      },
+      "raw_genre_counts": {
+        "Drama": 2232,
+        "Documentary": 828,
+        "Comedy": 1130,
+        "Action": 675,
+        "Thriller": 924
+      },
+      "total_movies": 4479,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 1899.3,
+        "Documentary": 764.7,
+        "Comedy": 993.3,
+        "Action": 574.7,
+        "Thriller": 812.0
+      },
+      "raw_genre_counts": {
+        "Drama": 1802,
+        "Documentary": 807,
+        "Comedy": 987,
+        "Action": 586,
+        "Thriller": 831
+      },
+      "total_movies": 4041,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2009,
+      "event": "Black Saturday Bushfires",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 487,
+      "event_count": 545,
+      "after_count": 532,
+      "immediate_impact": 11.9,
+      "recovery_rate": -2.4,
+      "event_date": "2009-02-07"
+    },
+    {
+      "year": 2009,
+      "event": "Black Saturday Bushfires",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 161,
+      "event_count": 148,
+      "after_count": 179,
+      "immediate_impact": -8.1,
+      "recovery_rate": 20.9,
+      "event_date": "2009-02-07"
+    },
+    {
+      "year": 2009,
+      "event": "Black Saturday Bushfires",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 275,
+      "event_count": 360,
+      "after_count": 317,
+      "immediate_impact": 30.9,
+      "recovery_rate": -11.9,
+      "event_date": "2009-02-07"
+    },
+    {
+      "year": 2009,
+      "event": "Black Saturday Bushfires",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 156,
+      "event_count": 158,
+      "after_count": 166,
+      "immediate_impact": 1.3,
+      "recovery_rate": 5.1,
+      "event_date": "2009-02-07"
+    },
+    {
+      "year": 2009,
+      "event": "Black Saturday Bushfires",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 147,
+      "event_count": 178,
+      "after_count": 172,
+      "immediate_impact": 21.1,
+      "recovery_rate": -3.4,
+      "event_date": "2009-02-07"
+    },
+    {
+      "year": 2019,
+      "event": "Bushfire Crisis",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1238,
+      "event_count": 1404,
+      "after_count": 1073,
+      "immediate_impact": 13.4,
+      "recovery_rate": -23.6,
+      "event_date": "2019-12-01"
+    },
+    {
+      "year": 2019,
+      "event": "Bushfire Crisis",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 459,
+      "event_count": 503,
+      "after_count": 471,
+      "immediate_impact": 9.6,
+      "recovery_rate": -6.4,
+      "event_date": "2019-12-01"
+    },
+    {
+      "year": 2019,
+      "event": "Bushfire Crisis",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 645,
+      "event_count": 724,
+      "after_count": 550,
+      "immediate_impact": 12.2,
+      "recovery_rate": -24.0,
+      "event_date": "2019-12-01"
+    },
+    {
+      "year": 2019,
+      "event": "Bushfire Crisis",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 389,
+      "event_count": 414,
+      "after_count": 291,
+      "immediate_impact": 6.4,
+      "recovery_rate": -29.7,
+      "event_date": "2019-12-01"
+    },
+    {
+      "year": 2019,
+      "event": "Bushfire Crisis",
+      "event_type": "natural_disaster",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 394,
+      "event_count": 444,
+      "after_count": 399,
+      "immediate_impact": 12.7,
+      "recovery_rate": -10.1,
+      "event_date": "2019-12-01"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 1404,
+      "event_count": 1073,
+      "after_count": 1204,
+      "immediate_impact": -23.6,
+      "recovery_rate": 12.2,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 503,
+      "event_count": 471,
+      "after_count": 521,
+      "immediate_impact": -6.4,
+      "recovery_rate": 10.6,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 724,
+      "event_count": 550,
+      "after_count": 516,
+      "immediate_impact": -24.0,
+      "recovery_rate": -6.2,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 414,
+      "event_count": 291,
+      "after_count": 362,
+      "immediate_impact": -29.7,
+      "recovery_rate": 24.4,
+      "event_date": "2020-03-21"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Lockdown",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 444,
+      "event_count": 399,
+      "after_count": 423,
+      "immediate_impact": -10.1,
+      "recovery_rate": 6.0,
+      "event_date": "2020-03-21"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2009,
+      "date": "2009-02-07",
+      "event": "Black Saturday Bushfires",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2019,
+      "date": "2019-12-01",
+      "event": "Bushfire Crisis",
+      "type": "natural_disaster",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-21",
+      "event": "COVID-19 Lockdown",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:05:00.474959",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

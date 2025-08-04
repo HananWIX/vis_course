@@ -1,0 +1,752 @@
+{
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "region": "europe",
+    "tier": "major"
+  },
+  "summary": {
+    "total_movies": 16013,
+    "avg_rating": 5.996573805739928,
+    "median_rating": 6.1,
+    "std_rating": 1.1382974026822883,
+    "year_range": [
+      2010,
+      2024
+    ],
+    "genres_covered": 5
+  },
+  "genre_analysis": {
+    "Drama": {
+      "count": 8875,
+      "avg_rating": 6.16470985915493,
+      "median_rating": 6.3,
+      "std_rating": 1.0139797638255652,
+      "top_rated": [
+        {
+          "title": "I Was A Stranger",
+          "rating": 9.3,
+          "year": 2024
+        },
+        {
+          "title": "Vacuum",
+          "rating": 9.1,
+          "year": 2012
+        },
+        {
+          "title": "National Theatre Live: Prima Facie",
+          "rating": 9.1,
+          "year": 2022
+        }
+      ]
+    },
+    "Comedy": {
+      "count": 4875,
+      "avg_rating": 5.846400000000001,
+      "median_rating": 5.9,
+      "std_rating": 1.0307006990697067,
+      "top_rated": [
+        {
+          "title": "777 Charlie",
+          "rating": 8.7,
+          "year": 2022
+        },
+        {
+          "title": "The Intouchables",
+          "rating": 8.5,
+          "year": 2011
+        },
+        {
+          "title": "Come from Away",
+          "rating": 8.5,
+          "year": 2021
+        }
+      ]
+    },
+    "Action": {
+      "count": 2994,
+      "avg_rating": 5.701469605878423,
+      "median_rating": 5.8,
+      "std_rating": 1.2895676830367175,
+      "top_rated": [
+        {
+          "title": "Attack on Titan the Movie: The Last Attack",
+          "rating": 9.1,
+          "year": 2024
+        },
+        {
+          "title": "Inception",
+          "rating": 8.8,
+          "year": 2010
+        },
+        {
+          "title": "Solo Leveling: ReAwakening",
+          "rating": 8.8,
+          "year": 2024
+        }
+      ]
+    },
+    "Documentary": {
+      "count": 1735,
+      "avg_rating": 7.012391930835735,
+      "median_rating": 7.1,
+      "std_rating": 0.7968303606759366,
+      "top_rated": [
+        {
+          "title": "Hawala",
+          "rating": 9.6,
+          "year": 2024
+        },
+        {
+          "title": "Golden Opulence: 500 Years of Luxury in Anatolia",
+          "rating": 9.5,
+          "year": 2024
+        },
+        {
+          "title": "In Visible Light",
+          "rating": 9.2,
+          "year": 2023
+        }
+      ]
+    },
+    "Thriller": {
+      "count": 2915,
+      "avg_rating": 5.434305317324185,
+      "median_rating": 5.5,
+      "std_rating": 1.1724780128222767,
+      "top_rated": [
+        {
+          "title": "Jamalinte Punjiri",
+          "rating": 8.7,
+          "year": 2024
+        },
+        {
+          "title": "Devil Hunters",
+          "rating": 8.7,
+          "year": 2024
+        },
+        {
+          "title": "Parasite",
+          "rating": 8.5,
+          "year": 2019
+        }
+      ]
+    }
+  },
+  "yearly_trends": {
+    "2010": {
+      "total_movies": 581,
+      "avg_rating": 6.155036855036854,
+      "median_rating": 6.3,
+      "genres": {
+        "Drama": {
+          "count": 343,
+          "avg_rating": 6.320991253644315
+        },
+        "Comedy": {
+          "count": 214,
+          "avg_rating": 5.960280373831775
+        },
+        "Action": {
+          "count": 131,
+          "avg_rating": 5.962595419847328
+        },
+        "Documentary": {
+          "count": 33,
+          "avg_rating": 7.239393939393938
+        },
+        "Thriller": {
+          "count": 93,
+          "avg_rating": 5.877419354838708
+        }
+      }
+    },
+    "2011": {
+      "total_movies": 621,
+      "avg_rating": 6.113555291319857,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 368,
+          "avg_rating": 6.31195652173913
+        },
+        "Comedy": {
+          "count": 217,
+          "avg_rating": 5.948847926267281
+        },
+        "Action": {
+          "count": 121,
+          "avg_rating": 5.877685950413222
+        },
+        "Documentary": {
+          "count": 32,
+          "avg_rating": 7.10625
+        },
+        "Thriller": {
+          "count": 103,
+          "avg_rating": 5.720388349514564
+        }
+      }
+    },
+    "2012": {
+      "total_movies": 671,
+      "avg_rating": 6.082319819819819,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 367,
+          "avg_rating": 6.259400544959128
+        },
+        "Comedy": {
+          "count": 217,
+          "avg_rating": 5.847004608294932
+        },
+        "Action": {
+          "count": 128,
+          "avg_rating": 5.889843750000001
+        },
+        "Documentary": {
+          "count": 64,
+          "avg_rating": 7.0359375
+        },
+        "Thriller": {
+          "count": 112,
+          "avg_rating": 5.633035714285714
+        }
+      }
+    },
+    "2013": {
+      "total_movies": 750,
+      "avg_rating": 6.178670634920635,
+      "median_rating": 6.3,
+      "genres": {
+        "Drama": {
+          "count": 406,
+          "avg_rating": 6.395320197044335
+        },
+        "Comedy": {
+          "count": 239,
+          "avg_rating": 6.0112970711297065
+        },
+        "Action": {
+          "count": 148,
+          "avg_rating": 5.933783783783784
+        },
+        "Documentary": {
+          "count": 72,
+          "avg_rating": 7.036111111111111
+        },
+        "Thriller": {
+          "count": 143,
+          "avg_rating": 5.665034965034965
+        }
+      }
+    },
+    "2014": {
+      "total_movies": 845,
+      "avg_rating": 6.049781659388646,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 487,
+          "avg_rating": 6.201848049281314
+        },
+        "Comedy": {
+          "count": 276,
+          "avg_rating": 5.838043478260869
+        },
+        "Action": {
+          "count": 173,
+          "avg_rating": 5.8387283236994225
+        },
+        "Documentary": {
+          "count": 74,
+          "avg_rating": 7.090540540540539
+        },
+        "Thriller": {
+          "count": 135,
+          "avg_rating": 5.634074074074074
+        }
+      }
+    },
+    "2015": {
+      "total_movies": 899,
+      "avg_rating": 6.0649999999999995,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 509,
+          "avg_rating": 6.204518664047151
+        },
+        "Comedy": {
+          "count": 283,
+          "avg_rating": 5.962544169611307
+        },
+        "Action": {
+          "count": 174,
+          "avg_rating": 5.786206896551724
+        },
+        "Documentary": {
+          "count": 105,
+          "avg_rating": 6.9819047619047625
+        },
+        "Thriller": {
+          "count": 149,
+          "avg_rating": 5.462416107382549
+        }
+      }
+    },
+    "2016": {
+      "total_movies": 985,
+      "avg_rating": 6.075899005355777,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 552,
+          "avg_rating": 6.250905797101449
+        },
+        "Comedy": {
+          "count": 301,
+          "avg_rating": 5.863787375415282
+        },
+        "Action": {
+          "count": 196,
+          "avg_rating": 5.8132653061224495
+        },
+        "Documentary": {
+          "count": 115,
+          "avg_rating": 6.954782608695652
+        },
+        "Thriller": {
+          "count": 143,
+          "avg_rating": 5.5
+        }
+      }
+    },
+    "2017": {
+      "total_movies": 1075,
+      "avg_rating": 6.076810584958217,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 609,
+          "avg_rating": 6.213628899835796
+        },
+        "Comedy": {
+          "count": 321,
+          "avg_rating": 5.909968847352024
+        },
+        "Action": {
+          "count": 192,
+          "avg_rating": 5.886979166666666
+        },
+        "Documentary": {
+          "count": 115,
+          "avg_rating": 7.029565217391304
+        },
+        "Thriller": {
+          "count": 199,
+          "avg_rating": 5.559798994974876
+        }
+      }
+    },
+    "2018": {
+      "total_movies": 1251,
+      "avg_rating": 6.032067510548524,
+      "median_rating": 6.2,
+      "genres": {
+        "Drama": {
+          "count": 712,
+          "avg_rating": 6.199859550561798
+        },
+        "Comedy": {
+          "count": 382,
+          "avg_rating": 5.817015706806283
+        },
+        "Action": {
+          "count": 229,
+          "avg_rating": 5.756768558951965
+        },
+        "Documentary": {
+          "count": 133,
+          "avg_rating": 6.957894736842106
+        },
+        "Thriller": {
+          "count": 203,
+          "avg_rating": 5.552216748768473
+        }
+      }
+    },
+    "2019": {
+      "total_movies": 1459,
+      "avg_rating": 5.964437689969604,
+      "median_rating": 6.1,
+      "genres": {
+        "Drama": {
+          "count": 845,
+          "avg_rating": 6.135147928994083
+        },
+        "Comedy": {
+          "count": 439,
+          "avg_rating": 5.80751708428246
+        },
+        "Action": {
+          "count": 280,
+          "avg_rating": 5.681785714285715
+        },
+        "Documentary": {
+          "count": 137,
+          "avg_rating": 7.032116788321169
+        },
+        "Thriller": {
+          "count": 273,
+          "avg_rating": 5.442490842490843
+        }
+      }
+    },
+    "2020": {
+      "total_movies": 1112,
+      "avg_rating": 5.898238482384824,
+      "median_rating": 6.0,
+      "genres": {
+        "Drama": {
+          "count": 615,
+          "avg_rating": 6.083089430894308
+        },
+        "Comedy": {
+          "count": 349,
+          "avg_rating": 5.76647564469914
+        },
+        "Action": {
+          "count": 170,
+          "avg_rating": 5.4805882352941175
+        },
+        "Documentary": {
+          "count": 130,
+          "avg_rating": 7.066923076923077
+        },
+        "Thriller": {
+          "count": 212,
+          "avg_rating": 5.197169811320753
+        }
+      }
+    },
+    "2021": {
+      "total_movies": 1253,
+      "avg_rating": 5.935582822085889,
+      "median_rating": 6.1,
+      "genres": {
+        "Drama": {
+          "count": 716,
+          "avg_rating": 6.045251396648045
+        },
+        "Comedy": {
+          "count": 316,
+          "avg_rating": 5.810443037974683
+        },
+        "Action": {
+          "count": 214,
+          "avg_rating": 5.677570093457944
+        },
+        "Documentary": {
+          "count": 156,
+          "avg_rating": 7.012820512820513
+        },
+        "Thriller": {
+          "count": 228,
+          "avg_rating": 5.269736842105263
+        }
+      }
+    },
+    "2022": {
+      "total_movies": 1669,
+      "avg_rating": 5.793508851566045,
+      "median_rating": 5.9,
+      "genres": {
+        "Drama": {
+          "count": 888,
+          "avg_rating": 6.011261261261262
+        },
+        "Comedy": {
+          "count": 497,
+          "avg_rating": 5.713883299798793
+        },
+        "Action": {
+          "count": 293,
+          "avg_rating": 5.316040955631399
+        },
+        "Documentary": {
+          "count": 179,
+          "avg_rating": 6.973184357541898
+        },
+        "Thriller": {
+          "count": 346,
+          "avg_rating": 5.143063583815029
+        }
+      }
+    },
+    "2023": {
+      "total_movies": 1579,
+      "avg_rating": 5.916666666666667,
+      "median_rating": 6.1,
+      "genres": {
+        "Drama": {
+          "count": 826,
+          "avg_rating": 6.0857142857142845
+        },
+        "Comedy": {
+          "count": 455,
+          "avg_rating": 5.840879120879121
+        },
+        "Action": {
+          "count": 313,
+          "avg_rating": 5.529392971246007
+        },
+        "Documentary": {
+          "count": 204,
+          "avg_rating": 6.957843137254902
+        },
+        "Thriller": {
+          "count": 326,
+          "avg_rating": 5.31441717791411
+        }
+      }
+    },
+    "2024": {
+      "total_movies": 1263,
+      "avg_rating": 6.006051527860995,
+      "median_rating": 6.1,
+      "genres": {
+        "Drama": {
+          "count": 632,
+          "avg_rating": 6.141455696202531
+        },
+        "Comedy": {
+          "count": 369,
+          "avg_rating": 5.828997289972898
+        },
+        "Action": {
+          "count": 232,
+          "avg_rating": 5.668103448275862
+        },
+        "Documentary": {
+          "count": 186,
+          "avg_rating": 7.033333333333332
+        },
+        "Thriller": {
+          "count": 250,
+          "avg_rating": 5.4744
+        }
+      }
+    }
+  },
+  "quality_distribution": {
+    "excellent": {
+      "count": 383,
+      "percentage": 2.3918066570911134
+    },
+    "great": {
+      "count": 2909,
+      "percentage": 18.166489727096735
+    },
+    "good": {
+      "count": 5780,
+      "percentage": 36.09567226628364
+    },
+    "decent": {
+      "count": 4262,
+      "percentage": 26.61587460188597
+    },
+    "poor": {
+      "count": 2679,
+      "percentage": 16.730156747642543
+    }
+  },
+  "rating_histogram": [
+    {
+      "rating": 1.0,
+      "count": 3
+    },
+    {
+      "rating": 1.2,
+      "count": 4
+    },
+    {
+      "rating": 1.4,
+      "count": 6
+    },
+    {
+      "rating": 1.6,
+      "count": 6
+    },
+    {
+      "rating": 1.8,
+      "count": 16
+    },
+    {
+      "rating": 2.0,
+      "count": 16
+    },
+    {
+      "rating": 2.2,
+      "count": 45
+    },
+    {
+      "rating": 2.4,
+      "count": 32
+    },
+    {
+      "rating": 2.6,
+      "count": 78
+    },
+    {
+      "rating": 2.8,
+      "count": 73
+    },
+    {
+      "rating": 3.0,
+      "count": 87
+    },
+    {
+      "rating": 3.2,
+      "count": 157
+    },
+    {
+      "rating": 3.4,
+      "count": 178
+    },
+    {
+      "rating": 3.6,
+      "count": 234
+    },
+    {
+      "rating": 3.8,
+      "count": 254
+    },
+    {
+      "rating": 4.0,
+      "count": 249
+    },
+    {
+      "rating": 4.2,
+      "count": 422
+    },
+    {
+      "rating": 4.4,
+      "count": 505
+    },
+    {
+      "rating": 4.6,
+      "count": 610
+    },
+    {
+      "rating": 4.8,
+      "count": 595
+    },
+    {
+      "rating": 5.0,
+      "count": 735
+    },
+    {
+      "rating": 5.2,
+      "count": 1017
+    },
+    {
+      "rating": 5.4,
+      "count": 1259
+    },
+    {
+      "rating": 5.6,
+      "count": 1374
+    },
+    {
+      "rating": 5.8,
+      "count": 1408
+    },
+    {
+      "rating": 6.0,
+      "count": 1438
+    },
+    {
+      "rating": 6.2,
+      "count": 1717
+    },
+    {
+      "rating": 6.4,
+      "count": 1694
+    },
+    {
+      "rating": 6.6,
+      "count": 1616
+    },
+    {
+      "rating": 6.8,
+      "count": 1310
+    },
+    {
+      "rating": 7.0,
+      "count": 1212
+    },
+    {
+      "rating": 7.2,
+      "count": 1026
+    },
+    {
+      "rating": 7.4,
+      "count": 736
+    },
+    {
+      "rating": 7.6,
+      "count": 495
+    },
+    {
+      "rating": 7.8,
+      "count": 290
+    },
+    {
+      "rating": 8.0,
+      "count": 219
+    },
+    {
+      "rating": 8.2,
+      "count": 142
+    },
+    {
+      "rating": 8.4,
+      "count": 91
+    },
+    {
+      "rating": 8.6,
+      "count": 27
+    },
+    {
+      "rating": 8.8,
+      "count": 9
+    },
+    {
+      "rating": 9.0,
+      "count": 5
+    },
+    {
+      "rating": 9.2,
+      "count": 2
+    },
+    {
+      "rating": 9.4,
+      "count": 1
+    },
+    {
+      "rating": 9.6,
+      "count": 1
+    },
+    {
+      "rating": 9.8,
+      "count": 0
+    },
+    {
+      "rating": 10.0,
+      "count": 0
+    }
+  ],
+  "generated": "2025-08-03T18:18:44.797640"
+}

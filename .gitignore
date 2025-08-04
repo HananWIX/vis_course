@@ -125,17 +125,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-.dmypy.json
-dmypy.json
-
 # Pyre type checker
 .pyre/
 
 # Data files (common for data science projects)
-data/
 *.csv
 *.tsv
-*.json
 *.parquet
 *.pkl
 *.pickle

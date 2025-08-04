@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "BR",
+    "name": "Brazil"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 396,
+        "Documentary": 42,
+        "Comedy": 231,
+        "Action": 94,
+        "Thriller": 106
+      },
+      "raw_genre_counts": {
+        "Drama": 396,
+        "Documentary": 42,
+        "Comedy": 231,
+        "Action": 94,
+        "Thriller": 106
+      },
+      "total_movies": 643,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 409,
+        "Documentary": 56,
+        "Comedy": 250,
+        "Action": 135,
+        "Thriller": 108
+      },
+      "raw_genre_counts": {
+        "Drama": 409,
+        "Documentary": 56,
+        "Comedy": 250,
+        "Action": 135,
+        "Thriller": 108
+      },
+      "total_movies": 696,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 406.7,
+        "Documentary": 53.7,
+        "Comedy": 230.0,
+        "Action": 116.3,
+        "Thriller": 105.3
+      },
+      "raw_genre_counts": {
+        "Drama": 415,
+        "Documentary": 63,
+        "Comedy": 209,
+        "Action": 120,
+        "Thriller": 102
+      },
+      "total_movies": 681,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 399.0,
+        "Documentary": 64.3,
+        "Comedy": 229.3,
+        "Action": 123.0,
+        "Thriller": 100.0
+      },
+      "raw_genre_counts": {
+        "Drama": 373,
+        "Documentary": 74,
+        "Comedy": 229,
+        "Action": 114,
+        "Thriller": 90
+      },
+      "total_movies": 657,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 410.0,
+        "Documentary": 73.3,
+        "Comedy": 231.3,
+        "Action": 121.0,
+        "Thriller": 101.0
+      },
+      "raw_genre_counts": {
+        "Drama": 442,
+        "Documentary": 83,
+        "Comedy": 256,
+        "Action": 129,
+        "Thriller": 111
+      },
+      "total_movies": 772,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 440.0,
+        "Documentary": 86.0,
+        "Comedy": 251.0,
+        "Action": 118.3,
+        "Thriller": 99.0
+      },
+      "raw_genre_counts": {
+        "Drama": 505,
+        "Documentary": 101,
+        "Comedy": 268,
+        "Action": 112,
+        "Thriller": 96
+      },
+      "total_movies": 837,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 496.3,
+        "Documentary": 94.7,
+        "Comedy": 271.3,
+        "Action": 120.0,
+        "Thriller": 122.3
+      },
+      "raw_genre_counts": {
+        "Drama": 542,
+        "Documentary": 100,
+        "Comedy": 290,
+        "Action": 119,
+        "Thriller": 160
+      },
+      "total_movies": 939,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 522.7,
+        "Documentary": 109.3,
+        "Comedy": 268.3,
+        "Action": 114.7,
+        "Thriller": 133.0
+      },
+      "raw_genre_counts": {
+        "Drama": 521,
+        "Documentary": 127,
+        "Comedy": 247,
+        "Action": 113,
+        "Thriller": 143
+      },
+      "total_movies": 899,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 521.0,
+        "Documentary": 114.0,
+        "Comedy": 266.0,
+        "Action": 123.0,
+        "Thriller": 144.0
+      },
+      "raw_genre_counts": {
+        "Drama": 500,
+        "Documentary": 115,
+        "Comedy": 261,
+        "Action": 137,
+        "Thriller": 129
+      },
+      "total_movies": 887,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 503.3,
+        "Documentary": 126.7,
+        "Comedy": 248.0,
+        "Action": 131.7,
+        "Thriller": 135.7
+      },
+      "raw_genre_counts": {
+        "Drama": 489,
+        "Documentary": 138,
+        "Comedy": 236,
+        "Action": 145,
+        "Thriller": 135
+      },
+      "total_movies": 892,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 509.7,
+        "Documentary": 130.3,
+        "Comedy": 253.3,
+        "Action": 148.3,
+        "Thriller": 131.7
+      },
+      "raw_genre_counts": {
+        "Drama": 540,
+        "Documentary": 138,
+        "Comedy": 263,
+        "Action": 163,
+        "Thriller": 131
+      },
+      "total_movies": 912,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 511.3,
+        "Documentary": 143.0,
+        "Comedy": 255.0,
+        "Action": 157.3,
+        "Thriller": 131.7
+      },
+      "raw_genre_counts": {
+        "Drama": 505,
+        "Documentary": 153,
+        "Comedy": 266,
+        "Action": 164,
+        "Thriller": 129
+      },
+      "total_movies": 939,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 534.7,
+        "Documentary": 148.3,
+        "Comedy": 272.3,
+        "Action": 166.7,
+        "Thriller": 133.7
+      },
+      "raw_genre_counts": {
+        "Drama": 559,
+        "Documentary": 154,
+        "Comedy": 288,
+        "Action": 173,
+        "Thriller": 141
+      },
+      "total_movies": 1010,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 552.3,
+        "Documentary": 170.0,
+        "Comedy": 287.0,
+        "Action": 174.7,
+        "Thriller": 145.7
+      },
+      "raw_genre_counts": {
+        "Drama": 593,
+        "Documentary": 203,
+        "Comedy": 307,
+        "Action": 187,
+        "Thriller": 167
+      },
+      "total_movies": 1109,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 606.0,
+        "Documentary": 180.3,
+        "Comedy": 305.0,
+        "Action": 188.3,
+        "Thriller": 160.0
+      },
+      "raw_genre_counts": {
+        "Drama": 666,
+        "Documentary": 184,
+        "Comedy": 320,
+        "Action": 205,
+        "Thriller": 172
+      },
+      "total_movies": 1170,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-03-17",
+          "event": "Operation Car Wash",
+          "type": "corruption_scandal",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 651.0,
+        "Documentary": 202.3,
+        "Comedy": 318.0,
+        "Action": 197.3,
+        "Thriller": 165.3
+      },
+      "raw_genre_counts": {
+        "Drama": 694,
+        "Documentary": 220,
+        "Comedy": 327,
+        "Action": 200,
+        "Thriller": 157
+      },
+      "total_movies": 1226,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 702.0,
+        "Documentary": 208.3,
+        "Comedy": 336.7,
+        "Action": 214.3,
+        "Thriller": 172.0
+      },
+      "raw_genre_counts": {
+        "Drama": 746,
+        "Documentary": 221,
+        "Comedy": 363,
+        "Action": 238,
+        "Thriller": 187
+      },
+      "total_movies": 1359,
+      "events": [
+        {
+          "year": 2016,
+          "date": "2016-08-31",
+          "event": "Rousseff Impeachment",
+          "type": "political_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 750.3,
+        "Documentary": 237.3,
+        "Comedy": 358.7,
+        "Action": 215.7,
+        "Thriller": 188.0
+      },
+      "raw_genre_counts": {
+        "Drama": 811,
+        "Documentary": 271,
+        "Comedy": 386,
+        "Action": 209,
+        "Thriller": 220
+      },
+      "total_movies": 1483,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 830.0,
+        "Documentary": 264.7,
+        "Comedy": 393.3,
+        "Action": 230.7,
+        "Thriller": 215.0
+      },
+      "raw_genre_counts": {
+        "Drama": 933,
+        "Documentary": 302,
+        "Comedy": 431,
+        "Action": 245,
+        "Thriller": 238
+      },
+      "total_movies": 1688,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 907.0,
+        "Documentary": 305.3,
+        "Comedy": 421.7,
+        "Action": 237.3,
+        "Thriller": 250.3
+      },
+      "raw_genre_counts": {
+        "Drama": 977,
+        "Documentary": 343,
+        "Comedy": 448,
+        "Action": 258,
+        "Thriller": 293
+      },
+      "total_movies": 1803,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 888.0,
+        "Documentary": 318.3,
+        "Comedy": 408.7,
+        "Action": 228.3,
+        "Thriller": 257.7
+      },
+      "raw_genre_counts": {
+        "Drama": 754,
+        "Documentary": 310,
+        "Comedy": 347,
+        "Action": 182,
+        "Thriller": 242
+      },
+      "total_movies": 1454,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-03-20",
+          "event": "COVID-19 Crisis",
+          "type": "health_crisis",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 835.7,
+        "Documentary": 327.0,
+        "Comedy": 386.3,
+        "Action": 229.0,
+        "Thriller": 263.7
+      },
+      "raw_genre_counts": {
+        "Drama": 776,
+        "Documentary": 328,
+        "Comedy": 364,
+        "Action": 247,
+        "Thriller": 256
+      },
+      "total_movies": 1576,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 791.3,
+        "Documentary": 313.0,
+        "Comedy": 393.0,
+        "Action": 231.3,
+        "Thriller": 275.3
+      },
+      "raw_genre_counts": {
+        "Drama": 844,
+        "Documentary": 301,
+        "Comedy": 468,
+        "Action": 265,
+        "Thriller": 328
+      },
+      "total_movies": 1728,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 807.0,
+        "Documentary": 314.0,
+        "Comedy": 420.0,
+        "Action": 263.0,
+        "Thriller": 302.3
+      },
+      "raw_genre_counts": {
+        "Drama": 801,
+        "Documentary": 313,
+        "Comedy": 428,
+        "Action": 277,
+        "Thriller": 323
+      },
+      "total_movies": 1653,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 738.0,
+        "Documentary": 302.3,
+        "Comedy": 409.3,
+        "Action": 249.3,
+        "Thriller": 295.3
+      },
+      "raw_genre_counts": {
+        "Drama": 569,
+        "Documentary": 293,
+        "Comedy": 332,
+        "Action": 206,
+        "Thriller": 235
+      },
+      "total_movies": 1300,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2014,
+      "event": "Operation Car Wash",
+      "event_type": "corruption_scandal",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 593,
+      "event_count": 666,
+      "after_count": 694,
+      "immediate_impact": 12.3,
+      "recovery_rate": 4.2,
+      "event_date": "2014-03-17"
+    },
+    {
+      "year": 2014,
+      "event": "Operation Car Wash",
+      "event_type": "corruption_scandal",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 203,
+      "event_count": 184,
+      "after_count": 220,
+      "immediate_impact": -9.4,
+      "recovery_rate": 19.6,
+      "event_date": "2014-03-17"
+    },
+    {
+      "year": 2014,
+      "event": "Operation Car Wash",
+      "event_type": "corruption_scandal",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 307,
+      "event_count": 320,
+      "after_count": 327,
+      "immediate_impact": 4.2,
+      "recovery_rate": 2.2,
+      "event_date": "2014-03-17"
+    },
+    {
+      "year": 2014,
+      "event": "Operation Car Wash",
+      "event_type": "corruption_scandal",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 187,
+      "event_count": 205,
+      "after_count": 200,
+      "immediate_impact": 9.6,
+      "recovery_rate": -2.4,
+      "event_date": "2014-03-17"
+    },
+    {
+      "year": 2014,
+      "event": "Operation Car Wash",
+      "event_type": "corruption_scandal",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 167,
+      "event_count": 172,
+      "after_count": 157,
+      "immediate_impact": 3.0,
+      "recovery_rate": -8.7,
+      "event_date": "2014-03-17"
+    },
+    {
+      "year": 2016,
+      "event": "Rousseff Impeachment",
+      "event_type": "political_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 694,
+      "event_count": 746,
+      "after_count": 811,
+      "immediate_impact": 7.5,
+      "recovery_rate": 8.7,
+      "event_date": "2016-08-31"
+    },
+    {
+      "year": 2016,
+      "event": "Rousseff Impeachment",
+      "event_type": "political_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 220,
+      "event_count": 221,
+      "after_count": 271,
+      "immediate_impact": 0.5,
+      "recovery_rate": 22.6,
+      "event_date": "2016-08-31"
+    },
+    {
+      "year": 2016,
+      "event": "Rousseff Impeachment",
+      "event_type": "political_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 327,
+      "event_count": 363,
+      "after_count": 386,
+      "immediate_impact": 11.0,
+      "recovery_rate": 6.3,
+      "event_date": "2016-08-31"
+    },
+    {
+      "year": 2016,
+      "event": "Rousseff Impeachment",
+      "event_type": "political_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 200,
+      "event_count": 238,
+      "after_count": 209,
+      "immediate_impact": 19.0,
+      "recovery_rate": -12.2,
+      "event_date": "2016-08-31"
+    },
+    {
+      "year": 2016,
+      "event": "Rousseff Impeachment",
+      "event_type": "political_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 157,
+      "event_count": 187,
+      "after_count": 220,
+      "immediate_impact": 19.1,
+      "recovery_rate": 17.6,
+      "event_date": "2016-08-31"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Crisis",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 977,
+      "event_count": 754,
+      "after_count": 776,
+      "immediate_impact": -22.8,
+      "recovery_rate": 2.9,
+      "event_date": "2020-03-20"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Crisis",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 343,
+      "event_count": 310,
+      "after_count": 328,
+      "immediate_impact": -9.6,
+      "recovery_rate": 5.8,
+      "event_date": "2020-03-20"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Crisis",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 448,
+      "event_count": 347,
+      "after_count": 364,
+      "immediate_impact": -22.5,
+      "recovery_rate": 4.9,
+      "event_date": "2020-03-20"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Crisis",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 258,
+      "event_count": 182,
+      "after_count": 247,
+      "immediate_impact": -29.5,
+      "recovery_rate": 35.7,
+      "event_date": "2020-03-20"
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 Crisis",
+      "event_type": "health_crisis",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 293,
+      "event_count": 242,
+      "after_count": 256,
+      "immediate_impact": -17.4,
+      "recovery_rate": 5.8,
+      "event_date": "2020-03-20"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2014,
+      "date": "2014-03-17",
+      "event": "Operation Car Wash",
+      "type": "corruption_scandal",
+      "severity": "high"
+    },
+    {
+      "year": 2016,
+      "date": "2016-08-31",
+      "event": "Rousseff Impeachment",
+      "type": "political_crisis",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-20",
+      "event": "COVID-19 Crisis",
+      "type": "health_crisis",
+      "severity": "high"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T10:50:00.594971",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}

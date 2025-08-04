@@ -1,0 +1,766 @@
+{
+  "country": {
+    "code": "IL",
+    "name": "Israel"
+  },
+  "timeline_data": [
+    {
+      "year": 2000,
+      "genre_counts": {
+        "Drama": 62,
+        "Documentary": 19,
+        "Comedy": 36,
+        "Action": 14,
+        "Thriller": 13
+      },
+      "raw_genre_counts": {
+        "Drama": 62,
+        "Documentary": 19,
+        "Comedy": 36,
+        "Action": 14,
+        "Thriller": 13
+      },
+      "total_movies": 112,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2001,
+      "genre_counts": {
+        "Drama": 64,
+        "Documentary": 32,
+        "Comedy": 33,
+        "Action": 24,
+        "Thriller": 17
+      },
+      "raw_genre_counts": {
+        "Drama": 64,
+        "Documentary": 32,
+        "Comedy": 33,
+        "Action": 24,
+        "Thriller": 17
+      },
+      "total_movies": 130,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2002,
+      "genre_counts": {
+        "Drama": 66.3,
+        "Documentary": 26.7,
+        "Comedy": 36.7,
+        "Action": 21.3,
+        "Thriller": 16.3
+      },
+      "raw_genre_counts": {
+        "Drama": 73,
+        "Documentary": 29,
+        "Comedy": 41,
+        "Action": 26,
+        "Thriller": 19
+      },
+      "total_movies": 141,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2003,
+      "genre_counts": {
+        "Drama": 67.3,
+        "Documentary": 31.0,
+        "Comedy": 40.0,
+        "Action": 25.0,
+        "Thriller": 17.3
+      },
+      "raw_genre_counts": {
+        "Drama": 65,
+        "Documentary": 32,
+        "Comedy": 46,
+        "Action": 25,
+        "Thriller": 16
+      },
+      "total_movies": 145,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2004,
+      "genre_counts": {
+        "Drama": 73.0,
+        "Documentary": 32.3,
+        "Comedy": 45.7,
+        "Action": 27.3,
+        "Thriller": 17.7
+      },
+      "raw_genre_counts": {
+        "Drama": 81,
+        "Documentary": 36,
+        "Comedy": 50,
+        "Action": 31,
+        "Thriller": 18
+      },
+      "total_movies": 172,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2005,
+      "genre_counts": {
+        "Drama": 85.0,
+        "Documentary": 35.3,
+        "Comedy": 48.7,
+        "Action": 27.7,
+        "Thriller": 17.7
+      },
+      "raw_genre_counts": {
+        "Drama": 109,
+        "Documentary": 38,
+        "Comedy": 50,
+        "Action": 27,
+        "Thriller": 19
+      },
+      "total_movies": 189,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2006,
+      "genre_counts": {
+        "Drama": 104.7,
+        "Documentary": 37.3,
+        "Comedy": 55.0,
+        "Action": 30.0,
+        "Thriller": 20.0
+      },
+      "raw_genre_counts": {
+        "Drama": 124,
+        "Documentary": 38,
+        "Comedy": 65,
+        "Action": 32,
+        "Thriller": 23
+      },
+      "total_movies": 215,
+      "events": [
+        {
+          "year": 2006,
+          "date": "2006-07-12",
+          "event": "Second Lebanon War",
+          "type": "war",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2007,
+      "genre_counts": {
+        "Drama": 110.7,
+        "Documentary": 40.0,
+        "Comedy": 56.3,
+        "Action": 29.3,
+        "Thriller": 24.3
+      },
+      "raw_genre_counts": {
+        "Drama": 99,
+        "Documentary": 44,
+        "Comedy": 54,
+        "Action": 29,
+        "Thriller": 31
+      },
+      "total_movies": 205,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2008,
+      "genre_counts": {
+        "Drama": 114.3,
+        "Documentary": 45.3,
+        "Comedy": 59.3,
+        "Action": 33.0,
+        "Thriller": 25.7
+      },
+      "raw_genre_counts": {
+        "Drama": 120,
+        "Documentary": 54,
+        "Comedy": 59,
+        "Action": 38,
+        "Thriller": 23
+      },
+      "total_movies": 227,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2009,
+      "genre_counts": {
+        "Drama": 116.7,
+        "Documentary": 57.0,
+        "Comedy": 57.0,
+        "Action": 34.0,
+        "Thriller": 30.0
+      },
+      "raw_genre_counts": {
+        "Drama": 131,
+        "Documentary": 73,
+        "Comedy": 58,
+        "Action": 35,
+        "Thriller": 36
+      },
+      "total_movies": 264,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2010,
+      "genre_counts": {
+        "Drama": 150.7,
+        "Documentary": 70.0,
+        "Comedy": 72.3,
+        "Action": 42.7,
+        "Thriller": 33.3
+      },
+      "raw_genre_counts": {
+        "Drama": 201,
+        "Documentary": 83,
+        "Comedy": 100,
+        "Action": 55,
+        "Thriller": 41
+      },
+      "total_movies": 345,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2011,
+      "genre_counts": {
+        "Drama": 174.0,
+        "Documentary": 76.7,
+        "Comedy": 86.3,
+        "Action": 51.3,
+        "Thriller": 40.7
+      },
+      "raw_genre_counts": {
+        "Drama": 190,
+        "Documentary": 74,
+        "Comedy": 101,
+        "Action": 64,
+        "Thriller": 45
+      },
+      "total_movies": 352,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2012,
+      "genre_counts": {
+        "Drama": 194.7,
+        "Documentary": 81.7,
+        "Comedy": 103.3,
+        "Action": 59.7,
+        "Thriller": 43.3
+      },
+      "raw_genre_counts": {
+        "Drama": 193,
+        "Documentary": 88,
+        "Comedy": 109,
+        "Action": 60,
+        "Thriller": 44
+      },
+      "total_movies": 366,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2013,
+      "genre_counts": {
+        "Drama": 193.7,
+        "Documentary": 78.3,
+        "Comedy": 102.0,
+        "Action": 63.3,
+        "Thriller": 47.0
+      },
+      "raw_genre_counts": {
+        "Drama": 198,
+        "Documentary": 73,
+        "Comedy": 96,
+        "Action": 66,
+        "Thriller": 52
+      },
+      "total_movies": 352,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2014,
+      "genre_counts": {
+        "Drama": 209.7,
+        "Documentary": 78.3,
+        "Comedy": 105.7,
+        "Action": 65.3,
+        "Thriller": 47.3
+      },
+      "raw_genre_counts": {
+        "Drama": 238,
+        "Documentary": 74,
+        "Comedy": 112,
+        "Action": 70,
+        "Thriller": 46
+      },
+      "total_movies": 385,
+      "events": [
+        {
+          "year": 2014,
+          "date": "2014-07-08",
+          "event": "Gaza War (Protective Edge)",
+          "type": "war",
+          "severity": "high"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2015,
+      "genre_counts": {
+        "Drama": 212.7,
+        "Documentary": 75.0,
+        "Comedy": 105.7,
+        "Action": 66.3,
+        "Thriller": 47.3
+      },
+      "raw_genre_counts": {
+        "Drama": 202,
+        "Documentary": 78,
+        "Comedy": 109,
+        "Action": 63,
+        "Thriller": 44
+      },
+      "total_movies": 370,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2016,
+      "genre_counts": {
+        "Drama": 214.0,
+        "Documentary": 77.0,
+        "Comedy": 108.7,
+        "Action": 73.0,
+        "Thriller": 40.7
+      },
+      "raw_genre_counts": {
+        "Drama": 202,
+        "Documentary": 79,
+        "Comedy": 105,
+        "Action": 86,
+        "Thriller": 32
+      },
+      "total_movies": 383,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2017,
+      "genre_counts": {
+        "Drama": 208.7,
+        "Documentary": 82.3,
+        "Comedy": 112.7,
+        "Action": 71.3,
+        "Thriller": 42.7
+      },
+      "raw_genre_counts": {
+        "Drama": 222,
+        "Documentary": 90,
+        "Comedy": 124,
+        "Action": 65,
+        "Thriller": 52
+      },
+      "total_movies": 419,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2018,
+      "genre_counts": {
+        "Drama": 217.7,
+        "Documentary": 87.3,
+        "Comedy": 119.0,
+        "Action": 78.7,
+        "Thriller": 47.7
+      },
+      "raw_genre_counts": {
+        "Drama": 229,
+        "Documentary": 93,
+        "Comedy": 128,
+        "Action": 85,
+        "Thriller": 59
+      },
+      "total_movies": 447,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2019,
+      "genre_counts": {
+        "Drama": 221.3,
+        "Documentary": 85.3,
+        "Comedy": 129.7,
+        "Action": 73.0,
+        "Thriller": 56.3
+      },
+      "raw_genre_counts": {
+        "Drama": 213,
+        "Documentary": 73,
+        "Comedy": 137,
+        "Action": 69,
+        "Thriller": 58
+      },
+      "total_movies": 422,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2020,
+      "genre_counts": {
+        "Drama": 212.7,
+        "Documentary": 80.3,
+        "Comedy": 127.0,
+        "Action": 69.7,
+        "Thriller": 51.7
+      },
+      "raw_genre_counts": {
+        "Drama": 196,
+        "Documentary": 75,
+        "Comedy": 116,
+        "Action": 55,
+        "Thriller": 38
+      },
+      "total_movies": 364,
+      "events": [
+        {
+          "year": 2020,
+          "date": "2020-09-15",
+          "event": "Abraham Accords",
+          "type": "diplomatic",
+          "severity": "positive"
+        }
+      ],
+      "has_events": true
+    },
+    {
+      "year": 2021,
+      "genre_counts": {
+        "Drama": 247.7,
+        "Documentary": 78.0,
+        "Comedy": 133.0,
+        "Action": 75.0,
+        "Thriller": 65.7
+      },
+      "raw_genre_counts": {
+        "Drama": 334,
+        "Documentary": 86,
+        "Comedy": 146,
+        "Action": 101,
+        "Thriller": 101
+      },
+      "total_movies": 591,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2022,
+      "genre_counts": {
+        "Drama": 369.7,
+        "Documentary": 117.0,
+        "Comedy": 214.0,
+        "Action": 125.3,
+        "Thriller": 124.7
+      },
+      "raw_genre_counts": {
+        "Drama": 579,
+        "Documentary": 190,
+        "Comedy": 380,
+        "Action": 220,
+        "Thriller": 235
+      },
+      "total_movies": 1209,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2023,
+      "genre_counts": {
+        "Drama": 360.3,
+        "Documentary": 114.7,
+        "Comedy": 208.3,
+        "Action": 127.7,
+        "Thriller": 128.7
+      },
+      "raw_genre_counts": {
+        "Drama": 168,
+        "Documentary": 68,
+        "Comedy": 99,
+        "Action": 62,
+        "Thriller": 50
+      },
+      "total_movies": 333,
+      "events": [],
+      "has_events": false
+    },
+    {
+      "year": 2024,
+      "genre_counts": {
+        "Drama": 288.0,
+        "Documentary": 107.0,
+        "Comedy": 183.3,
+        "Action": 109.7,
+        "Thriller": 109.3
+      },
+      "raw_genre_counts": {
+        "Drama": 117,
+        "Documentary": 63,
+        "Comedy": 71,
+        "Action": 47,
+        "Thriller": 43
+      },
+      "total_movies": 267,
+      "events": [],
+      "has_events": false
+    }
+  ],
+  "impact_analysis": [
+    {
+      "year": 2006,
+      "event": "Second Lebanon War",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 109,
+      "event_count": 124,
+      "after_count": 99,
+      "immediate_impact": 13.8,
+      "recovery_rate": -20.2,
+      "event_date": "2006-07-12"
+    },
+    {
+      "year": 2006,
+      "event": "Second Lebanon War",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 38,
+      "event_count": 38,
+      "after_count": 44,
+      "immediate_impact": 0.0,
+      "recovery_rate": 15.8,
+      "event_date": "2006-07-12"
+    },
+    {
+      "year": 2006,
+      "event": "Second Lebanon War",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 50,
+      "event_count": 65,
+      "after_count": 54,
+      "immediate_impact": 30.0,
+      "recovery_rate": -16.9,
+      "event_date": "2006-07-12"
+    },
+    {
+      "year": 2006,
+      "event": "Second Lebanon War",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 27,
+      "event_count": 32,
+      "after_count": 29,
+      "immediate_impact": 18.5,
+      "recovery_rate": -9.4,
+      "event_date": "2006-07-12"
+    },
+    {
+      "year": 2006,
+      "event": "Second Lebanon War",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 19,
+      "event_count": 23,
+      "after_count": 31,
+      "immediate_impact": 21.1,
+      "recovery_rate": 34.8,
+      "event_date": "2006-07-12"
+    },
+    {
+      "year": 2014,
+      "event": "Gaza War (Protective Edge)",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Drama",
+      "before_count": 198,
+      "event_count": 238,
+      "after_count": 202,
+      "immediate_impact": 20.2,
+      "recovery_rate": -15.1,
+      "event_date": "2014-07-08"
+    },
+    {
+      "year": 2014,
+      "event": "Gaza War (Protective Edge)",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Documentary",
+      "before_count": 73,
+      "event_count": 74,
+      "after_count": 78,
+      "immediate_impact": 1.4,
+      "recovery_rate": 5.4,
+      "event_date": "2014-07-08"
+    },
+    {
+      "year": 2014,
+      "event": "Gaza War (Protective Edge)",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Comedy",
+      "before_count": 96,
+      "event_count": 112,
+      "after_count": 109,
+      "immediate_impact": 16.7,
+      "recovery_rate": -2.7,
+      "event_date": "2014-07-08"
+    },
+    {
+      "year": 2014,
+      "event": "Gaza War (Protective Edge)",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Action",
+      "before_count": 66,
+      "event_count": 70,
+      "after_count": 63,
+      "immediate_impact": 6.1,
+      "recovery_rate": -10.0,
+      "event_date": "2014-07-08"
+    },
+    {
+      "year": 2014,
+      "event": "Gaza War (Protective Edge)",
+      "event_type": "war",
+      "severity": "high",
+      "genre": "Thriller",
+      "before_count": 52,
+      "event_count": 46,
+      "after_count": 44,
+      "immediate_impact": -11.5,
+      "recovery_rate": -4.3,
+      "event_date": "2014-07-08"
+    },
+    {
+      "year": 2020,
+      "event": "Abraham Accords",
+      "event_type": "diplomatic",
+      "severity": "positive",
+      "genre": "Drama",
+      "before_count": 213,
+      "event_count": 196,
+      "after_count": 334,
+      "immediate_impact": -8.0,
+      "recovery_rate": 70.4,
+      "event_date": "2020-09-15"
+    },
+    {
+      "year": 2020,
+      "event": "Abraham Accords",
+      "event_type": "diplomatic",
+      "severity": "positive",
+      "genre": "Documentary",
+      "before_count": 73,
+      "event_count": 75,
+      "after_count": 86,
+      "immediate_impact": 2.7,
+      "recovery_rate": 14.7,
+      "event_date": "2020-09-15"
+    },
+    {
+      "year": 2020,
+      "event": "Abraham Accords",
+      "event_type": "diplomatic",
+      "severity": "positive",
+      "genre": "Comedy",
+      "before_count": 137,
+      "event_count": 116,
+      "after_count": 146,
+      "immediate_impact": -15.3,
+      "recovery_rate": 25.9,
+      "event_date": "2020-09-15"
+    },
+    {
+      "year": 2020,
+      "event": "Abraham Accords",
+      "event_type": "diplomatic",
+      "severity": "positive",
+      "genre": "Action",
+      "before_count": 69,
+      "event_count": 55,
+      "after_count": 101,
+      "immediate_impact": -20.3,
+      "recovery_rate": 83.6,
+      "event_date": "2020-09-15"
+    },
+    {
+      "year": 2020,
+      "event": "Abraham Accords",
+      "event_type": "diplomatic",
+      "severity": "positive",
+      "genre": "Thriller",
+      "before_count": 58,
+      "event_count": 38,
+      "after_count": 101,
+      "immediate_impact": -34.5,
+      "recovery_rate": 165.8,
+      "event_date": "2020-09-15"
+    }
+  ],
+  "political_events": [
+    {
+      "year": 2006,
+      "date": "2006-07-12",
+      "event": "Second Lebanon War",
+      "type": "war",
+      "severity": "high"
+    },
+    {
+      "year": 2014,
+      "date": "2014-07-08",
+      "event": "Gaza War (Protective Edge)",
+      "type": "war",
+      "severity": "high"
+    },
+    {
+      "year": 2020,
+      "date": "2020-09-15",
+      "event": "Abraham Accords",
+      "type": "diplomatic",
+      "severity": "positive"
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Documentary",
+    "Comedy",
+    "Action",
+    "Thriller"
+  ],
+  "metadata": {
+    "total_events": 3,
+    "date_range": "2000-2024",
+    "processed_at": "2025-08-02T11:07:01.311007",
+    "smoothing_applied": true,
+    "smoothing_window": 3
+  }
+}
