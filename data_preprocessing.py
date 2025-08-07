@@ -42,7 +42,7 @@ class IMDbDataProcessor:
             chunk_size = 50000
             total_movies = 0
             
-            basics_path = os.path.join(self.data_dir, "title.basics.tsv", "title.basics.tsv")
+            basics_path = os.path.join(self.data_dir, "data", "title.basics.tsv")
             
             self.log(f"Reading file: {basics_path}")
             
@@ -94,7 +94,7 @@ class IMDbDataProcessor:
         self.log("Loading ratings data...")
         
         try:
-            ratings_path = os.path.join(self.data_dir, "title.ratings.tsv", "title.ratings.tsv")
+            ratings_path = os.path.join(self.data_dir, "data", "title.ratings.tsv")
             
             ratings_df = pd.read_csv(
                 ratings_path,
@@ -155,6 +155,27 @@ class IMDbDataProcessor:
                 
                 for genre in self.genre_mapping.keys():
                     row[genre] = int(genre_counts.get(genre, 0))
+                    
+                    # Add rating and votes data for each genre
+                    genre_data = year_data[year_data['genre'] == genre]
+                    if len(genre_data) > 0:
+                        # Calculate weighted average rating
+                        valid_ratings = genre_data[
+                            (genre_data['averageRating'].notna()) & 
+                            (genre_data['numVotes'] > 50)
+                        ]
+                        if len(valid_ratings) > 0:
+                            weighted_rating = (valid_ratings['averageRating'] * valid_ratings['numVotes']).sum() / valid_ratings['numVotes'].sum()
+                            row[f'{genre}Rating'] = round(weighted_rating, 2)
+                        else:
+                            row[f'{genre}Rating'] = 0
+                        
+                        # Calculate total votes
+                        total_votes = genre_data['numVotes'].sum()
+                        row[f'{genre}Votes'] = int(total_votes)
+                    else:
+                        row[f'{genre}Rating'] = 0
+                        row[f'{genre}Votes'] = 0
                 
                 line_data.append(row)
         
@@ -162,7 +183,7 @@ class IMDbDataProcessor:
         return line_data
     
     def create_bar_chart_data(self, merged_df):
-        """יצירת נתונים לגרף עמודות - השוואה לפני/אחרי משבר"""
+        """יצירת נתונים לגרף עמודות - השוואה דירוגים לפני/אחרי משבר"""
         self.log("Creating bar chart data...")
         
         bar_data = {}
@@ -171,24 +192,57 @@ class IMDbDataProcessor:
             before_year = crisis_year - 1
             after_year = crisis_year + 1
             
-            before_data = merged_df[merged_df['startYear'] == before_year]
-            after_data = merged_df[merged_df['startYear'] == after_year]
+            # Filter data with ratings
+            before_data = merged_df[
+                (merged_df['startYear'] == before_year) & 
+                (merged_df['averageRating'].notna()) &
+                (merged_df['numVotes'] > 50)  # Minimum votes for reliability
+            ]
+            after_data = merged_df[
+                (merged_df['startYear'] == after_year) & 
+                (merged_df['averageRating'].notna()) &
+                (merged_df['numVotes'] > 50)
+            ]
             
             crisis_data = []
             
             for genre in ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary']:
-                before_count = len(before_data[before_data['genre'] == genre].drop_duplicates('tconst'))
-                after_count = len(after_data[after_data['genre'] == genre].drop_duplicates('tconst'))
+                # Calculate average ratings
+                before_genre = before_data[before_data['genre'] == genre]
+                after_genre = after_data[after_data['genre'] == genre]
                 
-                change_percent = ((after_count - before_count) / before_count * 100) if before_count > 0 else 0
-                
-                crisis_data.append({
-                    'genre': self.genre_mapping.get(genre, genre),
-                    'genre_en': genre,
-                    'before': int(before_count),
-                    'after': int(after_count),
-                    'change': round(change_percent, 1)
-                })
+                if len(before_genre) > 0 and len(after_genre) > 0:
+                    # Weighted average by number of votes
+                    before_rating = (before_genre['averageRating'] * before_genre['numVotes']).sum() / before_genre['numVotes'].sum()
+                    after_rating = (after_genre['averageRating'] * after_genre['numVotes']).sum() / after_genre['numVotes'].sum()
+                    
+                    # Calculate rating change percentage
+                    rating_change = ((after_rating - before_rating) / before_rating * 100) if before_rating > 0 else 0
+                    
+                    # Also track production counts for context
+                    before_count = len(before_genre.drop_duplicates('tconst'))
+                    after_count = len(after_genre.drop_duplicates('tconst'))
+                    
+                    crisis_data.append({
+                        'genre': self.genre_mapping.get(genre, genre),
+                        'genre_en': genre,
+                        'before': round(before_rating, 2),
+                        'after': round(after_rating, 2),
+                        'change': round(rating_change, 1),
+                        'before_count': int(before_count),
+                        'after_count': int(after_count)
+                    })
+                else:
+                    # Fallback if no data available
+                    crisis_data.append({
+                        'genre': self.genre_mapping.get(genre, genre),
+                        'genre_en': genre,
+                        'before': 0,
+                        'after': 0,
+                        'change': 0,
+                        'before_count': 0,
+                        'after_count': 0
+                    })
             
             bar_data[str(crisis_year)] = crisis_data
         
@@ -344,8 +398,8 @@ class IMDbDataProcessor:
         self.log("מתחיל עיבוד נתונים...")
         
         # בדיקת קיום קבצים
-        basics_path = os.path.join(self.data_dir, "title.basics.tsv", "title.basics.tsv")
-        ratings_path = os.path.join(self.data_dir, "title.ratings.tsv", "title.ratings.tsv")
+        basics_path = os.path.join(self.data_dir, "data", "title.basics.tsv")
+        ratings_path = os.path.join(self.data_dir, "data", "title.ratings.tsv")
         
         if not os.path.exists(basics_path):
             self.log(f"שגיאה: לא נמצא קובץ {basics_path}")

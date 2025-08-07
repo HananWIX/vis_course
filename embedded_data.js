@@ -1,4 +1,5 @@
-window.DATA = {
+// נתוני IMDb מוטמעים
+const EMBEDDED_DATA = {
   "lineChartData": [
     {
       "year": 2000,
@@ -92762,3 +92763,8 @@ window.DATA = {
     ]
   }
 };
+
+// פונקציה להחלפת טעינת הנתונים
+function getEmbeddedData() {
+    return Promise.resolve(EMBEDDED_DATA);
+}

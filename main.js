@@ -74,7 +74,7 @@ class IMDbVisualization {
             this.charts.barChart = new BarChart(
                 '#barChart', 
                 this.data.barChartData, 
-                null
+                this.data.lineChartData
             );
             console.log('✓ Bar chart created');
 
@@ -191,12 +191,28 @@ class IMDbVisualization {
             });
         }
 
+        // Add smoothing event listener for LineChart
+        const smoothingCheckbox = document.getElementById('smoothing');
+        if (smoothingCheckbox && this.charts.lineChart) {
+            smoothingCheckbox.addEventListener('change', (e) => {
+                this.charts.lineChart.toggleSmoothing(e.target.checked);
+            });
+        }
+
         // Bar Chart Controls - Enhanced
         const crisisSelect = document.getElementById('crisisSelect');
         if (crisisSelect && this.charts.barChart) {
             crisisSelect.addEventListener('change', (e) => {
                 this.charts.barChart.updateCrisis(e.target.value);
                 this.updateBarChartInsights(e.target.value);
+            });
+        }
+
+        // Bar Chart Show Percentage - Enhanced
+        const showPercentage = document.getElementById('showPercentage');
+        if (showPercentage && this.charts.barChart) {
+            showPercentage.addEventListener('change', (e) => {
+                this.charts.barChart.togglePercentages(e.target.checked);
             });
         }
 
@@ -218,21 +234,17 @@ class IMDbVisualization {
             });
         }
 
-        // Pie Chart Comparison - Enhanced
-        const pieComparison = document.getElementById('pieComparison');
-        if (pieComparison && this.charts.pieChart) {
-            pieComparison.addEventListener('click', () => {
-                this.charts.pieChart.toggleComparison();
-                const btn = pieComparison;
-                if (this.charts.pieChart.showComparison) {
-                    btn.textContent = 'Show Single Chart';
-                    btn.style.background = '#e74c3c';
-                } else {
-                    btn.textContent = 'Show Before/After Comparison';
-                    btn.style.background = '#3498db';
-                }
+        // Area Chart Crisis Selection - Enhanced
+        const areaCrisisSelect = document.getElementById('areaCrisisSelect');
+        if (areaCrisisSelect && this.charts.areaChart) {
+            areaCrisisSelect.addEventListener('change', (e) => {
+                this.charts.areaChart.currentCrisis = e.target.value;
+                this.charts.areaChart.updateVisualization();
+                this.updateAreaChartInsights();
             });
         }
+
+
 
         // Pie Chart Show Percentages - Enhanced
         const pieShowPercentages = document.getElementById('pieShowPercentages');
@@ -249,6 +261,14 @@ class IMDbVisualization {
             heatmapMetric.addEventListener('change', (e) => {
                 this.charts.heatmapChart.updateMetric(e.target.value);
                 this.updateHeatmapInsights(e.target.value);
+            });
+        }
+
+        // Heatmap Color Scheme Control
+        const colorScheme = document.getElementById('colorScheme');
+        if (colorScheme && this.charts.heatmapChart) {
+            colorScheme.addEventListener('change', (e) => {
+                this.charts.heatmapChart.updateColorScheme(e.target.value);
             });
         }
     }
@@ -443,7 +463,7 @@ class IMDbVisualization {
         const avgNormal = normalData.length > 0 ? normalData.reduce((sum, d) => sum + d.value, 0) / normalData.length : 0;
 
         const insights = [
-            `${metricLabel}: Highest value - ${hotSpot.genre} in ${hotSpot.year}`,
+            hotSpot ? `${metricLabel}: Highest value - ${hotSpot.genre} in ${hotSpot.year}` : `${metricLabel}: No data available`,
             `Average in crisis years: ${avgCrisis.toFixed(0)}`,
             `Average in normal years: ${avgNormal.toFixed(0)}`,
             `Difference between crisis and normal: ${avgNormal > 0 ? ((avgCrisis/avgNormal - 1) * 100).toFixed(1) : 0}%`,
@@ -538,7 +558,9 @@ class IMDbVisualization {
     identifyPattern(data, metric) {
         // Simple pattern identification
         const recentData = data.filter(d => d.year >= 2015);
-        const trend = this.calculateTrend(recentData.map(d => ({value: d[metric]})));
+        if (recentData.length === 0) return "No recent data available";
+        
+        const trend = this.calculateTrend(recentData.map(d => ({value: d.value || d[metric] || 0})));
         return `${trend} in recent years`;
     }
 

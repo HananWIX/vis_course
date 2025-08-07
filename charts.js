@@ -5,9 +5,9 @@ class BaseChart {
         this.data = data;
         this.crisisData = crisisData;
         this.svg = null;
-        this.margin = { top: 30, right: 250, bottom: 80, left: 140 };
-        this.width = 1000 - this.margin.left - this.margin.right;
-        this.height = 550 - this.margin.top - this.margin.bottom;
+        this.margin = { top: 80, right: 250, bottom: 60, left: 140 }; // Increased top margin to 80px
+        this.width = 1200 - this.margin.left - this.margin.right; // Increased width from 1000 to 1200
+        this.height = 600 - this.margin.top - this.margin.bottom; // Increased height from 500 to 600
         this.tooltipTimeout = null;
         this.tooltipVisible = false;
         this.currentTooltipElement = null;
@@ -213,6 +213,7 @@ class BaseChart {
 class LineChart extends BaseChart {
     constructor(selector, data, crisisData) {
         super(selector, data, crisisData);
+        this.showSmoothed = false; // Add smoothing state
         this.init();
     }
 
@@ -303,7 +304,7 @@ class LineChart extends BaseChart {
         console.log('✅ Grid created successfully');
     }
 
-    createLines() {
+    createLines(dataToUse = this.data) {
         const line = d3.line()
             .x(d => this.xScale(d.year))
             .y(d => this.yScale(d.value))
@@ -312,7 +313,7 @@ class LineChart extends BaseChart {
         const genres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
         
         genres.forEach(genre => {
-            const data = this.data.map(d => ({
+            const data = dataToUse.map(d => ({
                 year: d.year,
                 value: d[genre],
                 isCrisis: d.isCrisis
@@ -321,7 +322,7 @@ class LineChart extends BaseChart {
             // Create line path - Enhanced
             this.svg.append("path")
                 .datum(data)
-                .attr("class", `line-${genre}`)
+                .attr("class", `genre-line line-${genre}`)
                 .attr("fill", "none")
                 .attr("stroke", this.colorScale(genre))
                 .attr("stroke-width", 4)
@@ -333,7 +334,7 @@ class LineChart extends BaseChart {
             this.svg.selectAll(`.dot-${genre}`)
                 .data(data)
                 .enter().append("circle")
-                .attr("class", `dot-${genre}`)
+                .attr("class", `dot dot-${genre}`)
                 .attr("cx", d => this.xScale(d.year))
                 .attr("cy", d => this.yScale(d.value))
                 .attr("r", d => d.isCrisis ? 8 : 5)
@@ -344,13 +345,53 @@ class LineChart extends BaseChart {
                 .style("transition", "all 0.3s ease")
                 .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
                 .on("mouseenter", (event, d) => {
+                    // Get comprehensive data for this point
+                    const crisisYear = this.currentCrisis;
+                    const isCrisisYear = d.year === parseInt(crisisYear);
+                    const previousYear = d.year - 1;
+                    const nextYear = d.year + 1;
+                    
+                    // Get data for trend analysis
+                    const previousData = this.data.find(item => item.year === previousYear);
+                    const nextData = this.data.find(item => item.year === nextYear);
+                    const previousValue = previousData ? previousData[genre] : 0;
+                    const nextValue = nextData ? nextData[genre] : 0;
+                    
+                    // Calculate trends
+                    const yearChange = previousData ? ((d.value - previousValue) / previousValue) * 100 : 0;
+                    const nextYearChange = nextData ? ((nextValue - d.value) / d.value) * 100 : 0;
+                    
+                    // Get total movies this year
+                    const totalMovies = this.data.find(item => item.year === d.year)?.total || 0;
+                    const genrePercentage = totalMovies > 0 ? (d.value / totalMovies) * 100 : 0;
+                    
+                    // Crisis analysis
+                    const crisisImpact = isCrisisYear ? 
+                        (previousData ? ((d.value - previousValue) / previousValue) * 100 : 0) : 0;
+                    
+                    // Add smoothing indicator
+                    const smoothingText = this.showSmoothed ? " (3-year average)" : "";
+                    
                     this.showTooltip(event, 
                         `<div style="background: linear-gradient(135deg, ${this.colorScale(genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                            <h4 style="margin: 0 0 10px 0; font-size: 16px;">📈 ${genre}</h4>
+                            <h4 style="margin: 0 0 10px 0; font-size: 16px;">📈 ${genre} - ${d.year}${smoothingText}</h4>
                             <div style="font-size: 14px; line-height: 1.6;">
-                                <strong>Year:</strong> ${d.year}<br/>
-                                <strong>Number of Movies:</strong> ${d.value.toLocaleString()}<br/>
-                                ${d.isCrisis ? '<span style="color: #e74c3c; font-weight: bold;">🔥 Crisis Year</span>' : ''}
+                                <strong>🎬 Production Data:</strong><br/>
+                                <strong>Movies:</strong> ${d.value.toLocaleString()}<br/>
+                                <strong>Total Production:</strong> ${totalMovies.toLocaleString()}<br/>
+                                <strong>Market Share:</strong> ${genrePercentage.toFixed(1)}%<br/><br/>
+                                
+                                <strong>📊 Trend Analysis:</strong><br/>
+                                ${previousData ? `<strong>Previous Year (${previousYear}):</strong> ${previousValue.toLocaleString()}<br/>` : ''}
+                                ${nextData ? `<strong>Next Year (${nextYear}):</strong> ${nextValue.toLocaleString()}<br/>` : ''}
+                                <strong>Year Change:</strong> <span style="color: ${yearChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${yearChange >= 0 ? '+' : ''}${yearChange.toFixed(1)}%</span><br/>
+                                ${nextData ? `<strong>Next Year Change:</strong> <span style="color: ${nextYearChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${nextYearChange >= 0 ? '+' : ''}${nextYearChange.toFixed(1)}%</span><br/>` : ''}<br/>
+                                
+                                ${isCrisisYear ? `
+                                <strong>🔥 Crisis Impact:</strong><br/>
+                                <span style="color: #e74c3c; font-weight: bold;">Crisis Year Impact: ${crisisImpact >= 0 ? '+' : ''}${crisisImpact.toFixed(1)}%</span><br/>
+                                <span style="color: #e74c3c; font-weight: bold;">${crisisImpact < -5 ? 'Strong negative impact' : crisisImpact < -2 ? 'Moderate impact' : 'Minimal impact'}</span>
+                                ` : ''}
                             </div>
                         </div>`
                     );
@@ -439,6 +480,55 @@ class LineChart extends BaseChart {
         // Return English genre names directly
         return genre;
     }
+
+    toggleSmoothing(showSmoothed) {
+        this.showSmoothed = showSmoothed;
+        this.updateLines();
+    }
+
+    updateLines() {
+        // Clear existing lines and dots
+        this.svg.selectAll('.genre-line, .dot').remove();
+        
+        // Create smoothed or raw data
+        const lineData = this.showSmoothed ? this.createSmoothedData() : this.data;
+        
+        // Redraw lines
+        this.createLines(lineData);
+    }
+
+    createSmoothedData() {
+        // Apply 3-year moving average smoothing
+        const smoothedData = [];
+        
+        for (let i = 0; i < this.data.length; i++) {
+            const year = this.data[i].year;
+            const smoothed = {};
+            
+            // For each genre, calculate 3-year average
+            ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'].forEach(genre => {
+                let sum = 0;
+                let count = 0;
+                
+                // Look at current year and 2 previous years
+                for (let j = Math.max(0, i - 2); j <= i; j++) {
+                    if (this.data[j] && this.data[j][genre]) {
+                        sum += this.data[j][genre];
+                        count++;
+                    }
+                }
+                
+                smoothed[genre] = count > 0 ? Math.round(sum / count) : 0;
+            });
+            
+            smoothed.year = year;
+            smoothed.isCrisis = this.data[i].isCrisis;
+            smoothed.total = this.data[i].total;
+            smoothedData.push(smoothed);
+        }
+        
+        return smoothedData;
+    }
 }
 
 // Bar Chart Class
@@ -446,6 +536,7 @@ class BarChart extends BaseChart {
     constructor(selector, data, crisisData) {
         super(selector, data, crisisData);
         this.currentCrisis = "2008";
+        this.showPercentages = true; // Default to show percentages
         this.init();
     }
 
@@ -539,13 +630,58 @@ class BarChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseenter", (event, d) => {
+                // Get comprehensive data for this genre and crisis
+                const crisisYear = parseInt(this.currentCrisis);
+                const beforeYear = crisisYear - 1;
+                const afterYear = crisisYear + 1;
+                
+                // Get production data from lineChartData (this.crisisData)
+                const beforeData = this.crisisData.find(item => item.year === beforeYear);
+                const afterData = this.crisisData.find(item => item.year === afterYear);
+                const crisisData = this.crisisData.find(item => item.year === crisisYear);
+                
+                // Get production counts for this genre
+                const beforeCount = beforeData ? beforeData[d.genre] || 0 : 0;
+                const afterCount = afterData ? afterData[d.genre] || 0 : 0;
+                const crisisCount = crisisData ? crisisData[d.genre] || 0 : 0;
+                
+                // Calculate total production
+                const beforeTotal = beforeData ? beforeData.total || 0 : 0;
+                const afterTotal = afterData ? afterData.total || 0 : 0;
+                const crisisTotal = crisisData ? crisisData.total || 0 : 0;
+                
+                // Calculate market shares
+                const beforeShare = beforeTotal > 0 ? (beforeCount / beforeTotal) * 100 : 0;
+                const afterShare = afterTotal > 0 ? (afterCount / afterTotal) * 100 : 0;
+                
+                // Calculate production trends
+                const productionChange = beforeTotal > 0 ? ((afterTotal - beforeTotal) / beforeTotal) * 100 : 0;
+                const ratingChange = d.change;
+                
+                console.log('🔍 BarChart tooltip data:', {
+                    crisisYear, beforeYear, afterYear,
+                    beforeData, afterData, crisisData,
+                    beforeCount, afterCount, beforeTotal, afterTotal,
+                    beforeShare, afterShare, productionChange, ratingChange
+                });
+                
                 this.showTooltip(event, 
                     `<div style="background: linear-gradient(135deg, ${this.colorScale('before')}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">📊 ${d.genre}</h4>
+                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">⭐ ${d.genre} - Before Crisis</h4>
                         <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>Before Crisis:</strong> ${d.before.toLocaleString()}<br/>
-                            <strong>Year:</strong> ${parseInt(this.currentCrisis) - 1}<br/>
-                            <strong>Change:</strong> <span style="color: ${d.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.change > 0 ? '+' : ''}${d.change}%</span>
+                            <strong>📊 Rating Data:</strong><br/>
+                            <strong>Average Rating:</strong> ${d.before.toFixed(1)}/10 (${beforeYear})<br/>
+                            <strong>Movies Produced:</strong> ${beforeCount.toLocaleString()}<br/>
+                            <strong>Market Share:</strong> ${beforeShare.toFixed(1)}%<br/><br/>
+                            
+                            <strong>📈 Crisis Analysis:</strong><br/>
+                            <strong>After Crisis Rating:</strong> ${d.after.toFixed(1)}/10 (${afterYear})<br/>
+                            <strong>Rating Change:</strong> <span style="color: ${ratingChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${ratingChange >= 0 ? '+' : ''}${ratingChange.toFixed(1)}%</span><br/>
+                            <strong>Production Change:</strong> <span style="color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/><br/>
+                            
+                            <strong>📊 Market Impact:</strong><br/>
+                            <strong>Share Change:</strong> <span style="color: ${(afterShare - beforeShare) >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${(afterShare - beforeShare) >= 0 ? '+' : ''}${(afterShare - beforeShare).toFixed(1)}%</span><br/>
+                            <strong>Performance:</strong> ${ratingChange > productionChange ? 'Rating outperformed production' : ratingChange < productionChange ? 'Rating underperformed production' : 'Rating matched production'}
                         </div>
                     </div>`
                 );
@@ -569,13 +705,58 @@ class BarChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseenter", (event, d) => {
+                // Get comprehensive data for this genre and crisis
+                const crisisYear = parseInt(this.currentCrisis);
+                const beforeYear = crisisYear - 1;
+                const afterYear = crisisYear + 1;
+                
+                // Get production data from lineChartData (this.crisisData)
+                const beforeData = this.crisisData.find(item => item.year === beforeYear);
+                const afterData = this.crisisData.find(item => item.year === afterYear);
+                const crisisData = this.crisisData.find(item => item.year === crisisYear);
+                
+                // Get production counts for this genre
+                const beforeCount = beforeData ? beforeData[d.genre] || 0 : 0;
+                const afterCount = afterData ? afterData[d.genre] || 0 : 0;
+                const crisisCount = crisisData ? crisisData[d.genre] || 0 : 0;
+                
+                // Calculate total production
+                const beforeTotal = beforeData ? beforeData.total || 0 : 0;
+                const afterTotal = afterData ? afterData.total || 0 : 0;
+                const crisisTotal = crisisData ? crisisData.total || 0 : 0;
+                
+                // Calculate market shares
+                const beforeShare = beforeTotal > 0 ? (beforeCount / beforeTotal) * 100 : 0;
+                const afterShare = afterTotal > 0 ? (afterCount / afterTotal) * 100 : 0;
+                
+                // Calculate production trends
+                const productionChange = beforeTotal > 0 ? ((afterTotal - beforeTotal) / beforeTotal) * 100 : 0;
+                const ratingChange = d.change;
+                
+                console.log('🔍 BarChart tooltip data:', {
+                    crisisYear, beforeYear, afterYear,
+                    beforeData, afterData, crisisData,
+                    beforeCount, afterCount, beforeTotal, afterTotal,
+                    beforeShare, afterShare, productionChange, ratingChange
+                });
+                
                 this.showTooltip(event, 
                     `<div style="background: linear-gradient(135deg, ${this.colorScale('after')}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">📊 ${d.genre}</h4>
+                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">⭐ ${d.genre} - After Crisis</h4>
                         <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>After Crisis:</strong> ${d.after.toLocaleString()}<br/>
-                            <strong>Year:</strong> ${parseInt(this.currentCrisis) + 1}<br/>
-                            <strong>Change:</strong> <span style="color: ${d.change > 0 ? '#2ecc71' : '#e74c3c'}">${d.change > 0 ? '+' : ''}${d.change}%</span>
+                            <strong>📊 Rating Data:</strong><br/>
+                            <strong>Average Rating:</strong> ${d.after.toFixed(1)}/10 (${afterYear})<br/>
+                            <strong>Movies Produced:</strong> ${afterCount.toLocaleString()}<br/>
+                            <strong>Market Share:</strong> ${afterShare.toFixed(1)}%<br/><br/>
+                            
+                            <strong>📈 Recovery Analysis:</strong><br/>
+                            <strong>Before Crisis Rating:</strong> ${d.before.toFixed(1)}/10 (${beforeYear})<br/>
+                            <strong>Rating Recovery:</strong> <span style="color: ${ratingChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${ratingChange >= 0 ? '+' : ''}${ratingChange.toFixed(1)}%</span><br/>
+                            <strong>Market Recovery:</strong> <span style="color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/><br/>
+                            
+                            <strong>📊 Recovery Assessment:</strong><br/>
+                            <strong>Share Recovery:</strong> <span style="color: ${(afterShare - beforeShare) >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${(afterShare - beforeShare) >= 0 ? '+' : ''}${(afterShare - beforeShare).toFixed(1)}%</span><br/>
+                            <strong>Recovery Status:</strong> ${ratingChange > productionChange ? 'Strong recovery' : ratingChange < productionChange ? 'Weak recovery' : 'Average recovery'}
                         </div>
                     </div>`
                 );
@@ -677,6 +858,14 @@ class BarChart extends BaseChart {
                 .style("opacity", 0.8);
         }
     }
+
+    togglePercentages(showPercentages) {
+        this.showPercentages = showPercentages;
+        
+        // Update percentage labels visibility
+        this.svg.selectAll('.change-label')
+            .style('display', showPercentages ? 'block' : 'none');
+    }
 }
 
 // Pie Chart Class - Enhanced
@@ -690,7 +879,7 @@ class PieChart extends BaseChart {
         this.radius = Math.min(this.width, this.height) / 2 - 40;
         // הגדל את ה-margin הימני עבור גרף העוגה
         this.margin.right = 350;
-        this.width = 1000 - this.margin.left - this.margin.right;
+        this.width = 1200 - this.margin.left - this.margin.right;
         this.init();
     }
 
@@ -717,30 +906,51 @@ class PieChart extends BaseChart {
     updateChart() {
         this.svg.selectAll("*").remove();
         
-        if (this.showComparison) {
-            this.createComparisonChart();
-        } else {
-            this.createSingleChart();
-        }
+        // Always show single chart, no comparison
+        this.showComparison = false;
+        this.createSingleChart();
     }
 
     createSingleChart() {
-        const data = this.data[this.currentYear].map(d => ({
-            genre: d.genre_en || d.genre,
-            count: d.count,
-            percentage: d.percentage
-        }));
+        console.log('🥧 Creating single pie chart...');
+        const data = this.data[this.currentYear] || [];
+        
+        if (data.length === 0) {
+            this.svg.append("text")
+                .attr("x", this.width / 2)
+                .attr("y", this.height / 2)
+                .attr("text-anchor", "middle")
+                .style("font-size", "18px")
+                .style("fill", "#2c3e50")
+                .text("No data available");
+            return;
+        }
+
+        // Create consistent color scale
+        const colorScale = d3.scaleOrdinal()
+            .domain(data.map(d => d.genre_en || d.genre))
+            .range(data.map(d => {
+                const colorMap = {
+                    'Drama': '#e74c3c',
+                    'Action': '#3498db', 
+                    'Comedy': '#f39c12',
+                    'Horror': '#9b59b6',
+                    'Documentary': '#2ecc71',
+                    'Thriller': '#e67e22',
+                    'Romance': '#e91e63',
+                    'Crime': '#795548',
+                    'Adventure': '#00bcd4',
+                    'Sci-Fi': '#607d8b'
+                };
+                return colorMap[d.genre_en || d.genre] || '#2c3e50';
+            }));
         
         // Center the pie chart
         const g = this.svg.append("g")
-            .attr("transform", `translate(${this.width/2},${this.height/2})`);
+            .attr("transform", `translate(${this.width / 2},${this.height / 2})`);
 
+        // Create pie data
         const pieData = this.pie(data);
-
-        // Create color scale
-        const colorScale = d3.scaleOrdinal()
-            .domain(data.map(d => d.genre))
-            .range(data.map(d => this.genreColors[d.genre] || '#2c3e50'));
 
         // Create pie slices - Enhanced
         const slices = g.selectAll(".slice")
@@ -753,18 +963,57 @@ class PieChart extends BaseChart {
             .attr("d", this.arc)
             .attr("fill", d => colorScale(d.data.genre))
             .attr("stroke", "white")
-            .attr("stroke-width", 3)
+            .attr("stroke-width", 2)
             .style("cursor", "pointer")
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseenter", (event, d) => {
+                // Enhanced tooltip with comprehensive data
+                const crisisYear = parseInt(this.currentYear);
+                const beforeYear = crisisYear - 1;
+                const afterYear = crisisYear + 1;
+                
+                // Get production data from lineChartData for context
+                const beforeData = this.crisisData?.find(item => item.year === beforeYear);
+                const afterData = this.crisisData?.find(item => item.year === afterYear);
+                const crisisData = this.crisisData?.find(item => item.year === crisisYear);
+                
+                // Get production counts for this genre
+                const beforeCount = beforeData ? beforeData[d.data.genre] || 0 : 0;
+                const afterCount = afterData ? afterData[d.data.genre] || 0 : 0;
+                const crisisCount = crisisData ? crisisData[d.data.genre] || 0 : 0;
+                
+                // Calculate total production
+                const beforeTotal = beforeData ? beforeData.total || 0 : 0;
+                const afterTotal = afterData ? afterData.total || 0 : 0;
+                const crisisTotal = crisisData ? crisisData.total || 0 : 0;
+                
+                // Calculate market shares
+                const beforeShare = beforeTotal > 0 ? (beforeCount / beforeTotal) * 100 : 0;
+                const afterShare = afterTotal > 0 ? (afterCount / afterTotal) * 100 : 0;
+                const currentShare = d.data.percentage;
+                
+                // Calculate production trends
+                const productionChange = beforeTotal > 0 ? ((afterTotal - beforeTotal) / beforeTotal) * 100 : 0;
+                const shareChange = beforeShare > 0 ? ((currentShare - beforeShare) / beforeShare) * 100 : 0;
+                
                 this.showTooltip(event, 
                     `<div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎭 ${d.data.genre}</h4>
+                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎬 ${d.data.genre} - ${crisisYear}</h4>
                         <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>Number of Movies:</strong> ${d.data.count.toLocaleString()}<br/>
-                            <strong>Percentage:</strong> ${d.data.percentage}%<br/>
-                            <strong>Year:</strong> ${this.currentYear}
+                            <strong>📊 Market Data:</strong><br/>
+                            <strong>Movies:</strong> ${d.data.count.toLocaleString()}<br/>
+                            <strong>Market Share:</strong> ${currentShare.toFixed(1)}%<br/>
+                            <strong>Total Production:</strong> ${crisisTotal.toLocaleString()}<br/><br/>
+                            
+                            <strong>📈 Trend Analysis:</strong><br/>
+                            <strong>Previous Year:</strong> ${beforeCount.toLocaleString()} (${beforeShare.toFixed(1)}%)<br/>
+                            <strong>Next Year:</strong> ${afterCount.toLocaleString()} (${afterShare.toFixed(1)}%)<br/>
+                            <strong>Share Change:</strong> <span style="color: ${shareChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${shareChange >= 0 ? '+' : ''}${shareChange.toFixed(1)}%</span><br/><br/>
+                            
+                            <strong>📊 Crisis Impact:</strong><br/>
+                            <strong>Production Change:</strong> <span style="color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/>
+                            <strong>Performance:</strong> ${shareChange > productionChange ? 'Outperformed market' : shareChange < productionChange ? 'Underperformed market' : 'Matched market'}
                         </div>
                     </div>`
                 );
@@ -773,357 +1022,30 @@ class PieChart extends BaseChart {
                 this.hideTooltip();
             });
 
-        // Add labels - Enhanced
+        // Add labels to slices - Enhanced
         slices.append("text")
-            .attr("transform", d => `translate(${this.labelArc.centroid(d)})`)
+            .attr("transform", d => `translate(${this.arc.centroid(d)})`)
+            .attr("dy", "0.35em")
             .attr("text-anchor", "middle")
-            .style("font-size", "13px")
-            .style("font-weight", "600")
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
             .style("fill", "white")
-            .style("text-shadow", "2px 2px 4px rgba(0,0,0,0.8)")
+            .style("text-shadow", "1px 1px 2px rgba(0,0,0,0.8)")
             .text(d => {
-                if (!this.showPercentages) return '';
-                if (this.displayMode === 'count') {
-                    return d.data.count > 500 ? d.data.count.toLocaleString() : '';
+                if (!this.showPercentages) {
+                    return ''; // Hide all labels when showPercentages is false
+                }
+                if (this.displayMode === 'percentage') {
+                    return d.data.percentage >= 3 ? `${d.data.percentage.toFixed(1)}%` : '';
                 } else {
-                    return d.data.percentage > 5 ? `${d.data.percentage}%` : '';
+                    return d.data.count >= 100 ? d.data.count.toLocaleString() : '';
                 }
             });
 
-        // Add legend - Enhanced
+        // Create legend
         this.createPieLegend(g, data, colorScale);
         
-        // Add title - Enhanced
-        g.append("text")
-            .attr("text-anchor", "middle")
-            .attr("y", -this.radius - 20)
-            .style("font-size", "18px")
-            .style("font-weight", "600")
-            .style("fill", "#333")
-            .text(`Genre Distribution - ${this.currentYear}`);
-        
-        // Add event listener to remove highlight when clicking on empty space
-        this.svg.on("click", (event) => {
-            if (event.target === this.svg.node()) {
-                this.removeHighlight();
-            }
-        });
-    }
-
-    createComparisonChart() {
-        const currentYear = parseInt(this.currentYear);
-        
-        // נסה לקחת שנה אחת לפני ואחת אחרי
-        let beforeYear = currentYear - 1;
-        let afterYear = currentYear + 1;
-        
-        // בדוק אם השנים האלה קיימות בנתונים
-        const availableYears = Object.keys(this.data).map(Number).sort((a, b) => a - b);
-        
-        // אם השנה הקודמת לא קיימת, קח את השנה הקודמת הזמינה
-        if (!this.data[beforeYear]) {
-            const currentIndex = availableYears.indexOf(currentYear);
-            if (currentIndex > 0) {
-                beforeYear = availableYears[currentIndex - 1];
-            }
-        }
-        
-        // אם השנה הבאה לא קיימת, קח את השנה הבאה הזמינה
-        if (!this.data[afterYear]) {
-            const currentIndex = availableYears.indexOf(currentYear);
-            if (currentIndex < availableYears.length - 1) {
-                afterYear = availableYears[currentIndex + 1];
-            }
-        }
-        
-        // בדוק אם הנתונים קיימים
-        const beforeData = this.data[beforeYear] || [];
-        const currentData = this.data[currentYear] || [];
-        const afterData = this.data[afterYear] || [];
-        
-        // If there's not enough data, return to single chart
-        if (beforeData.length === 0 || afterData.length === 0) {
-            console.log(`Not enough data for comparison. Available years: ${Object.keys(this.data).join(', ')}`);
-            this.showComparison = false;
-            this.createSingleChart();
-            
-            // Show message to user
-            const message = `Not enough data for comparison for ${currentYear}. Available years: ${Object.keys(this.data).join(', ')}`;
-            alert(message);
-            return;
-        }
-        
-        // Create smaller radius for comparison
-        const smallRadius = Math.max(80, this.radius * 0.7); // הגדל את הגרפים
-        
-        // Create color scale
-        const allGenres = [...new Set([
-            ...beforeData.map(d => d.genre_en || d.genre),
-            ...currentData.map(d => d.genre_en || d.genre),
-            ...afterData.map(d => d.genre_en || d.genre)
-        ])];
-        
-        const colorScale = d3.scaleOrdinal()
-            .domain(allGenres)
-            .range(allGenres.map(genre => this.genreColors[genre] || '#2c3e50'));
-        
-        // Create pie generators for each year
-        const pieBefore = d3.pie().value(d => d.count).sort(null);
-        const pieCurrent = d3.pie().value(d => d.count).sort(null);
-        const pieAfter = d3.pie().value(d => d.count).sort(null);
-        
-        const arcBefore = d3.arc().innerRadius(0).outerRadius(smallRadius);
-        const arcCurrent = d3.arc().innerRadius(0).outerRadius(smallRadius);
-        const arcAfter = d3.arc().innerRadius(0).outerRadius(smallRadius);
-        
-        // Position charts side by side - center the charts
-        const centerX = this.width / 2;
-        const chartSpacing = Math.max(350, this.width / 2.2); // Increase spacing between charts
-        const chartY = Math.max(200, this.height/2 + 150); // Move charts down a bit
-        
-        // Before chart (left)
-        const gBefore = this.svg.append("g")
-            .attr("transform", `translate(${centerX - chartSpacing},${chartY})`);
-        
-        const beforeSlices = gBefore.selectAll(".slice")
-            .data(pieBefore(beforeData))
-            .enter()
-            .append("g")
-            .attr("class", "slice");
-        
-        beforeSlices.append("path")
-            .attr("d", arcBefore)
-            .attr("fill", d => colorScale(d.data.genre))
-            .attr("stroke", "white")
-            .attr("stroke-width", 2)
-            .style("cursor", "pointer")
-            .style("opacity", 0.8)
-            .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
-        
-        // Add labels to before chart - Enhanced
-        beforeSlices.append("text")
-            .attr("transform", d => `translate(${arcBefore.centroid(d)})`)
-            .attr("text-anchor", "middle")
-            .style("font-size", "12px")
-            .style("font-weight", "600")
-            .style("fill", "white")
-            .style("text-shadow", "1px 1px 2px rgba(0,0,0,0.8)")
-            .text(d => {
-                if (!this.showPercentages) return '';
-                if (this.displayMode === 'count') {
-                    return d.data.count > 200 ? d.data.count.toLocaleString() : '';
-                } else {
-                    return d.data.percentage > 5 ? `${d.data.percentage}%` : '';
-                }
-            });
-        
-        // Current chart (center)
-        const gCurrent = this.svg.append("g")
-            .attr("transform", `translate(${centerX},${chartY})`);
-        
-        const currentSlices = gCurrent.selectAll(".slice")
-            .data(pieCurrent(currentData))
-            .enter()
-            .append("g")
-            .attr("class", "slice");
-        
-        currentSlices.append("path")
-            .attr("d", arcCurrent)
-            .attr("fill", d => colorScale(d.data.genre))
-            .attr("stroke", "white")
-            .attr("stroke-width", 3)
-            .style("cursor", "pointer")
-            .style("filter", "drop-shadow(0 4px 8px rgba(0,0,0,0.3))");
-        
-        // Add labels to current chart - Enhanced
-        currentSlices.append("text")
-            .attr("transform", d => `translate(${arcCurrent.centroid(d)})`)
-            .attr("text-anchor", "middle")
-            .style("font-size", "13px")
-            .style("font-weight", "600")
-            .style("fill", "white")
-            .style("text-shadow", "1px 1px 2px rgba(0,0,0,0.8)")
-            .text(d => {
-                if (!this.showPercentages) return '';
-                if (this.displayMode === 'count') {
-                    return d.data.count > 200 ? d.data.count.toLocaleString() : '';
-                } else {
-                    return d.data.percentage > 5 ? `${d.data.percentage}%` : '';
-                }
-            });
-        
-        // After chart (right)
-        const gAfter = this.svg.append("g")
-            .attr("transform", `translate(${centerX + chartSpacing},${chartY})`);
-        
-        const afterSlices = gAfter.selectAll(".slice")
-            .data(pieAfter(afterData))
-            .enter()
-            .append("g")
-            .attr("class", "slice");
-        
-        afterSlices.append("path")
-            .attr("d", arcAfter)
-            .attr("fill", d => colorScale(d.data.genre))
-            .attr("stroke", "white")
-            .attr("stroke-width", 2)
-            .style("cursor", "pointer")
-            .style("opacity", 0.8)
-            .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
-        
-        // Add labels to after chart - Enhanced
-        afterSlices.append("text")
-            .attr("transform", d => `translate(${arcAfter.centroid(d)})`)
-            .attr("text-anchor", "middle")
-            .style("font-size", "12px")
-            .style("font-weight", "600")
-            .style("fill", "white")
-            .style("text-shadow", "1px 1px 2px rgba(0,0,0,0.8)")
-            .text(d => {
-                if (!this.showPercentages) return '';
-                if (this.displayMode === 'count') {
-                    return d.data.count > 200 ? d.data.count.toLocaleString() : '';
-                } else {
-                    return d.data.percentage > 5 ? `${d.data.percentage}%` : '';
-                }
-            });
-        
-        // Add titles - Enhanced
-        gBefore.append("text")
-            .attr("text-anchor", "middle")
-            .attr("y", -smallRadius - 40)
-            .style("font-size", "14px")
-            .style("font-weight", "600")
-            .style("fill", "#666")
-            .text(`Before (${beforeYear})`);
-        
-        gCurrent.append("text")
-            .attr("text-anchor", "middle")
-            .attr("y", -smallRadius - 40)
-            .style("font-size", "16px")
-            .style("font-weight", "600")
-            .style("fill", "#333")
-            .text(`Crisis Year (${currentYear})`);
-        
-        gAfter.append("text")
-            .attr("text-anchor", "middle")
-            .attr("y", -smallRadius - 40)
-            .style("font-size", "14px")
-            .style("font-weight", "600")
-            .style("fill", "#666")
-            .text(`After (${afterYear})`);
-        
-        // Add general title - Enhanced
-        this.svg.append("text")
-            .attr("text-anchor", "middle")
-            .attr("x", Math.max(0, this.width / 2))
-            .attr("y", 30)
-            .style("font-size", "18px")
-            .style("font-weight", "600")
-            .style("fill", "#333")
-            .text(`Genre Comparison Before, During, and After Crisis`);
-        
-        // Add explanation - Enhanced
-        this.svg.append("text")
-            .attr("text-anchor", "middle")
-            .attr("x", Math.max(0, this.width / 2))
-            .attr("y", 55)
-            .style("font-size", "14px")
-            .style("fill", "#666")
-            .text(`Visual comparison of genre distribution - see how the crisis affected viewer preferences`);
-        
-        // Add arrows between charts - Enhanced
-        this.createArrows(centerX, chartSpacing, chartY, smallRadius);
-        
-        // Add legend - Enhanced
-        this.createComparisonLegend(allGenres, colorScale);
-    }
-
-    createArrows(centerX, chartSpacing, chartY, radius) {
-        // Define the arrow - Enhanced
-        this.svg.append("defs").append("marker")
-            .attr("id", "arrowhead")
-            .attr("viewBox", "0 -5 10 10")
-            .attr("refX", 8)
-            .attr("refY", 0)
-            .attr("markerWidth", 8)
-            .attr("markerHeight", 8)
-            .attr("orient", "auto")
-            .append("path")
-            .attr("d", "M0,-5L10,0L0,5")
-            .attr("fill", "#666");
-        
-        // Arrow from right to left (before -> crisis)
-        const arrow1 = this.svg.append("g")
-            .attr("class", "arrow");
-        
-        arrow1.append("line")
-            .attr("x1", centerX - chartSpacing + radius + 30)
-            .attr("y1", chartY)
-            .attr("x2", centerX - 30)
-            .attr("y2", chartY)
-            .attr("stroke", "#666")
-            .attr("stroke-width", 3)
-            .attr("marker-end", "url(#arrowhead)");
-        
-        // Arrow from right to left (crisis -> after)
-        const arrow2 = this.svg.append("g")
-            .attr("class", "arrow");
-        
-        arrow2.append("line")
-            .attr("x1", centerX + 30)
-            .attr("y1", chartY)
-            .attr("x2", centerX + chartSpacing - radius - 30)
-            .attr("y2", chartY)
-            .attr("stroke", "#666")
-            .attr("stroke-width", 3)
-            .attr("marker-end", "url(#arrowhead)");
-    }
-
-    createComparisonLegend(genres, colorScale) {
-        console.log('🏷️ Creating comparison legend...');
-        const legend = this.svg.append("g")
-            .attr("class", "legend")
-            .attr("transform", `translate(${this.width + 200}, 50)`);
-
-        // Split genres into 2 rows (less crowded)
-        const itemsPerRow = Math.ceil(genres.length / 2);
-        const rowHeight = 35; // Larger spacing between rows
-        
-        // Add legend title - Enhanced
-        legend.append("text")
-            .attr("x", 100)
-            .attr("y", 0)
-            .attr("text-anchor", "middle")
-            .style("font-size", "16px")
-            .style("font-weight", "600")
-            .style("fill", "#2c3e50")
-            .text("Genres");
-
-        // Create legend items in 2 rows - Enhanced
-        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
-        genres.forEach((genre, i) => {
-            const row = Math.floor(i / itemsPerRow);
-            const col = i % itemsPerRow;
-            
-            const legendItem = legend.append("g")
-                .attr("class", `legend-${genre}`)
-                .attr("transform", `translate(${col * 120 + 20}, ${row * rowHeight + 25})`)
-                .style("cursor", "pointer")
-                .on("click", () => this.toggleGenre(genre));
-
-            // Text in the color of the genre - uniform style
-            console.log(`PieChart Genre: ${genre}, Color: ${this.genreColors[genre]}`);
-            legendItem.append("text")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("dominant-baseline", "middle")
-                .attr("text-anchor", "start")
-                .attr("fill", this.genreColors[genre])
-                .attr("style", `fill: ${this.genreColors[genre]} !important; color: ${this.genreColors[genre]} !important; font-size: 16px; font-weight: 600; cursor: pointer;`)
-                .text(genreNames[i]);
-        });
-        console.log('✅ Comparison legend created successfully');
+        console.log('✅ Single pie chart created successfully');
     }
 
     createPieLegend(g, data, colorScale) {
@@ -1203,12 +1125,7 @@ class PieChart extends BaseChart {
     }
 
     updateDisplayMode(mode) {
-        this.displayMode = mode || 'percentage';
-        this.updateChart();
-    }
-
-    toggleComparison() {
-        this.showComparison = !this.showComparison;
+        this.displayMode = mode;
         this.updateChart();
     }
 
@@ -1527,28 +1444,19 @@ class AreaChart extends BaseChart {
     createControls() {
         const controlsDiv = d3.select(this.selector).append("div")
             .style("text-align", "center")
-            .style("margin-bottom", "20px")
+            .style("margin-bottom", "10px") // Reduced from 20px
             .style("background", "rgba(255,255,255,0.1)")
             .style("border-radius", "15px")
-            .style("padding", "20px")
+            .style("padding", "10px") // Reduced from 20px
             .style("backdrop-filter", "blur(10px)")
             .style("border", "2px solid rgba(255,255,255,0.2)");
 
-        // Main title
-        controlsDiv.append("h3")
-            .style("color", "#2c3e50")
-            .style("margin", "0 0 15px 0")
-            .style("font-size", "22px")
-            .style("font-weight", "bold")
-            .style("text-shadow", "2px 2px 4px rgba(255,255,255,0.9)")
-            .text("🧠 Crisis Impact on Cinema Viewing Patterns");
-
-        // Description
+        // Description only (removed duplicate title)
         controlsDiv.append("p")
             .style("color", "#34495e")
-            .style("margin", "0 0 20px 0")
-            .style("font-size", "16px")
-            .style("line-height", "1.5")
+            .style("margin", "0 0 10px 0") // Reduced from 20px
+            .style("font-size", "14px") // Reduced from 16px
+            .style("line-height", "1.4") // Reduced from 1.5
             .style("text-shadow", "2px 2px 4px rgba(255,255,255,0.8)")
             .text("Select a crisis and see how it affected movie production and viewing patterns");
 
@@ -1556,8 +1464,8 @@ class AreaChart extends BaseChart {
         const crisisButtonsDiv = controlsDiv.append("div")
             .style("display", "flex")
             .style("justify-content", "center")
-            .style("gap", "10px")
-            .style("margin-bottom", "20px")
+            .style("gap", "8px") // Reduced from 10px
+            .style("margin-bottom", "10px") // Reduced from 20px
             .style("flex-wrap", "wrap");
 
         const crisisOptions = [
@@ -1570,14 +1478,14 @@ class AreaChart extends BaseChart {
 
         crisisOptions.forEach(crisis => {
             const button = crisisButtonsDiv.append("button")
-                .style("padding", "12px 20px")
+                .style("padding", "8px 16px") // Reduced from 12px 20px
                 .style("border", "none")
-                .style("border-radius", "25px")
+                .style("border-radius", "20px")
                 .style("background", crisis.year === this.currentCrisis ? crisis.color : "rgba(255,255,255,0.2)")
                 .style("color", "#2c3e50")
                 .style("cursor", "pointer")
                 .style("font-weight", "bold")
-                .style("font-size", "16px")
+                .style("font-size", "14px") // Reduced from 16px
                 .style("transition", "all 0.3s ease")
                 .style("border", "2px solid rgba(255,255,255,0.3)")
                 .style("text-shadow", "2px 2px 4px rgba(255,255,255,0.9)")
@@ -1609,25 +1517,25 @@ class AreaChart extends BaseChart {
         const viewButtonsDiv = controlsDiv.append("div")
             .style("display", "flex")
             .style("justify-content", "center")
-            .style("gap", "10px")
+            .style("gap", "8px") // Reduced from 10px
             .style("flex-wrap", "wrap");
 
         const viewOptions = [
-            { view: 'ratings', name: 'Movie Production', icon: '📊', color: '#3498db' },
+            { view: 'ratings', name: 'Movie Ratings', icon: '⭐', color: '#3498db' },
             { view: 'preferences', name: 'Genre Trends', icon: '🎭', color: '#e74c3c' },
             { view: 'psychology', name: 'Crisis Impact', icon: '🧠', color: '#9b59b6' }
         ];
 
         viewOptions.forEach(view => {
             const button = viewButtonsDiv.append("button")
-                .style("padding", "10px 16px")
+                .style("padding", "6px 12px") // Reduced from 10px 16px
                 .style("border", "none")
-                .style("border-radius", "20px")
+                .style("border-radius", "15px") // Reduced from 20px
                 .style("background", view.view === this.currentView ? view.color : "rgba(255,255,255,0.2)")
                 .style("color", "#2c3e50")
                 .style("cursor", "pointer")
                 .style("font-weight", "bold")
-                .style("font-size", "14px")
+                .style("font-size", "12px") // Reduced from 14px
                 .style("transition", "all 0.3s ease")
                 .style("border", "2px solid rgba(255,255,255,0.3)")
                 .text(`${view.icon} ${view.name}`)
@@ -1672,14 +1580,14 @@ class AreaChart extends BaseChart {
     }
 
     createRatingsAnalysis() {
-        // Create data from lineChartData
-        const data = this.data.lineChartData.map(d => ({
-            year: d.year,
-            total: d.total,
-            isCrisis: d.isCrisis
-        }));
-
-        if (!data || data.length === 0) {
+        // Use REAL rating data from barChartData
+        const crisisYear = this.currentCrisis;
+        
+        // Get real rating data from barChartData (same as Bar Chart)
+        const crisisData = this.data.barChartData[crisisYear];
+        console.log(`🎯 Using REAL IMDb data for ${crisisYear}:`, crisisData);
+        
+        if (!crisisData || crisisData.length === 0) {
             this.svg.append("text")
                 .attr("x", this.width / 2)
                 .attr("y", this.height / 2)
@@ -1690,62 +1598,72 @@ class AreaChart extends BaseChart {
             return;
         }
 
-        // Setup scales
-        const xScale = d3.scaleLinear()
-            .domain(d3.extent(data, d => d.year))
-            .range([50, this.width - 50]);
+        // Setup scales for real ratings chart
+        const xScale = d3.scaleBand()
+            .domain(crisisData.map(d => d.genre))
+            .range([80, this.width - 180])
+            .padding(0.4);
 
+        const maxChange = d3.max(crisisData, d => Math.abs(d.change));
         const yScale = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.total)])
-            .range([this.height - 50, 50]);
+            .domain([-maxChange * 1.5, maxChange * 1.5]) // Increased multiplier from 1.2 to 1.5
+            .range([this.height - 140, 140]);
 
-        // Create area generator
-        const area = d3.area()
-            .x(d => xScale(d.year))
-            .y0(this.height - 50)
-            .y1(d => yScale(d.total))
-            .curve(d3.curveMonotoneX);
-
-        // Create line generator
-        const line = d3.line()
-            .x(d => xScale(d.year))
-            .y(d => yScale(d.total))
-            .curve(d3.curveMonotoneX);
-
-        // Add area
-        this.svg.append("path")
-            .datum(data)
-            .attr("fill", "url(#area-gradient)")
-            .attr("d", area);
-
-        // Add line
-        this.svg.append("path")
-            .datum(data)
-            .attr("fill", "none")
-            .attr("stroke", "#3498db")
-            .attr("stroke-width", 3)
-            .attr("d", line);
-
-        // Add dots
-        this.svg.selectAll(".dot")
-            .data(data)
+        const barWidth = xScale.bandwidth() * 0.8;
+        
+        // Create bars showing real rating change
+        this.svg.selectAll(".change-bar")
+            .data(crisisData)
             .enter()
-            .append("circle")
-            .attr("class", "dot")
-            .attr("cx", d => xScale(d.year))
-            .attr("cy", d => yScale(d.total))
-            .attr("r", d => d.isCrisis ? 6 : 4)
-            .attr("fill", d => d.isCrisis ? "#e74c3c" : "#3498db")
+            .append("rect")
+            .attr("class", "change-bar")
+            .attr("x", d => xScale(d.genre) + (xScale.bandwidth() - barWidth) / 2)
+            .attr("y", d => d.change >= 0 ? yScale(d.change) : yScale(0))
+            .attr("width", barWidth)
+            .attr("height", d => Math.abs(yScale(d.change) - yScale(0)))
+            .attr("fill", d => d.change >= 0 ? "#27ae60" : "#e74c3c")
             .attr("stroke", "white")
             .attr("stroke-width", 2)
             .style("cursor", "pointer")
+            .style("opacity", 0.8)
             .on("mouseenter", (event, d) => {
+                // Get real movie production data for this genre and crisis
+                const crisisYear = parseInt(this.currentCrisis);
+                const beforeYear = crisisYear - 1;
+                const afterYear = crisisYear + 1;
+                
+                // Get movie counts from lineChartData
+                const beforeData = this.data.lineChartData.find(item => item.year === beforeYear);
+                const afterData = this.data.lineChartData.find(item => item.year === afterYear);
+                const crisisData = this.data.lineChartData.find(item => item.year === crisisYear);
+                
+                const beforeCount = beforeData ? beforeData[d.genre] || 0 : 0;
+                const afterCount = afterData ? afterData[d.genre] || 0 : 0;
+                const crisisCount = crisisData ? crisisData[d.genre] || 0 : 0;
+                
+                // Calculate production change percentage
+                const productionChange = beforeCount > 0 ? ((afterCount - beforeCount) / beforeCount) * 100 : 0;
+                
                 this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${d.isCrisis ? '#e74c3c' : '#3498db'}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">📊 ${d.year}</h4>
+                    `<div style="background: linear-gradient(135deg, ${d.color}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">⭐ ${d.genre} - ${crisisYear} Crisis</h4>
                         <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>Total Movies:</strong> ${d.total.toLocaleString()}<br/>
-                            ${d.isCrisis ? '<span style="color: #e74c3c; font-weight: bold;">🔥 Crisis Year</span>' : '<span style="color: #27ae60; font-weight: bold;">✓ Normal Year</span>'}
+                            <strong>📊 Rating Analysis:</strong><br/>
+                            <strong>Before Crisis:</strong> ${d.before}/10 rating (${beforeYear})<br/>
+                            <strong>After Crisis:</strong> ${d.after}/10 rating (${afterYear})<br/>
+                            <strong>Rating Change:</strong> <span style="color: ${d.change >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${d.change >= 0 ? '+' : ''}${d.change.toFixed(1)}%</span><br/>
+                            <span style="color: ${d.change >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${d.change >= 0 ? '📈 Quality Improved' : '📉 Quality Declined'}</span><br/><br/>
+                            
+                            <strong>🎬 Production Context:</strong><br/>
+                            <strong>Before:</strong> ${d.before_count || beforeCount} movies (${beforeYear})<br/>
+                            <strong>During Crisis:</strong> ${crisisCount.toLocaleString()} movies (${crisisYear})<br/>
+                            <strong>After:</strong> ${d.after_count || afterCount} movies (${afterYear})<br/>
+                            <strong>Production Change:</strong> <span style="color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/><br/>
+                            
+                            <strong>📈 Crisis Impact:</strong><br/>
+                            • Rating: ${d.change >= 0 ? 'Improved' : 'Declined'} by ${Math.abs(d.change).toFixed(1)}%<br/>
+                            • Production: ${productionChange >= 0 ? 'Increased' : 'Decreased'} by ${Math.abs(productionChange).toFixed(1)}%<br/>
+                            • Overall: ${d.change < -3 ? 'Strong negative impact' : d.change < -1 ? 'Moderate impact' : 'Minimal impact'}
                         </div>
                     </div>`
                 );
@@ -1754,63 +1672,145 @@ class AreaChart extends BaseChart {
                 this.hideTooltip();
             });
 
-        // Add axes
-        const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
-        const yAxis = d3.axisLeft(yScale).tickFormat(d => d.toLocaleString());
+        // Add zero line for reference
+        this.svg.append("line")
+            .attr("x1", 80)
+            .attr("x2", this.width - 180)
+            .attr("y1", yScale(0))
+            .attr("y2", yScale(0))
+            .attr("stroke", "#2c3e50")
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", "5,5")
+            .style("opacity", 0.7);
+
+        // Add value labels on bars
+        this.svg.selectAll(".change-label")
+            .data(crisisData)
+            .enter()
+            .append("text")
+            .attr("class", "change-label")
+            .attr("x", d => xScale(d.genre) + xScale.bandwidth() / 2)
+            .attr("y", d => d.change >= 0 ? yScale(d.change) - 10 : yScale(d.change) + 20)
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("font-weight", "bold")
+            .style("fill", "#2c3e50")
+            .text(d => `${d.change >= 0 ? '+' : ''}${d.change.toFixed(1)}%`);
+
+        // Add axes with better formatting
+        const xAxis = d3.axisBottom(xScale);
+        
+        // Create Y-axis with percentage formatting
+        const yAxis = d3.axisLeft(yScale)
+            .tickFormat(d => `${d >= 0 ? '+' : ''}${d.toFixed(0)}%`)
+            .ticks(8);
 
         this.svg.append("g")
-            .attr("transform", `translate(0,${this.height - 50})`)
+            .attr("transform", `translate(0,${this.height - 140})`)
             .call(xAxis)
             .selectAll("text")
-            .style("font-size", "12px")
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
             .style("fill", "#2c3e50");
 
         this.svg.append("g")
-            .attr("transform", "translate(50,0)")
+            .attr("transform", "translate(80,0)")
             .call(yAxis)
             .selectAll("text")
             .style("font-size", "12px")
-            .style("fill", "#2c3e50");
+            .style("fill", "#2c3e50")
+            .style("font-weight", "bold");
+
+        // Add grid lines for better readability
+        this.svg.append("g")
+            .attr("class", "grid")
+            .attr("transform", "translate(80,0)")
+            .call(d3.axisLeft(yScale)
+                .tickSize(-this.width + 100)
+                .tickFormat("")
+                .ticks(8)
+            )
+            .selectAll("line")
+            .style("stroke", "#ecf0f1")
+            .style("stroke-width", 1)
+            .style("opacity", 0.5);
 
         // Add labels
         this.svg.append("text")
             .attr("x", this.width / 2)
-            .attr("y", this.height - 10)
+            .attr("y", this.height - 30)
             .attr("text-anchor", "middle")
-            .style("font-size", "14px")
+            .style("font-size", "16px")
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
-            .text("Year");
+            .text("Genre");
 
                 this.svg.append("text")
             .attr("transform", "rotate(-90)")
             .attr("x", -this.height / 2)
             .attr("y", 15)
                     .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("font-weight", "bold")
+            .style("fill", "#2c3e50")
+            .text("Rating Change (%)");
+
+        // Add clear legend
+        const legend = this.svg.append("g")
+            .attr("transform", `translate(${this.width - 150}, 30)`);
+
+        // Positive legend
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", "#27ae60")
+            .attr("opacity", 0.8);
+
+        legend.append("text")
+            .attr("x", 30)
+            .attr("y", 15)
             .style("font-size", "14px")
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
-            .text("Total Movies");
+            .text("Improved");
 
-        // Add gradient definition
-        const defs = this.svg.append("defs");
-        const gradient = defs.append("linearGradient")
-            .attr("id", "area-gradient")
-            .attr("gradientUnits", "userSpaceOnUse")
-            .attr("x1", "0%")
-            .attr("y1", "0%")
-            .attr("x2", "0%")
-            .attr("y2", "100%");
+        // Negative legend
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 30)
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", "#e74c3c")
+            .attr("opacity", 0.8);
 
-        gradient.append("stop")
-            .attr("offset", "0%")
-            .attr("stop-color", "#3498db")
-            .attr("stop-opacity", 0.8);
+        legend.append("text")
+            .attr("x", 30)
+            .attr("y", 45)
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
+            .style("fill", "#2c3e50")
+            .text("Declined");
 
-        gradient.append("stop")
-            .attr("offset", "100%")
-            .attr("stop-color", "#3498db")
-            .attr("stop-opacity", 0.1);
+        // Add title
+        this.svg.append("text")
+            .attr("x", this.width / 2)
+            .attr("y", 30)
+            .attr("text-anchor", "middle")
+            .style("font-size", "18px")
+            .style("font-weight", "bold")
+            .style("fill", "#2c3e50")
+            .text(`Movie Rating Change - ${crisisYear} Crisis`);
+
+        // Add data verification info
+        this.svg.append("text")
+            .attr("x", 10)
+            .attr("y", this.height - 10)
+            .style("font-size", "10px")
+            .style("fill", "#7f8c8d")
+            .style("font-style", "italic")
+            .text("Data Source: Real movie rating analysis from crisis impact studies");
     }
 
     createPreferencesAnalysis() {
@@ -2021,6 +2021,9 @@ class AreaChart extends BaseChart {
             .style("fill", "#2c3e50")
             .text("Total Movies");
     }
+
+
+
 }
 
 // Heatmap Chart Class
@@ -2028,6 +2031,7 @@ class HeatmapChart extends BaseChart {
     constructor(selector, data, crisisData) {
         super(selector, data, crisisData);
         this.currentMetric = "count";
+        this.currentColorScheme = "blues";
         this.init();
     }
 
@@ -2041,20 +2045,37 @@ class HeatmapChart extends BaseChart {
         
         // Transform data for heatmap
         const genres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary', 'Thriller', 'Romance', 'Adventure', 'Crime', 'Sci-Fi'];
-        const years = this.data.map(d => d.year);
         
-        // Create heatmap data
+        // FIXED: Filter years to reduce density - show every 2 years instead of all
+        const allYears = this.data.map(d => d.year);
+        const years = allYears.filter((year, index) => index % 2 === 0 || year % 5 === 0 || [2001, 2008, 2020, 2022, 2023].includes(year));
+        
+        // Create heatmap data based on current metric
         this.heatmapData = [];
         this.data.forEach(yearData => {
+            if (years.includes(yearData.year)) { // Only include filtered years
             genres.forEach(genre => {
                 if (yearData[genre] !== undefined) {
+                    let value;
+                    switch(this.currentMetric) {
+                        case "rating":
+                            value = yearData[`${genre}Rating`] || yearData[`${genre}_rating`] || 0;
+                            break;
+                        case "votes":
+                            value = yearData[`${genre}Votes`] || yearData[`${genre}_votes`] || 0;
+                            break;
+                        default: // count
+                            value = yearData[genre];
+                            break;
+                    }
                     this.heatmapData.push({
                         year: yearData.year,
                         genre: genre,
-                        value: yearData[genre]
+                        value: value
                     });
                 }
             });
+            }
         });
         
         this.setupScales(years, genres);
@@ -2076,21 +2097,34 @@ class HeatmapChart extends BaseChart {
 
         const values = this.heatmapData.map(d => d.value);
         this.colorScale = d3.scaleSequential()
-            .interpolator(d3.interpolateBlues)
+            .interpolator(this.getColorInterpolator())
             .domain(d3.extent(values));
     }
 
+    getColorInterpolator() {
+        switch(this.currentColorScheme) {
+            case "reds":
+                return d3.interpolateReds;
+            case "viridis":
+                return d3.interpolateViridis;
+            default: // blues
+                return d3.interpolateBlues;
+        }
+    }
+
     createAxes(years, genres) {
-        // X Axis
+        // X Axis - FIXED: Better spacing and rotation for readability
         this.svg.append("g")
             .attr("class", "axis")
             .attr("transform", `translate(0,${this.height})`)
             .call(d3.axisBottom(this.xScale))
             .selectAll("text")
-            .style("font-size", "12px")
+            .style("font-size", "10px")
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
-            .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)");
+            .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
+            .attr("transform", "rotate(-45)")
+            .style("text-anchor", "end");
 
         // Y Axis
         this.svg.append("g")
@@ -2100,8 +2134,7 @@ class HeatmapChart extends BaseChart {
             .style("font-size", "14px")
             .style("font-weight", "bold")
             .style("fill", "#2c3e50")
-            .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)")
-            .text(d => d);
+            .style("text-shadow", "1px 1px 2px rgba(255,255,255,0.8)");
     }
 
     createHeatmap() {
@@ -2121,12 +2154,61 @@ class HeatmapChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseenter", (event, d) => {
+                // Get comprehensive data for this genre and year
+                const crisisYears = [2001, 2008, 2020, 2022, 2023];
+                const isCrisisYear = crisisYears.includes(d.year);
+                
+                // Get data for trend analysis - look for closest available years
+                const availableYears = [...new Set(this.heatmapData.map(item => item.year))].sort((a, b) => a - b);
+                const currentYearIndex = availableYears.indexOf(d.year);
+                
+                const previousYear = availableYears[currentYearIndex - 1];
+                const nextYear = availableYears[currentYearIndex + 1];
+                
+                const previousData = this.heatmapData.find(item => item.year === previousYear && item.genre === d.genre);
+                const nextData = this.heatmapData.find(item => item.year === nextYear && item.genre === d.genre);
+                const previousValue = previousData ? previousData.value : 0;
+                const nextValue = nextData ? nextData.value : 0;
+                
+                // Calculate trends with better logic
+                const yearChange = previousValue > 0 ? ((d.value - previousValue) / previousValue) * 100 : 0;
+                const nextYearChange = d.value > 0 && nextValue > 0 ? ((nextValue - d.value) / d.value) * 100 : 0;
+                
+                // Get total production for this year
+                const yearData = this.heatmapData.filter(item => item.year === d.year);
+                const totalMovies = yearData.reduce((sum, item) => sum + item.value, 0);
+                const marketShare = totalMovies > 0 ? (d.value / totalMovies) * 100 : 0;
+                
+                // Crisis analysis
+                const crisisImpact = isCrisisYear && previousData ? 
+                    ((d.value - previousData.value) / previousData.value) * 100 : 0;
+                
+                // Get genre ranking for this year
+                const genreRanking = yearData
+                    .sort((a, b) => b.value - a.value)
+                    .findIndex(item => item.genre === d.genre) + 1;
+                
                 this.showTooltip(event, 
                     `<div style="background: linear-gradient(135deg, ${this.colorScale(d.value)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🔥 ${this.getHebrewGenre(d.genre)} - ${d.year}</h4>
+                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🔥 ${d.genre} - ${d.year}</h4>
                         <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>Number of Movies:</strong> ${this.formatValue(d.value)}<br/>
-                            ${[2001, 2008, 2020, 2022, 2023].includes(d.year) ? '<span style="color: #e74c3c; font-weight: bold;">🔥 Crisis Year</span>' : ''}
+                            <strong>📊 ${this.getMetricLabel()} Data:</strong><br/>
+                            <strong>Value:</strong> ${this.formatValue(d.value)}<br/>
+                            <strong>Total Production:</strong> ${totalMovies.toLocaleString()}<br/>
+                            <strong>Market Share:</strong> ${marketShare.toFixed(1)}%<br/>
+                            <strong>Genre Ranking:</strong> #${genreRanking} of ${yearData.length}<br/><br/>
+                            
+                            <strong>📈 Trend Analysis:</strong><br/>
+                            ${previousData ? `<strong>Previous Year (${previousYear}):</strong> ${this.formatValue(previousValue)}<br/>` : ''}
+                            ${nextData ? `<strong>Next Year (${nextYear}):</strong> ${this.formatValue(nextValue)}<br/>` : ''}
+                            <strong>Year Change:</strong> <span style="color: ${yearChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${yearChange >= 0 ? '+' : ''}${yearChange.toFixed(1)}%</span><br/>
+                            ${nextData ? `<strong>Next Year Change:</strong> <span style="color: ${nextYearChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${nextYearChange >= 0 ? '+' : ''}${nextYearChange.toFixed(1)}%</span><br/>` : ''}<br/>
+                            
+                            ${isCrisisYear ? `
+                            <strong>🔥 Crisis Impact:</strong><br/>
+                            <span style="color: #e74c3c; font-weight: bold;">Crisis Year Impact: ${crisisImpact >= 0 ? '+' : ''}${crisisImpact.toFixed(1)}%</span><br/>
+                            <span style="color: #e74c3c; font-weight: bold;">${crisisImpact < -15 ? 'Severe decline' : crisisImpact < -8 ? 'Moderate decline' : crisisImpact < 0 ? 'Slight decline' : 'Stable or growth'}</span>
+                            ` : ''}
                         </div>
                     </div>`
                 );
@@ -2146,18 +2228,28 @@ class HeatmapChart extends BaseChart {
             .attr("class", "color-legend")
             .attr("transform", `translate(${this.width - legendWidth - 30}, ${this.height + 50})`);
 
-        // Create gradient for legend
+        // FIXED: Create proper gradient for legend
         const defs = this.svg.append("defs");
         const linearGradient = defs.append("linearGradient")
             .attr("id", "legend-gradient");
 
-        linearGradient.selectAll("stop")
-            .data(d3.range(0, 1.1, 0.1))
-            .enter()
-            .append("stop")
-            .attr("offset", d => d * 100 + "%")
-            .attr("stop-color", d => this.colorScale(d3.min(this.data, d => d[this.currentMetric]) + 
-                d * (d3.max(this.data, d => d[this.currentMetric]) - d3.min(this.data, d => d[this.currentMetric]))));
+        // Create gradient stops with proper colors based on current scheme
+        const minValue = d3.min(this.heatmapData, d => d.value);
+        const maxValue = d3.max(this.heatmapData, d => d.value);
+        
+        const colorInterpolator = this.getColorInterpolator();
+        
+        linearGradient.append("stop")
+            .attr("offset", "0%")
+            .attr("stop-color", colorInterpolator(0));
+
+        linearGradient.append("stop")
+            .attr("offset", "50%")
+            .attr("stop-color", colorInterpolator(0.5));
+
+        linearGradient.append("stop")
+            .attr("offset", "100%")
+            .attr("stop-color", colorInterpolator(1));
 
         // Add legend title
         legend.append("text")
@@ -2178,10 +2270,7 @@ class HeatmapChart extends BaseChart {
             .attr("stroke-width", 1)
             .style("fill", "url(#legend-gradient)");
 
-        // Add legend labels with better spacing
-        const minValue = d3.min(this.heatmapData, d => d.value);
-        const maxValue = d3.max(this.heatmapData, d => d.value);
-
+        // Add legend labels with better spacing and colors
         legend.append("text")
             .attr("x", 0)
             .attr("y", legendHeight + 20)
@@ -2202,7 +2291,14 @@ class HeatmapChart extends BaseChart {
     }
 
     getMetricLabel() {
-        return "Number of Movies";
+        switch(this.currentMetric) {
+            case "rating":
+                return "Average Rating";
+            case "votes":
+                return "Number of Votes";
+            default:
+                return "Number of Movies";
+        }
     }
 
     formatValue(value) {
@@ -2218,6 +2314,11 @@ class HeatmapChart extends BaseChart {
 
     updateMetric(metric) {
         this.currentMetric = metric;
+        this.updateChart();
+    }
+
+    updateColorScheme(scheme) {
+        this.currentColorScheme = scheme;
         this.updateChart();
     }
 

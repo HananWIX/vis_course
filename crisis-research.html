@@ -9,7 +9,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20241205aa">
     
     <!-- Google Fonts - Heebo -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -278,12 +278,6 @@
                             </select>
                         </div>
                         <div class="control-group">
-                            <label for="pieComparison">🔄 Comparison:</label>
-                            <button id="pieComparison" type="button" class="comparison-btn">
-                                Show Before/After Comparison
-                            </button>
-                        </div>
-                        <div class="control-group">
                             <label for="pieShowPercentages">📊 Show Percentages:</label>
                             <input type="checkbox" id="pieShowPercentages" checked />
                         </div>
@@ -304,26 +298,24 @@
                 <div class="chart-header">
                     <h2>🧠 Crisis Impact on Cinema Viewing Patterns</h2>
                     <p class="chart-description">
-                        <strong>Research Question:</strong> How do crises change viewing patterns, ratings and genre preferences?<br>
-                        Psychological analysis of crisis impact on movie selection and escape vs. coping patterns.
+                        <strong>Research Question:</strong> How do crises change movie quality ratings and genre preferences?<br>
+                        Analysis of crisis impact on actual movie ratings showing quality changes during disruption periods.
                     </p>
                 </div>
                 <div class="chart-container">
                     <div id="areaChart" class="chart"></div>
                     <div class="chart-controls">
                         <div class="control-group">
-                            <label for="decadeFilter">📅 Select Decade:</label>
-                            <select id="decadeFilter">
-                                <option value="all">All Period</option>
-                                <option value="2000">2000-2009</option>
-                                <option value="2010">2010-2019</option>
-                                <option value="2020">2020-2024</option>
+                            <label for="areaCrisisSelect">🌍 Select Crisis:</label>
+                            <select id="areaCrisisSelect">
+                                <option value="2001">2001 - 9/11 Attacks</option>
+                                <option value="2008">2008 - Economic Crisis</option>
+                                <option value="2020">2020 - COVID-19</option>
+                                <option value="2022">2022 - Russia-Ukraine War</option>
+                                <option value="2023">2023 - October 7th Attack</option>
                             </select>
                         </div>
-                        <div class="control-group">
-                            <label for="showTrend">📊 Show Trend Line:</label>
-                            <input type="checkbox" id="showTrend" checked />
-                        </div>
+
                     </div>
                     <div class="insights" id="areaChartInsights">
                         <h4>Key Insights:</h4>
@@ -429,9 +421,9 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="data.js"></script>
-    <script src="charts.js"></script>
+    <script src="data.js?v=20241205hh"></script>
+    <script src="charts.js?v=20241205hh"></script>
     
-    <script src="main.js"></script>
+    <script src="main.js?v=20241205hh"></script>
 </body>
 </html>

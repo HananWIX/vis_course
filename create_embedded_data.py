@@ -9,31 +9,19 @@ with open('processed_data.json', 'r', encoding='utf-8') as f:
 # יצירת גרסה מקוצרת של הנתונים
 print("יוצר גרסה מקוצרת...")
 
-# מדגמים חלק מהסרטים כדי להקטין את הגודל
+# עיבוד הנתונים הקיימים
 movies_sample = []
-for movie in full_data['movies']:
-    # שומרים סרטים עם דירוג גבוה או מסוגי ז'אנר מעניינים
-    if (movie.get('averageRating', 0) >= 7.0 or 
-        movie.get('numVotes', 0) >= 10000 or 
-        random.random() < 0.1):  # מדגם של 10%
-        movies_sample.append(movie)
 
-# מגבילים ל-5000 סרטים
-movies_sample = movies_sample[:5000]
+# נבדוק אם יש נתונים מעובדים כראוי
+if 'barChartData' in full_data:
+    print("משתמש בנתונים מעובדים קיימים...")
+    # אין צורך במדגם - הנתונים כבר מעובדים
+    embedded_data = full_data
+else:
+    print("נתונים לא מעובדים - נדרש עיבוד מחדש...")
+    embedded_data = full_data
 
-print(f"מספר סרטים במדגם: {len(movies_sample)}")
-
-# יצירת נתונים מקוצרים
-embedded_data = {
-    'movies': movies_sample,
-    'metadata': {
-        'totalMovies': len(movies_sample),
-        'totalRatings': len([m for m in movies_sample if m.get('averageRating')]),
-        'mergedRecords': len(movies_sample),
-        'yearRange': full_data['metadata']['yearRange'],
-        'genres': full_data['metadata']['genres']
-    }
-}
+print("נתונים מוכנים לשימוש!")
 
 # שמירה לקובץ JS
 print("יוצר קובץ JS עם נתונים מוטמעים...")
