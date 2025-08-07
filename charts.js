@@ -926,21 +926,44 @@ class PieChart extends BaseChart {
             return;
         }
 
-        // Create consistent color scale
+        // Define the 5 main genres
+        const mainGenres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
+        
+        // Process data to show only 5 main genres + "Others"
+        const processedData = [];
+        let othersCount = 0;
+        let othersPercentage = 0;
+        
+        data.forEach(item => {
+            if (mainGenres.includes(item.genre)) {
+                processedData.push(item);
+            } else {
+                othersCount += item.count;
+                othersPercentage += item.percentage;
+            }
+        });
+        
+        // Add "Others" category if there are other genres
+        if (othersCount > 0) {
+            processedData.push({
+                genre: 'Others',
+                genre_en: 'Others',
+                count: othersCount,
+                percentage: othersPercentage
+            });
+        }
+
+        // Create consistent color scale for main genres + others
         const colorScale = d3.scaleOrdinal()
-            .domain(data.map(d => d.genre_en || d.genre))
-            .range(data.map(d => {
+            .domain(processedData.map(d => d.genre_en || d.genre))
+            .range(processedData.map(d => {
                 const colorMap = {
                     'Drama': '#e74c3c',
                     'Action': '#3498db', 
                     'Comedy': '#f39c12',
                     'Horror': '#9b59b6',
                     'Documentary': '#2ecc71',
-                    'Thriller': '#e67e22',
-                    'Romance': '#e91e63',
-                    'Crime': '#795548',
-                    'Adventure': '#00bcd4',
-                    'Sci-Fi': '#607d8b'
+                    'Others': '#95a5a6' // Gray color for others
                 };
                 return colorMap[d.genre_en || d.genre] || '#2c3e50';
             }));
@@ -950,7 +973,7 @@ class PieChart extends BaseChart {
             .attr("transform", `translate(${this.width / 2},${this.height / 2})`);
 
         // Create pie data
-        const pieData = this.pie(data);
+        const pieData = this.pie(processedData);
 
         // Create pie slices - Enhanced
         const slices = g.selectAll(".slice")
@@ -1043,7 +1066,7 @@ class PieChart extends BaseChart {
             });
 
         // Create legend
-        this.createPieLegend(g, data, colorScale);
+        this.createPieLegend(g, processedData, colorScale);
         
         console.log('✅ Single pie chart created successfully');
     }
@@ -1076,40 +1099,30 @@ class PieChart extends BaseChart {
                 this.toggleGenre(d.genre);
             });
 
-        // Text in the color of the genre - uniform style
-        const genreNames = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
-        const hebrewGenres = {
-            'Drama': 'Drama',
-            'Action': 'Action', 
-            'Comedy': 'Comedy',
-            'Horror': 'Horror',
-            'Documentary': 'Documentary',
-            'Thriller': 'Thriller',
-            'Romance': 'Romance',
-            'Adventure': 'Adventure',
-            'Crime': 'Crime',
-            'Sci-Fi': 'Sci-Fi'
+        // Updated color mapping for main genres + others
+        const colorMap = {
+            'Drama': '#e74c3c',
+            'Action': '#3498db', 
+            'Comedy': '#f39c12',
+            'Horror': '#9b59b6',
+            'Documentary': '#2ecc71',
+            'Others': '#95a5a6'
         };
+
         legendItems.append("text")
             .attr("x", 0)
             .attr("y", 0)
             .attr("dominant-baseline", "middle")
             .attr("text-anchor", "start")
             .attr("fill", d => {
-                // Convert Hebrew genre to English for color lookup
-                const englishGenre = this.hebrewToEnglish[d.genre] || d.genre;
-                const color = this.genreColors[englishGenre];
-                console.log(`PieLegend Genre: ${d.genre} -> ${englishGenre}, Color: ${color}`);
-                return color || "#2c3e50"; // fallback color
+                const color = colorMap[d.genre] || "#2c3e50";
+                return color;
             })
             .attr("style", d => {
-                const englishGenre = this.hebrewToEnglish[d.genre] || d.genre;
-                const color = this.genreColors[englishGenre] || "#2c3e50";
-                console.log(`Setting color for ${d.genre}: ${color}`);
+                const color = colorMap[d.genre] || "#2c3e50";
                 return `fill: ${color} !important; color: ${color} !important; font-size: 16px; font-weight: 600; cursor: pointer;`;
             })
             .text(d => {
-                // Use the Hebrew genre name directly
                 if (this.displayMode === 'count') {
                     return `${d.genre} (${d.count.toLocaleString()})`;
                 } else {

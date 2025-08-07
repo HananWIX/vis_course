@@ -6,6 +6,7 @@ class DiversityBarChart {
         this.container = d3.select(containerSelector);
         this.data = null;
         this.currentSort = 'diversity'; // 'diversity', 'movies', 'rating', 'name'
+        this.currentFilter = 'all'; // 'all', '5', '10', '15', '20', '25'
         
         // Dimensions
         this.margin = { top: 80, right: 200, bottom: 100, left: 220 };
@@ -133,6 +134,44 @@ class DiversityBarChart {
             this.updateChart();
         });
         
+        // Filter controls
+        const filterDiv = controlsDiv.append('div')
+            .style('background', '#f8f9fa')
+            .style('padding', '10px 20px')
+            .style('border-radius', '25px')
+            .style('border', '2px solid #e9ecef');
+        
+        filterDiv.append('label')
+            .text('🔍 Show: ')
+            .style('font-weight', 'bold')
+            .style('margin-right', '10px')
+            .style('font-family', 'Inter, sans-serif');
+        
+        const filterSelect = filterDiv.append('select')
+            .style('padding', '8px 12px')
+            .style('border-radius', '8px')
+            .style('border', '1px solid #ddd')
+            .style('font-size', '14px')
+            .style('cursor', 'pointer');
+        
+        [
+            { value: 'all', text: '🌍 All Countries' },
+            { value: '5', text: '🥇 Top 5' },
+            { value: '10', text: '🥈 Top 10' },
+            { value: '15', text: '🥉 Top 15' },
+            { value: '20', text: '🏅 Top 20' },
+            { value: '25', text: '🏆 Top 25' }
+        ].forEach(option => {
+            filterSelect.append('option')
+                .attr('value', option.value)
+                .text(option.text);
+        });
+        
+        filterSelect.on('change', (event) => {
+            this.currentFilter = event.target.value;
+            this.updateChart();
+        });
+        
         // Info button
         controlsDiv.append('button')
             .text('ℹ️ Info')
@@ -190,16 +229,36 @@ class DiversityBarChart {
         })));
     }
     
+    getFilteredData() {
+        if (!this.data) return [];
+        
+        // Sort data first based on current sort
+        this.sortData();
+        
+        // Apply filter
+        if (this.currentFilter === 'all') {
+            return this.data;
+        } else {
+            const limit = parseInt(this.currentFilter);
+            return this.data.slice(0, limit);
+        }
+    }
+    
     updateChart() {
         if (!this.data || this.data.length === 0) {
             this.showError('No data available');
             return;
         }
         
-        console.log(`🔄 Updating chart with sort: ${this.currentSort}`);
+        console.log(`🔄 Updating chart with sort: ${this.currentSort}, filter: ${this.currentFilter}`);
         
-        // Sort data based on current selection
-        this.sortData();
+        // Get filtered data
+        const filteredData = this.getFilteredData();
+        
+        if (filteredData.length === 0) {
+            this.showError('No data available after filtering');
+            return;
+        }
         
         // Ensure all required components exist before updating
         if (!this.xScale || !this.yScale) {
@@ -208,16 +267,16 @@ class DiversityBarChart {
             this.yScale = d3.scaleBand().range([0, this.innerHeight]).padding(0.15);
         }
         
-        // Update scales
-        this.updateScales();
+        // Update scales with filtered data
+        this.updateScales(filteredData);
         
-        // Update axes
-        this.updateAxes();
+        // Update axes with filtered data
+        this.updateAxes(filteredData);
         
-        // Update bars
-        this.updateBars();
+        // Update bars with filtered data
+        this.updateBars(filteredData);
         
-        console.log('✅ Chart updated successfully');
+        console.log(`✅ Chart updated successfully with ${filteredData.length} countries`);
     }
     
     sortData() {
@@ -237,9 +296,9 @@ class DiversityBarChart {
         }
     }
     
-    updateScales() {
+    updateScales(filteredData) {
         // X scale - diversity index
-        const maxValue = d3.max(this.data, d => {
+        const maxValue = d3.max(filteredData, d => {
             switch (this.currentSort) {
                 case 'diversity': return d.diversity_index;
                 case 'movies': return d.movie_count;
@@ -251,12 +310,12 @@ class DiversityBarChart {
         this.xScale.domain([0, maxValue * 1.1]);
         
         // Y scale - countries
-        this.yScale.domain(this.data.map(d => d.country_name));
+        this.yScale.domain(filteredData.map(d => d.country_name));
     }
     
-    updateAxes() {
+    updateAxes(filteredData) {
         // Ensure scales are properly initialized
-        if (!this.xScale || !this.yScale || !this.data) {
+        if (!this.xScale || !this.yScale || !filteredData) {
             console.warn('⚠️ Scales or data not ready for axis update');
             return;
         }
@@ -351,11 +410,11 @@ class DiversityBarChart {
             .text('Countries');
     }
     
-    updateBars() {
+    updateBars(filteredData) {
         // Bind data
         const bars = this.barsGroup
             .selectAll('.country-bar')
-            .data(this.data, d => d.country);
+            .data(filteredData, d => d.country);
         
         // Remove old bars
         bars.exit()
@@ -428,7 +487,7 @@ class DiversityBarChart {
         
         // Add new labels with better visibility and safety checks
         this.g.selectAll('.value-label')
-            .data(this.data)
+            .data(bars.data())
             .enter()
             .append('text')
             .attr('class', 'value-label')
@@ -548,12 +607,16 @@ class DiversityBarChart {
         // Clear existing content
         legendContainer.html('');
         
-        // Add title
+        // Add title with filter info
+        const titleText = this.currentFilter === 'all' 
+            ? `📊 ${this.getLegendTitle()}`
+            : `📊 ${this.getLegendTitle()} (Showing Top ${this.currentFilter})`;
+            
         legendContainer.append('h4')
             .style('color', '#2c3e50')
             .style('margin-bottom', '15px')
             .style('font-family', 'Inter, sans-serif')
-            .text(`📊 ${this.getLegendTitle()}`);
+            .text(titleText);
         
         // Create legend content based on current sort
         const legendContent = legendContainer.append('div')
@@ -613,7 +676,9 @@ class DiversityBarChart {
     }
     
     getLegendItems() {
-        const maxValue = d3.max(this.data, d => {
+        const filteredData = this.getFilteredData();
+        
+        const maxValue = d3.max(filteredData, d => {
             switch(this.currentSort) {
                 case 'movies': return d.movie_count;
                 case 'rating': return d.avg_rating;
@@ -621,7 +686,7 @@ class DiversityBarChart {
             }
         });
         
-        const minValue = d3.min(this.data, d => {
+        const minValue = d3.min(filteredData, d => {
             switch(this.currentSort) {
                 case 'movies': return d.movie_count;
                 case 'rating': return d.avg_rating;
@@ -635,7 +700,7 @@ class DiversityBarChart {
                     { icon: '🎭', text: `<strong>Bar Length:</strong> Genre diversity index (Shannon entropy)` },
                     { icon: '🌈', text: `<strong>Bar Color:</strong> Higher diversity = brighter/warmer colors` },
                     { icon: '📊', text: `<strong>Range:</strong> ${minValue.toFixed(2)} to ${maxValue.toFixed(2)}` },
-                    { icon: '🏆', text: `<strong>Most Diverse:</strong> ${this.data[0]?.country_name} (${this.data[0]?.diversity_index.toFixed(2)})` },
+                    { icon: '🏆', text: `<strong>Most Diverse:</strong> ${filteredData[0]?.country_name} (${filteredData[0]?.diversity_index.toFixed(2)})` },
                     { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = more balanced genre distribution` }
                 ];
             
@@ -644,7 +709,7 @@ class DiversityBarChart {
                     { icon: '🎬', text: `<strong>Bar Length:</strong> Total number of movies produced` },
                     { icon: '🌈', text: `<strong>Bar Color:</strong> Still shows diversity level for comparison` },
                     { icon: '📊', text: `<strong>Range:</strong> ${minValue.toLocaleString()} to ${maxValue.toLocaleString()} movies` },
-                    { icon: '🏆', text: `<strong>Most Productive:</strong> ${this.data[0]?.country_name} (${this.data[0]?.movie_count.toLocaleString()})` },
+                    { icon: '🏆', text: `<strong>Most Productive:</strong> ${filteredData[0]?.country_name} (${filteredData[0]?.movie_count.toLocaleString()})` },
                     { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = larger cinema industry` }
                 ];
             
@@ -653,7 +718,7 @@ class DiversityBarChart {
                     { icon: '⭐', text: `<strong>Bar Length:</strong> Average IMDb rating (1-10 scale)` },
                     { icon: '🌈', text: `<strong>Bar Color:</strong> Still shows diversity level for comparison` },
                     { icon: '📊', text: `<strong>Range:</strong> ${minValue.toFixed(1)} to ${maxValue.toFixed(1)} stars` },
-                    { icon: '🏆', text: `<strong>Highest Quality:</strong> ${this.data[0]?.country_name} (${this.data[0]?.avg_rating.toFixed(1)}/10)` },
+                    { icon: '🏆', text: `<strong>Highest Quality:</strong> ${filteredData[0]?.country_name} (${filteredData[0]?.avg_rating.toFixed(1)}/10)` },
                     { icon: '🔍', text: `<strong>Interpretation:</strong> Higher values = better average quality` }
                 ];
             
