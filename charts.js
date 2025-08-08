@@ -461,18 +461,29 @@ class LineChart extends BaseChart {
     filterByGenre(selectedGenre) {
         if (selectedGenre === "all") {
             // Show all genres
-            this.svg.selectAll("path[class^='line-']").style("opacity", 0.8);
-            this.svg.selectAll("circle[class^='dot-']").style("opacity", 1);
+            this.svg.selectAll(".genre-line").style("opacity", 0.8);
+            this.svg.selectAll(".dot").style("opacity", 1);
             this.svg.selectAll("g[class^='legend-']").style("opacity", 1);
         } else {
-            // Hide all, then show selected
-            this.svg.selectAll("path[class^='line-']").style("opacity", 0.1);
-            this.svg.selectAll("circle[class^='dot-']").style("opacity", 0.1);
+            // Hide all, then show only selected genre
+            this.svg.selectAll(".genre-line").style("opacity", 0.1);
+            this.svg.selectAll(".dot").style("opacity", 0.1);
             this.svg.selectAll("g[class^='legend-']").style("opacity", 0.3);
             
-            this.svg.select(`.line-${selectedGenre}`).style("opacity", 0.8);
-            this.svg.selectAll(`.dot-${selectedGenre}`).style("opacity", 1);
-            this.svg.select(`.legend-${selectedGenre}`).style("opacity", 1);
+            // Show only the selected genre
+            const selectedLine = this.svg.select(`.line-${selectedGenre}`);
+            const selectedDots = this.svg.selectAll(`.dot-${selectedGenre}`);
+            const selectedLegend = this.svg.select(`.legend-${selectedGenre}`);
+            
+            if (!selectedLine.empty()) {
+                selectedLine.style("opacity", 0.8);
+            }
+            if (!selectedDots.empty()) {
+                selectedDots.style("opacity", 1);
+            }
+            if (!selectedLegend.empty()) {
+                selectedLegend.style("opacity", 1);
+            }
         }
     }
 
@@ -975,7 +986,10 @@ class PieChart extends BaseChart {
         // Create pie data
         const pieData = this.pie(processedData);
 
-        // Create pie slices - Enhanced
+        // Precompute total for dynamic percentage (use counts of processedData including Others)
+        const dynamicTotal = processedData.reduce((s, x) => s + (x.count || 0), 0);
+
+        // Create pie slices
         const slices = g.selectAll(".slice")
             .data(pieData)
             .enter()
@@ -991,61 +1005,60 @@ class PieChart extends BaseChart {
             .style("transition", "all 0.3s ease")
             .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
             .on("mouseenter", (event, d) => {
-                // Enhanced tooltip with comprehensive data
+                // Market Data + genre-specific Crisis Impact
                 const crisisYear = parseInt(this.currentYear);
                 const beforeYear = crisisYear - 1;
-                const afterYear = crisisYear + 1;
-                
-                // Get production data from lineChartData for context
-                const beforeData = this.crisisData?.find(item => item.year === beforeYear);
-                const afterData = this.crisisData?.find(item => item.year === afterYear);
                 const crisisData = this.crisisData?.find(item => item.year === crisisYear);
+                const crisisTotal = crisisData ? (crisisData.total || dynamicTotal) : dynamicTotal;
+                const crisisCount = d.data.count;
+                const currentShare = crisisTotal > 0 ? (crisisCount / crisisTotal) * 100 : 0;
                 
-                // Get production counts for this genre
-                const beforeCount = beforeData ? beforeData[d.data.genre] || 0 : 0;
-                const afterCount = afterData ? afterData[d.data.genre] || 0 : 0;
-                const crisisCount = crisisData ? crisisData[d.data.genre] || 0 : 0;
+                const beforeData = this.crisisData?.find(item => item.year === beforeYear);
+                const beforeTotalLine = beforeData ? beforeData.total || 0 : 0;
                 
-                // Calculate total production
-                const beforeTotal = beforeData ? beforeData.total || 0 : 0;
-                const afterTotal = afterData ? afterData.total || 0 : 0;
-                const crisisTotal = crisisData ? crisisData.total || 0 : 0;
+                // Use pie data for robust per-genre previous-year count (handles 'Others')
+                const mainGenres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary'];
+                const prevPie = (this.data && this.data[beforeYear]) ? this.data[beforeYear] : [];
+                const beforeTotalPie = prevPie.reduce((s,x)=>s + (x.count||0), 0);
+                const beforeTotal = beforeTotalPie > 0 ? beforeTotalPie : beforeTotalLine;
                 
-                // Calculate market shares
-                const beforeShare = beforeTotal > 0 ? (beforeCount / beforeTotal) * 100 : 0;
-                const afterShare = afterTotal > 0 ? (afterCount / afterTotal) * 100 : 0;
-                const currentShare = d.data.percentage;
+                const genreKey = d.data.genre_en || d.data.genre;
+                let beforeGenreCount = 0;
+                if (genreKey === 'Others') {
+                    if (prevPie.length > 0) {
+                        // Sum all non-main genres for 'Others' from pie data
+                        beforeGenreCount = prevPie
+                            .filter(x => !mainGenres.includes(x.genre))
+                            .reduce((s,x)=>s + (x.count||0), 0);
+                    } else if (beforeData) {
+                        // Fallback: derive 'Others' from line data totals
+                        const mainSum = (beforeData.Drama||0) + (beforeData.Action||0) + (beforeData.Comedy||0) + (beforeData.Horror||0) + (beforeData.Documentary||0);
+                        beforeGenreCount = Math.max((beforeData.total||0) - mainSum, 0);
+                    }
+                } else {
+                    const prevItem = prevPie.find(x => (x.genre_en || x.genre) === genreKey || x.genre === genreKey);
+                    beforeGenreCount = prevItem ? prevItem.count : (beforeData ? (beforeData[genreKey] || 0) : 0);
+                }
                 
-                // Calculate production trends
-                const productionChange = beforeTotal > 0 ? ((afterTotal - beforeTotal) / beforeTotal) * 100 : 0;
-                const shareChange = beforeShare > 0 ? ((currentShare - beforeShare) / beforeShare) * 100 : 0;
+                const productionChange = beforeTotalLine > 0 ? ((crisisTotal - beforeTotalLine) / beforeTotalLine) * 100 : 0;
+                const beforeShare = beforeTotal > 0 ? (beforeGenreCount / beforeTotal) * 100 : 0;
+                let shareChange = beforeShare > 0 ? ((currentShare - beforeShare) / beforeShare) * 100 : 0;
+                // Avoid displaying 0.0% when there is a tiny non-zero change
+                let shareChangeDisplay = shareChange;
+                if (shareChange !== 0 && Math.abs(shareChange) < 0.1) {
+                    shareChangeDisplay = shareChange > 0 ? 0.1 : -0.1;
+                }
+                const performanceText = shareChange > productionChange ? 'Outperformed market' : shareChange < productionChange ? 'Underperformed market' : 'Matched market';
                 
                 this.showTooltip(event, 
-                    `<div style="background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-                        <h4 style="margin: 0 0 10px 0; font-size: 16px;">🎬 ${d.data.genre} - ${crisisYear}</h4>
-                        <div style="font-size: 14px; line-height: 1.6;">
-                            <strong>📊 Market Data:</strong><br/>
-                            <strong>Movies:</strong> ${d.data.count.toLocaleString()}<br/>
-                            <strong>Market Share:</strong> ${currentShare.toFixed(1)}%<br/>
-                            <strong>Total Production:</strong> ${crisisTotal.toLocaleString()}<br/><br/>
-                            
-                            <strong>📈 Trend Analysis:</strong><br/>
-                            <strong>Previous Year:</strong> ${beforeCount.toLocaleString()} (${beforeShare.toFixed(1)}%)<br/>
-                            <strong>Next Year:</strong> ${afterCount.toLocaleString()} (${afterShare.toFixed(1)}%)<br/>
-                            <strong>Share Change:</strong> <span style="color: ${shareChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${shareChange >= 0 ? '+' : ''}${shareChange.toFixed(1)}%</span><br/><br/>
-                            
-                            <strong>📊 Crisis Impact:</strong><br/>
-                            <strong>Production Change:</strong> <span style="color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/>
-                            <strong>Performance:</strong> ${shareChange > productionChange ? 'Outperformed market' : shareChange < productionChange ? 'Underperformed market' : 'Matched market'}
-                        </div>
-                    </div>`
+                    `<div style=\"background: linear-gradient(135deg, ${colorScale(d.data.genre)}, #2c3e50); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);\">\n                        <h4 style=\"margin: 0 0 10px 0; font-size: 16px;\">🎬 ${d.data.genre} - ${crisisYear}</h4>\n                        <div style=\"font-size: 14px; line-height: 1.6;\">\n                            <strong>📊 Market Data:</strong><br/>\n                            <strong>Movies:</strong> ${crisisCount.toLocaleString()}<br/>\n                            <strong>Market Share:</strong> ${currentShare.toFixed(1)}%<br/>\n                            <strong>Total Production:</strong> ${crisisTotal.toLocaleString()}<br/><br/>\n                            <strong>🔥 Crisis Impact (genre):</strong><br/>\n                            <strong>Market Production Change:</strong> <span style=\"color: ${productionChange >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;\">${productionChange >= 0 ? '+' : ''}${productionChange.toFixed(1)}%</span><br/>\n                            <strong>Genre Share Change vs prev. year:</strong> <span style=\"color: ${shareChangeDisplay >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;\">${shareChangeDisplay >= 0 ? '+' : ''}${shareChangeDisplay.toFixed(1)}%</span><br/>\n                            <strong>Performance:</strong> ${performanceText}\n                        </div>\n                    </div>`
                 );
             })
             .on("mouseleave", () => {
                 this.hideTooltip();
             });
 
-        // Add labels to slices - Enhanced
+        // Update labels to use dynamic percentage
         slices.append("text")
             .attr("transform", d => `translate(${this.arc.centroid(d)})`)
             .attr("dy", "0.35em")
@@ -1055,14 +1068,9 @@ class PieChart extends BaseChart {
             .style("fill", "white")
             .style("text-shadow", "1px 1px 2px rgba(0,0,0,0.8)")
             .text(d => {
-                if (!this.showPercentages) {
-                    return ''; // Hide all labels when showPercentages is false
-                }
-                if (this.displayMode === 'percentage') {
-                    return d.data.percentage >= 3 ? `${d.data.percentage.toFixed(1)}%` : '';
-                } else {
-                    return d.data.count >= 100 ? d.data.count.toLocaleString() : '';
-                }
+                if (!this.showPercentages) return '';
+                const pct = dynamicTotal > 0 ? (d.data.count / dynamicTotal) * 100 : 0;
+                return pct >= 3 ? `${pct.toFixed(1)}%` : '';
             });
 
         // Create legend
@@ -1414,10 +1422,30 @@ class ScatterChart extends BaseChart {
 
     filterByGenre(selectedGenre) {
         if (selectedGenre === "all") {
-            this.svg.selectAll(".dot").style("opacity", 0.7);
+            // Show all genres
+            this.svg.selectAll(".genre-line").style("opacity", 0.8);
+            this.svg.selectAll(".dot").style("opacity", 1);
+            this.svg.selectAll("g[class^='legend-']").style("opacity", 1);
         } else {
-            this.svg.selectAll(".dot")
-                .style("opacity", d => d.genre_en === selectedGenre ? 0.7 : 0.1);
+            // Hide all, then show only selected genre
+            this.svg.selectAll(".genre-line").style("opacity", 0.1);
+            this.svg.selectAll(".dot").style("opacity", 0.1);
+            this.svg.selectAll("g[class^='legend-']").style("opacity", 0.3);
+            
+            // Show only the selected genre
+            const selectedLine = this.svg.select(`.line-${selectedGenre}`);
+            const selectedDots = this.svg.selectAll(`.dot-${selectedGenre}`);
+            const selectedLegend = this.svg.select(`.legend-${selectedGenre}`);
+            
+            if (!selectedLine.empty()) {
+                selectedLine.style("opacity", 0.8);
+            }
+            if (!selectedDots.empty()) {
+                selectedDots.style("opacity", 1);
+            }
+            if (!selectedLegend.empty()) {
+                selectedLegend.style("opacity", 1);
+            }
         }
     }
 

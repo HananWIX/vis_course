@@ -155,17 +155,21 @@ class DiversityBarChart {
             .style('cursor', 'pointer');
         
         [
+            { value: '10', text: '🥈 Top 10' },
             { value: 'all', text: '🌍 All Countries' },
             { value: '5', text: '🥇 Top 5' },
-            { value: '10', text: '🥈 Top 10' },
             { value: '15', text: '🥉 Top 15' },
             { value: '20', text: '🏅 Top 20' },
             { value: '25', text: '🏆 Top 25' }
         ].forEach(option => {
             filterSelect.append('option')
                 .attr('value', option.value)
+                .attr('selected', option.value === '10')
                 .text(option.text);
         });
+        
+        // Set default filter to top 10
+        this.currentFilter = '10';
         
         filterSelect.on('change', (event) => {
             this.currentFilter = event.target.value;

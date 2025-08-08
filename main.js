@@ -82,7 +82,7 @@ class IMDbVisualization {
             this.charts.pieChart = new PieChart(
                 '#pieChart', 
                 this.data.pieChartData, 
-                null
+                this.data.lineChartData
             );
             console.log('✓ Pie chart created');
 
@@ -407,20 +407,16 @@ class IMDbVisualization {
         const insightsList = document.getElementById('heatmapInsightsList');
         if (!insightsList) return;
 
-        // Create heatmap data from lineChartData if heatmapData doesn't exist
+        // Build heatmap-like table from lineChartData if needed
         let data = this.data.heatmapData;
         if (!data || !Array.isArray(data) || !data.length) {
-            // Create heatmap data from lineChartData
             const genres = ['Drama', 'Action', 'Comedy', 'Horror', 'Documentary', 'Thriller', 'Romance', 'Adventure', 'Crime', 'Sci-Fi'];
             data = [];
             (this.data.lineChartData || []).forEach(yearData => {
+                const total = yearData.total || 0;
                 genres.forEach(genre => {
                     if (yearData[genre] !== undefined) {
-                        data.push({
-                            year: yearData.year,
-                            genre: genre,
-                            value: yearData[genre]
-                        });
+                        data.push({ year: yearData.year, genre, value: yearData[genre], total });
                     }
                 });
             });
@@ -431,24 +427,35 @@ class IMDbVisualization {
             return;
         }
 
-        const metricLabel = this.getMetricLabel(metric);
-        
-        // Find the hottest spots
-        const maxValue = Math.max(...data.map(d => d.value));
-        const hotSpot = data.find(d => d.value === maxValue);
-        
-        // Crisis years analysis
         const crisisYears = [2001, 2008, 2020, 2022, 2023];
-        const crisisData = data.filter(d => crisisYears.includes(d.year));
-        const normalData = data.filter(d => !crisisYears.includes(d.year));
-        
-        const avgCrisis = crisisData.length > 0 ? crisisData.reduce((sum, d) => sum + d.value, 0) / crisisData.length : 0;
-        const avgNormal = normalData.length > 0 ? normalData.reduce((sum, d) => sum + d.value, 0) / normalData.length : 0;
 
-        // Two most important insights based on actual heatmap data
+        // Share-based analysis for Documentary to avoid scale effects
+        const docRows = data.filter(d => d.genre === 'Documentary');
+        const byYear = new Map();
+        docRows.forEach(d => { byYear.set(d.year, d); });
+
+        const crisisShares = crisisYears
+            .map(y => byYear.get(y))
+            .filter(Boolean)
+            .map(d => (d.total > 0 ? d.value / d.total : 0));
+        const nonCrisisShares = Array.from(byYear.values())
+            .filter(d => !crisisYears.includes(d.year))
+            .map(d => (d.total > 0 ? d.value / d.total : 0));
+
+        const avgCrisisShare = crisisShares.length ? crisisShares.reduce((a,b)=>a+b,0)/crisisShares.length : 0;
+        const avgNormalShare = nonCrisisShares.length ? nonCrisisShares.reduce((a,b)=>a+b,0)/nonCrisisShares.length : 0;
+        const shareRelChange = avgNormalShare > 0 ? ((avgCrisisShare - avgNormalShare) / avgNormalShare) * 100 : 0;
+
+        // Post-2008 vs pre-2008 count comparison for sustained growth wording
+        const pre = docRows.filter(d => d.year < 2008);
+        const post = docRows.filter(d => d.year >= 2008);
+        const preAvg = pre.length ? pre.reduce((s,d)=>s+d.value,0)/pre.length : 0;
+        const postAvg = post.length ? post.reduce((s,d)=>s+d.value,0)/post.length : 0;
+        const since2008Change = preAvg > 0 ? ((postAvg - preAvg) / preAvg) * 100 : 0;
+
         const insights = [
-            `Drama and Action maintain consistent high activity across all crisis periods`,
-            `Documentary shows exponential growth pattern since 2008 with ${((avgCrisis/avgNormal - 1) * 100).toFixed(1)}% higher activity during crises`
+            `Drama and Action maintain consistent high activity across crisis periods`,
+            `Documentary production accelerates after 2008 and tends to capture a larger share of output in crisis years compared with normal periods`
         ];
 
         insightsList.innerHTML = insights.map(insight => `<li>${insight}</li>`).join('');
@@ -622,7 +629,8 @@ window.addEventListener('error', (event) => {
     console.error('💥 Global error:', event.error);
 });
 
-// Service Worker for offline capability (optional) - Enhanced
+// Disable service worker in local dev to avoid 404 on sw.js
+/*
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
@@ -633,4 +641,5 @@ if ('serviceWorker' in navigator) {
                 console.log('❌ Service Worker failed:', registrationError);
             });
     });
-} 
+}
+*/ 
