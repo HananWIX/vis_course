@@ -162,10 +162,14 @@ class DiversityBarChart {
             { value: '20', text: '🏅 Top 20' },
             { value: '25', text: '🏆 Top 25' }
         ].forEach(option => {
-            filterSelect.append('option')
+            const optionElement = filterSelect.append('option')
                 .attr('value', option.value)
-                .attr('selected', option.value === '10')
                 .text(option.text);
+            
+            // Set the default selection to Top 10
+            if (option.value === '10') {
+                optionElement.property('selected', true);
+            }
         });
         
         // Set default filter to top 10
